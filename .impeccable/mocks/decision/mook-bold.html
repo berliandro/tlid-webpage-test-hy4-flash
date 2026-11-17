@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Team Liquid ID — the lookbook (refined)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=DM+Sans:wght@400;500;600;700&family=Italianno&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#001538;--blue2:#0b2a5e;--gold:#F09F26;--gold2:#F7C95E;--cream:#F4EAD7;--paper:#EFE3CC}
+html,body{width:1440px;height:900px;overflow:hidden}
+body{background:var(--blue);color:var(--cream);font-family:'DM Sans',Arial,sans-serif;position:relative}
+::selection{background:var(--gold);color:var(--blue)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.lace{position:absolute;left:0;right:0;height:44px;background:url('lace-gold.svg') repeat-x;background-size:80px 44px;z-index:30}
+.lace.top{top:0}.lace.bottom{bottom:0;transform:rotate(180deg)}
+.side{position:absolute;top:44px;bottom:44px;width:10px;border-left:2px solid var(--gold2);border-right:2px solid var(--gold2);opacity:.65;z-index:29}
+.side.l{left:14px}.side.r{right:14px}
+.ambient{position:absolute;inset:44px 0;background:url('lace-gold.svg') repeat;background-size:160px 88px;opacity:.055;z-index:1;pointer-events:none;animation:atmosphere 90s linear infinite alternate}
+header{position:absolute;top:44px;left:0;right:0;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 50px;border-bottom:1px solid rgba(247,201,94,.45);z-index:20}
+.brand{font-family:'Bodoni Moda',Georgia,serif;font-size:19px;letter-spacing:.5px;color:var(--cream)}
+.brand b{color:var(--gold2);font-style:italic}
+.tag{font-size:11px;letter-spacing:2.2px;color:var(--gold2);margin-left:14px;vertical-align:2px}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:5px 9px;transition:background 180ms ease,color 180ms ease,transform 180ms ease}
+nav a:hover{color:var(--gold2);transform:translateY(-2px)}
+nav a.on{background:var(--gold);border:1px solid var(--blue);color:var(--blue)}
+main{position:absolute;top:94px;left:0;right:0;height:636px}
+.left{position:absolute;left:48px;top:14px;width:410px;z-index:12}
+.mast{font-family:'Bodoni Moda',Georgia,serif;font-weight:700;line-height:.86;letter-spacing:-.045em;color:var(--cream)}
+.mast .l1{display:block;font-size:64px}
+.mast .l2{display:block;font-size:92px}
+.mast .l2 em{font-style:italic;color:var(--gold2);font-weight:400}
+.rule{height:10px;width:240px;margin:13px 0 12px;background:linear-gradient(90deg,var(--gold2) 0 34%,transparent 34% 40%,var(--gold) 40% 60%,transparent 60% 66%,var(--gold2) 66% 100%)}
+.copy{font-size:14px;line-height:1.55;max-width:33ch;color:#EADFC8}
+.script{font-family:'Italianno',cursive;font-size:26px;color:var(--gold2);transform:rotate(-3deg);margin:7px 0 12px;display:block}
+.ribbon{position:relative;display:inline-block;background:var(--gold);border:1.5px solid var(--blue);padding:8px 18px;color:var(--blue);font-family:'Bodoni Moda',Georgia,serif;font-size:18px;box-shadow:3px 6px 12px rgba(0,0,0,.4);transition:transform 180ms cubic-bezier(.16,1,.3,1)}
+.ribbon:hover{transform:translateY(-3px) rotate(-1deg)}
+.ribbon:before,.ribbon:after{content:'';position:absolute;top:5px;border-style:solid}
+.ribbon:before{left:-13px;border-width:0 13px 25px 0;border-color:transparent #c97d14 transparent transparent}
+.ribbon:after{right:-13px;border-width:0 0 25px 13px;border-color:transparent transparent transparent #c97d14}
+.pin{margin-top:22px;width:320px;background:var(--paper);border:1px solid var(--blue);padding:12px 15px;position:relative;transform:rotate(-1deg);box-shadow:4px 8px 16px rgba(0,0,0,.45);color:var(--blue)}
+.pin:before{content:'';position:absolute;right:14px;top:-8px;width:42px;height:16px;background:var(--gold2);border:1px solid var(--blue);transform:rotate(4deg)}
+.pin h4{font-family:'Bodoni Moda',Georgia,serif;font-size:14px;letter-spacing:1px;margin-bottom:5px}
+.pin p{font-size:12px;line-height:1.5;color:var(--blue2)}
+.pin .v{color:#8A4B00;font-weight:700}
+.disclaim{margin-top:14px;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:#C9D6E8}
+.stage{position:absolute;left:490px;top:0;width:920px;height:636px}
+.spine{position:absolute;left:0;top:42px;width:900px;height:400px;z-index:2;pointer-events:none}
+.sheet{position:absolute;left:186px;top:96px;width:300px;height:238px;transform:rotate(-3deg);background:var(--paper) url('draft.svg') center/cover no-repeat;border:1px solid rgba(0,21,56,.35);box-shadow:6px 10px 20px rgba(0,0,0,.5);z-index:3}
+.horse-mark{position:absolute;right:12px;bottom:8px;width:74px;height:80px;color:var(--blue);opacity:.22}
+.plate{position:absolute;width:220px;height:300px;background:var(--paper) url('draft.svg') center/cover no-repeat;border:1.5px solid var(--blue);box-shadow:7px 12px 22px rgba(0,0,0,.5);z-index:4;transform:rotate(var(--r,0deg))}
+.plate .field{position:absolute;inset:0;overflow:hidden}
+.plate svg.portrait{position:absolute;left:10px;top:12px;width:200px;height:240px;color:var(--blue)}
+.plate.dark{background:var(--blue)}
+.plate.dark .field{background:linear-gradient(160deg,var(--blue2),var(--blue) 62%,#000b20)}
+.plate.dark svg.portrait{color:var(--gold2)}
+.plate .ribbon{position:absolute;left:10px;bottom:24px;font-size:15px;white-space:nowrap;padding:6px 14px}
+.p1{left:10px;top:148px;--r:-8deg;z-index:4}
+.p2{left:140px;top:98px;--r:4deg;z-index:5;animation:breathe 15s ease-in-out infinite alternate;animation-delay:-3s}
+.p3{left:270px;top:156px;--r:-4deg;z-index:6}
+.p4{left:400px;top:103px;--r:7deg;z-index:7;animation:breathe 17s ease-in-out infinite alternate;animation-delay:-8s}
+.p5{left:530px;top:160px;--r:-6deg;z-index:8}
+.p6{left:660px;top:106px;--r:3deg;z-index:9}
+.now{position:absolute;left:24px;top:16px;z-index:11;background:var(--gold);border:1.5px solid var(--blue);padding:8px 14px;transform:rotate(-2deg);box-shadow:3px 6px 12px rgba(0,0,0,.4);font-size:12px;letter-spacing:1px;color:var(--blue);animation:nowPulse 5s ease-in-out infinite}
+.now b{font-family:'Bodoni Moda',Georgia,serif;font-size:14px;letter-spacing:1px;margin-right:9px}
+.note{position:absolute;right:20px;top:26px;z-index:11;font-family:'Italianno',cursive;font-size:24px;color:var(--gold2);transform:rotate(3deg)}
+.tickets{position:absolute;top:744px;left:48px;right:48px;height:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;z-index:20}
+.ticket{border:1.5px dashed var(--gold2);background:var(--paper);padding:8px 14px;display:flex;flex-direction:column;justify-content:center;color:var(--blue);text-decoration:none;transition:transform 180ms cubic-bezier(.16,1,.3,1),background 180ms ease}
+.ticket:hover{transform:translateY(-4px);background:#fff6e4}
+.ticket b{font-family:'Bodoni Moda',Georgia,serif;font-size:16px}
+.ticket span{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:#4A3200;margin-top:2px}
+footer{position:absolute;top:814px;left:48px;right:48px;height:32px;border-top:1px solid var(--gold2);display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:#EADFC8;z-index:20}
+svg.defs{position:absolute;width:0;height:0}
+@keyframes atmosphere{from{transform:translate3d(0,0,0)}to{transform:translate3d(-14px,7px,0)}}
+@keyframes breathe{from{transform:rotate(var(--r)) translate3d(0,0,0)}to{transform:rotate(var(--r)) translate3d(0,-4px,0)}}
+@keyframes nowPulse{0%,100%{opacity:.94;transform:rotate(-2deg) scale(1)}50%{opacity:1;transform:rotate(-2deg) scale(1.014)}}
+body.paused .ambient,body.paused .plate,body.paused .now{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){
+  .ambient,.plate,.now{animation:none!important}
+  .ribbon,.ticket,nav a{transition:none!important}
+  .now{opacity:1;transform:rotate(-2deg)}
+}
+</style></head><body>
+<svg class="defs" aria-hidden="true">
+<symbol id="horse" viewBox="0 0 140 150"><path d="M40 138 C22 116 26 86 46 68 C56 58 64 52 68 38 L78 12 L88 36 C104 44 116 58 120 78 C124 96 114 116 96 128 C82 138 58 142 40 138 Z"/><path d="M68 38 L73 15 L82 34"/><path d="M84 46 C104 40 118 48 128 64 C112 58 100 60 90 68"/><circle cx="92" cy="70" r="3" fill="#F4EAD7"/></symbol>
+</svg>
+<div class="lace top"></div><div class="side l"></div><div class="side r"></div><div class="ambient"></div>
+<header><div class="brand">TEAM LIQUID <b>ID</b><span class="tag">MPL-ID / MLBB</span></div>
+<nav><a class="on">Team</a><a>Players</a><a>Statistics</a><a>Matches</a><a>Discover</a><a>History</a></nav></header>
+<main>
+<div class="left">
+<div class="mast"><span class="l1">TEAM LIQUID</span><span class="l2">ID <em>lookbook</em></span></div>
+<div class="rule"></div>
+<p class="copy">A season is a pattern. Six players cut their own lines through it — and the team stitches every seam into a competitive journey.</p>
+<span class="script">field notes, cut &amp; worn</span>
+<a class="ribbon" href="#">OPEN THE LOOKBOOK →</a>
+<div class="pin"><h4>PINNED / THE LIVE SEAM</h4><p><span class="v">NEXT MATCH — TO BE VERIFIED.</span> Form and current story are pinned here once sourced. This is an unofficial concept; no official Team Liquid asset is used.</p></div>
+<div class="disclaim">Unofficial concept · roster as of retrieval, verify · no stats asserted</div>
+</div>
+<div class="stage">
+<svg class="spine" viewBox="0 0 900 400" aria-hidden="true"><path d="M30 250 C180 210 250 160 400 150 C560 140 660 180 850 130" fill="none" stroke="#F7C95E" stroke-width="2" stroke-dasharray="3 7" opacity=".65"/><circle cx="400" cy="150" r="6" fill="#F7C95E"/><text x="40" y="272" font-family="DM Sans,sans-serif" font-size="10" letter-spacing="2" fill="#F7C95E">TEAM → PLAYERS → SEASON</text></svg>
+<div class="sheet"><svg class="horse-mark"><use href="#horse"/></svg></div>
+<div class="now"><b>NOW</b> NEXT FIXTURE — TO BE VERIFIED · FORM — TO BE VERIFIED</div>
+<div class="note">cut along the season</div>
+<div class="plate p1"><div class="field"></div><svg class="portrait"><use href="#player-1"/></svg><span class="ribbon">ARAN</span></div>
+<div class="plate p2 dark"><div class="field"></div><svg class="portrait"><use href="#player-2"/></svg><span class="ribbon">FAVIANN</span></div>
+<div class="plate p3"><div class="field"></div><svg class="portrait"><use href="#player-3"/></svg><span class="ribbon">YEHEZKIEL</span></div>
+<div class="plate p4 dark"><div class="field"></div><svg class="portrait"><use href="#player-4"/></svg><span class="ribbon">AERONNSHIKII</span></div>
+<div class="plate p5"><div class="field"></div><svg class="portrait"><use href="#player-5"/></svg><span class="ribbon">KYOU</span></div>
+<div class="plate p6 dark"><div class="field"></div><svg class="portrait"><use href="#player-6"/></svg><span class="ribbon">WIDY</span></div>
+</div>
+</main>
+<div class="tickets">
+<a class="ticket" href="preview-stats.html"><b>STATISTICS</b><span>trace the pattern</span></a>
+<a class="ticket" href="preview-matches.html"><b>MATCHES</b><span>every cutting line</span></a>
+<a class="ticket" href="preview-player.html"><b>DISCOVER</b><span>seams worth keeping</span></a>
+<a class="ticket" href="preview-history.html"><b>HISTORY</b><span>the full pattern book</span></a>
+</div>
+<footer><span>Key: sourced and verified · to be verified · synthetic / illustrative</span><span>Foundation blue &amp; gold are brand cues only — no official assets or endorsement</span></footer>
+<div class="lace bottom"></div>
+<script>document.addEventListener('visibilitychange',function(){document.body.classList.toggle('paused',document.hidden)});</script>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "name": "team-liquid-id-lookbook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent editorial destination for Team Liquid ID — V1",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node server.mjs --dist",
+    "check": "node --check src/main.js && node --check src/router.js && node --check server.mjs && node --check scripts/build.mjs"
+  }
+}

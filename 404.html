@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>Mengarahkan…</title></head>
+<body>
+<script>
+(function () {
+  var parts = location.pathname.split('/');
+  var base = '/' + (parts[1] || '') + '/';
+  var route = location.pathname.slice(base.length - 1) || '/';
+  var extra = location.search ? '&' + location.search.slice(1) : '';
+  location.replace(base + 'index.html?p=' + encodeURIComponent(route) + extra + location.hash);
+})();
+</script>
+</body>
+</html>
