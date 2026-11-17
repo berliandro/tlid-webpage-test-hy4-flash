@@ -1,0 +1,60 @@
+export const stories = [
+  {
+    id: 's14-final',
+    kicker: 'Gelar',
+    figure: '4–3',
+    title: 'Tujuh game untuk gelar pertama',
+    text: 'Grand Final MPL Indonesia Season 14 berakhir 4–3 atas RRQ Hoshi pada 27 Oktober 2024. Kemenangan ini juga membawa TLID ke M6 World Championship.',
+    sources: ['LIQ_S14', 'LIQ_RES', 'WIKI_MPL'],
+  },
+  {
+    id: 'm6',
+    kicker: 'Dunia',
+    figure: '1–4',
+    title: 'Satu langkah dari puncak M6',
+    text: 'Di final M6 World Championship, TLID taklukkan dalam empat game oleh Fnatic ONIC PH. Runner-up ini tetap menjadi capaian internasional terbesar tim menurut data yang dikumpulkan.',
+    sources: ['LIQ_M6', 'LIQ_TEAM'],
+  },
+  {
+    id: 'handle',
+    kicker: 'Detail kecil',
+    figure: 'Joo → Kevin',
+    title: 'Nama panggung yang berubah',
+    text: 'Sumber independen mencatat bahwa Kevin menggunakan nama “Joo” sebelum mengubahnya pada MPL ID Season 17. S18 kemudian menampilkannya sebagai Jungler.',
+    sources: ['LIQ_PLAYER', 'IG_S18'],
+  },
+  {
+    id: 's18-top',
+    kicker: 'Musim reguler',
+    figure: '12–4',
+    title: 'Puncak klasemen yang tidak berujung trofi',
+    text: 'TLID menutup musim reguler S18 di posisi pertama dengan selisih game +15, mendapat bye, lalu finis ketiga setelah kalah dari BTR di braket bawah.',
+    sources: ['LIQ_S18', 'DOT', 'ITEM'],
+  },
+  {
+    id: 'record',
+    kicker: 'Skala',
+    figure: '71–50',
+    title: 'Rekor dalam jendela riset',
+    text: 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 21 Mei 2024 hingga 2 Oktober 2026.',
+    sources: ['LIQ_TEAM', 'ESC'],
+  },
+  {
+    id: 'academy',
+    kicker: 'Jalur pemain',
+    figure: 'Akademi → utama',
+    title: 'Lyoni naik dari TLID Academy',
+    text: 'Lyoni bergabung dari Monster Vicious, melewati TLID Academy, lalu masuk tim utama pada Maret 2026. Ia tercatat sebagai Roamer di S18.',
+    sources: ['LIQ_PLAYER', 'IG_S18'],
+  },
+  {
+    id: 'movement',
+    kicker: 'Pergerakan roster',
+    figure: '2026',
+    title: 'Wajah yang berpindah',
+    text: 'Faviannn bergabung dengan RRQ Hoshi, YehezKiel dengan RRQ Tora, dan AeronnShikii dengan AC Esports setelah kontraknya dengan TLID dihentikan pada Agustus 2026.',
+    sources: ['LIQ_PLAYER', 'IDN'],
+  },
+];
+
+export const editorialNote = 'Setiap cerita di halaman ini bersumber dari paket riset Stage 4. Angka adalah fakta yang dikutip, bukan data contoh. Buka catatan sumber pada tiap bagian untuk melihat asal dan batas keyakinannya.';
