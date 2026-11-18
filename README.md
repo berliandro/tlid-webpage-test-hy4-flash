@@ -56,7 +56,7 @@ src/
 public/
   assets/             Lace, drafting pattern, synthetic portrait symbols, mark
   assets/players/     Licensed CC BY-SA 3.0 player portraits
-  fonts/              Self-hosted Bodoni Moda, DM Sans, Italianno
+  fonts/              Self-hosted Gloock, Manrope, Bodoni Moda, DM Sans, Italianno
 ```
 
 ## Updating data
@@ -71,7 +71,7 @@ Never replace an unknown value with a guess, zero, or illustrative number. Use t
 
 - Source of truth is `RESEARCH.md` plus `research/SOURCES.md` (retrieved 2026-11-17). Conflicts are shown, not silently resolved.
 - Player portraits for Aran, Kevin, Drichel, Keven and Lyoni come from **Liquipedia Commons** under **CC BY-SA 3.0**, supplied with a provenance manifest. Attribution and licence are shown in the UI and at `/sources`. Anaver has no supplied portrait and uses an authored synthetic illustration, clearly labeled.
-- No official Team Liquid logo, brand kit artwork, or unlicensed photography is used. Colours and typefaces are design cues only.
+- The browser icon uses the user-supplied `tlid.png` crest from the reusable asset folder (500px source, with 64/32/180px derivatives). It is the only official mark used in the site, and the site remains an independent concept. No other brand-kit artwork or unlicensed photography is used; colours and typefaces are design cues only.
 - Fonts are self-hosted under their open licences; there is no runtime Google Fonts dependency.
 
 ## Motion and performance
