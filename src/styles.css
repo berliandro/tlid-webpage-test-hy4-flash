@@ -273,7 +273,11 @@ h1 em,h2 em{font-style:italic;color:var(--gold2);font-weight:400}
 .footer-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin:0 0 10px}
 .site-footer a{display:block;font-size:13px;color:#EADFC8;text-decoration:none;margin-bottom:6px}
 .site-footer a:hover{color:var(--gold2)}
-.footer-bottom{max-width:1240px;margin:34px auto 0;border-top:1px solid var(--line);padding-top:14px;font-size:11px;letter-spacing:.6px;color:#9fb4c8}
+.footer-bottom-row{max-width:1240px;margin:34px auto 0;border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-bottom{font-size:11px;letter-spacing:.6px;color:#9fb4c8;margin:0}
+.lang-toggle{flex:0 0 auto;background:transparent;color:var(--gold2);border:1.5px dashed var(--gold2);padding:8px 14px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;cursor:pointer;transition:background 180ms ease,color 180ms ease}
+.lang-toggle:hover{background:var(--gold);color:var(--blue)}
+@media(max-width:560px){.footer-bottom-row{flex-direction:column;align-items:flex-start}}
 
 /* ---------- motion ---------- */
 @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-14px,7px,0)}}

@@ -1,5 +1,6 @@
 import { playerStats, teamTotals, records, mvpLeader, statConflicts } from '../data/stats.js';
 import { sourceNote, sectionHead, esc } from '../lib/ui.js';
+import { applyLanguage } from '../i18n.js';
 
 const metrics = {
   kda: { label: 'KDA rata-rata', max: 7, get: (p) => p.kda, fmt: (v) => v.toFixed(2) },
@@ -68,6 +69,7 @@ export function renderStats() {
             <b>${m.fmt(value)}</b>
           </div>`;
         }).join('');
+        applyLanguage(chart);
       };
       draw('kda');
       buttons.forEach((btn) => btn.addEventListener('click', () => {

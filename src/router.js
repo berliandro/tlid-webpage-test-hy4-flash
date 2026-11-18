@@ -9,6 +9,7 @@ import { renderSources } from './pages/sources.js';
 import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
 import { laceTop } from './lib/ui.js';
+import { translate, applyLanguage } from './i18n.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -63,7 +64,10 @@ function shell(content, title) {
       <div><p class="footer-label">Navigasi</p>${navItems.map((n) => `<a href="${n.href}">${n.label}</a>`).join('')}</div>
       <div><p class="footer-label">Data</p><a href="/sources">Daftar sumber</a><a href="/statistics">Catatan verifikasi</a><a href="/players">Roster S18</a></div>
     </div>
-    <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.</p>
+    <div class="footer-bottom-row">
+      <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.</p>
+      <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
+    </div>
   </footer>`;
   return html.replace(/href="\//g, `href="${BASE}`);
 }
@@ -85,8 +89,8 @@ function titles(path) {
     '/': 'Beranda', '/players': 'Pemain', '/statistics': 'Statistik',
     '/matches': 'Pertandingan', '/discover': 'Jelajah', '/history': 'Sejarah', '/sources': 'Sumber',
   };
-  if (path.startsWith('/players/')) return 'Profil Pemain';
-  return map[path] || 'Halaman tidak ditemukan';
+  const title = path.startsWith('/players/') ? 'Profil Pemain' : (map[path] || 'Halaman tidak ditemukan');
+  return translate(title);
 }
 
 export function render() {
@@ -98,6 +102,7 @@ export function render() {
   document.getElementById('main')?.focus({ preventScroll: true });
   result.mount?.();
   wireNav();
+  applyLanguage(document);
 }
 
 function wireNav() {
@@ -107,7 +112,7 @@ function wireNav() {
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Tutup navigasi' : 'Buka navigasi');
+    toggle.setAttribute('aria-label', translate(open ? 'Tutup navigasi' : 'Buka navigasi'));
   });
   nav.addEventListener('click', (e) => {
     if (e.target.closest('a')) {
