@@ -95,6 +95,7 @@ function titles(path) {
 
 export function render() {
   const path = routeFromLocation();
+  document.body.classList.toggle('route-home', path === '/');
   const result = resolve(path);
   app.innerHTML = shell(result.html, titles(path));
   document.title = `${titles(path)} — Team Liquid ID`;
