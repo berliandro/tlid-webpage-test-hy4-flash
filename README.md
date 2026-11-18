@@ -82,6 +82,12 @@ Never replace an unknown value with a guess, zero, or illustrative number. Use t
 - A single `visibilitychange` listener pauses ambient animation when the tab is hidden.
 - Images are `loading="lazy"` except the above-the-fold player profile portrait, and all have fixed dimensions to prevent layout shift.
 
+## Language
+
+The default language is **English**. A footer control labeled **Bahasa Indonesia** switches the entire site to Indonesian; once switched, the control reads **English**. The choice is stored in `localStorage` under `tlid-lang` and applies to every route, including deep links and refreshes.
+
+Translations are defined in `src/i18n.js`. Authored UI copy lives in Indonesian source strings; `applyLanguage()` translates the rendered DOM to English when the stored locale is `en`. To add or correct a translation, add an exact entry to the `DICT` map. `phrases` in the same file handle dynamically composed strings. No language switcher or extra dependencies are needed.
+
 ## Validation notes
 
 - `npm run check` passes and `npm run build` completes.
