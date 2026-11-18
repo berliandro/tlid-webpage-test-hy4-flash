@@ -244,6 +244,24 @@ const DICT = {
   'Halaman ini': 'This page', 'tidak ada di arsip': 'is not in the archive',
   'Rute yang Anda cari tidak tersedia. Kembali ke beranda atau buka daftar sumber.': 'The route you are looking for is unavailable. Return home or open the source list.',
   'Ke beranda →': 'Go home →', 'Lihat sumber →': 'View sources →',
+
+  // homepage V2
+  'Enam pemain. Satu tim MLBB Indonesia. Setiap musim dipotong menjadi pola.': 'Six players. One Indonesian MLBB team. Every season cut into a pattern.',
+  'Temui roster ': 'Meet the roster ',
+  'Snapshot terakhir': 'Latest snapshot',
+  'SNAPSHOT · 8 NOV 2026': 'SNAPSHOT · 8 NOV 2026',
+  'ke-3': '3rd',
+  'MPL ID S18 selesai': 'MPL ID S18 complete',
+  'Catatan arsip, bukan data langsung.': 'Archive note, not a live feed.',
+  'Enam individu': 'Six individuals',
+  'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Ilustrasi, bukan potret.': 'S18 lineup per the official 7 August 2026 announcement. Illustrations, not portraits.',
+  'Rekor agregat': 'Aggregate record',
+  '174–141 game · 21 Mei 2024 – 2 Okt 2026.': '174–141 games · 21 May 2024 – 2 Oct 2026.',
+  'Juara MPL ID S14 · runner-up M6 · ke-3 S18.': 'MPL ID S14 champions · M6 runners-up · 3rd at S18.',
+  'Masuk lebih dalam': 'Go deeper',
+  'KDA, MVP, batas data': 'KDA, MVP, data limits',
+  'Turnamen dan hasil': 'Tournaments and results',
+  'Bagian lain': 'Other sections',
 };
 
 // Phrase fallbacks for dynamically composed strings not covered by exact keys.

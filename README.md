@@ -88,6 +88,14 @@ The default language is **English**. A footer control labeled **Bahasa Indonesia
 
 Translations are defined in `src/i18n.js`. Authored UI copy lives in Indonesian source strings; `applyLanguage()` translates the rendered DOM to English when the stored locale is `en`. To add or correct a translation, add an exact entry to the `DICT` map. `phrases` in the same file handle dynamically composed strings. No language switcher or extra dependencies are needed.
 
+## Workflow preference
+
+For this project only, every implementation is committed and pushed after it is complete, and the `gh-pages` branch is updated with the production build. Do not apply this rule to other projects.
+
+## Page-level refinement
+
+The homepage has a V2 treatment scoped to `body.route-home` and `.home-page`: a light paper canvas, Gloock display type, Manrope body type, a single navy pulse panel, and a shorter editorial copy structure. Other routes intentionally keep the original dark system until their own passes. The repeatable process is documented in `REFINEMENT-WORKFLOW.md`.
+
 ## Validation notes
 
 - `npm run check` passes and `npm run build` completes.
