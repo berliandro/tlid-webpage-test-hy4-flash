@@ -144,13 +144,17 @@ function wireNav() {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-nav');
   if (!toggle || !nav) return;
+  const exploreToggle = document.querySelector('.explore-toggle');
+  const exploreMenu = document.getElementById('explore-menu');
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', translate(open ? 'Tutup navigasi' : 'Buka navigasi'));
+    if (open && window.innerWidth <= 860 && exploreMenu) {
+      exploreMenu.hidden = false;
+      exploreToggle?.setAttribute('aria-expanded', 'true');
+    }
   });
-  const exploreToggle = document.querySelector('.explore-toggle');
-  const exploreMenu = document.getElementById('explore-menu');
   exploreToggle?.addEventListener('click', () => {
     const open = exploreMenu.hidden;
     exploreMenu.hidden = !open;
