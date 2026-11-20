@@ -542,6 +542,25 @@ Object.assign(TO_ID, {
   'Most points in the official standings.': 'Poin terbanyak dalam klasemen resmi.',
   'Share of team kills involving the player.': 'Bagian dari kill tim yang melibatkan pemain.',
   'Where a fact came from.': 'Sumber sebuah fakta.',
+
+  // harden round 2: exact strings verified still byte-identical in ID mode.
+  'Public research, 17 November 2026. Unknowns stay blank.': 'Riset publik, 17 November 2026. Yang tidak diketahui sengaja dikosongkan.',
+  'No invented fixtures.': 'Tidak ada jadwal rekaan.',
+  'S18 ended 8 November 2026': 'S18 berakhir 8 November 2026',
+  'Player profile': 'Profil pemain',
+  'MPL ID S14 champion': 'Juara MPL ID S14',
+  'M6 runner-up': 'Runner-up M6',
+  'S18 lineup announced': 'Susunan S18 diumumkan',
+  'S15 5–6, S16 9th': 'S15 ke-5–6, S16 ke-9',
+  'Lane roles': 'Peran jalur',
+  'Joined': 'Bergabung',
+  'On the S14 roster (31 July 2024)': 'Tercatat di roster S14 (31 Juli 2024)',
+  'EXP laner since S14. In the S18 roster.': 'EXP laner sejak S14. Masih dalam roster S18.',
+  'MLBBHub, 17 November 2026, 14:13 UTC. Role per source: EXP.': 'MLBBHub, 17 November 2026, 14.13 UTC. Peran menurut sumber: EXP.',
+  'Kills': 'Kill', 'Deaths': 'Kematian', 'Assists': 'Assist', 'Gold': 'Emas', 'Tower': 'Menara',
+  'points · rank 1': 'poin · peringkat 1',
+  'Runner-up': 'Juara kedua',
+  'Round 2': 'Babak 2', 'Upper Bracket Final': 'Final braket atas', 'Lower Bracket Final': 'Final braket bawah',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
