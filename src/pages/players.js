@@ -15,7 +15,7 @@ export function renderPlayers() {
   ${starters.map((p, i) => `
   <a class="roster-row${i % 2 ? ' reverse' : ''}" href="/players/${p.slug}">
     <div class="player-shot">
-      <img src="public/assets/cards/${p.handle === 'Kevin' ? 'Kevinn' : p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" />
+      <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" />
       <span class="player-no">${p.index}</span>
     </div>
     <div class="row-copy">

@@ -36,7 +36,7 @@ export function renderPlayer(slug) {
   <nav class="breadcrumb" aria-label="Location">TEAM LIQUID ID / PLAYERS / ${p.handle}</nav>
   <div class="player-grid">
     <div class="player-portrait">
-      <div class="portrait-frame"><img src="public/assets/cards/${p.handle === 'Kevin' ? 'Kevinn' : p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /><span class="portrait-tag">Liquipedia Commons · CC BY-SA 3.0</span></div>
+      <div class="portrait-frame"><img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /><span class="portrait-tag">Liquipedia Commons · CC BY-SA 3.0</span></div>
       <span class="player-no">${p.index} / 06</span>
       ${p.photo ? sourceNote(['COMMONS'], 'Portrait licence') : ''}
     </div>
