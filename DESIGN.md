@@ -1,16 +1,15 @@
 ---
-name: Team Liquid ID — Aged Print Archive
-description: An aged, grainy printed archive of Team Liquid ID: ink, fibre, worn rules and stamped seals
+name: Team Liquid ID — Textured Team Archive
+description: A modern, finished site in Team Liquid's exact colors with restrained tactile grain and one focal point per viewport
 colors:
-  paper: "#D8C8A6"
-  paper-light: "#E7DAC0"
-  paper-dark: "#B9A886"
-  ink: "#241E17"
-  ink-soft: "#5B4E3D"
-  oxblood: "#8D2B1F"
-  blue: "#2C3E57"
-  brass: "#A37C31"
-  rule: "rgba(36,30,23,.32)"
+  foundation-blue: "#001538"
+  momentum-white: "#EEEEEE"
+  ebb-cyan: "#3BB0D4"
+  flow-purple: "#5651ED"
+  sunrise-gold: "#F7C95E"
+  sunset-gold: "#F09F26"
+  rule: "rgba(0,21,56,.28)"
+  panel-tint: "rgba(0,21,56,.04)"
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
@@ -50,50 +49,50 @@ spacing:
   measure: "38rem"
 components:
   primary-action:
-    backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.paper-light}"
+    backgroundColor: "{colors.sunset-gold}"
+    textColor: "{colors.foundation-blue}"
     rounded: "0px"
     padding: "12px 18px"
   archive-card:
-    backgroundColor: "{colors.paper-light}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.momentum-white}"
+    textColor: "{colors.foundation-blue}"
     rounded: "0px"
     padding: "12px"
-  stamp:
-    backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.paper-light}"
+  pulse-panel:
+    backgroundColor: "{colors.momentum-white}"
+    textColor: "{colors.foundation-blue}"
     rounded: "0px"
-    padding: "26px"
+    padding: "20px"
 ---
 
 ## Overview
 
-The site is an aged printed archive: warm paper fibre, heavy ink rules, oxblood wax seals, brass annotations, and small inlined game icons. One focal point per viewport, short factual copy, left-aligned reading.
+A modern, finished archive in Team Liquid's exact colors: Momentum white ground, Foundation blue type, Sunset gold actions, EBB cyan and Flow purple for accents. Grain is a restrained CC0 texture blended into selected surfaces, never a hue change and never animated.
 
 ## Colors
 
-Paper `#D8C8A6` is the ground with a seamless CC0 grain tile blended in. Ink `#241E17` carries text and rules. Oxblood `#8D2B1F` is the action and seal accent; blue `#2C3E57` marks sources; brass `#A37C31` is a quiet annotation tone. Dark mode darkens paper only.
+Only Team Liquid's published colors are used. Dark mode swaps to a Foundation-blue canvas with Momentum-white text; no new hues are introduced. Small text stays Foundation blue on white or white on blue so contrast holds.
 
 ## Typography
 
-Role tokens `--type-display/headline/title/body/label/meta` with `--fs-*` steps. Gloock for display, Manrope for body and data. No synthesized weights. Body is 16px/1.6 with a 38rem measure; functional text never below 11px; numerals tabular.
+Role tokens `--type-display/headline/title/body/label/meta` with `--fs-*` steps. Gloock display, Manrope body. 16px/1.6 body, 38rem measure, 11px functional floor, tabular numerals, `font-synthesis: none`.
 
 ## Layout
 
-A 12-column mental grid, one primary action above the fold, generous spacing, no nested cards. Sections are ruled bands with one heading and one supporting line. Coarse pointers get 44px targets via `--tap`.
+One focal point per viewport, left-aligned reading path, one primary action above the fold, generous spacing, no nested cards. Coarse pointers get 44px targets via `--tap`.
 
 ## Elevation & Depth
 
-No glow or gradient. Depth comes from paper tone, 1px rules, double rules, and a rotated wax-seal panel.
+No glow or gradient. Depth comes from blue rules, panel tint, and a small textured seal. Grain is `soft-light` over selected surfaces at fixed 256px tiling.
 
 ## Shapes
 
-Square corners. Recurring details: grain tile, heavy rules, registration ticks, inlined game-icons, oxblood seals.
+Square corners. Recurring details: heavy blue rules, gold action fills, inlined CC BY icons, and the grain tile.
 
 ## Components
 
-`primary-action` is oxblood on paper. `archive-card` is paper-light with a heavy top rule. `stamp` is an oxblood panel for the current-season snapshot. `source-note` is a disclosure with publisher, URL, retrieval date and confidence.
+`primary-action` is Sunset gold with Foundation-blue text. `archive-card` is Momentum white with a gold top rule. `pulse-panel` is a secondary snapshot stamp. `source-note` is a disclosure with publisher, URL, retrieval date and confidence.
 
 ## Do's and Don'ts
 
-Do keep every route in this world, write short concrete sentences, attribute every fact, and label unknowns. Don't use long paragraphs, generic marketing language, mixed terminology, emoji, hollow cards, dark+glow esports styling, or uncredited assets.
+Do keep the palette exactly, write short concrete sentences, attribute every fact, and label unknowns. Don't shift hues, apply sepia, use animated filters, write marketing filler, or use uncredited assets.

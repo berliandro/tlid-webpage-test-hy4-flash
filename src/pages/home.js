@@ -1,9 +1,9 @@
 import { pulse } from '../data/team.js';
-import { players } from '../data/players.js';
+import { starters, substitutes } from '../data/players.js';
 import { portrait, sourceNote } from '../lib/ui.js';
 import { icon } from '../icons.js';
 
-const band = players.map((p) => `
+const band = starters.map((p) => `
   <a class="band-card" href="/players/${p.slug}">
     <span class="band-image">${portrait(p)}</span>
     <b>${p.handle}</b>
@@ -44,6 +44,9 @@ export function renderHome() {
       <p>Susunan diumumkan 2026-08-07. Potret bersumber, bukan ukiran.</p>
     </div>
     <div class="band">${band}</div>
+    <details class="bench-panel"><summary>Cadangan · ${substitutes.length} pemain</summary>
+      <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${icon('quill')}<b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
+    </details>
     ${sourceNote(['IG_S18'])}
   </section>
 
