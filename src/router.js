@@ -99,7 +99,7 @@ function shell(content) {
       <div><dt>Kill participation</dt><dd>Share of team kills involving the player.</dd></div>
       <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
       <div><dt>Final placing</dt><dd>Where the team finished in the tournament.</dd></div>
-      <div class="glossary-group"><dt>Opponent codes</dt></div>
+      <div class="glossary-group"><dt>Opponent codes</dt><dd>Opponent abbreviations in the match archive.</dd></div>
       <div><dt>AE</dt><dd>AE was TLID’s opponent in the 2025 SPS S6 APAC Challenge, a 2–0 win.</dd></div>
       <div><dt>RRQ Hoshi</dt><dd>RRQ Hoshi was TLID’s opponent in the S14 final, a 4–3 win on 27 October 2024.</dd></div>
       <div><dt>BTR</dt><dd>BTR is the team that beat TLID in the S17 and S18 playoffs; BTR won S18 4–3 over NAVI.</dd></div>

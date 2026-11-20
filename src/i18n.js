@@ -563,6 +563,7 @@ Object.assign(TO_ID, {
   'Round 2': 'Babak 2', 'Upper Bracket Final': 'Final braket atas', 'Lower Bracket Final': 'Final braket bawah',
   'Substitutes (1) · No. 04': 'Cadangan (1) · No. 04',
   'Opponent codes': 'Kode lawan',
+  'Opponent abbreviations in the match archive.': 'Singkatan lawan dalam arsip pertandingan.',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
