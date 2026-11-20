@@ -48,7 +48,7 @@ function activeHref(path) {
 function shell(content) {
   const current = activeHref(routeFromLocation());
   const nav = navItems.filter((n) => n.top).map((n) =>
-    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
+    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
   ).join('');
   const html = `
   <a class="skip-link" href="#main">Skip to content</a>

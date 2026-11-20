@@ -1,5 +1,5 @@
 import { startRouter, render } from './router.js';
-import { getLang, setLang, applyLanguage } from './i18n.js';
+import { getLang, setLang, applyLanguage, translate } from './i18n.js';
 
 startRouter();
 
@@ -37,11 +37,15 @@ function runSearch(q, source) {
   const links = [...document.querySelectorAll('.site-nav .nav-link')];
   let shown = 0;
   links.forEach((a) => {
-    a.hidden = !!q && !a.textContent.toLowerCase().includes(q);
+    const haystack = (a.dataset.search || a.textContent).toLowerCase();
+    a.hidden = !!q && !haystack.includes(q);
     if (!a.hidden) shown += 1;
   });
   const status = document.getElementById('search-status');
-  if (status) status.textContent = q ? `${shown} section${shown === 1 ? '' : 's'} found` : 'Search by section name in the navigation.';
+  const found = getLang() === 'id'
+    ? `${shown} bagian ditemukan`
+    : `${shown} section${shown === 1 ? '' : 's'} found`;
+  if (status) status.textContent = q ? found : translate('Search by section name in the navigation.');
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
   if (q) {
     const nav = document.getElementById('primary-nav');
