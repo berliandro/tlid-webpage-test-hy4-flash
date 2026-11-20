@@ -36,7 +36,7 @@ export const stories = [
     kicker: 'Skala',
     figure: '71–50',
     title: 'Rekor dalam jendela riset',
-    text: 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 2024-05-21 hingga --0.',
+    text: 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 2024-05-21 hingga 2026-10-02.',
     sources: ['LIQ_TEAM', 'ESC'],
   },
   {
