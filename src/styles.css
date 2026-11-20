@@ -362,7 +362,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 @media(max-width:1100px){
   .topbar{grid-template-columns:1fr auto;row-gap:12px}
   .site-nav{grid-column:1/-1;justify-content:center}
-  .roster{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .roster,.roster-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media(max-width:860px){
   .topbar{grid-template-columns:1fr auto}
@@ -373,9 +373,9 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .status-pill,.icon-btn{display:none}
   .hero{min-height:auto;padding-top:var(--page-y)}
   .hero h1{font-size:clamp(2.5rem,12vw,4.6rem)}
-  .card-fan{height:clamp(260px,72vw,420px)}
+  .card-fan{height:min(clamp(260px,72vw,420px),64vh)}
   .fan-inner{width:160%;bottom:-2%}
-  .roster,.roster-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .roster{grid-template-columns:repeat(2,minmax(0,1fr))}
   .roster-row,.player-grid,.split-section,.story{grid-template-columns:1fr}
   .archive-row{grid-template-columns:50px 1fr 72px}
   .arch-final{grid-column:2/-1}
@@ -390,6 +390,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .fan-inner{width:230%;bottom:0}
   .fan-card{width:150px}
   .roster{grid-template-columns:1fr}
+  .roster-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .footer-grid{grid-template-columns:1fr}
   .identity-list{grid-template-columns:1fr}
   .bar-row{grid-template-columns:78px 1fr 48px;gap:6px}
