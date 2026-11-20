@@ -56,7 +56,7 @@ function shell(content) {
   <div class="grid-edge" aria-hidden="true"></div>
   <header class="topbar">
     <div class="topbar-left">
-      <a class="brand" href="/" aria-label="Team Liquid ID — home"><span class="brand-mark"><img src="public/assets/tlid-mark.svg" alt="" /></span>TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
+      <a class="brand" href="/" aria-label="Team Liquid ID — home">TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
       <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
@@ -64,7 +64,6 @@ function shell(content) {
     <div class="topbar-right">
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
       <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED</span>
-      <span class="avatar" aria-hidden="true"><img src="public/assets/apple-touch-icon.png" alt="" /></span>
     </div>
   </header>
   <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>
@@ -72,8 +71,8 @@ function shell(content) {
   <footer class="site-footer">
     <div class="footer-grid">
       <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Independent project. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0. Anaver uses a synthetic illustration.</p></div>
-      <div><p class="footer-label">Sections</p>${navItems.map((n) => `<a href="${n.href}">${n.en}</a>`).join('')}</div>
-      <div><p class="footer-label">Data</p><a href="/sources">Sources</a><a href="/statistics">Checks</a><a href="/players">S18 roster</a></div>
+      <div><p class="footer-label">More</p><a href="/discover">Discover</a><a href="/history">History</a></div>
+      <div><p class="footer-label">Data</p><a href="/sources">Sources</a></div>
     </div>
     <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
     <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
