@@ -387,6 +387,7 @@ Object.assign(TO_ID, {
   'A timeline': 'Linimasa', 'still unfinished': 'yang belum selesai',
   'What cannot be confirmed': 'Yang tidak bisa dipastikan', 'Deliberately blank': 'Sengaja dikosongkan',
   'list': 'daftar', '26 sources': '26 sumber', 'Ledger': 'Daftar',
+  'S18 · SINGLE-SOURCE': 'S18 · SUMBER TUNGGAL',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is

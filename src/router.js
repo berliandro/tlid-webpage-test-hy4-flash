@@ -64,7 +64,7 @@ function shell(content) {
     <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
     <div class="topbar-right">
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
-      <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED</span>
+      <span class="pill status-pill"><span class="coin"></span> S18 · SINGLE-SOURCE</span>
     </div>
   </header>
   <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>
