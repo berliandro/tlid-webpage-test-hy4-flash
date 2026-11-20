@@ -16,6 +16,7 @@ export function renderMatches() {
 <section class="section upcoming-section">
   ${sectionHead('Upcoming', 'No verified fixtures')}
   <div class="unavailable"><h3>S18 ended 8 November 2026</h3>${sourceNote(upcoming.sources)}</div>
+  <div class="link-row"><a class="ticket" href="/history">Read the season timeline →</a><a class="ticket" href="/statistics">See the verified record →</a></div>
 </section>
 
 <section class="section">

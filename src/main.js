@@ -50,6 +50,16 @@ function runSearch(q, source) {
     ? `${shown} bagian ditemukan`
     : `${shown} section${shown === 1 ? '' : 's'} found`;
   if (status) status.textContent = q ? found : translate('Search by section name in the navigation.');
+  const feedback = document.getElementById('search-feedback');
+  const result = document.getElementById('search-result');
+  if (feedback && result) {
+    feedback.hidden = !q;
+    if (q) {
+      result.textContent = shown ? found : (getLang() === 'id'
+        ? `Tidak ada bagian yang cocok dengan “${q}” — coba “tim” atau tekan Esc`
+        : `No sections match “${q}” — try “team” or press Esc`);
+    }
+  }
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
   if (q) {
     const menu = document.getElementById('explore-menu');

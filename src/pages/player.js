@@ -24,7 +24,7 @@ export function renderPlayer(slug) {
     </div>
     <p class="stat-caveat">MLBBHub, 17 November 2026, 14:13 UTC. Role per source: ${p.stat.listedRole}.</p>
     ${sourceNote(['MLBBHUB', 'MPL_STATS'])}` : `
-    <div class="empty-stat"><b>${unknown('Not published')}</b><p>Season statistics for ${p.handle} are not in the collected data. We do not fill the gap with zeroes or guesses.</p>${sourceNote(p.sources)}</div>`;
+    <div class="empty-stat"><b>${unknown('Not published')}</b><p>Season statistics for ${p.handle} are not in the collected data. We do not fill the gap with zeroes or guesses.</p>${sourceNote(p.sources)}<div class="link-row"><a class="ticket" href="/statistics">See the numbers we do have →</a></div></div>`;
 
   const mvp = p.slug === 'kevin' ? `
     <div class="mvp-mark"><span>MVP standings</span><b>${mvpLeader.points} points · rank ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
