@@ -1,5 +1,5 @@
 ---
-name: Team Liquid ID — Agled Print Archive
+name: Team Liquid ID — Aged Print Archive
 description: An aged, grainy printed archive of Team Liquid ID: ink, fibre, worn rules and stamped seals
 colors:
   paper: "#D8C8A6"
