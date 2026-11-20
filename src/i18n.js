@@ -389,6 +389,8 @@ Object.assign(TO_ID, {
   'list': 'daftar', '26 sources': '26 sumber', 'Ledger': 'Daftar',
   'Explore: Discover': 'Jelajahi: Jelajah', 'Explore: History': 'Jelajahi: Sejarah',
   'Clear': 'Hapus',
+  'August 2025': 'Agustus 2025', 'March 2026': 'Maret 2026', 'Aug 2026': 'Agu 2026',
+  'Academy → main team, Mar 2026': 'Akademi → tim utama, Mar 2026',
   'Read the season timeline →': 'Baca linimasa musim →',
   'See the verified record →': 'Lihat rekor terverifikasi →',
   'See the numbers we do have →': 'Lihat angka yang kami punya →',

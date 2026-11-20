@@ -442,6 +442,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .bar-label a{font-size:13px}
   .bar-row b{font-size:12px}
 }
+@media(pointer:coarse){.search-pill>span:last-child{display:none}}
 @media(pointer:coarse){.nav-link,.nav-toggle,.metric-btn,.filter-btn,.pill,.ticket,.text-link,.back-link,.source-note summary,.glossary summary,.bench summary,.brand,.center-mark,.site-footer a,.credits-line a{min-height:var(--tap)}}
 /* Functional text floor: nothing below 12px carries information. */
 .src-url,.stat-strip span,.identity-list dt,.bar-label small,.src-meta,.stat-caveat,.chart-note,.arch-main p,.po-note,.po-date,.credits-line,.expand-sources,.lang-toggle,.player-no,.result-status,.unavailable-seal,.metric-btn,.filter-btn,.site-footer a,.ticket,.nav-toggle,.search-pill span{font-size:12px}

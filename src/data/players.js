@@ -26,7 +26,7 @@ export const players = [
   {
     slug: 'kevin', handle: 'Kevin', realName: null, starter: true,
     role: 'Jungler', nationality: null, born: null,
-    joined: 'Joined August 2025',
+    joined: 'August 2025',
     portrait: 'player-2', photo: 'Kevinn', index: '02', cardBg: '#f75062', cardInk: '#0F0F11',
     hook: 'Jungler per S18. Previously named Joo.',
     tagline: 'Nama panggungnya berubah di S17; datanya ada, identitas pribadinya tidak.',
@@ -43,7 +43,7 @@ export const players = [
   {
     slug: 'drichel', handle: 'Drichel', realName: 'Andric Alfayyadh', starter: true,
     role: 'Mid Laner', nationality: 'Indonesia', born: null,
-    joined: 'Joined March 2026',
+    joined: 'March 2026',
     portrait: 'player-3', photo: 'Drichel', index: '03', cardBg: '#04ddca', cardInk: '#0F0F11',
     hook: 'Mid laner. Joined in March 2026.',
     tagline: 'KDA 6.39 — angka yang juga muncul di papan peringkat resmi MPL.',
@@ -58,7 +58,7 @@ export const players = [
   {
     slug: 'anaver', handle: 'Anaver', realName: null, starter: false,
     role: 'Mid Laner', nationality: null, born: null,
-    joined: 'Bergabung 2026-08',
+    joined: 'Aug 2026',
     portrait: 'player-4', index: '04', cardBg: '#6b4ee6', cardInk: '#FFFFFF',
     tagline: 'Anggota gelombang S18 yang datanya belum dipublikasikan.',
     bio: 'Anaver diumumkan sebagai Mid Laner dalam roster S18. Akun Instagramnya menggunakan nama “Nain”. Nama asli, tanggal lahir, dan statistik musimannya tidak tersedia dalam data yang dikumpulkan.',
@@ -72,7 +72,7 @@ export const players = [
   {
     slug: 'keven', handle: 'Keven', realName: null, starter: true,
     role: 'Gold Laner', nationality: null, born: null,
-    joined: 'Bergabung 2026-08',
+    joined: 'Aug 2026',
     portrait: 'player-5', photo: 'Keven', index: '05', cardBg: '#3e56f6', cardInk: '#FFFFFF',
     hook: 'Gold laner in S18. His name has several spellings in the sources.',
     tagline: 'Satu nama, beberapa ejaan di sumber yang berbeda.',
@@ -88,7 +88,7 @@ export const players = [
   {
     slug: 'lyoni', handle: 'Lyoni', realName: null, starter: true,
     role: 'Roamer', nationality: 'Indonesia', born: null,
-    joined: 'Akademi → tim utama, 2026-03',
+    joined: 'Academy → main team, Mar 2026',
     portrait: 'player-6', photo: 'Lyoni', index: '06', cardBg: '#00d5f3', cardInk: '#0F0F11',
     hook: 'Roamer who came up through TLID Academy.',
     tagline: 'Jalur akademi yang akhirnya sampai ke roster utama.',
