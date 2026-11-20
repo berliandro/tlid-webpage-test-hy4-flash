@@ -11,7 +11,9 @@ const REVEAL_SELECTORS = [
   '.footer-grid>div', '.glossary dl>div',
 ];
 
-const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduced = () => typeof window.matchMedia === 'function'
+  && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const supported = () => 'IntersectionObserver' in window;
 let observer = null;
 
 function scan(root) {
@@ -28,7 +30,7 @@ function scan(root) {
 }
 
 export function initMotion(root = document) {
-  if (reduced()) return;
+  if (reduced() || !supported()) return;
   if (observer) observer.disconnect();
   observer = new IntersectionObserver((entries, obs) => {
     for (const entry of entries) {
@@ -42,6 +44,6 @@ export function initMotion(root = document) {
 
 // For chart and archive rows injected after the initial render.
 export function refreshMotion(root = document) {
-  if (reduced() || !observer) return;
+  if (reduced() || !supported() || !observer) return;
   scan(root);
 }
