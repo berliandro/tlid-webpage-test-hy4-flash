@@ -56,10 +56,20 @@ export function renderMatches() {
           </article>`).join('');
         applyLanguage(archive);
       };
-      draw('all');
+      const requested = new URLSearchParams(location.search).get('y');
+      const initial = years.some((y) => String(y) === requested) ? requested : 'all';
+      buttons.forEach((b) => {
+        const on = b.dataset.year === initial;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      draw(initial);
       buttons.forEach((btn) => btn.addEventListener('click', () => {
         buttons.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+        const url = new URL(location.href);
+        url.searchParams.set('y', btn.dataset.year);
+        history.replaceState({}, '', url);
         draw(btn.dataset.year);
       }));
     },

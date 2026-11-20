@@ -6,12 +6,15 @@ colors:
   ink: "#0A1F4A"
   paper: "#FFFBF2"
   gold: "#F0A626"
+  gold-light: "#F7C95E"
   gold-ink: "#8A4B00"
   cobalt: "#1F6FB2"
   slate: "#5B6B8C"
   canvas-dark: "#001538"
   ink-dark: "#F4EAD7"
   paper-dark: "#0A1F4A"
+  on-dark: "#E6E2D6"
+  on-dark-muted: "#C9D6E8"
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
