@@ -187,6 +187,7 @@ em{font-style:normal}
 @media(hover:none){
   .card-hook{opacity:1;transform:none}
   .card-hook-text{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card-hook-src{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;text-overflow:clip;overflow:hidden}
 }
 .swipe-hint{display:none}
 .kicker,.tile-tag,.section-head .kicker,.result-status,.bar-label small{font-size:13px;letter-spacing:.08em}
