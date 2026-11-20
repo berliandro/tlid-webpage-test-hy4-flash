@@ -1,12 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Loading…</title></head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Team Liquid ID — five starters, one season, a record you can check. Independent project, not an official site." />
+  <meta name="theme-color" content="#001538" />
+  <title>Team Liquid ID — Five starters, one season</title>
+  <script>
+    var base = location.hostname.endsWith('github.io')
+      ? '/' + (location.pathname.split('/')[1] || '') + '/'
+      : '/';
+    document.write('<base href="' + base + '">');
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="public/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="public/assets/favicon-64.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="public/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
 <body>
-<script>
-(function () {
-  var extra = location.search ? '&' + location.search.slice(1) : '';
-  location.replace('../../index.html?p=/players/kevin' + extra + location.hash);
-})();
-</script>
+  <div id="app"></div>
+  <noscript><div style="padding:40px;font-family:Arial,sans-serif;color:#001538;background:#EEEEEE">This site needs JavaScript for navigation. Please enable it to explore Team Liquid ID.</div></noscript>
+  <script type="module" src="src/main.js"></script>
 </body>
 </html>
