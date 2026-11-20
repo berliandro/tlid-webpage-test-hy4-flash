@@ -17,12 +17,24 @@ colors:
   green: "#05E0CC"
   grid-line: "rgba(255,255,255,.055)"
   hairline: "rgba(255,255,255,.09)"
+  muted-light: "#A8A8B2"
+  shade-25: "rgba(0,0,0,.25)"
+  shade-35: "rgba(0,0,0,.35)"
+  shade-50: "rgba(0,0,0,.5)"
+  purple-deep: "#4A24A8"
+  red-deep: "#A8183D"
+  cyan-deep: "#005CB0"
+  green-deep: "#00706E"
+  blue-deep: "#1C1E96"
+  gold-deep: "#A67A00"
+  mask-solid: "#000000"
 typography:
   display: "Manrope 800, -0.04em tracking, 1.03 leading"
   body: "Manrope 400, 16px / 1.6"
   data: "IBM Plex Mono 400/600, uppercase micro-labels"
 spacing:
-  grid-step: "32px"
+  grid-step: "32px, rendered as two full-width layers so lines cross both edges"
+  card-ratio: "3/4"
   panel-radius: "28px"
   card-radius: "22px"
   pill-radius: "999px"
@@ -50,7 +62,7 @@ Manrope variable handles everything: 800 with `-0.04em` tracking for display, 40
 - `pill` — compact 30px control, 999px radius, 1px hairline, active state filled white.
 - `search-pill` — inline search with subtle placeholder and key hint.
 - `status-pill` — gold dot plus short verified label.
-- `fan-card` — vivid gradient card, 22px top radius, name and role top-left, index badge top-right, rotated and overlapping; centre card raised.
+- `fan-card` — 3:4 vivid gradient card with `object-fit: cover`, 22px top radius, name and role top-left, index badge top-right, rotated and overlapping; centre card raised. The same 3:4 ratio is used for roster and profile portraits.
 - `tile` — compact panel tile with a 34px accent rule; vivid variants use the card palette.
 - `source-note` — disclosure with a mono `+` marker.
 

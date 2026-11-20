@@ -25,7 +25,6 @@ export function renderHome() {
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
     <p class="hero-sub">Five starters announced on 7 August. 71 wins and 50 losses since 2024. Every number here has a source.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
-    <div class="hero-stats"><span class="pill">3rd · MPL ID S18</span><span class="pill">71–50 · match record</span><span class="pill">12–4 · regular season</span></div>
   </section>
 
   <section class="card-fan" aria-label="Starting five">

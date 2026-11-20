@@ -12,20 +12,13 @@ export function renderPlayers() {
 </section>
 
 <section class="roster-editorial">
-  ${starters.map((p, i) => `
-  <a class="roster-row${i % 2 ? ' reverse' : ''}" href="/players/${p.slug}">
-    <div class="player-shot">
+  <div class="roster-cards">
+    ${starters.map((p) => `
+    <a class="player-card" href="/players/${p.slug}">
       <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" />
-      <span class="player-no">${p.index}</span>
-    </div>
-    <div class="row-copy">
-      <h2>${p.handle}</h2>
-      <p class="kicker">${p.role}</p>
-      <p class="row-tagline">${p.tagline}</p>
-      <p class="row-meta">${p.joined}${p.nationality ? ` · ${p.nationality}` : ''}</p>
-      <span class="row-link">Open profile</span>
-    </div>
-  </a>`).join('')}
+      <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
+    </a>`).join('')}
+  </div>
   <details class="bench"><summary>Substitutes (${substitutes.length})</summary>
     <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}"><b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
   </details>
