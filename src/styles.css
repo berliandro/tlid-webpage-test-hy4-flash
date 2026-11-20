@@ -143,7 +143,7 @@ em{font-style:normal}
 .fan-card .card-name{display:block;font-size:clamp(14px,1.7vw,25px);font-weight:800;letter-spacing:-.035em;line-height:1;color:#fff}
 .fan-card .card-sub{display:block;font-family:var(--mono);font-size:12px;color:#fff;margin-top:4px}
 .fan-card .score{display:inline-flex;align-items:center;gap:4px;background:rgba(15,15,17,.6);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 8px;font-family:var(--mono);font-size:12px;color:#fff}
-.fan-card .score b{width:16px;height:16px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:10px}
+.fan-card .score b{width:18px;height:18px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:12px}
 .fan-caption{text-align:center;font-family:var(--mono);font-size:12px;color:var(--muted);padding:10px 20px 26px}
 
 /* section grids */

@@ -19,7 +19,7 @@ export function renderPlayers() {
       <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
     </a>`).join('')}
   </div>
-  <details class="bench"><summary>Substitutes (${substitutes.length})</summary>
+  <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary>
     <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}"><b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
   </details>
 </section>
