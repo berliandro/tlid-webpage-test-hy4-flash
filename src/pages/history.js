@@ -12,7 +12,7 @@ export function renderHistory() {
 <section class="timeline">
   ${milestones.map((m, i) => `
   <article class="timeline-item${i % 2 ? ' right' : ''}">
-    <div class="timeline-year">${m.year}</div>
+    <div class="timeline-year" data-no-i18n>${m.year}</div>
     <div class="timeline-card">
       <h2>${m.title}</h2>
       <p class="kicker"><span>${esc(translate(m.kicker))}</span> · <span>${esc(translate(m.confidence))}</span></p>
