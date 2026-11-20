@@ -67,7 +67,7 @@ function shell(content) {
   <header class="topbar">
     <div class="topbar-left">
       <a class="brand" href="/" aria-label="Team Liquid ID — home">TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
-      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in header" aria-controls="search-status" /><span>⌘</span></label>
+      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in header" aria-controls="search-status" /><span>/</span></label>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
     <a class="center-mark" href="/" aria-label="Team Liquid ID crest — home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
