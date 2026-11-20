@@ -1,10 +1,12 @@
 import { starters, substitutes } from '../data/players.js';
+import { sources } from '../data/sources.js';
 import { sourceNote } from '../lib/ui.js';
 
 const fan = starters.map((p) => `
   <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}" style="--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
     <picture><source media="(max-width:860px)" srcset="public/assets/cards/sm/${p.handle}.webp" type="image/webp" /><img src="public/assets/cards/${p.handle}.jpg" width="504" height="784" loading="eager" decoding="async" alt="${p.handle} of Team Liquid ID" /></picture>
     <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
+    <span class="card-hook"><span class="card-hook-text">${p.hook}</span><span class="card-hook-src">${sources[p.sources[0]]?.publisher || ''}</span></span>
   </a>`).join('');
 
 export function renderHome() {
@@ -29,14 +31,19 @@ export function renderHome() {
     ${sourceNote(['IG_S18'], 'Roster source')}
   </section>
 
-  <section class="section">
-    <div class="section-head"><div><span class="kicker">02 / Record</span><h2>71–50</h2></div><p class="section-sub">Third at MPL ID S18.</p></div>
-    <div class="grid-cards">
-      <div class="tile tile-gold"><span class="tile-tag">Matches</span><b>71–50</b><p>Verified matches</p></div>
-      <div class="tile"><span class="tile-tag">Games</span><b>174–141</b><p>21 May 2024 – 2 October 2026</p></div>
-      <div class="tile"><span class="tile-tag">Best result</span><b>S14</b><p>MPL Indonesia champion</p></div>
+  <section class="section season-moment">
+    <div class="section-head"><div><span class="kicker">02 / Season</span><h2>The verified record</h2></div><p class="section-sub">One season, one sourced line.</p></div>
+    <div class="tile tile-gold season-tile">
+      <span class="tile-tag">Verified record</span>
+      <b>71–50</b>
+      <p>174–141 games · 21 May 2024 – 2 October 2026. Third at MPL ID S18; best result S14 champion.</p>
     </div>
     ${sourceNote(['LIQ_TEAM', 'ESC'])}
+  </section>
+
+  <section class="section home-closing">
+    <div class="section-head"><div><span class="kicker">Keep exploring</span><h2>The people behind the record.</h2></div><p class="section-sub">Five profiles, season numbers and the sources for both.</p></div>
+    <div class="link-row"><a class="ticket" href="/players">Meet the five →</a><a class="ticket" href="/discover">Why this team</a></div>
   </section>
 </div>`,
   };

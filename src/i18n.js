@@ -401,6 +401,18 @@ Object.assign(TO_ID, {
   'One step from the M6 title': 'Satu langkah dari gelar M6',
   'The record in this window': 'Rekor dalam rentang ini',
   'Liquipedia and Esports Charts both record 71 wins and 50 losses from 21 May 2024 to 2 October 2026.': 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan dari 21 Mei 2024 hingga 2 Oktober 2026.',
+  'EXP laner since S14. Still in the S18 five.': 'EXP laner sejak S14. Masih dalam susunan S18.',
+  'Jungler per S18. Previously named Joo.': 'Jungler menurut S18. Sebelumnya bernama Joo.',
+  'Mid laner. Joined in March 2026.': 'Mid laner. Bergabung Maret 2026.',
+  'Gold laner in S18. His name has several spellings in the sources.': 'Gold laner di S18. Namanya memiliki beberapa ejaan di sumber.',
+  'Roamer who came up through TLID Academy.': 'Roamer yang naik dari TLID Academy.',
+  '02 / Season': '02 / Musim', 'The verified record': 'Rekor terverifikasi',
+  'One season, one sourced line.': 'Satu musim, satu baris bersumber.',
+  'Verified record': 'Rekor terverifikasi',
+  '174–141 games · 21 May 2024 – 2 October 2026. Third at MPL ID S18; best result S14 champion.': '174–141 game · 21 Mei 2024 – 2 Oktober 2026. Posisi ketiga di MPL ID S18; hasil terbaik juara S14.',
+  'Keep exploring': 'Lanjut jelajah', 'The people behind the record.': 'Orang-orang di balik rekor itu.',
+  'Five profiles, season numbers and the sources for both.': 'Lima profil, angka musim, dan sumber untuk keduanya.',
+  'Meet the five →': 'Kenali lima pemain →', 'Why this team': 'Kenapa tim ini',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
