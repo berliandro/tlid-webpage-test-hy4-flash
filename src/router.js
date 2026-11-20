@@ -46,13 +46,14 @@ function activeHref(path) {
 
 function shell(content) {
   const current = activeHref(routeFromLocation());
-  const nav = navItems.map((n) =>
+  const nav = navItems.filter((n) => n.top).map((n) =>
     `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
   ).join('');
   const html = `
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="shell">
   <div class="grid-bg" aria-hidden="true"></div>
+  <div class="grid-edge" aria-hidden="true"></div>
   <header class="topbar">
     <div class="topbar-left">
       <a class="brand" href="/" aria-label="Team Liquid ID — home"><span class="brand-mark"><img src="public/assets/tlid-mark.svg" alt="" /></span>TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>

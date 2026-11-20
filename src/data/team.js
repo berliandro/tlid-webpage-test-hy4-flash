@@ -21,10 +21,10 @@ export const pulse = {
 };
 
 export const navItems = [
-  { label: 'Tim', en: 'Team', href: '/' },
-  { label: 'Pemain', en: 'Players', href: '/players' },
-  { label: 'Statistik', en: 'Statistics', href: '/statistics' },
-  { label: 'Pertandingan', en: 'Matches', href: '/matches' },
+  { label: 'Tim', en: 'Team', href: '/', top: true },
+  { label: 'Pemain', en: 'Players', href: '/players', top: true },
+  { label: 'Statistik', en: 'Statistics', href: '/statistics', top: true },
+  { label: 'Pertandingan', en: 'Matches', href: '/matches', top: true },
   { label: 'Jelajah', en: 'Discover', href: '/discover' },
   { label: 'Sejarah', en: 'History', href: '/history' },
 ];

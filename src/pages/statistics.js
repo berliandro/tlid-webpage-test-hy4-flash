@@ -18,14 +18,14 @@ export function renderStats() {
   return {
     html: `
 <section class="page-head analytics-head">
-  <h1>Numbers with<br><em>honest labels</em></h1>
+  <h1>Numbers with<br><em>the labels attached</em></h1>
   <p class="kicker">Statistics</p>
-  <p class="lede">Only sourced figures. Disputed values are left out.</p>
+  <p class="lede">No guesses. When sources disagree, we show both and leave the rest blank.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
 </section>
 
 <section class="section">
-  ${sectionHead('Comparison', 'Three players with season data', 'MLBBHub · 17 November 2026, 14:13 UTC. Pick a metric.')}
+  ${sectionHead('Comparison', 'Three players, one season of numbers', 'MLBBHub, 17 November 2026. Choose a metric to compare.')}
   <div class="metric-controls" role="group" aria-label="Pilih metrik perbandingan">
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>

@@ -23,7 +23,7 @@ export function renderHome() {
     <span class="float-chip right" aria-hidden="true"><img src="public/assets/cards/Lyoni.jpg" alt="" /></span>
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
-    <p class="hero-sub">A record you can check. The lineup, the results and their sources for Team Liquid's Indonesian Mobile Legends squad.</p>
+    <p class="hero-sub">Five starters announced on 7 August. 71 wins and 50 losses since 2024. Every number here has a source.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
     <div class="hero-stats"><span class="pill">3rd · MPL ID S18</span><span class="pill">71–50 · match record</span><span class="pill">12–4 · regular season</span></div>
   </section>
@@ -34,7 +34,7 @@ export function renderHome() {
   <p class="fan-caption">THE STARTING FIVE · SOURCED PORTRAITS · 7 AUGUST 2026</p>
 
   <section class="section">
-    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>The five</h2></div><p class="section-sub">Announced 7 August 2026. Anaver sits in the bench group below.</p></div>
+    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>The five</h2></div><p class="section-sub">Named on 7 August 2026. Anaver is listed with the substitutes below.</p></div>
     <div class="grid-cards">
       ${starters.map((p) => `<a class="tile" href="/players/${p.slug}"><span class="tile-tag">${p.role}</span><b>${p.handle}</b><p>${p.tagline}</p></a>`).join('')}
     </div>
