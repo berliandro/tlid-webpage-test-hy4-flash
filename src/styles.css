@@ -482,9 +482,9 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .search-pill{min-height:30px}
   .search-pill input{height:var(--tap);min-height:var(--tap);margin-block:calc((30px - var(--tap))/2)}
   /* Grow the clickable box without resizing the visual mark. */
-  .term-help summary,.term-help a,.bar-label a,.ledger-link,.src-note a{position:relative;isolation:isolate}
+  .term-help summary,.term-help a,.bar-label a,.ledger-link,.source-note a{position:relative;isolation:isolate}
   .term-help summary::after,.term-help a::after,.bar-label a::after,
-  .ledger-link::after,.src-note a::after{
+  .ledger-link::after,.source-note a::after{
     content:'';position:absolute;left:50%;top:50%;
     width:max(var(--tap),100%);height:var(--tap);
     transform:translate(-50%,-50%);z-index:1
