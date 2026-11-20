@@ -7,74 +7,74 @@ export function renderPlayer(slug) {
   const p = playerBySlug[slug];
   if (!p) return renderNotFound();
   const shortBio = {
-    aran: 'EXP Laner TLID sejak S14. Masuk roster S18.',
-    kevin: 'Jungler menurut S18. Sebelumnya bernama Joo.',
-    drichel: 'Mid Laner. Bergabung 2026-03.',
-    anaver: 'Mid Laner dalam roster S18. Data pribadi belum terverifikasi.',
-    keven: 'Gold Laner dalam roster S18. Ejaan nama masih bertabrakan.',
-    lyoni: 'Roamer. Naik dari TLID Academy ke tim utama.',
+    aran: 'EXP laner since S14. In the S18 roster.',
+    kevin: 'Jungler per S18. Previously named Joo.',
+    drichel: 'Mid laner. Joined in March 2026.',
+    anaver: 'Mid laner in the S18 roster. Personal data unverified.',
+    keven: 'Gold laner in S18. The spelling of the name is disputed.',
+    lyoni: 'Roamer. Came up from TLID Academy.',
   };
 
   const statBlock = p.stat ? `
     <div class="stat-strip">
-      <div><b>${p.stat.kda.toFixed(2)}</b><span>KDA rata-rata</span></div>
+      <div><b>${p.stat.kda.toFixed(2)}</b><span>Average KDA</span></div>
       <div><b>${p.stat.kp}%</b><span>Kill participation</span></div>
-      <div><b>${p.stat.games}</b><span>Game tercatat</span></div>
-      <div><b>${p.stat.k.toFixed(1)}/${p.stat.d.toFixed(1)}/${p.stat.a.toFixed(1)}</b><span>K/D/A rata-rata</span></div>
+      <div><b>${p.stat.games}</b><span>Games recorded</span></div>
+      <div><b>${p.stat.k.toFixed(1)}/${p.stat.d.toFixed(1)}/${p.stat.a.toFixed(1)}</b><span>Average K/D/A</span></div>
     </div>
-    <p class="stat-caveat">Statistik dari MLBBHub, 2026-11-17 14:13 UTC. Peran menurut sumber: ${p.stat.listedRole}. ${p.slug === 'kevin' ? 'Nilai KDA 6.39 milik Drichel; Kevin 5.82.' : ''}</p>
+    <p class="stat-caveat">Figures from MLBBHub, 17 November 2026, 14:13 UTC. Role per source: ${p.stat.listedRole}. ${p.slug === 'kevin' ? 'The 6.39 KDA belongs to Drichel; Kevin is 5.82.' : ''}</p>
     ${sourceNote(['MLBBHUB', 'MPL_STATS'])}` : `
-    <div class="empty-stat"><b>${unknown('Belum dipublikasikan')}</b><p>Statistik musiman untuk ${p.handle} tidak tersedia dalam data yang dikumpulkan. Kami tidak mengisi dengan nol atau perkiraan.</p>${sourceNote(p.sources)}</div>`;
+    <div class="empty-stat"><b>${unknown('Not published')}</b><p>Season statistics for ${p.handle} are not in the collected data. We do not fill the gap with zeroes or guesses.</p>${sourceNote(p.sources)}</div>`;
 
   const mvp = p.slug === 'kevin' ? `
-    <div class="mvp-mark"><span>Klasemen MVP</span><b>${mvpLeader.points} poin · peringkat ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
+    <div class="mvp-mark"><span>MVP standings</span><b>${mvpLeader.points} points · rank ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
 
   return {
     html: `
 <section class="player-hero" style="--accent-rot:${p.index}deg">
-  <a class="back-link" href="/players">← Kembali ke roster</a>
-  <nav class="breadcrumb" aria-label="Lokasi">TEAM LIQUID ID / PEMAIN / ${p.handle}</nav>
+  <a class="back-link" href="/players">← Back to roster</a>
+  <nav class="breadcrumb" aria-label="Location">TEAM LIQUID ID / PLAYERS / ${p.handle}</nav>
   <div class="player-grid">
     <div class="player-portrait">
-      <div class="portrait-frame">${portrait(p, '', true)}<span class="portrait-tag">${portraitCredit(p)}</span></div>
+      <div class="portrait-frame"><img src="public/assets/cards/${p.handle === 'Kevin' ? 'Kevinn' : p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /><span class="portrait-tag">Liquipedia Commons · CC BY-SA 3.0</span></div>
       <span class="player-no">${p.index} / 06</span>
-      ${p.photo ? sourceNote(['COMMONS'], 'Lisensi potret') : ''}
+      ${p.photo ? sourceNote(['COMMONS'], 'Portrait licence') : ''}
     </div>
     <div class="player-intro">
       <h1>${p.handle}</h1>
       <p class="kicker">${p.role}</p>
       <p class="script">${p.tagline}</p>
       <dl class="identity-list">
-        <div><dt>Nama asli</dt><dd>${p.realName ? p.realName : unknown('Tidak dipublikasikan')}</dd></div>
-        <div><dt>Peran</dt><dd>${p.role}</dd></div>
-        <div><dt>Kewarganegaraan</dt><dd>${p.nationality ? p.nationality : unknown()}</dd></div>
-        <div><dt>Tanggal lahir</dt><dd>${p.born ? p.born : unknown()}</dd></div>
-        <div><dt>Riwayat joined</dt><dd>${p.joined}</dd></div>
+        <div><dt>Real name</dt><dd>${p.realName ? p.realName : unknown('Not published')}</dd></div>
+        <div><dt>Role</dt><dd>${p.role}</dd></div>
+        <div><dt>Nationality</dt><dd>${p.nationality ? p.nationality : unknown()}</dd></div>
+        <div><dt>Date of birth</dt><dd>${p.born ? p.born : unknown()}</dd></div>
+        <div><dt>Joined</dt><dd>${p.joined}</dd></div>
       </dl>
-      ${sourceNote(p.sources, 'Sumber identitas')}
+      ${sourceNote(p.sources, 'Identity sources')}
     </div>
   </div>
 </section>
 
 <section class="section player-bio">
-  ${sectionHead('Profil', 'Catatan kompetitif')}
+  ${sectionHead('Profile', 'Competitive notes')}
   <p class="bio-lead">${shortBio[p.slug]}</p>
   <ul class="fact-list">${p.facts.map((f) => `<li>${f}</li>`).join('')}</ul>
-  ${p.conflict ? `<aside class="conflict"><p class="kicker">Konflik sumber</p><p>${p.conflict}</p><a class="conflict-link" href="/sources">Lihat sumber →</a></aside>` : ''}
+  ${p.conflict ? `<aside class="conflict"><p class="kicker">Source conflict</p><p>${p.conflict}</p><a class="conflict-link" href="/sources">See sources</a></aside>` : ''}
 </section>
 
 <section class="section">
-  ${sectionHead('Angka', 'Statistik yang dapat ditampilkan')}
+  ${sectionHead('Numbers', 'Statistics we can show')}
   ${statBlock}
   ${mvp}
 </section>
 
 <section class="section">
-  ${sectionHead('Rute', 'Lanjut menjelajah')}
+  ${sectionHead('Next', 'Keep exploring')}
   <div class="link-row">
-    <a class="ticket" href="/statistics">Lihat statistik tim →</a>
-    <a class="ticket" href="/matches">Lihat arsip pertandingan →</a>
-    <a class="ticket" href="/history">Lihat garis waktu tim →</a>
+    <a class="ticket" href="/statistics">Team statistics</a>
+    <a class="ticket" href="/matches">Match results</a>
+    <a class="ticket" href="/history">Team timeline</a>
   </div>
 </section>`,
   };

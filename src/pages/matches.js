@@ -8,36 +8,36 @@ export function renderMatches() {
   return {
     html: `
 <section class="page-head">
-  <h1>Arsip <em>cutting lines</em></h1>
-  <p class="kicker">Pertandingan</p>
-  <p class="lede">Turnamen, tanggal, lawan, hasil. Tanpa jadwal rekaan.</p>
+  <h1>Match<br><em>record</em></h1>
+  <p class="kicker">Matches</p>
+  <p class="lede">Tournaments, dates, opponents, results. No invented fixtures.</p>
 </section>
 
 <section class="section upcoming-section">
-  ${sectionHead('Mendatang', 'Keadaan kosong yang disengaja')}
+  ${sectionHead('Upcoming', 'The empty state is deliberate')}
   ${upcoming.available
-    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>S18 selesai 2026-11-08. Tidak ada fixture terverifikasi setelahnya.</p>${sourceNote(upcoming.sources)}</div>`
-    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>S18 selesai 2026-11-08. Tidak ada fixture terverifikasi setelahnya.</p>${sourceNote(upcoming.sources)}</div>`}
+    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>S18 ended 8 November 2026. No verified fixtures after it.</p>${sourceNote(upcoming.sources)}</div>`
+    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>S18 ended 8 November 2026. No verified fixtures after it.</p>${sourceNote(upcoming.sources)}</div>`}
 </section>
 
 <section class="section">
-  ${sectionHead('Arsip', 'Turnamen yang tercatat', 'Satu baris adalah satu turnamen, bukan satu pertandingan.')}
+  ${sectionHead('Recorded', 'Tournaments on file', 'One row is one tournament, not one match.')}
   <div class="filter-row" role="group" aria-label="Filter tahun turnamen">
-    <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">Semua</button>
+    <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">All</button>
     ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
-    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Urutan: terbaru ↓</button>
+    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Order: newest ↓</button>
   </div>
   <div class="archive" id="match-archive"></div>
 </section>
 
 <section class="section">
-  ${sectionHead('S18', 'Jalur playoff terakhir', 'Jatim Expo, Surabaya · 4–2026-11-08')}
+  ${sectionHead('S18', 'The last playoff run', 'Jatim Expo, Surabaya · 4–8 November 2026')}
   <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Sumber')}</li>`).join('')}</ol>
 </section>
 
 <section class="section">
-  ${sectionHead('Konflik', 'Catatan arsip')}
-  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">Lihat sumber →</a>${sourceNote(c.sources)}</article>`).join('')}</div>
+  ${sectionHead('Conflicts', 'Notes on the record')}
+  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">See sources</a>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>`,
     mount() {
       const archive = document.getElementById('match-archive');
@@ -50,7 +50,7 @@ export function renderMatches() {
         currentYear = year;
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
           .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
-        archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini. <button type="button" class="filter-btn" data-reset>Semua</button></p>') + list.map((t) => `
+        archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRIES</p>` + (list.length ? '' : '<p class="result-empty">No entries for this filter. <button type="button" class="filter-btn" data-reset>All</button></p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
@@ -71,7 +71,7 @@ export function renderMatches() {
       });
       if (sortBtn) {
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Urutan: terbaru ↓' : 'Urutan: terlama ↑';
+        sortBtn.textContent = desc ? 'Order: newest ↓' : 'Order: oldest ↑';
       }
       draw(initial);
       buttons.forEach((btn) => btn.addEventListener('click', () => {
@@ -85,7 +85,7 @@ export function renderMatches() {
       sortBtn?.addEventListener('click', () => {
         desc = !desc;
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Urutan: terbaru ↓' : 'Urutan: terlama ↑';
+        sortBtn.textContent = desc ? 'Order: newest ↓' : 'Order: oldest ↑';
         const url = new URL(location.href);
         url.searchParams.set('s', desc ? 'desc' : 'asc');
         history.pushState({}, '', url);

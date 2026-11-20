@@ -1,70 +1,60 @@
-import { pulse } from '../data/team.js';
 import { starters, substitutes } from '../data/players.js';
-import { portrait, sourceNote } from '../lib/ui.js';
-import { icon } from '../icons.js';
+import { sourceNote } from '../lib/ui.js';
 
-const band = starters.map((p) => `
-  <a class="band-card" href="/players/${p.slug}">
-    <span class="band-image">${portrait(p)}</span>
-    <b>${p.handle}</b>
-    <span class="band-role">${p.role}</span>
+const cardFile = { Kevin: 'Kevinn' };
+const tints = { Aran: 'purple', Kevin: 'red', Lyoni: 'cyan', Drichel: 'green', Keven: 'blue' };
+const fan = starters.map((p) => `
+  <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}">
+    <img src="public/assets/cards/${cardFile[p.handle] || p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle} of Team Liquid ID" />
+    <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
   </a>`).join('');
 
 const gates = [
-  { href: '/statistics', label: 'Statistik', note: 'KDA dan MVP', icon: 'target' },
-  { href: '/matches', label: 'Pertandingan', note: 'Hasil dan turnamen', icon: 'swords' },
-  { href: '/discover', label: 'Jelajah', note: 'Cerita tim', icon: 'quill' },
-  { href: '/history', label: 'Sejarah', note: 'Garis waktu', icon: 'book' },
-].map((g) => `<a href="${g.href}">${icon(g.icon)}<b>${g.label}</b><span>${g.note}</span></a>`).join('');
+  { href: '/statistics', label: 'Statistics', note: 'KDA / MVP', cls: 'tile-cyan' },
+  { href: '/matches', label: 'Matches', note: 'Results & tournaments', cls: 'tile-purple' },
+  { href: '/discover', label: 'Discover', note: 'Stories', cls: 'tile-red' },
+  { href: '/history', label: 'History', note: 'Timeline', cls: 'tile-green' },
+].map((g) => `<a class="tile tile-vivid ${g.cls}" href="${g.href}"><span class="tile-tag">${g.note}</span><b>${g.label}</b></a>`).join('');
 
 export function renderHome() {
   return {
     html: `
 <div class="home-page">
-  <section class="home-hero" aria-labelledby="home-title">
-    <div class="home-identity">
-      <h1 id="home-title" class="home-title">${icon('horse', 'icon-lg')}<span>Team Liquid <em>ID</em></span></h1>
-      <p class="home-deck">Lima pemain utama. Satu musim. Rekor yang bisa diverifikasi.</p>
-      <a class="home-cta" href="/players">Lihat roster ${icon('quill')}</a>
-      <span class="home-thread" aria-hidden="true"></span>
-    </div>
-    <aside class="home-pulse" aria-label="Snapshot terakhir">
-      <p class="pulse-kicker">SNAPSHOT · ${pulse.date}</p>
-      <p class="pulse-big">ke-3</p>
-      <p class="pulse-line">MPL ID ${pulse.lines[0]}</p>
-      <p class="pulse-line">${pulse.lines[1]}</p>
-      <p class="pulse-note">Arsip, bukan data langsung.</p>
-      ${sourceNote(pulse.sources, 'Sumber')}
-    </aside>
+  <section class="hero" aria-labelledby="home-title">
+    <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
+    <h1 id="home-title"><span>Five starters.</span><span>One season.</span><span>A record you can check.</span></h1>
+    <p class="hero-sub">Team Liquid's Indonesian Mobile Legends squad. The lineup, the results and their sources, in one place.</p>
+    <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
+    <div class="hero-stats"><span class="pill">3rd · MPL ID S18</span><span class="pill">71–50 · match record</span><span class="pill">12–4 · regular season</span></div>
   </section>
 
-  <section class="home-players" aria-labelledby="players-band-title">
-    <div class="home-head">
-      <div><p class="kicker">01 / Roster</p><h2 id="players-band-title">Lima pemain utama S18</h2></div>
-      <p>Susunan diumumkan 2026-08-07. Potret bersumber, bukan ukiran.</p>
+  <section class="card-fan" aria-label="Starting five">
+    <div class="fan-inner">${fan}</div>
+  </section>
+  <p class="fan-caption">THE STARTING FIVE · SOURCED PORTRAITS · 7 AUGUST 2026</p>
+
+  <section class="section">
+    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>The five</h2></div><p class="section-sub">Announced 7 August 2026. Anaver sits in the bench group below.</p></div>
+    <div class="grid-cards">
+      ${starters.map((p) => `<a class="tile" href="/players/${p.slug}"><span class="tile-tag">${p.role}</span><b>${p.handle}</b><p>${p.tagline}</p></a>`).join('')}
     </div>
-    <div class="band">${band}</div>
-    <details class="bench-panel"><summary>Cadangan · ${substitutes.length} pemain</summary>
-      <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${icon('quill')}<b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
-    </details>
-    ${sourceNote(['IG_S18'])}
+    <details class="bench"><summary>Substitutes (${substitutes.length})</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div></details>
+    ${sourceNote(['IG_S18'], 'Roster source')}
   </section>
 
-  <section class="home-record" aria-labelledby="record-title">
-    <div><p class="kicker">02 / Rekor</p><p class="record-number">71–50</p></div>
-    <div class="record-body">
-      <h2 id="record-title">Rekor pertandingan</h2>
-      <p>174–141 game · 2024-05-21 sampai 2026-10-02.</p>
-      <p>Juara MPL ID S14. Runner-up M6. Posisi 3 di S18.</p>
-      <a class="text-link" href="/matches">Lihat pertandingan →</a>
+  <section class="section">
+    <div class="section-head"><div><span class="kicker">02 / Record</span><h2>71–50</h2></div><p class="section-sub">Wins and losses since May 2024. Third at MPL ID S18.</p></div>
+    <div class="grid-cards">
+      <div class="tile tile-gold"><span class="tile-tag">Matches</span><b>71–50</b><p>All Verified results</p></div>
+      <div class="tile"><span class="tile-tag">Games</span><b>174–141</b><p>21 May 2024 – 2 October 2026</p></div>
+      <div class="tile"><span class="tile-tag">Best result</span><b>S14</b><p>MPL Indonesia champion</p></div>
     </div>
     ${sourceNote(['LIQ_TEAM', 'ESC'])}
   </section>
 
-  <section class="home-gates" aria-labelledby="gates-title">
-    <h2 id="gates-title">Lanjut ke arsip</h2>
-    <p class="archive-note">Angka bersumber. Buka catatan sumber di tiap bagian. <a href="#glossary">Glosarium →</a></p>
-    <nav class="gate-row" aria-label="Bagian lain">${gates}</nav>
+  <section class="section">
+    <div class="section-head"><div><span class="kicker">03 / Explore</span><h2>Go deeper</h2></div><p class="section-sub">Sources are listed on every page.</p></div>
+    <div class="grid-cards">${gates}</div>
   </section>
 </div>`,
   };

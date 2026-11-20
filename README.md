@@ -1,8 +1,8 @@
-# Team Liquid ID — Arsip Kompetitif
+# Team Liquid ID — Reference System
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 
-The site uses Team Liquid's exact published colors on a solid background. A procedural SVG feTurbulence noise field is multiplied into selected surfaces at low opacity for a matte finish; no image tiles the page. Composition, Gloock typography, inlined CC BY icons and short factual copy create the identity. Every route shares the same system and tokens.
+The visual language follows a supplied reference: an inset charcoal panel, a faint one-pixel perspective grid, compact pill controls, oversized centred type and a fan of vivid character cards. Layout and content are adapted to Team Liquid ID's real roster, results and sources. Every route shares the same system.
 
 ## Run locally
 
@@ -21,12 +21,15 @@ No dependencies to install. For this project, every implementation is committed 
 
 ## Design
 
-`DESIGN.md` is normative. Type roles are `--type-display`, `--type-headline`, `--type-title`, `--type-body`, `--type-label`, `--type-meta`, with `--fs-*` steps (`--fs-headline` plus tokenized `--fs-h2-row/story/compact` for component contexts). Body is 16px at 1.6 line-height with a 38rem measure. Functional text is at least 11px, numerals are tabular, `font-synthesis: none`, and `--tap` is 44px with coarse-pointer coverage. The matte grain is a procedural SVG noise overlay applied once per selected surface; no repeating image, animated filter, or large texture file is used.
+`DESIGN.md` is normative. Manrope handles display and reading; IBM Plex Mono handles data and micro-labels. The 44px grid step, 28px panel radius, 22px card radius and 999px pill radius define the geometry. Body is 16px at 1.6 line-height with a 70ch measure; functional text is at least 10px; `--tap` is 44px with coarse-pointer coverage. Motion is limited to card hover and a data-bar transition, and stops under `prefers-reduced-motion`.
 
 ## Data and credits
 
-`src/data/` holds curated research records; `src/data/sources.js` holds the source ledger with URLs, retrieval dates and confidence. Unknowns stay null or are labeled. Conflicts are shown, not silently resolved. Icons and textures are credited in `CREDITS.md` and in the site footer.
+`src/data/` holds curated research records; `src/data/sources.js` holds the source ledger with URLs, retrieval dates and confidence. Unknowns stay null or are labelled. Conflicts are shown, not silently resolved. Third-party assets and licences are recorded in `CREDITS.md` and linked in the footer.
 
 ## Validation
 
-`npm run check`, `node --check`, `impeccable detect --json index.html`, an asset-reference check, clean build, and live URL 200 with cache-busted assets are run each iteration.
+- `npm run check`
+- `npm run build`
+- `impeccable.cmd detect --json "index.html"`
+- Live deployment verified after every push with a cache-busted request.
