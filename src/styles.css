@@ -471,7 +471,8 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .source-note summary,.glossary summary,.bench summary,.brand,.center-mark,
   .site-footer a,.credits-line a,.lang-toggle,.expand-sources,.skip-link,.search-clear,
   .hero-cta .pill{min-height:var(--tap)}
-  .center-mark{min-width:var(--tap)}
+  /* Hang the crest below the enlarged 44px header controls on touch. */
+  .center-mark{min-width:var(--tap);bottom:-27px}
   /* Keep the pill visually compact; the input's 44px hit box is centred on it. */
   .search-pill{min-height:30px}
   .search-pill input{height:var(--tap);min-height:var(--tap);margin-block:calc((30px - var(--tap))/2)}
