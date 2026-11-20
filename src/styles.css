@@ -6,7 +6,7 @@
 
 :root{
   --panel:#0F0F11; --panel-2:#15151A; --pill:#27262E;
-  --text:#F6F6F8; --muted:#A8A8B2; --line:rgba(255,255,255,.055); --hair:rgba(255,255,255,.09);
+  --text:#F6F6F8; --muted:#A8A8B2; --line:rgba(255,255,255,.038); --hair:rgba(255,255,255,.09);
   --gold:#F5C542; --cyan:#3BB0D4; --blue:#2F6BFF; --purple:#8B55F3; --red:#F95264; --green:#05E0CC;
   --font:'Manrope',Arial,sans-serif; --mono:'IBM Plex Mono',monospace;
   --step:32px; --radius:28px; --card-radius:22px; --tap:44px; --measure:70ch;
@@ -42,13 +42,17 @@ html{scrollbar-color:var(--pill) var(--panel);scrollbar-width:thin}
   background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);
   background-size:var(--step) var(--step);
   transform:perspective(820px) rotateX(15deg) scale(1.16);transform-origin:50% 14%;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 78%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 78%,transparent 100%)}
-.grid-edge{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 78%,transparent 100%),linear-gradient(to right,#000 0%,rgba(0,0,0,.32) 26%,rgba(0,0,0,.32) 74%,#000 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 16%,#000 78%,transparent 100%),linear-gradient(to right,#000 0%,rgba(0,0,0,.32) 26%,rgba(0,0,0,.32) 74%,#000 100%);
+  mask-composite:intersect}
+.grid-edge{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.35;
   background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);
   background-size:var(--step) var(--step);
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to right,#000 0%,rgba(0,0,0,.32) 26%,rgba(0,0,0,.32) 74%,#000 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to right,#000 0%,rgba(0,0,0,.32) 26%,rgba(0,0,0,.32) 74%,#000 100%);
+  mask-composite:intersect}
 .shell>*:not(.grid-bg):not(.grid-edge){position:relative;z-index:1}
 
 /* top bar */
@@ -381,8 +385,8 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .source-note summary,.glossary summary,.bench summary,.site-footer a{min-height:var(--tap)}
 }
 @media(max-width:560px){
-  :root{--line:rgba(255,255,255,.09)}
-  .grid-edge{opacity:.75}
+  :root{--line:rgba(255,255,255,.06)}
+  .grid-edge{opacity:.5}
   .card-fan{height:290px}
   .fan-inner{width:230%;bottom:0}
   .fan-card{width:150px}
