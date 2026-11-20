@@ -21,11 +21,10 @@ export function renderHome() {
       <span class="home-thread" aria-hidden="true"></span>
     </div>
     <aside class="home-pulse" aria-label="Snapshot terakhir">
-      <p class="pulse-kicker">SNAPSHOT · 8 NOV 2026</p>
+      <p class="pulse-kicker">SNAPSHOT · ${pulse.date}</p>
       <p class="pulse-big">ke-3</p>
-      <p class="pulse-line">MPL ID S18 selesai</p>
-      <p class="pulse-line">Musim reguler: 12–4 · posisi 1</p>
-      <p class="pulse-note">Catatan arsip, bukan data langsung.</p>
+      ${pulse.lines.map((line) => `<p class="pulse-line">${line}</p>`).join('')}
+      <p class="pulse-note">${pulse.note}</p>
       ${sourceNote(pulse.sources, 'Sumber snapshot')}
     </aside>
   </section>
