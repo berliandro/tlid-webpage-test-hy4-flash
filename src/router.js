@@ -99,6 +99,11 @@ function shell(content) {
       <div><dt>Kill participation</dt><dd>Share of team kills involving the player.</dd></div>
       <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
       <div><dt>Final placing</dt><dd>Where the team finished in the tournament.</dd></div>
+      <div class="glossary-group"><dt>Opponent codes</dt></div>
+      <div><dt>AE</dt><dd>AE was TLID’s opponent in the 2025 SPS S6 APAC Challenge, a 2–0 win.</dd></div>
+      <div><dt>RRQ Hoshi</dt><dd>RRQ Hoshi was TLID’s opponent in the S14 final, a 4–3 win on 27 October 2024.</dd></div>
+      <div><dt>BTR</dt><dd>BTR is the team that beat TLID in the S17 and S18 playoffs; BTR won S18 4–3 over NAVI.</dd></div>
+      <div><dt>NAVI</dt><dd>NAVI is the team TLID met in the S18 upper-bracket final (2–3); BTR beat them 4–3 in the grand final.</dd></div>
     </dl></details>
     <div class="footer-controls">
       <div class="footer-control-links"><a href="/sources" data-search="Sources Source Sumber Provenance Credits Daftar sumber"${current === '/sources' ? ' class="active" aria-current="page"' : ''}>Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>
