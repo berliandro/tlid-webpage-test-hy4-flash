@@ -419,6 +419,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .fan-inner{width:160%;bottom:-2%}
   .roster{grid-template-columns:repeat(2,minmax(0,1fr))}
   .player-grid,.story{grid-template-columns:1fr}
+  .player-grid .player-intro{order:-1}
   .archive-row{grid-template-columns:50px 1fr 72px}
   .arch-final{grid-column:2/-1}
   .footer-grid{grid-template-columns:1fr 1fr}
