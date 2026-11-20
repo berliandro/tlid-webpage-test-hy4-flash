@@ -80,7 +80,6 @@ const DICT = {
 
   // players list
   'DAFTAR': 'ROSTER', 'PEMAIN': 'PLAYERS',
-  'Enam identitas, enam jalur. Halaman ini memakai roster yang diumumkan TLID pada 7 Agustus 2026, bukan daftar lama di situs resmi.': 'Six identities, six threads. This page uses the roster TLID announced on 7 August 2026, not the older list on the official site.',
   'Roster S18 · 2026-08-07': 'S18 roster · 7 Aug 2026',
   'Susunan ini berasal dari pengumuman resmi TLID untuk MPL ID Season 18 dan dua sumber pendukung. Halaman tim resmi masih menampilkan daftar lama, sehingga tidak dipakai sebagai roster saat ini.': 'This lineup comes from TLID’s official MPL ID Season 18 announcement and two supporting sources. The official team page still shows an older list, so it is not used as the current roster.',
   'Buka profil →': 'Open profile →',
@@ -279,14 +278,12 @@ const DICT = {
   'Ke beranda →': 'Go home →', 'Lihat sumber →': 'View sources →',
 
   // homepage V2
-  'Enam pemain. Satu tim MLBB Indonesia. Setiap musim dipotong menjadi pola.': 'Six players. One Indonesian MLBB team. Every season cut into a pattern.',
   'Temui roster': 'Meet the roster ',
   'Snapshot terakhir': 'Latest snapshot',
   'SNAPSHOT · 8 NOV 2026': 'SNAPSHOT · 8 NOV 2026',
   'ke-3': '3rd',
   'MPL ID S18 selesai': 'MPL ID S18 complete',
   'Catatan arsip, bukan data langsung.': 'Archive note, not a live feed.',
-  'Enam individu': 'Six individuals',
   'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Ilustrasi, bukan potret.': 'S18 lineup per the official 7 August 2026 announcement. Illustrations, not portraits.',
   'Rekor agregat': 'Aggregate record',
   '174–141 game · 2024-05-21 – 2026-10-02.': '174–141 games · 21 May 2024 – 2 Oct 2026.',
@@ -317,7 +314,6 @@ const DICT = {
   'Lihat roster ': 'View roster ',
   'Lihat roster': 'View roster',
   'Arsip, bukan data langsung.': 'Archive, not live data.',
-  'Enam pemain S18': 'Six players, S18',
   'Susunan diumumkan 2026-08-07. Potret bersumber, bukan ukiran.': 'Lineup announced 2026-08-07. Sourced portraits, not engravings.',
   '02 / Rekor': '02 / Record',
   'Rekor pertandingan': 'Match record',
