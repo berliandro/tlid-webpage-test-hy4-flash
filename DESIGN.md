@@ -20,6 +20,9 @@ colors:
   paper-rule: "rgba(7,27,51,.24)"
   plate-shadow: "rgba(3,16,31,.55)"
   wash: "rgba(216,169,59,.08)"
+  identity-panel: "rgba(3,16,31,.78)"
+  track-fill: "rgba(237,227,204,.12)"
+  inset-panel: "rgba(237,227,204,.06)"
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
