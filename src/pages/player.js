@@ -1,6 +1,6 @@
 import { playerBySlug } from '../data/players.js';
 import { mvpLeader } from '../data/stats.js';
-import { portrait, portraitCredit, sourceNote, unknown, sectionHead, ribbon } from '../lib/ui.js';
+import { portrait, sourceNote, unknown, sectionHead } from '../lib/ui.js';
 import { renderNotFound } from './notfound.js';
 
 export function renderPlayer(slug) {
@@ -30,8 +30,8 @@ export function renderPlayer(slug) {
     <div class="mvp-mark"><span>MVP standings</span><b>${mvpLeader.points} points · rank ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
 
   const heroPortrait = p.photo
-    ? `<img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" />`
-    : portrait(p, '', true);
+    ? `<img src="public/assets/cards/${p.handle}.jpg" width="504" height="784" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" />`
+    : portrait(p);
 
   return {
     html: `

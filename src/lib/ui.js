@@ -23,28 +23,12 @@ export function sourceNote(ids = [], label = 'Sources &amp; checks') {
   return `<details class="source-note"><summary>${label}</summary><ul>${items}</ul></details>`;
 }
 
-export function portrait(player, extraClass = '', eager = false) {
-  if (player && typeof player === 'object') {
-    if (player.photo) {
-      return `<img class="portrait photo ${extraClass}" src="public/assets/players/duotone/${esc(player.photo)}.jpg" width="600" height="750" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="${esc(player.handle)}, Team Liquid ID · Liquipedia Commons, CC BY-SA 3.0" />`;
-    }
-    return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
-  }
-  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" aria-hidden="true"><use href="public/assets/portraits.svg#player-4"></use></svg>`;
-}
-
-export function portraitCredit(player) {
-  return player.photo
-    ? 'PORTRAIT · LIQUIPEDIA COMMONS / CC BY-SA 3.0'
-    : 'ILUSTRASI SINTETIK / BUKAN POTRET';
-}
-
-export function ribbon(text, tag = 'span', cls = '') {
-  return `<${tag} class="ribbon ${cls}">${esc(text)}</${tag}>`;
-}
-
-export function laceTop() {
-  return '';
+export function portrait(player, extraClass = '') {
+  const id = player?.portrait || 'player-4';
+  const label = player?.handle
+    ? ` role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"`
+    : ' aria-hidden="true"';
+  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240"${label}><use href="public/assets/portraits.svg#${esc(id)}"></use></svg>`;
 }
 
 export function sectionHead(kicker, title, sub = '') {
