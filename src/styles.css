@@ -190,6 +190,13 @@ em{font-style:normal}
   .card-hook-text{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .card-hook-src{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;text-overflow:clip;overflow:hidden}
 }
+@media(hover:none) and (max-width:480px){
+  /* Keep the face as the primary asset: one-line hook text, tighter padding,
+     single-line role. Full copy stays in the DOM and the source keeps its two readable lines. */
+  .card-hook{padding:6px 8px}
+  .card-hook-text{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card-sub{white-space:nowrap}
+}
 .swipe-hint{display:none}
 .kicker,.tile-tag,.section-head .kicker,.result-status,.bar-label small{font-size:13px;letter-spacing:.08em}
 .fan-hint{text-align:center;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);padding:var(--block-gap) var(--gutter)}
