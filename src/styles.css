@@ -218,6 +218,13 @@ em{font-style:normal}
 .player-card .card-top{position:absolute;inset:12px 12px auto;display:flex;justify-content:space-between;align-items:flex-start}
 .player-card h3{font-size:clamp(15px,1.7vw,24px);color:#fff;line-height:1}
 .player-card .card-sub{font-family:var(--mono);font-size:12px;color:var(--card-ink,#fff)}
+/* Role labels can fall below the matte band on small cards. An opaque matte pill
+   keeps them legible over the portrait, reusing each card's chosen ink pair. */
+.fan-card .card-sub,.player-card .card-sub{
+  display:inline-block;max-width:100%;padding:2px 8px;border-radius:999px;
+  background:var(--card-bg,var(--panel-2));color:var(--card-ink,#fff);
+  text-shadow:none;margin-top:4px
+}
 .bench{margin-top:var(--block-gap);border:1px solid var(--hair);border-radius:16px;padding:0 16px;background:var(--panel-2)}
 .bench summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;min-height:48px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
 .bench summary::-webkit-details-marker{display:none}
