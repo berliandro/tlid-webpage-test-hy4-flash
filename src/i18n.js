@@ -392,6 +392,8 @@ Object.assign(TO_ID, {
   'August 2025': 'Agustus 2025', 'March 2026': 'Maret 2026', 'Aug 2026': 'Agu 2026',
   'Academy → main team, Mar 2026': 'Akademi → tim utama, Mar 2026',
   'What this term means': 'Apa arti istilah ini', 'Full glossary': 'Glosarium lengkap',
+  'All': 'Semua', 'Filter tournaments by year': 'Saring turnamen berdasarkan tahun',
+  'Sort: Newest first': 'Urutkan: terbaru', 'Sort: Oldest first': 'Urutkan: terlama',
   'BTR is the team that beat TLID in the S17 and S18 playoffs; BTR won S18 4–3 over NAVI.': 'BTR adalah tim yang mengalahkan TLID di playoff S17 dan S18; BTR menang S18 4–3 atas NAVI.',
   'NAVI is the team TLID met in the S18 upper-bracket final (2–3); BTR beat them 4–3 in the grand final.': 'NAVI adalah tim yang dihadapi TLID di final braket atas S18 (2–3); BTR mengalahkan mereka 4–3 di grand final.',
   'AE was TLID’s opponent in the 2025 SPS S6 APAC Challenge, a 2–0 win.': 'AE adalah lawan TLID di SPS S6 APAC Challenge 2025, menang 2–0.',

@@ -40,9 +40,12 @@ export function renderMatches() {
 <section class="section">
   ${sectionHead('Recorded', 'Tournaments on file', 'One row is one tournament, not one match.')}
   <div class="filter-row" role="group" aria-label="Filter tournaments by year">
-    <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">All</button>
-    ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
-    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Order: newest ↓</button>
+    <span class="year-wrap"><select id="match-year" class="filter-btn year-select" data-year aria-label="Filter tournaments by year">
+      <option value="all">All</option>
+      ${years.map((y) => `<option value="${y}">${y}</option>`).join('')}
+    </select></span>
+    <span class="filter-divider" aria-hidden="true"></span>
+    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Sort: Newest first</button>
   </div>
   <div class="archive" id="match-archive"></div>
 </section>
@@ -58,9 +61,9 @@ export function renderMatches() {
 </section>`,
     mount() {
       const archive = document.getElementById('match-archive');
-      const buttons = [...document.querySelectorAll('.filter-btn[data-year]')];
+      const yearSelect = document.getElementById('match-year');
       const sortBtn = document.querySelector('[data-sort]');
-      if (!archive || !buttons.length) return;
+      if (!archive || !yearSelect) return;
       let desc = new URLSearchParams(location.search).get('s') !== 'asc';
       let currentYear = 'all';
       const draw = (year) => {
@@ -77,33 +80,29 @@ export function renderMatches() {
         applyLanguage(archive);
         refreshMotion(archive);
         archive.querySelector('[data-reset]')?.addEventListener('click', () => {
-          buttons.find((b) => b.dataset.year === 'all')?.click();
+          yearSelect.value = 'all';
+          yearSelect.dispatchEvent(new Event('change', { bubbles: true }));
         });
       };
       const requested = new URLSearchParams(location.search).get('y');
       const initial = requested && requested !== 'all' ? requested : 'all';
-      buttons.forEach((b) => {
-        const on = b.dataset.year === initial;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-pressed', String(on));
-      });
+      yearSelect.value = initial;
       if (sortBtn) {
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Order: newest ↓' : 'Order: oldest ↑';
+        sortBtn.textContent = desc ? 'Sort: Newest first' : 'Sort: Oldest first';
       }
       draw(initial);
-      buttons.forEach((btn) => btn.addEventListener('click', () => {
-        buttons.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-        btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+      yearSelect.addEventListener('change', () => {
+        const year = yearSelect.value;
         const url = new URL(location.href);
-        url.searchParams.set('y', btn.dataset.year);
+        url.searchParams.set('y', year);
         history.pushState({}, '', url);
-        draw(btn.dataset.year);
-      }));
+        draw(year);
+      });
       sortBtn?.addEventListener('click', () => {
         desc = !desc;
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Order: newest ↓' : 'Order: oldest ↑';
+        sortBtn.textContent = desc ? 'Sort: Newest first' : 'Sort: Oldest first';
         const url = new URL(location.href);
         url.searchParams.set('s', desc ? 'desc' : 'asc');
         history.pushState({}, '', url);
