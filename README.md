@@ -2,7 +2,7 @@
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 
-The visual language follows a supplied reference: an inset charcoal panel, a faint one-pixel perspective grid, compact pill controls, oversized centred type and a fan of vivid character cards. Layout and content are adapted to Team Liquid ID's real roster, results and sources. Every route shares the same system.
+The visual language follows a supplied reference: a full-bleed charcoal canvas, a faint one-pixel perspective grid, compact pill controls, oversized centred type and a fan of vivid character cards. The grey preview frame in the reference image is presentation-only and is not reproduced. Layout and content are adapted to Team Liquid ID's real roster, results and sources. Every route shares the same system.
 
 ## Run locally
 
