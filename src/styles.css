@@ -154,8 +154,8 @@ em{font-style:normal}
 .fan-card:nth-child(5){transform:rotate(11deg) translate(-10%,16%);z-index:1}
 .fan-card:hover{transform:translateY(-14px) rotate(0deg) scale(1.04);z-index:10}
 .fan-card .card-top{position:absolute;left:14px;right:12px;top:14px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-.fan-card .card-name{display:block;font-size:clamp(14px,1.7vw,25px);font-weight:800;letter-spacing:-.035em;line-height:1;color:#fff}
-.fan-card .card-sub{display:block;font-family:var(--mono);font-size:12px;color:#fff;margin-top:4px}
+.fan-card .card-name{display:block;font-size:clamp(14px,1.7vw,25px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--card-ink,#fff)}
+.fan-card .card-sub{display:block;font-family:var(--mono);font-size:12px;color:var(--card-ink,#fff);margin-top:4px}
 .fan-card .score{display:inline-flex;align-items:center;gap:4px;background:rgba(15,15,17,.6);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 8px;font-family:var(--mono);font-size:12px;color:#fff}
 .fan-card .score b{width:18px;height:18px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:12px}
 .swipe-hint{display:none}
@@ -176,11 +176,11 @@ em{font-style:normal}
 .roster{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .roster-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--block-gap);margin-bottom:var(--block-gap)}
 .player-card{position:relative;border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--hair);aspect-ratio:3/4;display:block}
-.player-card .card-name{display:block;font-size:clamp(16px,2vw,26px);font-weight:800;letter-spacing:-.035em;color:#fff;line-height:1}
+.player-card .card-name{display:block;font-size:clamp(16px,2vw,26px);font-weight:800;letter-spacing:-.035em;color:var(--card-ink,#fff);line-height:1}
 .player-card .card-top{text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .player-card .card-top{position:absolute;inset:12px 12px auto;display:flex;justify-content:space-between;align-items:flex-start}
 .player-card h3{font-size:clamp(15px,1.7vw,24px);color:#fff;line-height:1}
-.player-card .card-sub{font-family:var(--mono);font-size:12px;color:#fff}
+.player-card .card-sub{font-family:var(--mono);font-size:12px;color:var(--card-ink,#fff)}
 .bench{margin-top:var(--block-gap);border:1px solid var(--hair);border-radius:16px;padding:0 16px;background:var(--panel-2)}
 .bench summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;min-height:48px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
 .bench summary::-webkit-details-marker{display:none}
