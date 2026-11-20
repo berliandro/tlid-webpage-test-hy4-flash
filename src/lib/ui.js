@@ -30,7 +30,7 @@ export function portrait(player, extraClass = '', eager = false) {
     }
     return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Ilustrasi sintetik ${esc(player.handle)}, bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
   }
-  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" aria-hidden="true"><use href="public/assets/portraits.svg#${esc(symbol)}"></use></svg>`;
+  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" aria-hidden="true"><use href="public/assets/portraits.svg#player-4"></use></svg>`;
 }
 
 export function portraitCredit(player) {

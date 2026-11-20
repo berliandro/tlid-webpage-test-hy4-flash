@@ -1,33 +1,44 @@
 ---
-name: Team Liquid ID — editorial lookbook
-description: An independent editorial destination for Team Liquid's Indonesian MLBB squad
+name: Team Liquid ID — The Liquid Ledger
+description: A natural-history field ledger of a competitive horse: engraved, stamped, catalogued, and unequivocally Team Liquid ID
 colors:
-  canvas: "#F6F2E8"
-  ink: "#0A1F4A"
-  paper: "#FFFBF2"
-  gold: "#F0A626"
-  gold-light: "#F7C95E"
-  gold-ink: "#8A4B00"
-  cobalt: "#1F6FB2"
-  slate: "#5B6B8C"
-  canvas-dark: "#001538"
-  ink-dark: "#F4EAD7"
-  paper-dark: "#0A1F4A"
-  on-dark: "#E6E2D6"
-  on-dark-muted: "#C9D6E8"
+  ink: "#071B33"
+  ink-deep: "#03101F"
+  ink-deep-dark: "#01070F"
+  bone: "#EDE3CC"
+  bone-dark: "#F5EDD8"
+  paper: "#E4D8BC"
+  paper-dark: "#D9CDB0"
+  brass: "#D8A93B"
+  brass-dark: "#E6BC55"
+  brass-deep: "#A9782A"
+  oxblood: "#8E2B2B"
+  cyan: "#3BB0D4"
+  muted: "#9BAFC4"
+  muted-dark: "#A8BCD0"
+  rule: "rgba(237,227,204,.28)"
+  paper-rule: "rgba(7,27,51,.24)"
+  plate-shadow: "rgba(3,16,31,.55)"
+  wash: "rgba(216,169,59,.08)"
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(58px, 7.6vw, 96px)"
+    fontSize: "clamp(68px, 9.4vw, 150px)"
     fontWeight: 400
-    lineHeight: 0.96
-    letterSpacing: "-0.025em"
+    lineHeight: 0.9
+    letterSpacing: "-0.04em"
   headline:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(34px, 4vw, 52px)"
+    fontSize: "clamp(36px, 5vw, 70px)"
     fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.025em"
+    lineHeight: 1.03
+    letterSpacing: "-0.02em"
+  title:
+    fontFamily: "Gloock, Georgia, serif"
+    fontSize: "clamp(20px, 2.4vw, 32px)"
+    fontWeight: 400
+    lineHeight: 1.2
+    letterSpacing: "0em"
   body:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "1rem"
@@ -43,55 +54,66 @@ typography:
     fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.4
+  note:
+    fontFamily: "Bodoni Moda, Georgia, serif"
+    fontSize: "1.75rem"
+    fontWeight: 400
+    lineHeight: 1.2
+    letterSpacing: "0em"
 spacing:
   tap: "44px"
-  measure: "36rem"
+  measure: "38rem"
 components:
   primary-action:
-    backgroundColor: "{colors.gold}"
+    backgroundColor: "{colors.brass}"
     textColor: "{colors.ink}"
     rounded: "0px"
-    padding: "15px 22px"
-  source-note:
+    padding: "14px 22px"
+  specimen-plate:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
     rounded: "0px"
-    padding: "8px 0"
-  pulse-panel:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.canvas}"
+    padding: "12px"
+  record-panel:
+    backgroundColor: "{colors.oxblood}"
+    textColor: "{colors.bone}"
     rounded: "0px"
-    padding: "clamp(24px, 3vw, 38px)"
+    padding: "clamp(22px, 3vw, 38px)"
+  source-note:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.bone}"
+    rounded: "0px"
+    padding: "8px 0"
 ---
 
 ## Overview
 
-The site is one coherent editorial world: warm paper canvas, deep navy structural islands, gold reserved for actions and active states, cobalt for links, and Gloock/Manrope typography. The same tokens apply on every route; route classes only change composition, never the palette or type system.
+TLID is presented as a field ledger of a competitive animal: an authored engraving of a horse, specimen plates for the six players, ruled measurement tables for the record, and stamped provenance on every claim. The world is dark petrol indigo and bone paper, never white and never neon. It is an independent concept, not an official Team Liquid site.
 
 ## Colors
 
-Canvas `#F6F2E8` owns large regions. Ink `#0A1F4A` carries text and contained panels. Gold `#F0A626` is the action/active accent; `#8A4B00` is its accessible small-text form on paper. Cobalt `#1F6FB2` carries links. Slate `#5B6B8C` carries metadata. A `prefers-color-scheme: dark` variant remaps the same palette without introducing new hues.
+Ink `#071B33` is the ground; bone `#EDE3CC` and paper `#E4D8BC` are the catalogue surfaces. Brass `#D8A93B` is the single action and rule accent; oxblood `#8E2B2B` is reserved for the record panel and status seals; EBB cyan `#3BB0D4` identifies live data labels. `prefers-color-scheme: dark` deepens the ink and brightens bone/brass without changing hue families.
 
 ## Typography
 
-Role tokens: `--type-display`, `--type-headline`, `--type-title`, `--type-body`, `--type-label`, `--type-meta`, with matching `--fs-*` steps. Body is 16px/1.55 with a 36rem measure. All numeric data uses tabular figures. `font-synthesis: none`; only authored weights are used.
+Six role tokens: `--type-display`, `--type-note`, `--type-body`, `--type-label`, `--type-meta` with `--fs-*` steps. Gloock is the only display voice. Bodoni Moda italic is used only for annotations and the wordmark accent. Manrope handles body and data. All numerals are tabular; `font-synthesis: none` prevents fake weights. Body is 16px/1.55 with a 38rem measure.
 
 ## Layout
 
-A 12-column mental grid with one spacing scale. Reading path is left-aligned and top-to-bottom: masthead, pulse panel, player band, record, gate index. No element is centred except marks physically on a paper plate. Touch targets are at least 44px on coarse pointers via `--tap`.
+One left-aligned reading path: giant masthead, engraved plate, record panel, specimen band, gate index. Asymmetry comes from plate overlap and ruled columns, never from centred content. Every interactive target is at least 44px on coarse pointers via `--tap`.
 
 ## Elevation & Depth
 
-Depth comes from paper tone and 1px rules. Shadows are neutral, offset and soft; no glow, blur or animation of shadow.
+Depth is made from paper tone, 1px rules and a single hard plate shadow in ink. No glow, blur, or shadow animation.
 
 ## Shapes
 
-Square corners throughout. The recurring material details are the drafted paper texture, a stitched dashed line, and the gold lace edge. No rounded cards, glassmorphism or HUD ornament.
+Square corners. Recurring authored motifs: engraved horse plate, hatched ink texture, registration crosses, measurement ticks, brass double rules, and oxblood wax seals.
 
 ## Components
 
-`primary-action` is gold on ink, 15×22px padding, square. `source-note` is a disclosure with publisher, URL, retrieval date and confidence. `pulse-panel` is an ink island with cream text and a gold kicker. `glossary` defines KDA, MVP, MPL ID, S18 and MLBB.
+`primary-action` is brass on ink. `specimen-plate` is a paper card with a brass top rule. `record-panel` is oxblood with a brass border. `source-note` is a disclosure carrying publisher, URL, retrieval date and confidence. `glossary` defines MLBB, MPL ID, S18, KDA, MVP and kill participation.
 
-## Do's and Don's
+## Do's and Don'ts
 
-Do attribute every competitive fact, keep unknown states explicit, preserve the source ledger, and keep motion limited to one authored transform/opacity moment. Don't fabricate statistics, reuse another project's palette or motifs, use colour alone for meaning, shrink functional text below 11px, or start a local server for this project.
+Do keep every route in this same world, attribute every fact, label unknown states, and preserve the deterministic seeded offsets with hidden-tab pause and a static reduced-motion path. Don't use white/clean flat surfaces, generic dark+glow esports styling, card grids, gradients, glow, rounded components, fabricated data, or another project's motifs.
