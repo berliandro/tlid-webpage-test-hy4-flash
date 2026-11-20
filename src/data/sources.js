@@ -83,7 +83,7 @@ export const sources = {
     id: 'DOT', publisher: 'Dot Esports', type: 'secondary',
     url: 'https://dotesports.com/mobile-legends/news/mpl-id-season-18-schedule-results-standings', retrieved: '2026-11-17',
     confidence: 'verified',
-    note: 'S18 schedule, results and standings, updated --0.',
+    note: 'S18 schedule, results and standings, updated 2026-11-08.',
   },
   ITEM: {
     id: 'ITEM', publisher: 'itemgame', type: 'secondary',

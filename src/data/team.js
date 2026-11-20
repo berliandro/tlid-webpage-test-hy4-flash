@@ -10,7 +10,7 @@ export const team = {
 
 export const pulse = {
   label: 'SNAPSHOT TERAKHIR',
-  date: '--0',
+  date: '2026-11-08',
   lines: [
     'MPL ID S18 selesai · posisi 3',
     'Musim reguler: 12–4 · posisi 1',
