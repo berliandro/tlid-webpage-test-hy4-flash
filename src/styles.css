@@ -143,7 +143,7 @@ em{font-style:normal}
 .fan-card .card-name{display:block;font-size:clamp(14px,1.7vw,25px);font-weight:800;letter-spacing:-.035em;line-height:1;color:#fff}
 .fan-card .card-sub{display:block;font-family:var(--mono);font-size:12px;color:#fff;margin-top:4px}
 .fan-card .score{display:inline-flex;align-items:center;gap:4px;background:rgba(15,15,17,.6);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 8px;font-family:var(--mono);font-size:12px;color:#fff}
-.fan-card .score b{width:16px;height:16px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:10px}
+.fan-card .score b{width:18px;height:18px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:12px}
 .fan-caption{text-align:center;font-family:var(--mono);font-size:12px;color:var(--muted);padding:10px 20px 26px}
 
 /* section grids */
@@ -337,13 +337,4 @@ em{font-style:normal}
   .bar-row b{font-size:12px}
 }
 @media(pointer:coarse){.nav-link,.nav-toggle,.metric-btn,.filter-btn,.pill,.ticket,.text-link,.back-link,.source-note summary,.glossary summary,.bench summary,.brand,.center-mark,.site-footer a,.credits-line a{min-height:var(--tap)}}
-/* Functional text floor: nothing below 12px carries information. */
-.src-url,.stat-strip span,.identity-list dt,.bar-label small,.src-meta,.stat-caveat,.chart-note,.arch-main p,.po-note,.po-date,.credits-line,.footer-search label,.footer-search button,.expand-sources,.lang-toggle,.player-no,.paper-tag,.portrait-tag,.result-status,.unavailable-seal,.metric-btn,.filter-btn,.site-footer a,.ticket,.nav-toggle,.search-pill span{font-size:12px}
-.fan-card .card-name,.player-card .card-name{max-width:calc(100% - 42px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media(max-width:560px){
-  .card-fan{height:320px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory}
-  .fan-inner{width:max-content;left:0;bottom:0;transform:none;padding:0 18px;gap:10px}
-  .fan-card{width:140px;transform:none;scroll-snap-align:center}
-  .fan-card:nth-child(3){transform:translateY(-6px)}
-}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fan-card,.bar-track span{transition:none}}
