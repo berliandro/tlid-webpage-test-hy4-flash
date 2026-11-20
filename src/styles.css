@@ -194,7 +194,7 @@ em{font-style:normal}
   /* Keep the face as the primary asset: one-line hook text, tighter padding,
      single-line role. Full copy stays in the DOM and the source keeps its two readable lines. */
   .card-hook{padding:6px 8px}
-  .card-hook-text{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card-hook-text{display:block;-webkit-line-clamp:initial;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .card-sub{white-space:nowrap}
 }
 .swipe-hint{display:none}
