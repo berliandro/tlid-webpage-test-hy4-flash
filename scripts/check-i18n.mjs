@@ -92,6 +92,7 @@ try {
     if (PROPER.test(s)) return true;
     if (/↗$/.test(s)) return true; // publisher links
     if (/^https?:\/\//.test(s)) return true;
+    if (/^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(s)) return true; // hostnames
     if (/^[\d\s\-–—.,:+%()/×]+$/.test(s)) return true; // pure numeric/date tokens
     if (/^\d[\d\w\s\-–—.,:+%()/]*$/.test(s) && s.length <= 28) return true; // 2026-11-08, 71–50, 26 sources
     if (!/[a-z]/.test(s)) return true; // all-caps labels/abbreviations
