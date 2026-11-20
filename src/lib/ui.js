@@ -48,5 +48,5 @@ export function laceTop() {
 }
 
 export function sectionHead(kicker, title, sub = '') {
-  return `<header class="section-head"><h2>${esc(title)}</h2><p class="kicker">${esc(kicker)}</p>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
+  return `<header class="section-head"><div><span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2></div>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
 }
