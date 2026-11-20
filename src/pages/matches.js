@@ -5,7 +5,25 @@ import { refreshMotion } from '../motion.js';
 
 const years = [...new Set(tournaments.map((t) => t.year))].sort((a, b) => b - a);
 
+// Contextual decoding, each grounded in the verified match data — no invented expansions.
+const termGlosses = {
+  BTR: 'BTR is the team that beat TLID in the S17 and S18 playoffs; BTR won S18 4–3 over NAVI.',
+  NAVI: 'NAVI is the team TLID met in the S18 upper-bracket final (2–3); BTR beat them 4–3 in the grand final.',
+  AE: 'AE was TLID’s opponent in the 2025 SPS S6 APAC Challenge, a 2–0 win.',
+  'RRQ Hoshi': 'RRQ Hoshi was TLID’s opponent in the S14 final, a 4–3 win on 27 October 2024.',
+};
+
+function helpFor(text, seen) {
+  return Object.keys(termGlosses)
+    .filter((term) => text.includes(term) && !seen.has(term))
+    .map((term) => {
+      seen.add(term);
+      return `<details class="term-help"><summary aria-label="What this term means">?</summary><p>${termGlosses[term]} <a href="#glossary">Full glossary</a></p></details>`;
+    }).join('');
+}
+
 export function renderMatches() {
+  const seenTerms = new Set();
   return {
     html: `
 <section class="page-head compact-head">
@@ -31,7 +49,7 @@ export function renderMatches() {
 
 <section class="section">
   ${sectionHead('S18', 'The last playoff run', 'Jatim Expo, Surabaya · 4–8 November 2026')}
-  <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Source')}</li>`).join('')}</ol>
+  <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b>${helpFor(m.result, seenTerms)}<span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Source')}</li>`).join('')}</ol>
 </section>
 
 <section class="section">
@@ -52,7 +70,7 @@ export function renderMatches() {
         archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRIES</p>` + (list.length ? '' : '<p class="result-empty">No entries for this filter. <button type="button" class="filter-btn" data-reset>All</button></p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
-            <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
+            <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p>${helpFor(t.final, seenTerms)}</div>
             <span class="arch-final">${t.final}</span>
             <span class="arch-place${t.place === 'Juara' ? ' gold' : ''}">${t.place}</span>
           </article>`).join('');

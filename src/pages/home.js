@@ -16,7 +16,7 @@ export function renderHome() {
   <section class="hero" aria-labelledby="home-title">
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
-    <p class="hero-sub">Five starters named on 7 August. Match record 71–50 (174–141 games) since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.</p>
+    <p class="hero-sub">Five starters named on 7 August. Series record 71–50 (174–141 games) since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
   </section>
 
