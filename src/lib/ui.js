@@ -1,4 +1,5 @@
 import { sources } from '../data/sources.js';
+import { translate } from '../i18n.js';
 
 export function esc(value) {
   if (value === null || value === undefined) return '';
@@ -17,7 +18,7 @@ export function sourceNote(ids = [], label = 'Sources &amp; checks') {
     const s = sources[id];
     if (!s) return '';
     return `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)}</a>
-      <span class="src-meta">${esc(s.type)} · diambil ${esc(s.retrieved)} · ${esc(s.confidence)}</span>
+      <span class="src-meta">${esc(s.type)} · ${translate('retrieved')} ${esc(s.retrieved)} · ${esc(s.confidence)}</span>
       <span class="src-note">${esc(s.note)}</span></li>`;
   }).join('');
   return `<details class="source-note"><summary>${label}</summary><ul>${items}</ul></details>`;
