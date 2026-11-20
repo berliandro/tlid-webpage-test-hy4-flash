@@ -26,9 +26,9 @@ export function sourceNote(ids = [], label = 'Sumber &amp; verifikasi') {
 export function portrait(player, extraClass = '', eager = false) {
   if (player && typeof player === 'object') {
     if (player.photo) {
-      return `<img class="portrait photo ${extraClass}" src="public/assets/players/${esc(player.photo)}.png" width="500" height="500" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="Potret ${esc(player.handle)} · Liquipedia Commons, CC BY-SA 3.0" />`;
+      return `<img class="portrait photo ${extraClass}" src="public/assets/players/${esc(player.photo)}.png" width="500" height="500" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="Portrait / Potret ${esc(player.handle)} · Liquipedia Commons, CC BY-SA 3.0" />`;
     }
-    return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Ilustrasi sintetik ${esc(player.handle)}, bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
+    return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
   }
   return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" aria-hidden="true"><use href="public/assets/portraits.svg#player-4"></use></svg>`;
 }

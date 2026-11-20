@@ -63,7 +63,7 @@ export function renderMatches() {
         });
       };
       const requested = new URLSearchParams(location.search).get('y');
-      const initial = years.some((y) => String(y) === requested) ? requested : 'all';
+      const initial = requested && requested !== 'all' ? requested : 'all';
       buttons.forEach((b) => {
         const on = b.dataset.year === initial;
         b.classList.toggle('active', on);

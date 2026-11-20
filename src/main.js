@@ -1,5 +1,5 @@
 import { startRouter, render } from './router.js';
-import { getLang, setLang } from './i18n.js';
+import { getLang, setLang, applyLanguage } from './i18n.js';
 
 startRouter();
 
@@ -10,6 +10,7 @@ document.addEventListener('click', (e) => {
     setLang(getLang() === 'en' ? 'id' : 'en');
     render();
     [...document.querySelectorAll('.source-note, .glossary')].forEach((n, i) => { n.open = disclosure[i] !== false; });
+    document.querySelector('[data-lang-toggle]')?.focus({ preventScroll: true });
     window.scrollTo({ top: y, behavior: 'instant' });
   }
 });
@@ -26,4 +27,5 @@ document.addEventListener('click', (e) => {
   notes.forEach((note) => { note.open = open; });
   btn.setAttribute('aria-expanded', String(open));
   btn.textContent = open ? 'Sembunyikan sumber' : 'Tampilkan semua sumber';
+  applyLanguage(btn);
 });
