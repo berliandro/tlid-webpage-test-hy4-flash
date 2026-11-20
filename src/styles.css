@@ -12,22 +12,26 @@
   --type-title:'Gloock',Georgia,serif; --type-body:'Manrope',Arial,sans-serif;
   --type-label:'Manrope',Arial,sans-serif; --type-meta:'Manrope',Arial,sans-serif;
   --fs-display:clamp(56px,8vw,116px); --fs-headline:clamp(32px,4.4vw,58px);
-  --fs-title:clamp(20px,2.2vw,30px); --fs-body:1rem; --fs-label:.75rem; --fs-meta:.75rem;
+  --fs-title:clamp(20px,2.2vw,30px); --fs-h2-row:clamp(36px,4.6vw,64px);
+  --fs-h2-story:clamp(28px,3.6vw,46px); --fs-h2-compact:clamp(24px,3vw,36px);
+  --fs-body:1rem; --fs-label:.75rem; --fs-meta:.75rem;
   --tap:44px; --measure:38rem;
 }
 @media(prefers-color-scheme:dark){:root{--paper:#001538;--paper-light:#001538;--ink:#EEEEEE;--ink-soft:#EEEEEE;--accent:#F7C95E;--blue:#3BB0D4;--rule:rgba(238,238,238,.28);--panel-tint:rgba(238,238,238,.05)}}
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{
   margin:0;color:var(--ink);background-color:var(--paper);
-  background-image:url('../public/assets/paper-grain.jpg');background-size:256px 256px;
-  background-blend-mode:soft-light;
   font-family:var(--type-body);font-size:var(--fs-body);line-height:1.6;overflow-x:hidden;
   font-variant-numeric:tabular-nums;font-synthesis:none;
 }
-/* Restrained tactile grain on selected surfaces; text stays on solid TL colors. */
+/* Matte finish: procedural feTurbulence noise (paper-like baseFrequency .75,
+   3 octaves, desaturated) applied ONCE per selected surface and multiplied
+   into the solid TL color. No tiled photograph, no visible repeat, no animation. */
 .home-pulse,.band-card,.unavailable,.timeline-card,.source-card,.stat-strip>div,.total-cell{
-  background-image:url('../public/assets/paper-grain.jpg');background-size:256px 256px;background-blend-mode:soft-light;
+  background-image:url('../public/assets/matte-grain.svg');background-repeat:no-repeat;
+  background-size:100% 100%;background-blend-mode:multiply;
 }
 a{color:inherit}
 button{font-family:inherit}
@@ -75,7 +79,7 @@ h2{font-size:var(--fs-headline);line-height:1.05;margin-bottom:10px}
 .mast{font-family:var(--type-display);font-weight:400;line-height:.9;letter-spacing:-.03em}
 .mast-a{display:block;font-size:clamp(38px,5vw,70px)}
 .mast-b{display:block;font-size:clamp(54px,6.6vw,94px)}
-.mast em{font-style:italic;color:var(--accent)}
+.mast em{color:var(--accent)}
 .hairline{width:180px;height:6px;margin:18px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}
 
 /* primary action */
@@ -164,7 +168,7 @@ h2{font-size:var(--fs-headline);line-height:1.05;margin-bottom:10px}
 .row-portrait .portrait{height:94%;width:auto;color:var(--ink)}
 .row-index{position:absolute;left:10px;top:6px;font-family:var(--type-display);font-size:20px;color:var(--accent)}
 .paper-tag{position:absolute;right:8px;bottom:8px;background:var(--gold);color:var(--ink);font-size:11px;padding:4px 8px}
-.row-copy h2{font-size:clamp(36px,4.6vw,64px);line-height:1;margin:8px 0}
+.row-copy h2{font-size:var(--fs-h2-row);line-height:1;margin:8px 0}
 .row-tagline{font-size:18px;line-height:1.5;color:var(--ink-soft);max-width:34rem}
 .row-meta{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-soft);margin-top:10px}
 .player-hero{max-width:1280px;margin:0 auto;padding:24px clamp(20px,5vw,72px)}
@@ -245,13 +249,13 @@ h2{font-size:var(--fs-headline);line-height:1.05;margin-bottom:10px}
 .story-figure{padding:26px;text-align:center;border:2px solid var(--ink);background:var(--paper-light)}
 .story-figure span{display:block;font-family:var(--type-display);font-size:clamp(30px,4vw,56px);line-height:1}
 .story-figure small{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--accent)}
-.story-copy h2{font-size:clamp(28px,3.6vw,46px);line-height:1.05;margin-bottom:10px}
+.story-copy h2{font-size:var(--fs-h2-story);line-height:1.05;margin-bottom:10px}
 .story-copy p{font-size:15px;line-height:1.6}
 .timeline{max-width:960px;margin:0 auto;padding:20px clamp(20px,5vw,72px)}
 .timeline-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:20px 0;border-left:1px solid var(--accent);position:relative}
 .timeline-year{font-family:var(--type-display);font-size:clamp(20px,2.6vw,30px);color:var(--accent);padding-left:16px}
 .timeline-card{background:var(--panel-tint);padding:16px;border-left:3px solid var(--gold)}
-.timeline-card h2{font-size:clamp(24px,3vw,36px);margin-bottom:8px}
+.timeline-card h2{font-size:var(--fs-h2-compact);margin-bottom:8px}
 .timeline-card p{font-size:15px}
 .source-table .source-card{margin-bottom:10px;padding:14px;background:var(--paper-light);border:1px solid var(--ink);border-top:3px solid var(--accent)}
 .source-card h3{font-size:18px}

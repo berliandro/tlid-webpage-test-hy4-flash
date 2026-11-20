@@ -10,11 +10,11 @@ Used icons (inlined and recolored to the site's ink color): horse-head, trophy, 
 
 Attribution also appears in the site footer.
 
-## Paper grain texture
+## Matte finish overlay
 
-**Paper001** from **ambientCG**, licensed **CC0 1.0 Universal** (public domain). Source: https://ambientcg.com/a/Paper001 · https://docs.ambientcg.com/license/
+The matte grain is generated for this project with an SVG `feTurbulence` fractal-noise filter (`baseFrequency 0.75`, 3 octaves, desaturated, 0.12 opacity). It is a procedural effect, not a third-party texture file: no image tiles the page background. It is applied once per selected surface and multiplied into the solid Team Liquid color, so text stays readable and the palette dominates.
 
-The 1K color/displacement map was reduced to a 256px seamless tile and contrast-adjusted for this site.
+Method references: https://www.freecodecamp.org/news/grainy-css-backgrounds-using-svg-filters/ · https://zharr.is/posts/grain-of-the-screen/
 
 ## Player portraits
 

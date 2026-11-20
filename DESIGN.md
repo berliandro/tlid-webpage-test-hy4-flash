@@ -1,5 +1,5 @@
 ---
-name: Team Liquid ID — Textured Team Archive
+name: Team Liquid ID — Arsip Kompetitif
 description: A modern, finished site in Team Liquid's exact colors with restrained tactile grain and one focal point per viewport
 colors:
   foundation-blue: "#001538"
@@ -67,7 +67,7 @@ components:
 
 ## Overview
 
-A modern, finished archive in Team Liquid's exact colors: Momentum white ground, Foundation blue type, Sunset gold actions, EBB cyan and Flow purple for accents. Grain is a restrained CC0 texture blended into selected surfaces, never a hue change and never animated.
+A modern, finished archive in Team Liquid's exact colors: Momentum white ground, Foundation blue type, Sunset gold actions, EBB cyan and Flow purple for accents. The matte finish is a procedural feTurbulence noise overlay multiplied into selected surfaces, never a hue change, never a repeating image, and never animated.
 
 ## Colors
 
@@ -83,11 +83,11 @@ One focal point per viewport, left-aligned reading path, one primary action abov
 
 ## Elevation & Depth
 
-No glow or gradient. Depth comes from blue rules, panel tint, and a small textured seal. Grain is `soft-light` over selected surfaces at fixed 256px tiling.
+No glow or gradient. Depth comes from blue rules, panel tint, and a small textured seal. Grain is a single non-repeating SVG noise field with `multiply` on selected surfaces.
 
 ## Shapes
 
-Square corners. Recurring details: heavy blue rules, gold action fills, inlined CC BY icons, and the grain tile.
+Square corners. Recurring details: heavy blue rules, gold action fills, inlined CC BY icons, and the matte grain overlay.
 
 ## Components
 

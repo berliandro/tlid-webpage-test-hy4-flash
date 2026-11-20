@@ -1,8 +1,8 @@
-# Team Liquid ID — Textured Team Archive
+# Team Liquid ID — Arsip Kompetitif
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 
-The site uses Team Liquid's exact published colors with a restrained CC0 grain texture blended into selected surfaces. Composition, Gloock typography, inlined CC BY icons and short factual copy create the identity. Every route shares the same system and tokens.
+The site uses Team Liquid's exact published colors on a solid background. A procedural SVG feTurbulence noise field is multiplied into selected surfaces at low opacity for a matte finish; no image tiles the page. Composition, Gloock typography, inlined CC BY icons and short factual copy create the identity. Every route shares the same system and tokens.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ No dependencies to install. For this project, every implementation is committed 
 
 ## Design
 
-`DESIGN.md` is normative. Type roles are `--type-display`, `--type-headline`, `--type-title`, `--type-body`, `--type-label`, `--type-meta`, with `--fs-*` steps. Body is 16px at 1.6 line-height with a 38rem measure. Functional text is at least 11px, numerals are tabular, `font-synthesis: none`, and `--tap` is 44px with coarse-pointer coverage. Grain is a 256px CC0 tile blended into the background; no animated filters or large images.
+`DESIGN.md` is normative. Type roles are `--type-display`, `--type-headline`, `--type-title`, `--type-body`, `--type-label`, `--type-meta`, with `--fs-*` steps (`--fs-headline` plus tokenized `--fs-h2-row/story/compact` for component contexts). Body is 16px at 1.6 line-height with a 38rem measure. Functional text is at least 11px, numerals are tabular, `font-synthesis: none`, and `--tap` is 44px with coarse-pointer coverage. The matte grain is a procedural SVG noise overlay applied once per selected surface; no repeating image, animated filter, or large texture file is used.
 
 ## Data and credits
 

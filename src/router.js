@@ -88,7 +88,7 @@ function shell(content) {
       <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 2026-11-17 · status tidak diketahui sengaja dibiarkan kosong.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     </div>
-    <p class="credits-line">Icons by Lorc from <a href="https://game-icons.net" target="_blank" rel="noopener noreferrer">game-icons.net</a> · CC BY 3.0. Paper grain from <a href="https://ambientcg.com/a/Paper001" target="_blank" rel="noopener noreferrer">ambientCG</a> · CC0. Full credits: CREDITS.md.</p>
+    <p class="credits-line">Icons by Lorc from <a href="https://game-icons.net" target="_blank" rel="noopener noreferrer">game-icons.net</a> · CC BY 3.0. Matte grain is procedural SVG noise. Full credits: CREDITS.md.</p>
   </footer>`;
   return html.replace(/href="\//g, `href="${BASE}`);
 }
