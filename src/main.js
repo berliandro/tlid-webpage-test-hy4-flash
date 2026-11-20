@@ -17,14 +17,23 @@ document.addEventListener('click', (e) => {
   }
 });
 
+function searchInputs() {
+  return [...document.querySelectorAll('#site-search, #site-search-footer')];
+}
+
+function focusSearch() {
+  const visible = searchInputs().find((input) => input.getBoundingClientRect().width > 0);
+  (visible || document.querySelector('.nav-toggle'))?.focus();
+}
+
 document.addEventListener('keydown', (e) => {
   if (e.key === '/' && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) {
     e.preventDefault();
-    document.getElementById('site-search')?.focus();
+    focusSearch();
   }
 });
 
-function runSearch(q) {
+function runSearch(q, source) {
   const links = [...document.querySelectorAll('.site-nav .nav-link')];
   let shown = 0;
   links.forEach((a) => {
@@ -33,16 +42,33 @@ function runSearch(q) {
   });
   const status = document.getElementById('search-status');
   if (status) status.textContent = q ? `${shown} section${shown === 1 ? '' : 's'} found` : 'Search by section name in the navigation.';
+  searchInputs().forEach((input) => { if (input !== source) input.value = q; });
+  if (q) {
+    const nav = document.getElementById('primary-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    if (nav && getComputedStyle(nav).display === 'none') {
+      nav.classList.add('open');
+      toggle?.setAttribute('aria-expanded', 'true');
+    }
+  }
 }
 
 document.addEventListener('input', (e) => {
-  if (e.target.id === 'site-search') runSearch(e.target.value.toLowerCase().trim());
+  if (e.target.id === 'site-search' || e.target.id === 'site-search-footer') {
+    runSearch(e.target.value.toLowerCase().trim(), e.target);
+  }
+});
+
+document.addEventListener('submit', (e) => {
+  if (e.target.matches('[data-search-form]')) e.preventDefault();
 });
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('[data-search-reset]')) return;
-  const input = document.getElementById('site-search');
-  if (input) { input.value = ''; runSearch(''); input.focus(); }
+  const inputs = searchInputs();
+  inputs.forEach((input) => { input.value = ''; });
+  runSearch('');
+  inputs.find((input) => input.getBoundingClientRect().width > 0)?.focus();
 });
 
 document.addEventListener('visibilitychange', () => {

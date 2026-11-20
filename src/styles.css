@@ -293,6 +293,16 @@ em{font-style:normal}
 .credits-line{max-width:var(--shell-max);margin:var(--s-3) auto 0;border-top:1px solid var(--hair);padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--muted)}
 .credits-line a{display:inline;color:var(--cyan);text-decoration:underline}
 
+/* hardening — hidden tabs pause ambient motion; long labels degrade instead of overflowing */
+body.is-hidden *,body.is-hidden *::before,body.is-hidden *::after{animation-play-state:paused!important}
+h1,h2,h3,.tile b,.arch-place,.source-card h3,.conflict h3,.row-copy h2{overflow-wrap:anywhere}
+.pill,.nav-link,.brand,.bench-list a{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.footer-search .search-status{flex-basis:100%;margin-top:2px}
+@media(max-width:560px){
+  .search-pill input,.footer-search input{font-size:16px}
+  .footer-search input,.footer-search button{min-height:var(--tap)}
+}
+
 /* motion — transform/opacity only; one observer, no scroll listeners */
 @keyframes page-enter{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
 main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}

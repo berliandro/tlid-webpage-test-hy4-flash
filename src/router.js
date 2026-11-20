@@ -75,7 +75,12 @@ function shell(content) {
       <div><p class="footer-label">More</p><a href="/discover">Discover</a><a href="/history">History</a></div>
       <div><p class="footer-label">Data</p><a href="/sources">Sources</a></div>
     </div>
-    <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
+    <form class="footer-search" role="search" data-search-form>
+      <label for="site-search-footer">Find a section</label>
+      <input id="site-search-footer" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" />
+      <button type="button" data-search-reset>Reset</button>
+      <p id="search-status" class="search-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
+    </form>
     <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
       <div><dt>MLBB</dt><dd>The game TLID plays.</dd></div>
       <div><dt>MPL ID</dt><dd>Indonesia's pro MLBB league.</dd></div>
