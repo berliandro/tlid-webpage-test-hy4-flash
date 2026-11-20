@@ -14,7 +14,7 @@ export function renderPlayers() {
 <section class="roster-editorial">
   <div class="roster-cards">
     ${starters.map((p) => `
-    <a class="player-card" href="/players/${p.slug}">
+    <a class="player-card" href="/players/${p.slug}" style="--card-bg:${p.cardBg}">
       <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" />
       <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
     </a>`).join('')}

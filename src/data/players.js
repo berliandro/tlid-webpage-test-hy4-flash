@@ -12,7 +12,7 @@ export const players = [
     slug: 'aran', handle: 'Aran', realName: 'Aldhia Fahmi Aranda', starter: true,
     role: 'EXP Laner', nationality: 'Indonesia', born: '2003-02-23',
     joined: 'On the S14 roster (31 July 2024)',
-    portrait: 'player-1', photo: 'Aran', index: '01',
+    portrait: 'player-1', photo: 'Aran', index: '01', cardBg: '#8a54f2',
     tagline: 'Pilar EXP yang sudah melewati lebih dari satu babak tim.',
     bio: 'Aran tercatat sebagai EXP Laner TLID dalam roster S14 dan tetap masuk susunan S18. Namanya, tanggal lahir, dan kewarganegaraannya didokumentasikan di beberapa basis data esports.',
     facts: [
@@ -26,7 +26,7 @@ export const players = [
     slug: 'kevin', handle: 'Kevin', realName: null, starter: true,
     role: 'Jungler', nationality: null, born: null,
     joined: 'Joined August 2025',
-    portrait: 'player-2', photo: 'Kevinn', index: '02',
+    portrait: 'player-2', photo: 'Kevinn', index: '02', cardBg: '#f75062',
     tagline: 'Nama panggungnya berubah di S17; datanya ada, identitas pribadinya tidak.',
     bio: 'Pengumuman S18 menempatkan Kevin sebagai Jungler. Sumber independen mencatat bahwa ia sebelumnya menggunakan nama “Joo” dan bergabung dengan TLID pada Agustus 2025. Nama asli dan tanggal lahirnya tidak terverifikasi.',
     facts: [
@@ -42,7 +42,7 @@ export const players = [
     slug: 'drichel', handle: 'Drichel', realName: 'Andric Alfayyadh', starter: true,
     role: 'Mid Laner', nationality: 'Indonesia', born: null,
     joined: 'Joined March 2026',
-    portrait: 'player-3', photo: 'Drichel', index: '03',
+    portrait: 'player-3', photo: 'Drichel', index: '03', cardBg: '#04ddca',
     tagline: 'KDA 6.39 — angka yang juga muncul di papan peringkat resmi MPL.',
     bio: 'Drichel masuk TLID pada Maret 2026 sebagai Mid Laner. Andric Alfayyadh tercatat sebagai nama aslinya. KDA rata-ratanya muncul baik di MLBBHub maupun di daftar Top 5 KDA resmi MPL.',
     facts: [
@@ -56,7 +56,7 @@ export const players = [
     slug: 'anaver', handle: 'Anaver', realName: null, starter: false,
     role: 'Mid Laner', nationality: null, born: null,
     joined: 'Bergabung 2026-08',
-    portrait: 'player-4', index: '04',
+    portrait: 'player-4', index: '04', cardBg: '#6b4ee6',
     tagline: 'Anggota gelombang S18 yang datanya belum dipublikasikan.',
     bio: 'Anaver diumumkan sebagai Mid Laner dalam roster S18. Akun Instagramnya menggunakan nama “Nain”. Nama asli, tanggal lahir, dan statistik musimannya tidak tersedia dalam data yang dikumpulkan.',
     facts: [
@@ -70,7 +70,7 @@ export const players = [
     slug: 'keven', handle: 'Keven', realName: null, starter: true,
     role: 'Gold Laner', nationality: null, born: null,
     joined: 'Bergabung 2026-08',
-    portrait: 'player-5', photo: 'Keven', index: '05',
+    portrait: 'player-5', photo: 'Keven', index: '05', cardBg: '#3e56f6',
     tagline: 'Satu nama, beberapa ejaan di sumber yang berbeda.',
     bio: 'Keven diumumkan sebagai Gold Laner TLID untuk S18. Sumber lain menuliskan Kevin, Kevinn, atau Keven untuk entitas yang berbeda, sehingga data pribadinya sengaja tidak diisi.',
     facts: [
@@ -85,7 +85,7 @@ export const players = [
     slug: 'lyoni', handle: 'Lyoni', realName: null, starter: true,
     role: 'Roamer', nationality: 'Indonesia', born: null,
     joined: 'Akademi → tim utama, 2026-03',
-    portrait: 'player-6', photo: 'Lyoni', index: '06',
+    portrait: 'player-6', photo: 'Lyoni', index: '06', cardBg: '#00d5f3',
     tagline: 'Jalur akademi yang akhirnya sampai ke roster utama.',
     bio: 'Lyoni naik dari TLID Academy ke tim utama pada Maret 2026 dan tercatat pernah bermain untuk Monster Vicious. Dua sumber memberi nama lengkap yang berbeda, sehingga halaman ini tidak memilih salah satu.',
     facts: [
