@@ -1,4 +1,4 @@
-# Team Liquid ID — Aged Print Archive
+# Team Liquid ID — Textured Team Archive
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 

@@ -60,6 +60,7 @@ function shell(content) {
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buka navigasi"><span></span><span></span><span></span></button>
     <nav id="primary-nav" class="site-nav" aria-label="Navigasi utama">${nav}</nav>
   </header>
+  <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>
   <main id="main" tabindex="-1">${content}</main>
   <footer class="site-footer">
     <div class="footer-grid">
@@ -67,7 +68,8 @@ function shell(content) {
       <div><p class="footer-label">Navigasi</p>${navItems.map((n) => `<a href="${n.href}">${n.label}</a>`).join('')}</div>
       <div><p class="footer-label">Data</p><a href="/sources">Daftar sumber</a><a href="/statistics">Catatan verifikasi</a><a href="/players">Roster S18</a></div>
     </div>
-    <div class="footer-search"><label for="site-search">Cari bagian</label><input id="site-search" type="search" placeholder="Cari bagian…" autocomplete="off" aria-label="Cari bagian situs" /></div>
+    <div class="footer-search"><label for="site-search">Cari bagian</label><input id="site-search" type="search" placeholder="Cari bagian…" autocomplete="off" aria-label="Cari bagian situs" aria-controls="search-status" /><button type="button" data-search-reset aria-label="Hapus pencarian">Reset</button></div>
+    <p id="search-status" class="search-status" role="status" aria-live="polite">Cari berdasarkan nama bagian di navigasi.</p>
     <details class="glossary" id="glossary" open><summary>Glosarium</summary><dl>
       <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.</dd></div>
       <div><dt>MPL ID</dt><dd>Liga MLBB profesional Indonesia tempat TLID berkompetisi.</dd></div>
@@ -116,6 +118,8 @@ export function render() {
   const path = routeFromLocation();
   const result = resolve(path);
   app.innerHTML = shell(result.html);
+  const status = document.getElementById('route-status');
+  if (status) status.textContent = titles(path);
   document.title = `${titles(path)} — Team Liquid ID`;
   window.scrollTo({ top: 0, behavior: 'instant' });
   document.getElementById('main')?.focus({ preventScroll: true });

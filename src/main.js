@@ -22,12 +22,25 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-document.addEventListener('input', (e) => {
-  if (e.target.id !== 'site-search') return;
-  const q = e.target.value.toLowerCase().trim();
-  document.querySelectorAll('.site-footer .footer-grid a').forEach((a) => {
+function runSearch(q) {
+  const links = [...document.querySelectorAll('.site-footer .footer-grid a')];
+  let shown = 0;
+  links.forEach((a) => {
     a.hidden = !!q && !a.textContent.toLowerCase().includes(q);
+    if (!a.hidden) shown += 1;
   });
+  const status = document.getElementById('search-status');
+  if (status) status.textContent = q ? `${shown} bagian cocok` : 'Cari berdasarkan nama bagian di navigasi.';
+}
+
+document.addEventListener('input', (e) => {
+  if (e.target.id === 'site-search') runSearch(e.target.value.toLowerCase().trim());
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('[data-search-reset]')) return;
+  const input = document.getElementById('site-search');
+  if (input) { input.value = ''; runSearch(''); input.focus(); }
 });
 
 document.addEventListener('visibilitychange', () => {
