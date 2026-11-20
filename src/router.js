@@ -98,6 +98,7 @@ function shell(content) {
       <div><dt>MVP</dt><dd>Most points in the official standings.</dd></div>
       <div><dt>Kill participation</dt><dd>Share of team kills involving the player.</dd></div>
       <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
+      <div><dt>Final placing</dt><dd>Where the team finished in the tournament.</dd></div>
     </dl></details>
     <div class="footer-controls">
       <div class="footer-control-links"><a href="/sources"${current === '/sources' ? ' class="active" aria-current="page"' : ''}>Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>

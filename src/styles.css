@@ -272,6 +272,8 @@ em{font-style:normal}
 .bar-row b{font-size:15px;font-weight:800;text-align:right}
 .result-status{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px;min-height:32px}
 .result-empty{padding:16px;background:var(--panel-2);border-radius:14px;font-size:13px}
+.archive-head{display:flex;justify-content:flex-end;padding:0 0 4px}
+.arch-place-head{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .unavailable{max-width:640px;padding:22px;border:1px solid var(--hair);border-top:1px solid var(--hair);border-radius:0 16px 16px 0;background:var(--panel-2)}
 .unavailable h3{font-size:1.6rem;margin-bottom:8px}
 .unavailable p{font-size:13px}

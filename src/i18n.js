@@ -392,6 +392,8 @@ Object.assign(TO_ID, {
   'August 2025': 'Agustus 2025', 'March 2026': 'Maret 2026', 'Aug 2026': 'Agu 2026',
   'Academy → main team, Mar 2026': 'Akademi → tim utama, Mar 2026',
   'What this term means': 'Apa arti istilah ini', 'Full glossary': 'Glosarium lengkap',
+  'Final placing': 'Posisi akhir', 'Final placing:': 'Posisi akhir:',
+  'Where the team finished in the tournament.': 'Di mana tim berakhir dalam turnamen.',
   'All': 'Semua', 'Filter tournaments by year': 'Saring turnamen berdasarkan tahun',
   'Sort: Newest first': 'Urutkan: terbaru', 'Sort: Oldest first': 'Urutkan: terlama',
   'BTR is the team that beat TLID in the S17 and S18 playoffs; BTR won S18 4–3 over NAVI.': 'BTR adalah tim yang mengalahkan TLID di playoff S17 dan S18; BTR menang S18 4–3 atas NAVI.',

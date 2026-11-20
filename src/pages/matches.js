@@ -70,12 +70,12 @@ export function renderMatches() {
         currentYear = year;
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
           .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
-        archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRIES</p>` + (list.length ? '' : '<p class="result-empty">No entries for this filter. <button type="button" class="filter-btn" data-reset>All</button></p>') + list.map((t) => `
+        archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRIES</p>` + (list.length ? '<div class="archive-head" aria-hidden="true"><span class="arch-place-head">Final placing</span></div>' : '') + (list.length ? '' : '<p class="result-empty">No entries for this filter. <button type="button" class="filter-btn" data-reset>All</button></p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p>${helpFor(t.final, seenTerms)}</div>
             <span class="arch-final">${t.final}</span>
-            <span class="arch-place${t.place === 'Juara' ? ' gold' : ''}">${t.place}</span>
+            <span class="arch-place${t.place === 'Juara' ? ' gold' : ''}"><span class="sr-status">Final placing: </span>${t.place}</span>
           </article>`).join('');
         applyLanguage(archive);
         refreshMotion(archive);
