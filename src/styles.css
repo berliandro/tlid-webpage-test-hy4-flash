@@ -79,7 +79,7 @@ main:focus-visible{outline:2px solid var(--cyan);outline-offset:-4px}
 .nav-explore{position:relative}
 .explore-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:150px;display:flex;flex-direction:column;gap:4px;padding:8px;background:var(--panel-2);border:1px solid var(--hair);border-radius:16px;z-index:80}
 .explore-menu .nav-link{white-space:nowrap;text-align:left}
-.nav-link{font-size:12px;font-weight:700;padding:6px 9px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
+.nav-link{font-family:inherit;font-size:12px;font-weight:700;line-height:inherit;padding:6px 9px;background:transparent;color:inherit;border:1px solid transparent;border-radius:999px;white-space:nowrap;cursor:pointer}
 .nav-link:hover{background:var(--pill)}
 .nav-link.active{background:var(--text);color:var(--panel)}
 .status-pill .coin{width:14px;height:14px;border-radius:50%;background:var(--gold);border:1px solid rgba(0,0,0,.35)}
