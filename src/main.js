@@ -15,6 +15,21 @@ document.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) {
+    e.preventDefault();
+    document.getElementById('site-search')?.focus();
+  }
+});
+
+document.addEventListener('input', (e) => {
+  if (e.target.id !== 'site-search') return;
+  const q = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.site-footer .footer-grid a').forEach((a) => {
+    a.hidden = !!q && !a.textContent.toLowerCase().includes(q);
+  });
+});
+
 document.addEventListener('visibilitychange', () => {
   document.body.classList.toggle('is-hidden', document.hidden);
 });
