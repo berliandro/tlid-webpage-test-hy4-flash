@@ -11,7 +11,7 @@ export const players = [
   {
     slug: 'aran', handle: 'Aran', realName: 'Aldhia Fahmi Aranda', starter: true,
     role: 'EXP Laner', nationality: 'Indonesia', born: '2003-02-23',
-    joined: 'Tercatat di roster S14 (2024-07-31)',
+    joined: 'On the S14 roster (31 July 2024)',
     portrait: 'player-1', photo: 'Aran', index: '01',
     tagline: 'Pilar EXP yang sudah melewati lebih dari satu babak tim.',
     bio: 'Aran tercatat sebagai EXP Laner TLID dalam roster S14 dan tetap masuk susunan S18. Namanya, tanggal lahir, dan kewarganegaraannya didokumentasikan di beberapa basis data esports.',
@@ -25,7 +25,7 @@ export const players = [
   {
     slug: 'kevin', handle: 'Kevin', realName: null, starter: true,
     role: 'Jungler', nationality: null, born: null,
-    joined: 'Bergabung 2025-08',
+    joined: 'Joined August 2025',
     portrait: 'player-2', photo: 'Kevinn', index: '02',
     tagline: 'Nama panggungnya berubah di S17; datanya ada, identitas pribadinya tidak.',
     bio: 'Pengumuman S18 menempatkan Kevin sebagai Jungler. Sumber independen mencatat bahwa ia sebelumnya menggunakan nama “Joo” dan bergabung dengan TLID pada Agustus 2025. Nama asli dan tanggal lahirnya tidak terverifikasi.',
@@ -41,7 +41,7 @@ export const players = [
   {
     slug: 'drichel', handle: 'Drichel', realName: 'Andric Alfayyadh', starter: true,
     role: 'Mid Laner', nationality: 'Indonesia', born: null,
-    joined: 'Bergabung 2026-03',
+    joined: 'Joined March 2026',
     portrait: 'player-3', photo: 'Drichel', index: '03',
     tagline: 'KDA 6.39 — angka yang juga muncul di papan peringkat resmi MPL.',
     bio: 'Drichel masuk TLID pada Maret 2026 sebagai Mid Laner. Andric Alfayyadh tercatat sebagai nama aslinya. KDA rata-ratanya muncul baik di MLBBHub maupun di daftar Top 5 KDA resmi MPL.',
