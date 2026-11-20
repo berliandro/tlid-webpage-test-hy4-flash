@@ -1,12 +1,15 @@
 import { playerStats, teamTotals, records, mvpLeader, statConflicts } from '../data/stats.js';
 import { sourceNote, sectionHead, esc } from '../lib/ui.js';
-import { applyLanguage } from '../i18n.js';
+import { applyLanguage, translate } from '../i18n.js';
 import { refreshMotion } from '../motion.js';
 
 const metrics = {
-  kda: { label: 'KDA rata-rata', max: 7, get: (p) => p.kda, fmt: (v) => v.toFixed(2) },
-  kp: { label: 'Kill participation', max: 100, get: (p) => p.kp, fmt: (v) => `${v}%` },
-  games: { label: 'Game tercatat', max: 60, get: (p) => p.games, fmt: (v) => String(v) },
+  kda: {
+    label: 'KDA rata-rata', max: 7, get: (p) => p.kda, fmt: (v) => v.toFixed(2),
+    note: "Drichel's 6.39 KDA is also in the MPL ID Top 5.",
+  },
+  kp: { label: 'Kill participation', max: 100, get: (p) => p.kp, fmt: (v) => `${v}%`, note: '' },
+  games: { label: 'Game tercatat', max: 60, get: (p) => p.games, fmt: (v) => String(v), note: '' },
 };
 
 const totalRows = [
@@ -29,7 +32,7 @@ export function renderStats() {
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>
   <div class="bar-chart" id="bar-chart"></div>
-  <p class="chart-note">Drichel's 6.39 KDA is also in the MPL ID Top 5.</p>
+  <p class="chart-note" id="chart-note" role="status" aria-live="polite">Drichel's 6.39 KDA is also in the MPL ID Top 5.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'IG_S18'])}
 </section>
 
@@ -69,6 +72,11 @@ export function renderStats() {
             <b>${m.fmt(value)}</b>
           </div>`;
         }).join('');
+        const note = document.getElementById('chart-note');
+        if (note) {
+          note.textContent = m.note ? translate(m.note) : '';
+          note.hidden = !m.note;
+        }
         applyLanguage(chart);
         refreshMotion(chart);
       };

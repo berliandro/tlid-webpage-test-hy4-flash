@@ -397,6 +397,8 @@ Object.assign(TO_ID, {
   'Team Liquid ID crest — home': 'Lambang Team Liquid ID — beranda',
   'Five starters named on 7 August. 71–50 since May 2024.': 'Lima pemain utama diumumkan 7 Agustus. 71–50 sejak Mei 2024.',
   'Five starters named on 7 August. 71–50 since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.': 'Lima pemain utama diumumkan 7 Agustus. 71–50 sejak Mei 2024. S18 adalah musim 2026; MLBB adalah Mobile Legends: Bang Bang.',
+  'Five starters named on 7 August. Match record 71–50 (174–141 games) since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.': 'Lima pemain utama diumumkan 7 Agustus. Rekor pertandingan 71–50 (174–141 game) sejak Mei 2024. S18 adalah musim 2026; MLBB adalah Mobile Legends: Bang Bang.',
+  "Drichel's 6.39 KDA is also in the MPL ID Top 5.": 'KDA 6,39 Drichel juga masuk dalam Top 5 resmi MPL ID.',
   'Lane roles — EXP, Mid, Gold and Roamer describe where a player plays.': 'Peran jalur — EXP, Mid, Gold dan Roamer menjelaskan posisi bermain.',
   'Anaver uses a synthetic illustration.': 'Anaver menggunakan ilustrasi sintetik.',
   'View roster →': 'Lihat roster →',
