@@ -60,10 +60,10 @@ function shell(content) {
       <a class="brand" href="/" aria-label="Team Liquid ID — home"><span class="brand-mark"><img src="public/assets/tlid-mark.svg" alt="" /></span>TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
       <span class="pill active"><span class="dot"></span>Team</span>
       <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
+      <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
     <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
-    <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
     <div class="topbar-right">
       <span class="icon-btn" aria-hidden="true">✦</span>
       <span class="icon-btn" aria-hidden="true">◐</span>
