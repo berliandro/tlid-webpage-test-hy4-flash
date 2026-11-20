@@ -15,12 +15,9 @@ export function renderMatches() {
 
 <section class="section upcoming-section">
   ${sectionHead('Mendatang', 'Keadaan kosong yang disengaja')}
-  <div class="unavailable">
-    <span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span>
-    <h3>${upcoming.title}</h3>
-    <p>${upcoming.text}</p>
-    ${sourceNote(upcoming.sources)}
-  </div>
+  ${upcoming.available
+    ? `<div class="unavailable"><h3>${upcoming.title}</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`
+    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`}
 </section>
 
 <section class="section">
@@ -28,7 +25,7 @@ export function renderMatches() {
   <div class="filter-row" role="group" aria-label="Filter tahun turnamen">
     <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">Semua</button>
     ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
-    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="false">Urutkan ↓</button>
+    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Urutan: terbaru ↓</button>
   </div>
   <div class="archive" id="match-archive" aria-live="polite"></div>
 </section>
@@ -71,7 +68,7 @@ export function renderMatches() {
       });
       if (sortBtn) {
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Urutkan ↓' : 'Urutkan ↑';
+        sortBtn.textContent = desc ? 'Urutan: terbaru ↓' : 'Urutan: terlama ↑';
       }
       draw(initial);
       buttons.forEach((btn) => btn.addEventListener('click', () => {
@@ -85,7 +82,7 @@ export function renderMatches() {
       sortBtn?.addEventListener('click', () => {
         desc = !desc;
         sortBtn.setAttribute('aria-pressed', String(desc));
-        sortBtn.textContent = desc ? 'Urutkan ↓' : 'Urutkan ↑';
+        sortBtn.textContent = desc ? 'Urutan: terbaru ↓' : 'Urutan: terlama ↑';
         const url = new URL(location.href);
         url.searchParams.set('s', desc ? 'desc' : 'asc');
         history.pushState({}, '', url);
