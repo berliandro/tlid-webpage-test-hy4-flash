@@ -35,7 +35,7 @@ export const milestones = [
   {
     year: '2024-12-15', kicker: 'Panggung dunia',
     title: 'Runner-up M6 World Championship',
-    text: 'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 /12; perbedaan satu hari ini dicatat, bukan disembunyikan.',
+    text: 'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 2024-12-14; perbedaan satu hari ini dicatat, bukan disembunyikan.',
     sources: ['LIQ_M6', 'LIQ_TEAM', 'MOONTON'],
     confidence: 'verified with date conflict',
   },

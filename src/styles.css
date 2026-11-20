@@ -61,7 +61,6 @@ body.is-hidden *{animation-play-state:paused!important}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .lang-toggle{border:1px solid var(--brass);background:transparent;color:var(--brass);font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:8px 12px;min-height:var(--tap);cursor:pointer}
-.header-lang{padding:6px 10px}
 
 /* shared paper slip */
 :where(.ticket,.band-card,.roster-chip,.source-card,.record,.unavailable,.stat-strip>div,.total-cell,.mvp-card,.timeline-card,.story-figure,.intro-facts>div,.panel,.side,.conflict,.empty-stat){

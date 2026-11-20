@@ -189,7 +189,7 @@ const DICT = {
   'Identitas S13': 'S13 identity',
   'Liquipedia mencatat hasil S13 di bawah TLID, sementara Wikipedia menyebut rebrand dari Liquid AURA baru terjadi di S14. Atribusi hasil S13 ambigu.': 'Liquipedia records the S13 result under TLID, while Wikipedia says the rebrand from Liquid AURA happened in S14. S13 attribution is ambiguous.',
   'Tanggal final M6': 'M6 final date',
-  '2024-12-15 menurut Liquipedia dan Wikipedia; 14 /12 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
+  '2024-12-15 menurut Liquipedia dan Wikipedia; 2024-12-14 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
   'Juara': 'Champion',
 
   // discover
@@ -225,7 +225,7 @@ const DICT = {
   'Gelar pertama': 'First title', 'Juara MPL Indonesia S14': 'MPL Indonesia S14 champion',
   'TLID mengalahkan RRQ Hoshi 4–3 di grand final dan mengamankan gelar MPL Indonesia Season 14 sekaligus tiket M6.': 'TLID beat RRQ Hoshi 4–3 in the grand final to secure the MPL Indonesia Season 14 title and an M6 berth.',
   'Panggung dunia': 'World stage',
-  'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 /12; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1–4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
+  'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 2024-12-14; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1–4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
   'Fluktuasi': 'Fluctuation', 'S15 ke-5–6, S16 ke-9': 'S15 5th–6th, S16 9th',
   'Dua musim berikutnya berakhir di posisi 5–6 dan 9. TLID tidak lolos playoff pada MPL Indonesia Season 16.': 'The next two seasons ended 5th–6th and 9th. TLID missed playoffs in MPL Indonesia Season 16.',
   'Roster baru': 'New roster',
@@ -279,6 +279,7 @@ const DICT = {
   'Kill participation': 'Kill participation',
   'Persentase kill tim yang melibatkan pemain tersebut.': 'Share of team kills involving that player.',
   'Buka ledger ': 'Open the ledger ',
+  'Buka ledger': 'Open the ledger',
   'S18 / KEDUDUKAN': 'S18 / PLACEMENT',
   'REKOR PERTANDINGAN · 2024–2026': 'MATCH RECORD · 2024–2026',
   'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Potret pemain bersumber dari Liquipedia Commons, bukan ukiran; Anaver memakai ilustrasi.': 'S18 lineup per the official 7 August 2026 announcement. Player portraits come from Liquipedia Commons, not engravings; Anaver uses an illustration.',
@@ -299,8 +300,8 @@ const DICT = {
   'Jadwal terverifikasi': 'Verified fixtures',
   'Klasemen MVP': 'MVP standings',
   'TIDAK ADA JADWAL TERVERIFIKASI': 'NO VERIFIED FIXTURE',
-  '2024-12-15 menurut Liquipedia dan Wikipedia; 14 /12 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
-  'TLID kalah 1-4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 /12; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1-4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
+  '2024-12-15 menurut Liquipedia dan Wikipedia; 2024-12-14 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
+  'TLID kalah 1-4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 2024-12-14; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1-4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
   'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya. ': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence. ',
   'Lihat glosarium →': 'View glossary →',
 };
