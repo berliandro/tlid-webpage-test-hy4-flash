@@ -18,7 +18,7 @@ const totalRows = [
 export function renderStats() {
   return {
     html: `
-<section class="page-head analytics-head">
+<section class="page-head analytics-head compact-head">
   <h1>Numbers with<br><em>the labels attached</em></h1>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
 </section>

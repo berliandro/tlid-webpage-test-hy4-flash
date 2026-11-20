@@ -4,7 +4,7 @@ import { sourceNote, sectionHead } from '../lib/ui.js';
 export function renderDiscover() {
   return {
     html: `
-<section class="page-head">
+<section class="page-head chapter-head">
   <h1>What makes<br><em>this team real</em></h1>
 </section>
 

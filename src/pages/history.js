@@ -4,7 +4,7 @@ import { sourceNote, sectionHead } from '../lib/ui.js';
 export function renderHistory() {
   return {
     html: `
-<section class="page-head">
+<section class="page-head chapter-head">
   <h1>A timeline<br><em>still unfinished</em></h1>
 </section>
 

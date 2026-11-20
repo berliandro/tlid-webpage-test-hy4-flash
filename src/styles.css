@@ -96,6 +96,13 @@ main{min-height:40vh}
 .page-head .kicker{order:-1}
 .page-head .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(245,197,66,.1);border:1px solid rgba(245,197,66,.28);border-radius:999px;padding:6px 12px;margin-bottom:20px}
 .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* Route openings: data rooms are compact; narrative rooms lead like chapters. */
+.page-head.compact-head,.page-head.chapter-head{align-items:flex-start;text-align:left;padding-block:var(--s-6) var(--s-5);border-bottom:1px solid var(--hair)}
+.page-head.compact-head h1{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.03em;max-width:none}
+.page-head.chapter-head h1{font-size:clamp(2.2rem,4vw,3.6rem);max-width:20ch}
+.page-head.compact-head .lede,.page-head.chapter-head .lede{text-align:left;margin-inline:0;max-width:var(--measure)}
+.page-head.compact-head>.source-note,.page-head.chapter-head>.source-note{margin-inline:0}
+.compact-head+.section,.chapter-head+.section{border-top:0}
 h1,h2,h3{font-weight:800;letter-spacing:-.04em;line-height:1.03}
 h1{font-size:clamp(2.2rem,5vw,4.6rem)}
 h2{font-size:clamp(1.9rem,3.6vw,3.4rem)}

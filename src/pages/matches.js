@@ -8,7 +8,7 @@ const years = [...new Set(tournaments.map((t) => t.year))].sort((a, b) => b - a)
 export function renderMatches() {
   return {
     html: `
-<section class="page-head">
+<section class="page-head compact-head">
   <h1>Match<br><em>record</em></h1>
   <p class="lede">No invented fixtures.</p>
 </section>

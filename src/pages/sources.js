@@ -4,7 +4,7 @@ import { esc, sectionHead } from '../lib/ui.js';
 export function renderSources() {
   return {
     html: `
-<section class="page-head">
+<section class="page-head compact-head">
   <h1>Source<br><em>list</em></h1>
   <p class="lede">Retrieved 17 November 2026.</p>
 </section>
