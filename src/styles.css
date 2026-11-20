@@ -469,10 +469,11 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 @media(pointer:coarse){
   .nav-link,.nav-toggle,.metric-btn,.filter-btn,.pill,.ticket,.text-link,.back-link,
   .source-note summary,.glossary summary,.bench summary,.brand,.center-mark,
-  .site-footer a,.credits-line a,.lang-toggle,.expand-sources,.skip-link,.search-clear{min-height:var(--tap)}
+  .site-footer a,.credits-line a,.lang-toggle,.expand-sources,.skip-link,.search-clear,
+  .hero-cta .pill{min-height:var(--tap)}
   .center-mark{min-width:var(--tap)}
   .search-pill{min-height:var(--tap)}
-  .search-pill input{min-height:calc(var(--tap) - 2px)}
+  .search-pill input{min-height:var(--tap)}
   /* Grow the clickable box without resizing the visual mark. */
   .term-help summary,.term-help a,.bar-label a,.source-card h3 a,.src-note a{position:relative;isolation:isolate}
   .term-help summary::after,.term-help a::after,.bar-label a::after,
