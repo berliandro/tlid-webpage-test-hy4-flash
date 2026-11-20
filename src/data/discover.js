@@ -9,6 +9,7 @@ export const stories = [
   },
   {
     id: 'm6',
+    variant: 'editorial',
     kicker: 'Worlds',
     figure: '1–4',
     title: 'One step from the M6 title',
@@ -17,6 +18,7 @@ export const stories = [
   },
   {
     id: 'handle',
+    variant: 'editorial',
     kicker: 'Name',
     figure: 'Joo → Kevin',
     title: 'The name on the jersey',
@@ -49,6 +51,7 @@ export const stories = [
   },
   {
     id: 'movement',
+    variant: 'editorial',
     kicker: 'Roster moves',
     figure: '2026',
     title: 'Faces that moved on',
