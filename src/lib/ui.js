@@ -25,11 +25,14 @@ export function sourceNote(ids = [], label = 'Sources &amp; checks') {
 }
 
 export function portrait(player, extraClass = '') {
-  const id = player?.portrait || 'player-4';
-  const label = player?.handle
-    ? ` role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"`
-    : ' aria-hidden="true"';
-  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240"${label}><use href="public/assets/portraits.svg#${esc(id)}"></use></svg>`;
+  const handle = player?.handle || 'Unknown';
+  const label = `Unknown portrait: ${esc(handle)}. Synthetic illustration, not a real portrait / Potret tidak diketahui: ${esc(handle)}. Ilustrasi sintetik, bukan potret asli.`;
+  return `<div class="portrait-synthetic ${extraClass}" role="img" aria-label="${label}">
+    <span class="synthetic-mark">${esc(handle.slice(0, 1).toUpperCase())}</span>
+    <span class="synthetic-rule" aria-hidden="true"></span>
+    <span class="synthetic-label">SYNTHETIC ILLUSTRATION · NO VERIFIED PORTRAIT</span>
+    <span class="synthetic-sub">NOT A REAL PORTRAIT</span>
+  </div>`;
 }
 
 export function sectionHead(kicker, title, sub = '') {

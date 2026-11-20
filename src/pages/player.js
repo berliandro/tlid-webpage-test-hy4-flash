@@ -35,7 +35,7 @@ export function renderPlayer(slug) {
 
   return {
     html: `
-<section class="player-hero" style="--accent-rot:${p.index}deg;--card-bg:${p.cardBg}">
+<section class="player-hero" style="--accent-rot:${p.index}deg;--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
   <a class="back-link" href="/players">← Back to roster</a>
   <div class="player-grid">
     <div class="player-portrait">
