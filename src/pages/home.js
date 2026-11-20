@@ -21,8 +21,8 @@ export function renderHome() {
 <div class="home-page">
   <section class="hero" aria-labelledby="home-title">
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
-    <h1 id="home-title"><span>Five starters.</span><span>One season.</span><span>A record you can check.</span></h1>
-    <p class="hero-sub">Team Liquid's Indonesian Mobile Legends squad. The lineup, the results and their sources, in one place.</p>
+    <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
+    <p class="hero-sub">A record you can check. The lineup, the results and their sources for Team Liquid's Indonesian Mobile Legends squad.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
     <div class="hero-stats"><span class="pill">3rd · MPL ID S18</span><span class="pill">71–50 · match record</span><span class="pill">12–4 · regular season</span></div>
   </section>
