@@ -391,6 +391,13 @@ Object.assign(TO_ID, {
   'Search site sections in header': 'Cari bagian di header',
   'Search site sections in footer': 'Cari bagian di footer',
   'Team Liquid ID crest — home': 'Lambang Team Liquid ID — beranda',
+  'Five starters named on 7 August. 71–50 since May 2024.': 'Lima pemain utama diumumkan 7 Agustus. 71–50 sejak Mei 2024.',
+  'View roster →': 'Lihat roster →',
+  'NO. 04 IS ANAVER (BENCH)': 'NO. 04 ADALAH ANAVER (CADANGAN)',
+  'S18 standings and playoff path. One page shows 0–0, conflicting with 12–4.': 'Klasemen dan jalur playoff S18. Satu halaman menampilkan 0–0, bertentangan dengan 12–4.',
+  'One step from the M6 title': 'Satu langkah dari gelar M6',
+  'The record in this window': 'Rekor dalam rentang ini',
+  'Liquipedia and Esports Charts both record 71 wins and 50 losses from 21 May 2024 to 2 October 2026.': 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan dari 21 Mei 2024 hingga 2 Oktober 2026.',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
