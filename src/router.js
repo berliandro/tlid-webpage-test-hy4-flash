@@ -8,9 +8,7 @@ import { renderHistory } from './pages/history.js';
 import { renderSources } from './pages/sources.js';
 import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
-import { laceTop } from './lib/ui.js';
 import { translate, applyLanguage } from './i18n.js';
-import { applyScrollMotion } from './motion.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -58,16 +56,13 @@ function shell(content) {
   <header class="topbar">
     <div class="topbar-left">
       <a class="brand" href="/" aria-label="Team Liquid ID — home"><span class="brand-mark"><img src="public/assets/tlid-mark.svg" alt="" /></span>TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
-      <span class="pill active"><span class="dot"></span>Team</span>
       <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
     <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
     <div class="topbar-right">
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
-      <span class="icon-btn" aria-hidden="true">✦</span>
-      <span class="icon-btn" aria-hidden="true">◐</span>
-      <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED <span class="icon-btn">+</span></span>
+      <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED</span>
       <span class="avatar" aria-hidden="true"><img src="public/assets/apple-touch-icon.png" alt="" /></span>
     </div>
   </header>
@@ -136,7 +131,6 @@ export function render() {
   result.mount?.();
   wireNav();
   applyLanguage(document);
-  applyScrollMotion();
 }
 
 function wireNav() {

@@ -1,7 +1,6 @@
 import { starters, substitutes } from '../data/players.js';
 import { sourceNote } from '../lib/ui.js';
 
-const tints = { Aran: 'purple', Kevin: 'red', Lyoni: 'cyan', Drichel: 'green', Keven: 'blue' };
 const fan = starters.map((p) => `
   <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}">
     <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle} of Team Liquid ID" />
@@ -20,6 +19,8 @@ export function renderHome() {
     html: `
 <div class="home-page">
   <section class="hero" aria-labelledby="home-title">
+    <span class="float-chip left" aria-hidden="true"><img src="public/assets/cards/Aran.jpg" alt="" /></span>
+    <span class="float-chip right" aria-hidden="true"><img src="public/assets/cards/Lyoni.jpg" alt="" /></span>
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
     <p class="hero-sub">A record you can check. The lineup, the results and their sources for Team Liquid's Indonesian Mobile Legends squad.</p>
