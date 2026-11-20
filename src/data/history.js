@@ -12,7 +12,7 @@ export const milestones = [
     confidence: 'secondary',
   },
   {
-    year: '21 Mei 2024', kicker: 'Akuisisi',
+    year: '21 /05 2024', kicker: 'Akuisisi',
     title: 'STUN.GG, AURA Esports, ECHO',
     text: 'Team Liquid mengumumkan akuisisi STUN.GG beserta propertinya, AURA Esports di Indonesia dan ECHO Esports di Filipina. Nilai transaksi tidak diungkapkan.',
     sources: ['ESI', 'ESA', 'ESPN_G', 'WIKI_TL'],
@@ -26,14 +26,14 @@ export const milestones = [
     confidence: 'conflict recorded',
   },
   {
-    year: '27 Okt 2024', kicker: 'Gelar pertama',
+    year: '27 /10 2024', kicker: 'Gelar pertama',
     title: 'Juara MPL Indonesia S14',
     text: 'TLID mengalahkan RRQ Hoshi 4–3 di grand final dan mengamankan gelar MPL Indonesia Season 14 sekaligus tiket M6.',
     sources: ['LIQ_S14', 'LIQ_RES', 'WIKI_MPL'],
     confidence: 'verified',
   },
   {
-    year: '15 Des 2024', kicker: 'Panggung dunia',
+    year: '15 /12 2024', kicker: 'Panggung dunia',
     title: 'Runner-up M6 World Championship',
     text: 'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 Desember; perbedaan satu hari ini dicatat, bukan disembunyikan.',
     sources: ['LIQ_M6', 'LIQ_TEAM', 'MOONTON'],
@@ -47,14 +47,14 @@ export const milestones = [
     confidence: 'verified',
   },
   {
-    year: '7 Agu 2026', kicker: 'Roster baru',
+    year: '7 /08 2026', kicker: 'Roster baru',
     title: 'The Wave Rises Again',
     text: 'TLID mengumumkan susunan S18: Aran, Kevin, Drichel, Anaver, Keven, Lyoni, dengan Honjaw dan Facehugger di staf pelatih.',
     sources: ['IG_S18', 'VCG', 'TITO'],
     confidence: 'verified with corroboration',
   },
   {
-    year: '8 Nov 2026', kicker: 'S18',
+    year: '8 /11 2026', kicker: 'S18',
     title: 'Puncak klasemen, posisi 3',
     text: 'TLID finis pertama di musim reguler S18 dengan rekor 12–4, lalu ditutup di posisi 3 setelah kalah 3–4 dari BTR di final braket bawah. Dua tim teratas lolos ke M8.',
     sources: ['LIQ_S18', 'DOT', 'ITEM', 'MPL_TEAM'],

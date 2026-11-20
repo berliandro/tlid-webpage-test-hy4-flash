@@ -19,7 +19,7 @@ export function renderPlayer(slug) {
     <div class="empty-stat"><b>${unknown('Belum dipublikasikan')}</b><p>Statistik musiman untuk ${p.handle} tidak tersedia dalam data yang dikumpulkan. Kami tidak mengisi dengan nol atau perkiraan.</p>${sourceNote(p.sources)}</div>`;
 
   const mvp = p.slug === 'kevin' ? `
-    <div class="mvp-mark"><span>MVP standings</span><b>${mvpLeader.points} poin · peringkat ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
+    <div class="mvp-mark"><span>Klasemen MVP</span><b>${mvpLeader.points} poin · peringkat ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
 
   return {
     html: `
@@ -52,7 +52,7 @@ export function renderPlayer(slug) {
   ${sectionHead('Profil', 'Catatan kompetitif')}
   <p class="bio-lead">${p.bio}</p>
   <ul class="fact-list">${p.facts.map((f) => `<li>${f}</li>`).join('')}</ul>
-  ${p.conflict ? `<aside class="conflict"><p class="kicker">Konflik sumber</p><p>${p.conflict}</p></aside>` : ''}
+  ${p.conflict ? `<aside class="conflict"><p class="kicker">Konflik sumber</p><p>${p.conflict}</p><a class="conflict-link" href="/sources">Lihat sumber →</a></aside>` : ''}
 </section>
 
 <section class="section">
