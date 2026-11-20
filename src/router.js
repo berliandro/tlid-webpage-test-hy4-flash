@@ -58,10 +58,10 @@ function shell(content) {
   <header class="topbar">
     <div class="topbar-left">
       <a class="brand" href="/" aria-label="Team Liquid ID — home">TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
-      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
+      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in header" aria-controls="search-status" /><span>⌘</span></label>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
-    <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
+    <a class="center-mark" href="/" aria-label="Team Liquid ID crest — home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
     <div class="topbar-right">
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
       <span class="pill status-pill"><span class="coin"></span> S18 · SINGLE-SOURCE</span>
@@ -77,7 +77,7 @@ function shell(content) {
     </div>
     <form class="footer-search" role="search" data-search-form>
       <label for="site-search-footer">Find a section</label>
-      <input id="site-search-footer" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" />
+      <input id="site-search-footer" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in footer" aria-controls="search-status" />
       <button type="button" data-search-reset>Reset</button>
       <p id="search-status" class="search-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
     </form>

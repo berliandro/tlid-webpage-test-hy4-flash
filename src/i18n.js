@@ -388,6 +388,9 @@ Object.assign(TO_ID, {
   'What cannot be confirmed': 'Yang tidak bisa dipastikan', 'Deliberately blank': 'Sengaja dikosongkan',
   'list': 'daftar', '26 sources': '26 sumber', 'Ledger': 'Daftar',
   'S18 · SINGLE-SOURCE': 'S18 · SUMBER TUNGGAL',
+  'Search site sections in header': 'Cari bagian di header',
+  'Search site sections in footer': 'Cari bagian di footer',
+  'Team Liquid ID crest — home': 'Lambang Team Liquid ID — beranda',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
