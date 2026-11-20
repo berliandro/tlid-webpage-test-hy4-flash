@@ -2,7 +2,7 @@
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 
-The site is an aged printed archive: warm paper fibre, heavy ink rules, oxblood wax seals, small inlined game icons, short factual copy, and one focal point per viewport. Every route shares the same system and tokens.
+The site uses Team Liquid's exact published colors with a restrained CC0 grain texture blended into selected surfaces. Composition, Gloock typography, inlined CC BY icons and short factual copy create the identity. Every route shares the same system and tokens.
 
 ## Run locally
 

@@ -24,7 +24,7 @@ export function renderHome() {
   <section class="home-hero" aria-labelledby="home-title">
     <div class="home-identity">
       <h1 id="home-title" class="home-title">${icon('horse', 'icon-lg')}<span>Team Liquid <em>ID</em></span></h1>
-      <p class="home-deck">Enam pemain. Satu musim. Rekor yang bisa diverifikasi.</p>
+      <p class="home-deck">Lima pemain utama. Satu musim. Rekor yang bisa diverifikasi.</p>
       <a class="home-cta" href="/players">Lihat roster ${icon('quill')}</a>
       <span class="home-thread" aria-hidden="true"></span>
     </div>
@@ -40,7 +40,7 @@ export function renderHome() {
 
   <section class="home-players" aria-labelledby="players-band-title">
     <div class="home-head">
-      <div><p class="kicker">01 / Roster</p><h2 id="players-band-title">Enam pemain S18</h2></div>
+      <div><p class="kicker">01 / Roster</p><h2 id="players-band-title">Lima pemain utama S18</h2></div>
       <p>Susunan diumumkan 2026-08-07. Potret bersumber, bukan ukiran.</p>
     </div>
     <div class="band">${band}</div>
