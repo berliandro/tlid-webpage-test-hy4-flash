@@ -4,7 +4,7 @@ export const stories = [
     kicker: 'Gelar',
     figure: '4–3',
     title: 'Tujuh game untuk gelar pertama',
-    text: 'Grand Final MPL Indonesia Season 14 berakhir 4–3 atas RRQ Hoshi pada 27 /10 2024. Kemenangan ini juga membawa TLID ke M6 World Championship.',
+    text: 'Grand Final MPL Indonesia Season 14 berakhir 4–3 atas RRQ Hoshi pada 2024-10-27. Kemenangan ini juga membawa TLID ke M6 World Championship.',
     sources: ['LIQ_S14', 'LIQ_RES', 'WIKI_MPL'],
   },
   {
@@ -36,7 +36,7 @@ export const stories = [
     kicker: 'Skala',
     figure: '71–50',
     title: 'Rekor dalam jendela riset',
-    text: 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 21 /05 2024 hingga 2 /10 2026.',
+    text: 'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 2024-05-21 hingga 2026-10-2.',
     sources: ['LIQ_TEAM', 'ESC'],
   },
   {

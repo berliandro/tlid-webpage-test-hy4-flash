@@ -25,7 +25,7 @@ export function renderStats() {
 </section>
 
 <section class="section">
-  ${sectionHead('Perbandingan', 'Tiga pemain dengan data musiman', 'Data MLBBHub · 17 Nov 2026, 14:13 UTC. Klik metrik untuk mengubah perbandingan.')}
+  ${sectionHead('Perbandingan', 'Tiga pemain dengan data musiman', 'Data MLBBHub · 2026-11-17, 14:13 UTC. Klik metrik untuk mengubah perbandingan.')}
   <div class="metric-controls" role="group" aria-label="Pilih metrik perbandingan">
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>

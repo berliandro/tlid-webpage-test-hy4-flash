@@ -81,7 +81,7 @@ function shell(content) {
       <p class="motion-note">Gerakan dikurangi otomatis bila sistem memintanya.</p>
     </div>
     <div class="footer-bottom-row">
-      <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.</p>
+      <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 2026-11-17 · status tidak diketahui sengaja dibiarkan kosong.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     </div>
   </footer>`;

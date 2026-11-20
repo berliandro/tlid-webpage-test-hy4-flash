@@ -7,7 +7,7 @@ export function renderSources() {
 <section class="page-head">
   <h1>Daftar <em>sumber</em></h1>
   <p class="kicker">Provenansi</p>
-  <p class="lede">Semua sumber yang dipakai dalam situs ini. Setiap angka dan peristiwa membawa catatan sumber di halaman tempatnya muncul. Retrieval date seragam: 17 November 2026.</p>
+  <p class="lede">Semua sumber yang dipakai dalam situs ini. Setiap angka dan peristiwa membawa catatan sumber di halaman tempatnya muncul. Retrieval date seragam: 2026-11-17.</p>
 </section>
 <section class="section">
   ${sectionHead('Ledger', `${sourceList.length} sumber tercatat`)}
