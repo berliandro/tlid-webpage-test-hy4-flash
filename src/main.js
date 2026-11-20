@@ -6,8 +6,10 @@ startRouter();
 document.addEventListener('click', (e) => {
   if (e.target.closest('[data-lang-toggle]')) {
     const y = window.scrollY;
+    const disclosure = [...document.querySelectorAll('.source-note, .glossary')].map((n) => n.open);
     setLang(getLang() === 'en' ? 'id' : 'en');
     render();
+    [...document.querySelectorAll('.source-note, .glossary')].forEach((n, i) => { n.open = disclosure[i] !== false; });
     window.scrollTo({ top: y, behavior: 'instant' });
   }
 });

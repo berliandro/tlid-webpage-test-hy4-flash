@@ -53,7 +53,7 @@ export function renderHome() {
 
   <section class="home-gates" aria-labelledby="gates-title">
     <h2 id="gates-title">Masuk lebih dalam</h2>
-    <p class="archive-note">Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya.</p>
+    <p class="archive-note">Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya. <a href="#glossary">Lihat glosarium →</a></p>
     <nav class="gate-row" aria-label="Bagian lain">
       <a href="/statistics"><b>Statistik</b><span>KDA, MVP, batas data</span></a>
       <a href="/matches"><b>Pertandingan</b><span>Turnamen dan hasil</span></a>

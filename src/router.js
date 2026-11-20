@@ -67,7 +67,7 @@ function shell(content, title) {
       <div><p class="footer-label">Navigasi</p>${navItems.map((n) => `<a href="${n.href}">${n.label}</a>`).join('')}</div>
       <div><p class="footer-label">Data</p><a href="/sources">Daftar sumber</a><a href="/statistics">Catatan verifikasi</a><a href="/players">Roster S18</a></div>
     </div>
-    <details class="glossary" open><summary>Glosarium</summary><dl>
+    <details class="glossary" id="glossary" open><summary>Glosarium</summary><dl>
       <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.</dd></div>
       <div><dt>MPL ID</dt><dd>Liga MLBB profesional Indonesia tempat TLID berkompetisi.</dd></div>
       <div><dt>S18</dt><dd>Season 18, musim kompetisi yang menjadi acuan roster saat ini.</dd></div>

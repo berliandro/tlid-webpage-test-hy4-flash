@@ -42,7 +42,7 @@ h1,h2,h3{text-wrap:balance;overflow-wrap:break-word}
 .lace-band.top{top:0}.lace-band.bottom{bottom:0;transform:rotate(180deg)}
 .lace-side{position:absolute;top:22px;bottom:22px;width:10px;border-left:1px solid var(--brass-deep);border-right:1px solid var(--brass-deep);opacity:.7}
 .lace-side.left{left:10px}.lace-side.right{right:10px}
-.ambient-layer{position:absolute;inset:22px;background:url('../public/assets/ink-hatch.svg') repeat;background-size:120px 120px;opacity:.25;animation:ink-drift 120s linear infinite alternate}
+.ambient-layer{position:absolute;inset:22px;background:url('../public/assets/ink-hatch.svg') repeat;background-size:120px 120px;opacity:.12;animation:ink-drift 120s linear infinite alternate}
 @keyframes ink-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-18px,10px,0)}}
 body.is-hidden *{animation-play-state:paused!important}
 
@@ -168,6 +168,7 @@ h1 em,h2 em{font-style:italic;color:var(--brass);font-family:var(--type-note)}
 .row-copy h2{font-family:var(--type-display);font-size:clamp(40px,5vw,72px);font-weight:400;line-height:1;color:var(--bone)}
 .row-tagline{font-family:var(--type-note);font-style:italic;font-size:26px;color:var(--brass)}
 .row-meta{font-size:13px;color:var(--muted)}
+.breadcrumb{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan);margin-top:10px}
 .player-hero{max-width:1320px;margin:0 auto;padding:32px clamp(20px,5vw,72px)}
 .player-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:28px}
 .player-portrait{position:relative}
