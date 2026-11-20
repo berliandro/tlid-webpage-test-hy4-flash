@@ -1,13 +1,13 @@
-# Team Liquid ID — The Liquid Ledger
+# Team Liquid ID — Aged Print Archive
 
 An independent, unofficial concept site about Team Liquid's Indonesian Mobile Legends: Bang Bang squad. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton.
 
-The site is a natural-history field ledger of a competitive horse: engraved horse plate, hatched ink ground, bone specimen slips, brass rules, oxblood status seals, and tabular competitive records. Every route uses the same world and the same tokens.
+The site is an aged printed archive: warm paper fibre, heavy ink rules, oxblood wax seals, small inlined game icons, short factual copy, and one focal point per viewport. Every route shares the same system and tokens.
 
 ## Run locally
 
 ```bash
-npm run dev      # http://localhost:5173
+npm run dev
 npm run check
 npm run build    # dist/
 npm run preview
@@ -19,14 +19,14 @@ No dependencies to install. For this project, every implementation is committed 
 
 `/`, `/players`, `/players/:slug`, `/statistics`, `/matches`, `/discover`, `/history`, `/sources`.
 
-## Data and attribution
-
-`src/data/` holds curated research records; `src/data/sources.js` holds the 24-source ledger with URLs, retrieval dates and confidence. Unknown values stay null or are rendered by `unknown()`. Conflicts are displayed, not silently resolved. Player portraits are CC BY-SA 3.0 from Liquipedia Commons; Anaver uses a labeled synthetic illustration. The browser icon is the user-supplied TLID crest.
-
 ## Design
 
-`DESIGN.md` is normative for the current world. Type roles (`--type-display`, `--type-note`, `--type-body`, `--type-label`, `--type-meta`) and size steps (`--fs-*`) are tokens. Body is 16px/1.55 with a 38rem measure, numerals are tabular, `font-synthesis: none`, functional text is at least 11px, and `--tap` is 44px with coarse-pointer coverage. A skip link is first in the DOM; focus rings contrast on dark and paper surfaces; reduced-motion keeps the static composition; ambient motion pauses when the tab is hidden.
+`DESIGN.md` is normative. Type roles are `--type-display`, `--type-headline`, `--type-title`, `--type-body`, `--type-label`, `--type-meta`, with `--fs-*` steps. Body is 16px at 1.6 line-height with a 38rem measure. Functional text is at least 11px, numerals are tabular, `font-synthesis: none`, and `--tap` is 44px with coarse-pointer coverage. Grain is a 256px CC0 tile blended into the background; no animated filters or large images.
+
+## Data and credits
+
+`src/data/` holds curated research records; `src/data/sources.js` holds the source ledger with URLs, retrieval dates and confidence. Unknowns stay null or are labeled. Conflicts are shown, not silently resolved. Icons and textures are credited in `CREDITS.md` and in the site footer.
 
 ## Validation
 
-`npm run check`, `node --check`, `impeccable detect --json index.html`, an asset-reference check, clean install/build, and live URL 200 with cache-busted assets are run each iteration. See `RESEARCH.md` and `research/SOURCES.md` for the source material.
+`npm run check`, `node --check`, `impeccable detect --json index.html`, an asset-reference check, clean build, and live URL 200 with cache-busted assets are run each iteration.

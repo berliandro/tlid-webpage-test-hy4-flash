@@ -215,6 +215,11 @@ const DICT = {
 
   // history
   'Garis waktu': 'Timeline',
+  'Arsip': 'Archive',
+  'Kumpulan fakta bersumber, bukan siaran langsung.': 'Sourced facts, not a live feed.',
+  'Sumber': 'Source',
+  'Penerbit, tautan, tanggal ambil, dan tingkat keyakinan tiap fakta.': 'Publisher, URL, retrieval date and confidence for each fact.',
+  'Roster S18 diumumkan': 'S18 roster announced',
   'Roster S18 menurut pengumuman resmi 2026-08-07.': 'S18 roster per the official 2026-08-07 announcement.',
   'Kevin, Keven, Anaver': 'Kevin, Keven, Anaver',
   'identitas pribadi belum terverifikasi.': 'personal identities are not verified.',

@@ -18,7 +18,7 @@ The 1K color/displacement map was reduced to a 256px seamless tile and contrast-
 
 ## Player portraits
 
-Aran, Kevin, Drichel, Keven and Lyoni portraits from **Liquipedia Commons**, **CC BY-SA 3.0**, supplied with a provenance manifest. Anaver uses a synthetic illustration authored for this project and labeled as such.
+Aran, Kevinn (shown as Kevin), Drichel, Keven and Lyoni portraits from **Liquipedia Commons**, **CC BY-SA 3.0**, supplied with a provenance manifest. Anaver uses a synthetic illustration authored for this project and labeled as such.
 
 ## Team mark
 

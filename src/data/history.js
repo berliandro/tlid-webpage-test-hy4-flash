@@ -48,7 +48,7 @@ export const milestones = [
   },
   {
     year: '2026-08-07', kicker: 'Roster baru',
-    title: 'The Wave Rises Again',
+    title: 'Roster S18 diumumkan',
     text: 'TLID mengumumkan susunan S18: Aran, Kevin, Drichel, Anaver, Keven, Lyoni, dengan Honjaw dan Facehugger di staf pelatih.',
     sources: ['IG_S18', 'VCG', 'TITO'],
     confidence: 'verified with corroboration',
