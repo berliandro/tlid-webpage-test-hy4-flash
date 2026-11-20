@@ -25,6 +25,13 @@ img{max-width:100%;display:block}
 p{max-width:var(--measure)}
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 ::selection{background:var(--cyan);color:var(--panel)}
+/* browser surfaces carry the palette too */
+a{text-underline-offset:3px}
+body{caret-color:var(--cyan)}
+html{scrollbar-color:var(--pill) var(--panel);scrollbar-width:thin}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--panel)}
+::-webkit-scrollbar-thumb{background:var(--pill);border-radius:999px;border:2px solid var(--panel)}
 .sr-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .skip-link{position:absolute;left:24px;top:-70px;z-index:300;background:var(--text);color:var(--panel);padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700}
 .skip-link:focus{top:18px}

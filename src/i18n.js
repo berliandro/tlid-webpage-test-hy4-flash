@@ -370,6 +370,23 @@ Object.assign(TO_ID, {
   'Search by section name in the navigation.': 'Cari berdasarkan nama bagian di navigasi.',
   'Motion stops when your system asks for less.': 'Gerakan berhenti bila sistem memintanya.',
   'Source note': 'Catatan sumber',
+  // Current authored headings and labels, kept in step with the shipped copy.
+  'Five starters.': 'Lima pemain utama.', 'One season.': 'Satu musim.',
+  'Roster notes': 'Catatan roster', 'Anaver is listed with the substitutes.': 'Anaver tercatat sebagai cadangan.',
+  'Third at MPL ID S18.': 'Posisi ketiga di MPL ID S18.',
+  'The five': 'Lima pemain utama', 'Announced 7 August 2026.': 'Diumumkan 7 Agustus 2026.',
+  'What we left blank': 'Yang kami biarkan kosong',
+  'the labels attached': 'label yang melekat',
+  'Three players, one season of numbers': 'Tiga pemain, satu musim angka',
+  'Where sources disagree': 'Di mana sumber berbeda',
+  'GPM, DPM, CS and objective splits are missing': 'GPM, DPM, CS dan rincian objektif tidak tersedia',
+  'Match': 'Pertandingan', 'record': 'rekor', 'Recorded': 'Tercatat',
+  'Tournaments on file': 'Turnamen yang tercatat', 'The last playoff run': 'Playoff terakhir',
+  'One row is one tournament, not one match.': 'Satu baris adalah satu turnamen, bukan satu pertandingan.',
+  'this team real': 'tim ini nyata', 'Not covered': 'Tidak dibahas', 'Blank space': 'Ruang kosong',
+  'A timeline': 'Linimasa', 'still unfinished': 'yang belum selesai',
+  'What cannot be confirmed': 'Yang tidak bisa dipastikan', 'Deliberately blank': 'Sengaja dikosongkan',
+  'list': 'daftar', '26 sources': '26 sumber', 'Ledger': 'Daftar',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
