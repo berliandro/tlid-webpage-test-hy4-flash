@@ -20,7 +20,7 @@ function scan(root) {
   const seen = new Map();
   root.querySelectorAll(REVEAL_SELECTORS.join(',')).forEach((el) => {
     if (el.hasAttribute('data-reveal') || el.closest('[data-reveal]')) return;
-    if (el.closest('.season-moment, .home-closing')) return;
+    if (el.closest('.season-moment, .home-closing, .roster-notes')) return;
     const parent = el.parentElement;
     const index = seen.get(parent) || 0;
     seen.set(parent, index + 1);

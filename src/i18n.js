@@ -414,6 +414,7 @@ Object.assign(TO_ID, {
   '02 / Season': '02 / Musim', 'The verified record': 'Rekor terverifikasi',
   'One season, one sourced line.': 'Satu musim, satu baris bersumber.',
   'Verified record': 'Rekor terverifikasi',
+  'Verified record · MPL ID S18': 'Rekor terverifikasi · MPL ID S18',
   '174–141 games · 21 May 2024 – 2 October 2026. Third at MPL ID S18; best result S14 champion.': '174–141 game · 21 Mei 2024 – 2 Oktober 2026. Posisi ketiga di MPL ID S18; hasil terbaik juara S14.',
   'Keep exploring': 'Lanjut jelajah', 'The people behind the record.': 'Orang-orang di balik rekor itu.',
   'Five profiles, season numbers and the sources for both.': 'Lima profil, angka musim, dan sumber untuk keduanya.',

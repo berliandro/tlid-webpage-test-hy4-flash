@@ -25,7 +25,7 @@ export function renderHome() {
   </section>
   <p class="fan-hint"><span class="swipe-hint">SWIPE TO BROWSE · TAP A CARD FOR ITS STORY</span></p>
 
-  <section class="section">
+  <section class="section roster-notes">
     <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>Roster notes</h2></div><p class="section-sub">Anaver is listed with the substitutes.</p></div>
     <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div><p class="bench-note">No. 04 is Anaver, a substitute. Synthetic illustration, not a real portrait.</p></details>
     ${sourceNote(['IG_S18'], 'Roster source')}
@@ -33,8 +33,8 @@ export function renderHome() {
 
   <section class="section season-moment">
     <div class="section-head"><div><span class="kicker">02 / Season</span><h2>The verified record</h2></div><p class="section-sub">One season, one sourced line.</p></div>
-    <div class="tile tile-gold season-tile">
-      <span class="tile-tag">Verified record</span>
+    <div class="tile season-tile">
+      <span class="tile-tag">Verified record · MPL ID S18</span>
       <b>71–50</b>
       <p>174–141 games · 21 May 2024 – 2 October 2026. Third at MPL ID S18; best result S14 champion.</p>
     </div>
