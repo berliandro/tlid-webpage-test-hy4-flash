@@ -12,6 +12,8 @@ const metrics = {
   games: { label: 'Game tercatat', max: 60, get: (p) => p.games, fmt: (v) => String(v), note: '' },
 };
 
+const pageSources = ['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'];
+
 const totalRows = [
   ['Kills', teamTotals.kills], ['Deaths', teamTotals.deaths], ['Assists', teamTotals.assists],
   ['Gold', teamTotals.gold.toLocaleString('id-ID')], ['Damage', teamTotals.damage.toLocaleString('id-ID')],
@@ -23,7 +25,7 @@ export function renderStats() {
     html: `
 <section class="page-head analytics-head compact-head">
   <h1>Numbers with<br><em>the labels attached</em></h1>
-  ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
+  ${sourceNote(pageSources)}
 </section>
 
 <section class="section">
@@ -54,6 +56,10 @@ export function renderStats() {
 
 <section class="section unavailable-block">
   ${sectionHead('Not available', 'GPM, DPM, CS and objective splits are missing')}
+  <div class="unavailable">
+    <p>GPM, DPM, CS and objective details are not in the collected sources.</p>
+    ${sourceNote(pageSources)}
+  </div>
 </section>`,
     mount() {
       const chart = document.getElementById('bar-chart');
