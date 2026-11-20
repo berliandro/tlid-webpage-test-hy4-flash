@@ -55,6 +55,7 @@ function shell(content, title) {
   ${laceTop()}
   <header class="site-header">
     <a class="brand" href="/" aria-label="Team Liquid ID — beranda">TEAM LIQUID <b>ID</b><span class="brand-meta">MPL-ID / MLBB</span></a>
+    <button class="lang-toggle header-lang" type="button" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buka navigasi"><span></span><span></span><span></span></button>
     <nav id="primary-nav" class="site-nav" aria-label="Navigasi utama">${nav}</nav>
   </header>
@@ -71,6 +72,7 @@ function shell(content, title) {
       <div><dt>S18</dt><dd>Season 18, musim kompetisi yang menjadi acuan roster saat ini.</dd></div>
       <div><dt>KDA</dt><dd>Rasio kill, death, assist. Semakin tinggi, semakin baik.</dd></div>
       <div><dt>MVP</dt><dd>Pemain paling berkontribusi menurut klasemen resmi liga.</dd></div>
+      <div><dt>Kill participation</dt><dd>Persentase kill tim yang melibatkan pemain tersebut.</dd></div>
     </dl></details>
     <div class="footer-bottom-row">
       <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.</p>
@@ -139,6 +141,21 @@ export function startRouter() {
     navigate(link.getAttribute('href'));
   });
 
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const nav = document.getElementById('primary-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !nav.classList.contains('open')) return;
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('primary-nav');
+    if (!nav || !nav.classList.contains('open')) return;
+    if (e.target.closest('#primary-nav') || e.target.closest('.nav-toggle')) return;
+    nav.classList.remove('open');
+    document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+  });
   window.addEventListener('popstate', render);
   render();
 }

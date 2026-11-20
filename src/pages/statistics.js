@@ -71,11 +71,21 @@ export function renderStats() {
         }).join('');
         applyLanguage(chart);
       };
-      draw('kda');
+      const requested = new URLSearchParams(location.search).get('m');
+      const initial = metrics[requested] ? requested : 'kda';
+      buttons.forEach((b) => {
+        const on = b.dataset.metric === initial;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      draw(initial);
       buttons.forEach((btn) => btn.addEventListener('click', () => {
         buttons.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('active');
         btn.setAttribute('aria-pressed', 'true');
+        const url = new URL(location.href);
+        url.searchParams.set('m', btn.dataset.metric);
+        history.replaceState({}, '', url);
         draw(btn.dataset.metric);
       }));
     },

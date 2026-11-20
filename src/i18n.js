@@ -276,6 +276,9 @@ const DICT = {
   'Rasio kill, death, assist. Semakin tinggi, semakin baik.': 'Kill/death/assist ratio. Higher is better.',
   'MVP': 'MVP',
   'Pemain paling berkontribusi menurut klasemen resmi liga.': 'The most contributing player per the league’s official standings.',
+  'Kill participation': 'Kill participation',
+  'Persentase kill tim yang melibatkan pemain tersebut.': 'Share of team kills involving that player.',
+  'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya.': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence.',
 };
 
 // Phrase fallbacks for dynamically composed strings not covered by exact keys.
