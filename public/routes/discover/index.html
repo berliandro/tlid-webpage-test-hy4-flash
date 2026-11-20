@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Loading…</title></head>
+<body>
+<script>
+(function () {
+  var extra = location.search ? '&' + location.search.slice(1) : '';
+  location.replace('../index.html?p=/discover' + extra + location.hash);
+})();
+</script>
+</body>
+</html>
