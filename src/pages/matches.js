@@ -31,7 +31,7 @@ export function renderMatches() {
 </section>
 
 <section class="section">
-  ${sectionHead('S18', 'Jalur playoff terakhir', 'Jatim Expo, Surabaya · 4–2026-11-8')}
+  ${sectionHead('S18', 'Jalur playoff terakhir', 'Jatim Expo, Surabaya · 4–--0')}
   <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Sumber')}</li>`).join('')}</ol>
 </section>
 

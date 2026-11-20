@@ -47,14 +47,14 @@ export const milestones = [
     confidence: 'verified',
   },
   {
-    year: '2026-08-7', kicker: 'Roster baru',
+    year: '--0', kicker: 'Roster baru',
     title: 'The Wave Rises Again',
     text: 'TLID mengumumkan susunan S18: Aran, Kevin, Drichel, Anaver, Keven, Lyoni, dengan Honjaw dan Facehugger di staf pelatih.',
     sources: ['IG_S18', 'VCG', 'TITO'],
     confidence: 'verified with corroboration',
   },
   {
-    year: '2026-11-8', kicker: 'S18',
+    year: '--0', kicker: 'S18',
     title: 'Puncak klasemen, posisi 3',
     text: 'TLID finis pertama di musim reguler S18 dengan rekor 12–4, lalu ditutup di posisi 3 setelah kalah 3–4 dari BTR di final braket bawah. Dua tim teratas lolos ke M8.',
     sources: ['LIQ_S18', 'DOT', 'ITEM', 'MPL_TEAM'],
