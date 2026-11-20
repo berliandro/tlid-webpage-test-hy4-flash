@@ -19,40 +19,37 @@ export function renderStats() {
     html: `
 <section class="page-head analytics-head">
   <h1>Numbers with<br><em>the labels attached</em></h1>
-  <p class="kicker">Statistics</p>
-  <p class="lede">No guesses. When sources disagree, we show both and leave the rest blank.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
 </section>
 
 <section class="section">
-  ${sectionHead('Comparison', 'Three players, one season of numbers', 'MLBBHub, 17 November 2026. Choose a metric to compare.')}
+  ${sectionHead('Comparison', 'Three players, one season of numbers', 'MLBBHub, 17 November 2026.')}
   <div class="metric-controls" role="group" aria-label="Pilih metrik perbandingan">
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>
   <div class="bar-chart" id="bar-chart"></div>
-  <p class="chart-note">Drichel's 6.39 KDA also appears in the official MPL ID Top 5. Kevin's role is disputed.</p>
+  <p class="chart-note">Drichel's 6.39 KDA is also in the MPL ID Top 5.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'IG_S18'])}
 </section>
 
 <section class="section">
-  ${sectionHead('Team', 'Totals without a season label', 'The same figures appear in four official stat feeds with different season titles.')}
+  ${sectionHead('Team', 'Totals without a season label', 'Four official feeds show the same totals under different season titles.')}
   <div class="totals-grid">${totalRows.map(([label, value]) => `<div class="total-cell"><span>${label}</span><b>${value}</b></div>`).join('')}</div>
-  ${sourceNote(teamTotals.sources, 'Sumber total tim')}
+  ${sourceNote(teamTotals.sources, 'Team totals')}
 </section>
 
 <section class="section split-section">
   <div><h3 class="subhead">MVP</h3><div class="mvp-card"><span>${mvpLeader.handle}</span><b>${mvpLeader.points}</b><small>points · rank ${mvpLeader.rank}</small></div>${sourceNote(mvpLeader.sources)}</div>
-  <div><h3 class="subhead">Rekor</h3><div class="record-stack">${records.map((r) => `<div><b>${r.value}</b><span>${r.label}</span><small>${r.detail}</small>${sourceNote(r.sources, 'Sumber')}</div>`).join('')}</div></div>
+  <div><h3 class="subhead">Rekor</h3><div class="record-stack">${records.map((r) => `<div><b>${r.value}</b><span>${r.label}</span><small>${r.detail}</small>${sourceNote(r.sources, 'Source')}</div>`).join('')}</div></div>
 </section>
 
 <section class="section">
-  ${sectionHead('Limits', 'Conflicts we do not hide')}
-  <div class="conflict-grid">${statConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">See sources</a>${sourceNote(c.sources)}</article>`).join('')}</div>
+  ${sectionHead('Conflicts', 'Where sources disagree')}
+  <div class="conflict-grid">${statConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>
 
 <section class="section unavailable-block">
-  ${sectionHead('Not available', 'Data we do not have')}
-  <p>GPM, DPM, CS and objective splits are not in the collected sources.</p>
+  ${sectionHead('Not available', 'GPM, DPM, CS and objective splits are missing')}
 </section>`,
     mount() {
       const chart = document.getElementById('bar-chart');

@@ -9,20 +9,17 @@ export function renderMatches() {
     html: `
 <section class="page-head">
   <h1>Match<br><em>record</em></h1>
-  <p class="kicker">Matches</p>
-  <p class="lede">Tournaments, dates, opponents, results. No invented fixtures.</p>
+  <p class="lede">No invented fixtures.</p>
 </section>
 
 <section class="section upcoming-section">
-  ${sectionHead('Upcoming', 'The empty state is deliberate')}
-  ${upcoming.available
-    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>S18 ended 8 November 2026. No verified fixtures after it.</p>${sourceNote(upcoming.sources)}</div>`
-    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>S18 ended 8 November 2026. No verified fixtures after it.</p>${sourceNote(upcoming.sources)}</div>`}
+  ${sectionHead('Upcoming', 'No verified fixtures')}
+  <div class="unavailable"><h3>S18 ended 8 November 2026</h3>${sourceNote(upcoming.sources)}</div>
 </section>
 
 <section class="section">
   ${sectionHead('Recorded', 'Tournaments on file', 'One row is one tournament, not one match.')}
-  <div class="filter-row" role="group" aria-label="Filter tahun turnamen">
+  <div class="filter-row" role="group" aria-label="Filter tournaments by year">
     <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">All</button>
     ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
     <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Order: newest ↓</button>
@@ -32,12 +29,12 @@ export function renderMatches() {
 
 <section class="section">
   ${sectionHead('S18', 'The last playoff run', 'Jatim Expo, Surabaya · 4–8 November 2026')}
-  <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Sumber')}</li>`).join('')}</ol>
+  <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Source')}</li>`).join('')}</ol>
 </section>
 
 <section class="section">
-  ${sectionHead('Conflicts', 'Notes on the record')}
-  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">See sources</a>${sourceNote(c.sources)}</article>`).join('')}</div>
+  ${sectionHead('Conflicts', 'Where sources disagree')}
+  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>`,
     mount() {
       const archive = document.getElementById('match-archive');

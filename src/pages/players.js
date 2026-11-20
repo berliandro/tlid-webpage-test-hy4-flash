@@ -7,7 +7,7 @@ export function renderPlayers() {
 <section class="page-head">
   <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
   <h1><span>The five</span></h1>
-  <p class="lede">The S18 lineup, announced 7 August 2026.</p>
+  <p class="lede">Announced 7 August 2026.</p>
   ${sourceNote([rosterNote.id], 'Why this roster')}
 </section>
 
@@ -25,7 +25,7 @@ export function renderPlayers() {
 </section>
 
 <section class="section note-section">
-  ${sectionHead('Notes', 'What we left blank', 'No real names, birth dates or statistics without a verified source.')}
+  ${sectionHead('Notes', 'What we left blank')}
   <div class="note-grid">
     <p><b>Kevin, Keven, Anaver</b> — personal identities are not verified.</p>
     <p><b>Kevin's role</b> — Jungler per S18, GOLD per MLBBHub. Both are labelled.</p>

@@ -22,7 +22,7 @@ export function renderPlayer(slug) {
       <div><b>${p.stat.games}</b><span>Games recorded</span></div>
       <div><b>${p.stat.k.toFixed(1)}/${p.stat.d.toFixed(1)}/${p.stat.a.toFixed(1)}</b><span>Average K/D/A</span></div>
     </div>
-    <p class="stat-caveat">Figures from MLBBHub, 17 November 2026, 14:13 UTC. Role per source: ${p.stat.listedRole}. ${p.slug === 'kevin' ? 'The 6.39 KDA belongs to Drichel; Kevin is 5.82.' : ''}</p>
+    <p class="stat-caveat">MLBBHub, 17 November 2026, 14:13 UTC. Role per source: ${p.stat.listedRole}.</p>
     ${sourceNote(['MLBBHUB', 'MPL_STATS'])}` : `
     <div class="empty-stat"><b>${unknown('Not published')}</b><p>Season statistics for ${p.handle} are not in the collected data. We do not fill the gap with zeroes or guesses.</p>${sourceNote(p.sources)}</div>`;
 
@@ -33,10 +33,9 @@ export function renderPlayer(slug) {
     html: `
 <section class="player-hero" style="--accent-rot:${p.index}deg">
   <a class="back-link" href="/players">← Back to roster</a>
-  <nav class="breadcrumb" aria-label="Location">TEAM LIQUID ID / PLAYERS / ${p.handle}</nav>
   <div class="player-grid">
     <div class="player-portrait">
-      <div class="portrait-frame"><img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /><span class="portrait-tag">Liquipedia Commons · CC BY-SA 3.0</span></div>
+      <div class="portrait-frame"><img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /></div>
       <span class="player-no">${p.index} / 06</span>
       ${p.photo ? sourceNote(['COMMONS'], 'Portrait licence') : ''}
     </div>
@@ -46,7 +45,6 @@ export function renderPlayer(slug) {
       <p class="script">${p.tagline}</p>
       <dl class="identity-list">
         <div><dt>Real name</dt><dd>${p.realName ? p.realName : unknown('Not published')}</dd></div>
-        <div><dt>Role</dt><dd>${p.role}</dd></div>
         <div><dt>Nationality</dt><dd>${p.nationality ? p.nationality : unknown()}</dd></div>
         <div><dt>Date of birth</dt><dd>${p.born ? p.born : unknown()}</dd></div>
         <div><dt>Joined</dt><dd>${p.joined}</dd></div>
@@ -60,7 +58,7 @@ export function renderPlayer(slug) {
   ${sectionHead('Profile', 'Competitive notes')}
   <p class="bio-lead">${shortBio[p.slug]}</p>
   <ul class="fact-list">${p.facts.map((f) => `<li>${f}</li>`).join('')}</ul>
-  ${p.conflict ? `<aside class="conflict"><p class="kicker">Source conflict</p><p>${p.conflict}</p><a class="conflict-link" href="/sources">See sources</a></aside>` : ''}
+  ${p.conflict ? `<aside class="conflict"><p class="kicker">Source conflict</p><p>${p.conflict}</p></aside>` : ''}
 </section>
 
 <section class="section">
