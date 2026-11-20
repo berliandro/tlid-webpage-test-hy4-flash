@@ -70,29 +70,29 @@ function shell(content) {
   <main id="main" tabindex="-1">${content}</main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Independent project. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0. Anaver uses a synthetic illustration.</p></div>
+      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver is synthetic.</p></div>
       <div><p class="footer-label">More</p><a href="/discover">Discover</a><a href="/history">History</a></div>
       <div><p class="footer-label">Data</p><a href="/sources">Sources</a></div>
     </div>
     <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
     <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
-      <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, the game TLID plays.</dd></div>
-      <div><dt>MPL ID</dt><dd>Indonesia's professional MLBB league.</dd></div>
-      <div><dt>S18</dt><dd>Season 18, the season this roster refers to.</dd></div>
-      <div><dt>KDA</dt><dd>Kills, deaths and assists per game on average.</dd></div>
-      <div><dt>MVP</dt><dd>The player with the most points in the official standings.</dd></div>
-      <div><dt>Kill participation</dt><dd>Share of team kills the player was involved in.</dd></div>
-      <div><dt>Source note</dt><dd>Publisher, link, retrieval date and confidence for a fact.</dd></div>
+      <div><dt>MLBB</dt><dd>The game TLID plays.</dd></div>
+      <div><dt>MPL ID</dt><dd>Indonesia's pro MLBB league.</dd></div>
+      <div><dt>S18</dt><dd>The season this roster refers to.</dd></div>
+      <div><dt>KDA</dt><dd>Kills, deaths and assists per game.</dd></div>
+      <div><dt>MVP</dt><dd>Most points in the official standings.</dd></div>
+      <div><dt>Kill participation</dt><dd>Share of team kills involving the player.</dd></div>
+      <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
     </dl></details>
     <div class="footer-controls">
       <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button>
       <p class="motion-note">Motion stops when your system asks for less.</p>
     </div>
     <div class="footer-bottom-row">
-      <p class="footer-bottom">Built from public research, 17 November 2026. Unknown values stay blank.</p>
+      <p class="footer-bottom">Public research, 17 November 2026. Unknowns stay blank.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     </div>
-    <p class="credits-line">Player portraits: Liquipedia Commons (CC BY-SA 3.0). Type: Manrope and IBM Plex Mono (SIL OFL). Horse mark derived from the Team Liquid crest. Full credits: CREDITS.md.</p>
+    <p class="credits-line">Portraits: Liquipedia Commons (CC BY-SA 3.0). Type: Manrope, IBM Plex Mono (SIL OFL). Horse from the TL crest. CREDITS.md.</p>
   </footer>
   </div>`;
   return html.replace(/href="\//g, `href="${BASE}`);

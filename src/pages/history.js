@@ -1,4 +1,4 @@
-import { milestones, historyIntro, historyUnknowns } from '../data/history.js';
+import { milestones, historyUnknowns } from '../data/history.js';
 import { sourceNote, sectionHead } from '../lib/ui.js';
 
 export function renderHistory() {
@@ -6,8 +6,6 @@ export function renderHistory() {
     html: `
 <section class="page-head">
   <h1>A timeline<br><em>still unfinished</em></h1>
-  <p class="kicker">History</p>
-  <p class="lede">Only events we can trace. The uncertain parts stay blank.</p>
 </section>
 
 <section class="timeline">

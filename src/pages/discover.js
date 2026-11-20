@@ -1,4 +1,4 @@
-import { stories, editorialNote } from '../data/discover.js';
+import { stories } from '../data/discover.js';
 import { sourceNote, sectionHead } from '../lib/ui.js';
 
 export function renderDiscover() {
@@ -6,8 +6,6 @@ export function renderDiscover() {
     html: `
 <section class="page-head">
   <h1>What makes<br><em>this team real</em></h1>
-  <p class="kicker">Discover</p>
-  <p class="lede">Facts from public research. Every claim has a source note.</p>
 </section>
 
 <section class="story-stack">
@@ -19,8 +17,8 @@ export function renderDiscover() {
 </section>
 
 <section class="section">
-  ${sectionHead('Blank space', 'Stories we have not written')}
-  <p>Long rivalries, head-to-head records and player interviews were outside the research pack. We do not fill them with guesses.</p>
+  ${sectionHead('Blank space', 'Not covered')}
+  <p>No head-to-head records or player interviews in the research pack. We left them out.</p>
 </section>`,
   };
 }

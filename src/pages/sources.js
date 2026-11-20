@@ -6,11 +6,10 @@ export function renderSources() {
     html: `
 <section class="page-head">
   <h1>Source<br><em>list</em></h1>
-  <p class="kicker">Provenance</p>
-  <p class="lede">Every source used on this site. Each figure and event carries a source note on the page where it appears. Retrieved 17 November 2026.</p>
+  <p class="lede">Retrieved 17 November 2026.</p>
 </section>
 <section class="section">
-  ${sectionHead('Ledger', `${sourceList.length} sources recorded`)}
+  ${sectionHead('Ledger', `${sourceList.length} sources`)}
   <div class="source-table">${sourceList.map((s) => `
     <article class="source-card">
       <h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)} ↗</a></h3>
