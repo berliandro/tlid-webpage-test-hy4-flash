@@ -262,6 +262,20 @@ const DICT = {
   'KDA, MVP, batas data': 'KDA, MVP, data limits',
   'Turnamen dan hasil': 'Tournaments and results',
   'Bagian lain': 'Other sections',
+  'Lewati ke konten': 'Skip to content',
+  'Snapshot terakhir': 'Latest snapshot',
+  '8 November 2026': '8 November 2026',
+  'Glosarium': 'Glossary',
+  'MLBB': 'MLBB',
+  'Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.': 'Mobile Legends: Bang Bang, the competitive title TLID plays.',
+  'MPL ID': 'MPL ID',
+  'Liga MLBB profesional Indonesia tempat TLID berkompetisi.': 'Indonesia’s professional MLBB league, where TLID competes.',
+  'S18': 'S18',
+  'Season 18, musim kompetisi yang menjadi acuan roster saat ini.': 'Season 18, the competition season used as the current roster reference.',
+  'KDA': 'KDA',
+  'Rasio kill, death, assist. Semakin tinggi, semakin baik.': 'Kill/death/assist ratio. Higher is better.',
+  'MVP': 'MVP',
+  'Pemain paling berkontribusi menurut klasemen resmi liga.': 'The most contributing player per the league’s official standings.',
 };
 
 // Phrase fallbacks for dynamically composed strings not covered by exact keys.
