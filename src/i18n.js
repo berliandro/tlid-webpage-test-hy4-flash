@@ -351,13 +351,34 @@ const DICT = {
   'Lihat glosarium →': 'View glossary →',
 };
 
+// The authored source is now English; the Indonesian locale is produced by
+// inverting the original sentence-level dictionary. Exact-match only, so a
+// partial substitution can never change the meaning of a sourced statement.
+const TO_ID = Object.fromEntries(Object.entries(DICT).map(([id, en]) => [en, id]));
+Object.assign(TO_ID, {
+  'Five starters. One season. A record you can check.': 'Lima pemain utama. Satu musim. Rekor yang bisa dicek.',
+  'VIEW ROSTER': 'LIHAT ROSTER', 'View roster': 'Lihat roster',
+  'FIVE STARTERS': 'LIMA PEMAIN UTAMA', 'Five starters': 'Lima pemain utama',
+  'GO DEEPER': 'JELAJAHI', 'Go deeper': 'Jelajahi',
+  'Substitutes (1)': 'Cadangan (1)', 'MATCH RECORD': 'REKOR PERTANDINGAN',
+  'SINCE 2024': 'SEJAK 2024', 'All results': 'Semua hasil',
+  'Sections': 'Bagian', 'Checks': 'Pengecekan', 'Sources': 'Sumber',
+  'Skip to content': 'Lewati ke konten', 'Glossary': 'Glosarium',
+  'Find a section': 'Cari bagian', 'Find a section…': 'Cari bagian…',
+  'Show all sources': 'Tampilkan semua sumber', 'Hide all sources': 'Sembunyikan sumber',
+  'Reset': 'Atur ulang', 'Clear search': 'Hapus pencarian',
+  'Search by section name in the navigation.': 'Cari berdasarkan nama bagian di navigasi.',
+  'Motion stops when your system asks for less.': 'Gerakan berhenti bila sistem memintanya.',
+  'Source note': 'Catatan sumber',
+});
+
 // Exact-match only. Blind fragment substitution can change meaning, which is
 // unacceptable on a product whose core promise is "never invent the record".
 export function translate(text) {
-  if (getLang() === 'id' || typeof text !== 'string') return text;
+  if (typeof text !== 'string') return text;
   const key = text.trim();
-  if (DICT[key] === undefined) return text;
-  return text.replace(key, DICT[key]);
+  if (getLang() === 'id') return TO_ID[key] === undefined ? text : text.replace(key, TO_ID[key]);
+  return DICT[key] === undefined ? text : text.replace(key, DICT[key]);
 }
 
 const ATTRS = ['aria-label', 'title', 'placeholder', 'alt'];

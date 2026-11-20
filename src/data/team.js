@@ -21,10 +21,10 @@ export const pulse = {
 };
 
 export const navItems = [
-  { label: 'Tim', href: '/', icon: 'horse' },
-  { label: 'Pemain', href: '/players', icon: 'quill' },
-  { label: 'Statistik', href: '/statistics', icon: 'target' },
-  { label: 'Pertandingan', href: '/matches', icon: 'swords' },
-  { label: 'Jelajah', href: '/discover', icon: 'book' },
-  { label: 'Sejarah', href: '/history', icon: 'trophy' },
+  { label: 'Tim', en: 'Team', href: '/' },
+  { label: 'Pemain', en: 'Players', href: '/players' },
+  { label: 'Statistik', en: 'Statistics', href: '/statistics' },
+  { label: 'Pertandingan', en: 'Matches', href: '/matches' },
+  { label: 'Jelajah', en: 'Discover', href: '/discover' },
+  { label: 'Sejarah', en: 'History', href: '/history' },
 ];

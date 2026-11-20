@@ -18,41 +18,41 @@ export function renderStats() {
   return {
     html: `
 <section class="page-head analytics-head">
-  <h1>Angka dengan<br><em>label yang jujur</em></h1>
-  <p class="kicker">Statistik</p>
-  <p class="lede">Hanya angka bersumber. Nilai yang diperdebatkan tidak ditampilkan.</p>
+  <h1>Numbers with<br><em>honest labels</em></h1>
+  <p class="kicker">Statistics</p>
+  <p class="lede">Only sourced figures. Disputed values are left out.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
 </section>
 
 <section class="section">
-  ${sectionHead('Perbandingan', 'Tiga pemain dengan data musiman', 'Data MLBBHub · 2026-11-17, 14:13 UTC. Klik metrik untuk mengubah perbandingan.')}
+  ${sectionHead('Comparison', 'Three players with season data', 'MLBBHub · 17 November 2026, 14:13 UTC. Pick a metric.')}
   <div class="metric-controls" role="group" aria-label="Pilih metrik perbandingan">
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>
   <div class="bar-chart" id="bar-chart"></div>
-  <p class="chart-note">KDA 6.39 Drichel juga ada di Top 5 resmi MPL ID. Peran Kevin diperdebatkan.</p>
+  <p class="chart-note">Drichel's 6.39 KDA also appears in the official MPL ID Top 5. Kevin's role is disputed.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'IG_S18'])}
 </section>
 
 <section class="section">
-  ${sectionHead('Tim', 'Total yang tidak diberi label musim', 'Angka identik muncul di empat jalur statistik resmi dengan judul musim berbeda.')}
+  ${sectionHead('Team', 'Totals without a season label', 'The same figures appear in four official stat feeds with different season titles.')}
   <div class="totals-grid">${totalRows.map(([label, value]) => `<div class="total-cell"><span>${label}</span><b>${value}</b></div>`).join('')}</div>
   ${sourceNote(teamTotals.sources, 'Sumber total tim')}
 </section>
 
 <section class="section split-section">
-  <div><h3 class="subhead">MVP</h3><div class="mvp-card"><span>${mvpLeader.handle}</span><b>${mvpLeader.points}</b><small>poin · peringkat ${mvpLeader.rank}</small></div>${sourceNote(mvpLeader.sources)}</div>
+  <div><h3 class="subhead">MVP</h3><div class="mvp-card"><span>${mvpLeader.handle}</span><b>${mvpLeader.points}</b><small>points · rank ${mvpLeader.rank}</small></div>${sourceNote(mvpLeader.sources)}</div>
   <div><h3 class="subhead">Rekor</h3><div class="record-stack">${records.map((r) => `<div><b>${r.value}</b><span>${r.label}</span><small>${r.detail}</small>${sourceNote(r.sources, 'Sumber')}</div>`).join('')}</div></div>
 </section>
 
 <section class="section">
-  ${sectionHead('Batas data', 'Konflik yang tidak kami sembunyikan')}
-  <div class="conflict-grid">${statConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">Lihat sumber →</a>${sourceNote(c.sources)}</article>`).join('')}</div>
+  ${sectionHead('Limits', 'Conflicts we do not hide')}
+  <div class="conflict-grid">${statConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">See sources</a>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>
 
 <section class="section unavailable-block">
-  ${sectionHead('Belum tersedia', 'Data yang tidak kami punya')}
-  <p>GPM, DPM, CS, dan rincian objektif tidak tersedia di sumber terkumpul.</p>
+  ${sectionHead('Not available', 'Data we do not have')}
+  <p>GPM, DPM, CS and objective splits are not in the collected sources.</p>
 </section>`,
     mount() {
       const chart = document.getElementById('bar-chart');
@@ -62,7 +62,7 @@ export function renderStats() {
       const invalid = requested && !metrics[requested];
       const draw = (key) => {
         const m = metrics[key];
-        chart.innerHTML = (invalid ? '<p class="result-status" role="status" aria-live="polite">METRIK TIDAK VALID</p>' : `<p class="result-status" role="status" aria-live="polite"><span class="count">${playerStats.length}</span> PEMAIN</p>`) + playerStats.map((p) => {
+        chart.innerHTML = (invalid ? '<p class="result-status" role="status" aria-live="polite">INVALID METRIC</p>' : `<p class="result-status" role="status" aria-live="polite"><span class="count">${playerStats.length}</span> PLAYERS</p>`) + playerStats.map((p) => {
           const value = m.get(p);
           const pct = Math.min(100, (value / m.max) * 100);
           return `<div class="bar-row">

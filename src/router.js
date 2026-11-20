@@ -10,8 +10,7 @@ import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
 import { laceTop } from './lib/ui.js';
 import { translate, applyLanguage } from './i18n.js';
-import { applySeededOffsets } from './motion.js';
-import { icon } from './icons.js';
+import { applyScrollMotion } from './motion.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -50,46 +49,57 @@ function activeHref(path) {
 function shell(content) {
   const current = activeHref(routeFromLocation());
   const nav = navItems.map((n) =>
-    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${icon(n.icon)}${n.label}</a>`
+    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
   ).join('');
   const html = `
-  <a class="skip-link" href="#main">Lewati ke konten</a>
-  ${laceTop()}
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Team Liquid ID — beranda">TEAM LIQUID <b>ID</b><span class="brand-meta">MPL-ID / MLBB</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buka navigasi"><span></span><span></span><span></span></button>
-    <nav id="primary-nav" class="site-nav" aria-label="Navigasi utama">${nav}</nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="brand" href="/" aria-label="Team Liquid ID — home"><span class="brand-mark"><img src="public/assets/tlid-mark.svg" alt="" /></span>TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
+      <span class="pill active"><span class="dot"></span>Team</span>
+      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
+    </div>
+    <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
+    <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
+    <div class="topbar-right">
+      <span class="icon-btn" aria-hidden="true">✦</span>
+      <span class="icon-btn" aria-hidden="true">◐</span>
+      <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED <span class="icon-btn">+</span></span>
+      <span class="avatar" aria-hidden="true"><img src="public/assets/apple-touch-icon.png" alt="" /></span>
+    </div>
   </header>
   <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>
   <main id="main" tabindex="-1">${content}</main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Proyek independen. Tidak afiliasi, tidak commission, dan tidak disetujui oleh Team Liquid atau Moonton. Potret pemain bersumber dari Liquipedia Commons (CC BY-SA 3.0); Anaver memakai ilustrasi sintetik.</p></div>
-      <div><p class="footer-label">Navigasi</p>${navItems.map((n) => `<a href="${n.href}">${n.label}</a>`).join('')}</div>
-      <div><p class="footer-label">Data</p><a href="/sources">Daftar sumber</a><a href="/statistics">Catatan verifikasi</a><a href="/players">Roster S18</a></div>
+      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Independent project. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0. Anaver uses a synthetic illustration.</p></div>
+      <div><p class="footer-label">Sections</p>${navItems.map((n) => `<a href="${n.href}">${n.en}</a>`).join('')}</div>
+      <div><p class="footer-label">Data</p><a href="/sources">Sources</a><a href="/statistics">Checks</a><a href="/players">S18 roster</a></div>
     </div>
-    <div class="footer-search"><label for="site-search">Cari bagian</label><input id="site-search" type="search" placeholder="Cari bagian…" autocomplete="off" aria-label="Cari bagian situs" aria-controls="search-status" /><button type="button" data-search-reset aria-label="Hapus pencarian">Reset</button></div>
-    <p id="search-status" class="search-status" role="status" aria-live="polite">Cari berdasarkan nama bagian di navigasi.</p>
-    <details class="glossary" id="glossary" open><summary>Glosarium</summary><dl>
-      <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.</dd></div>
-      <div><dt>MPL ID</dt><dd>Liga MLBB profesional Indonesia tempat TLID berkompetisi.</dd></div>
-      <div><dt>S18</dt><dd>Season 18, musim kompetisi yang menjadi acuan roster saat ini.</dd></div>
-      <div><dt>KDA</dt><dd>Rasio kill, death, assist. Semakin tinggi, semakin baik.</dd></div>
-      <div><dt>MVP</dt><dd>Pemain paling berkontribusi menurut klasemen resmi liga.</dd></div>
-      <div><dt>Kill participation</dt><dd>Persentase kill tim yang melibatkan pemain tersebut.</dd></div>
-      <div><dt>Arsip</dt><dd>Kumpulan fakta bersumber, bukan siaran langsung.</dd></div>
-      <div><dt>Sumber</dt><dd>Penerbit, tautan, tanggal ambil, dan tingkat keyakinan tiap fakta.</dd></div>
+    <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
+    <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
+      <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, the game TLID plays.</dd></div>
+      <div><dt>MPL ID</dt><dd>Indonesia's professional MLBB league.</dd></div>
+      <div><dt>S18</dt><dd>Season 18, the season this roster refers to.</dd></div>
+      <div><dt>KDA</dt><dd>Kills, deaths and assists per game on average.</dd></div>
+      <div><dt>MVP</dt><dd>The player with the most points in the official standings.</dd></div>
+      <div><dt>Kill participation</dt><dd>Share of team kills the player was involved in.</dd></div>
+      <div><dt>Source note</dt><dd>Publisher, link, retrieval date and confidence for a fact.</dd></div>
     </dl></details>
     <div class="footer-controls">
-      <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Tampilkan semua sumber</button>
-      <p class="motion-note">Gerakan dikurangi otomatis bila sistem memintanya.</p>
+      <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button>
+      <p class="motion-note">Motion stops when your system asks for less.</p>
     </div>
     <div class="footer-bottom-row">
-      <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 2026-11-17 · status tidak diketahui sengaja dibiarkan kosong.</p>
+      <p class="footer-bottom">Built from public research, 17 November 2026. Unknown values stay blank.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     </div>
-    <p class="credits-line">Icons by Lorc from <a href="https://game-icons.net" target="_blank" rel="noopener noreferrer">game-icons.net</a> · CC BY 3.0. Matte grain is procedural SVG noise. Full credits: CREDITS.md.</p>
-  </footer>`;
+    <p class="credits-line">Player portraits: Liquipedia Commons (CC BY-SA 3.0). Type: Manrope and IBM Plex Mono (SIL OFL). Horse mark derived from the Team Liquid crest. Full credits: CREDITS.md.</p>
+  </footer>
+  </div>`;
   return html.replace(/href="\//g, `href="${BASE}`);
 }
 
@@ -107,10 +117,10 @@ function resolve(path) {
 
 function titles(path) {
   const map = {
-    '/': 'Beranda', '/players': 'Pemain', '/statistics': 'Statistik',
-    '/matches': 'Pertandingan', '/discover': 'Jelajah', '/history': 'Sejarah', '/sources': 'Sumber',
+    '/': 'Team', '/players': 'Players', '/statistics': 'Statistics',
+    '/matches': 'Matches', '/discover': 'Discover', '/history': 'History', '/sources': 'Sources',
   };
-  const title = path.startsWith('/players/') ? 'Profil Pemain' : (map[path] || 'Halaman tidak ditemukan');
+  const title = path.startsWith('/players/') ? 'Player profile' : (map[path] || 'Page not found');
   return translate(title);
 }
 
@@ -126,7 +136,7 @@ export function render() {
   result.mount?.();
   wireNav();
   applyLanguage(document);
-  applySeededOffsets();
+  applyScrollMotion();
 }
 
 function wireNav() {

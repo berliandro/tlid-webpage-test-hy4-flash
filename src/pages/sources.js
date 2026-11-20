@@ -5,12 +5,12 @@ export function renderSources() {
   return {
     html: `
 <section class="page-head">
-  <h1>Daftar <em>sumber</em></h1>
-  <p class="kicker">Provenansi</p>
-  <p class="lede">Semua sumber yang dipakai dalam situs ini. Setiap angka dan peristiwa membawa catatan sumber di halaman tempatnya muncul. Retrieval date seragam: 2026-11-17.</p>
+  <h1>Source<br><em>list</em></h1>
+  <p class="kicker">Provenance</p>
+  <p class="lede">Every source used on this site. Each figure and event carries a source note on the page where it appears. Retrieved 17 November 2026.</p>
 </section>
 <section class="section">
-  ${sectionHead('Ledger', `${sourceList.length} sumber tercatat`)}
+  ${sectionHead('Ledger', `${sourceList.length} sources recorded`)}
   <div class="source-table">${sourceList.map((s) => `
     <article class="source-card">
       <h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)} ↗</a></h3>

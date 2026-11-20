@@ -5,9 +5,9 @@ export function renderHistory() {
   return {
     html: `
 <section class="page-head">
-  <h1>Garis waktu<br><em>yang belum penuh</em></h1>
-  <p class="kicker">Sejarah</p>
-  <p class="lede">Hanya peristiwa yang bisa ditelusuri. Bagian yang belum pasti dibiarkan kosong.</p>
+  <h1>A timeline<br><em>still unfinished</em></h1>
+  <p class="kicker">History</p>
+  <p class="lede">Only events we can trace. The uncertain parts stay blank.</p>
 </section>
 
 <section class="timeline">
@@ -24,7 +24,7 @@ export function renderHistory() {
 </section>
 
 <section class="section">
-  ${sectionHead('Kosong dengan sengaja', 'Yang belum bisa dipastikan')}
+  ${sectionHead('Deliberately blank', 'What cannot be confirmed')}
   <ul class="unknown-list">${historyUnknowns.map((u) => `<li>${u}</li>`).join('')}</ul>
 </section>`,
   };

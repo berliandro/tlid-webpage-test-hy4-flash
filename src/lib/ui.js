@@ -7,11 +7,11 @@ export function esc(value) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-export function unknown(text = 'Tidak tersedia dalam data terverifikasi') {
+export function unknown(text = 'Not available in verified data') {
   return `<span class="unknown">${esc(text)}</span>`;
 }
 
-export function sourceNote(ids = [], label = 'Sumber &amp; verifikasi') {
+export function sourceNote(ids = [], label = 'Sources &amp; checks') {
   if (!ids.length) return '';
   const items = ids.map((id) => {
     const s = sources[id];
@@ -26,7 +26,7 @@ export function sourceNote(ids = [], label = 'Sumber &amp; verifikasi') {
 export function portrait(player, extraClass = '', eager = false) {
   if (player && typeof player === 'object') {
     if (player.photo) {
-      return `<img class="portrait photo ${extraClass}" src="public/assets/players/${esc(player.photo)}.png" width="500" height="500" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="Portrait / Potret ${esc(player.handle)} · Liquipedia Commons, CC BY-SA 3.0" />`;
+      return `<img class="portrait photo ${extraClass}" src="public/assets/players/duotone/${esc(player.photo)}.jpg" width="600" height="750" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="${esc(player.handle)}, Team Liquid ID · Liquipedia Commons, CC BY-SA 3.0" />`;
     }
     return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
   }
@@ -44,7 +44,7 @@ export function ribbon(text, tag = 'span', cls = '') {
 }
 
 export function laceTop() {
-  return `<div class="lace-frame" aria-hidden="true"><div class="lace-band top"></div><div class="lace-band bottom"></div><div class="lace-side left"></div><div class="lace-side right"></div><div class="ambient-layer"></div></div>`;
+  return '';
 }
 
 export function sectionHead(kicker, title, sub = '') {
