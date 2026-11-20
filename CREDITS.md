@@ -6,7 +6,7 @@ A supplied reference image was studied for visual language only (panel inset, gr
 
 ## Player portraits
 
-Aran, Kevinn (shown as Kevin), Drichel, Keven and Lyoni portraits from **Liquipedia Commons**, licensed **CC BY-SA 3.0**. They were cropped and placed on card-colour gradients for the roster and profile cards (`public/assets/cards/`). Anaver uses a synthetic illustration authored for this project (`public/assets/portraits.svg`) and is labelled as such.
+Aran, Kevinn (shown as Kevin), Drichel, Keven and Lyoni portraits from **Liquipedia Commons**, licensed **CC BY-SA 3.0**. They were cropped and placed on solid card-colour backgrounds for the roster and profile cards (`public/assets/cards/`). Anaver uses a synthetic illustration authored for this project (`public/assets/portraits.svg`) and is labelled as such.
 
 ## Team Liquid horse mark
 

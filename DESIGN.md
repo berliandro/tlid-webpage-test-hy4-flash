@@ -62,7 +62,7 @@ Manrope variable handles everything: 800 with `-0.04em` tracking for display, 40
 - `pill` — compact 30px control, 999px radius, 1px hairline, active state filled white.
 - `search-pill` — inline search with subtle placeholder and key hint.
 - `status-pill` — gold dot plus short verified label.
-- `fan-card` — 3:4 vivid gradient card with `object-fit: cover`, 22px top radius, name and role top-left, index badge top-right, rotated and overlapping; centre card raised. The same 3:4 ratio is used for roster and profile portraits.
+- `fan-card` — 3:4 solid-colour card with `object-fit: cover`, 22px top radius, name and role top-left, index badge top-right, rotated and overlapping; centre card raised. The same 3:4 ratio is used for roster and profile portraits.
 - `tile` — compact panel tile with a 34px accent rule; vivid variants use the card palette.
 - `source-note` — disclosure with a mono `+` marker.
 

@@ -3,7 +3,7 @@ import { sourceNote } from '../lib/ui.js';
 
 const fan = starters.map((p) => `
   <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}">
-    <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle} of Team Liquid ID" />
+    <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle} of Team Liquid ID" />
     <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
   </a>`).join('');
 
