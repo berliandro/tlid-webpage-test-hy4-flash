@@ -14,7 +14,7 @@
   --fs-title:clamp(20px,2.2vw,30px); --fs-body:1rem; --fs-label:.75rem; --fs-meta:.75rem;
   --tap:44px; --measure:38rem;
 }
-@media(prefers-color-scheme:dark){:root{--paper:#B9A886;--paper-light:#CBBB99;--ink:#17130F;--ink-soft:#4A3F33}}
+@media(prefers-color-scheme:dark){:root{--paper:#B9A886;--paper-light:#CBBB99;--ink:#17130F;--ink-soft:#3F352B}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -96,16 +96,17 @@ h1,h2,h3{text-wrap:balance;overflow-wrap:break-word;font-family:var(--type-displ
 .home-title .icon-lg{color:var(--oxblood);margin-top:10px}
 .home-deck{font-size:1rem;line-height:1.6;margin-bottom:26px;color:var(--ink)}
 .home-thread{display:block;width:140px;height:2px;background:var(--ink);margin:24px 0}
-.home-pulse{position:relative;justify-self:end;max-width:360px;border:2px solid var(--ink);padding:26px;transform:rotate(-2deg);background:var(--paper-light)}
+.home-pulse{position:relative;justify-self:end;max-width:300px;border:1px solid var(--ink);border-top:4px solid var(--oxblood);padding:20px;background:var(--paper-light)}
 .home-pulse:before{content:'';position:absolute;right:18px;top:-12px;width:60px;height:20px;background:var(--oxblood);border:1px solid var(--ink);transform:rotate(5deg)}
 .pulse-kicker{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--oxblood);margin-bottom:10px}
-.pulse-big{font-family:var(--type-display);font-size:clamp(56px,6vw,88px);line-height:.9;margin-bottom:8px}
+.pulse-big{font-family:var(--type-display);font-size:clamp(36px,3.4vw,52px);line-height:1;margin-bottom:6px;color:var(--oxblood)}
 .pulse-line{font-size:14px;line-height:1.5}
 .pulse-note{font-size:11px;color:var(--ink-soft);margin-top:12px}
 .home-players{padding:clamp(44px,6vw,76px) clamp(20px,5vw,72px)}
 .home-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}
 .home-head p{font-size:14px;color:var(--ink-soft);max-width:30rem}
-.band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.band{display:flex;flex-wrap:wrap;gap:12px}
+.band-card{flex:1 1 150px}
 .band-card{text-decoration:none;padding:10px;background:var(--paper-light);border:1px solid var(--ink);border-top:4px solid var(--oxblood);min-width:0}
 .band-image{display:block;aspect-ratio:4/5;background:var(--ink);overflow:hidden}
 .band-image .portrait{width:100%;height:100%;object-fit:contain;object-position:center bottom;color:var(--paper-light)}
@@ -116,7 +117,8 @@ h1,h2,h3{text-wrap:balance;overflow-wrap:break-word;font-family:var(--type-displ
 .record-body p{font-size:15px;line-height:1.6;color:var(--ink);margin-top:8px}
 .archive-note{font-size:14px;color:var(--ink-soft);max-width:var(--measure);margin-bottom:20px}
 .home-gates{padding:clamp(44px,6vw,76px) clamp(20px,5vw,72px)}
-.gate-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.gate-row{display:flex;flex-wrap:wrap;border-top:2px solid var(--ink)}
+.gate-row a{flex:1 1 220px}
 .gate-row a{display:block;padding:18px 16px;text-decoration:none;border-right:1px solid var(--rule);min-height:var(--tap)}
 .gate-row a:last-child{border-right:0}
 .gate-row a:hover{background:var(--paper-light)}
@@ -251,9 +253,7 @@ h1,h2,h3{text-wrap:balance;overflow-wrap:break-word;font-family:var(--type-displ
 @media(max-width:1180px){
   .home-hero{grid-template-columns:1fr;gap:32px}
   .home-pulse{justify-self:start}
-  .band{grid-template-columns:repeat(3,1fr)}
   .home-record{grid-template-columns:1fr}
-  .gate-row{grid-template-columns:repeat(2,1fr)}
   .gate-row a:nth-child(2){border-right:0}
 }
 @media(max-width:860px){
@@ -275,8 +275,7 @@ h1,h2,h3{text-wrap:balance;overflow-wrap:break-word;font-family:var(--type-displ
 }
 @media(max-width:560px){
   .home-hero{padding-left:18px;padding-right:18px}
-  .band{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gate-row{grid-template-columns:1fr}
+  .nav-link,.src-meta,.band-role{font-size:12px}
   .gate-row a{border-right:0;border-bottom:1px solid var(--rule)}
   .record-number{font-size:clamp(60px,17vw,96px)}
   .identity-list{grid-template-columns:1fr}
