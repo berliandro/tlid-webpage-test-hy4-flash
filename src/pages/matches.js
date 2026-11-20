@@ -38,7 +38,7 @@ export function renderMatches() {
 </section>
 
 <section class="section">
-  ${sectionHead('Recorded', 'Tournaments on file', 'One row is one tournament, not one match.')}
+  ${sectionHead('', 'Tournaments on file', 'One row is one tournament, not one match.')}
   <div class="filter-row" role="group" aria-label="Filter tournaments by year">
     <span class="year-wrap"><select id="match-year" class="filter-btn year-select" data-year aria-label="Filter tournaments by year">
       <option value="all">All</option>
