@@ -3,7 +3,7 @@
 
 export const rosterNote = {
   id: 'IG_S18',
-  title: 'Roster S18 · 2026-08-7',
+  title: 'Roster S18 · --0',
   text: 'Susunan ini berasal dari pengumuman resmi TLID untuk MPL ID Season 18 dan dua sumber pendukung. Halaman tim resmi masih menampilkan daftar lama, sehingga tidak dipakai sebagai roster saat ini.',
 };
 
