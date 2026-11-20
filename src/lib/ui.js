@@ -36,5 +36,5 @@ export function portrait(player, extraClass = '') {
 }
 
 export function sectionHead(kicker, title, sub = '') {
-  return `<header class="section-head"><div><span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2></div>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
+  return `<header class="section-head"><div>${kicker ? `<span class="kicker">${esc(kicker)}</span>` : ''}<h2>${esc(title)}</h2></div>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
 }

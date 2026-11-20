@@ -23,7 +23,7 @@ export function renderHistory() {
 </section>
 
 <section class="section">
-  ${sectionHead('Deliberately blank', 'What cannot be confirmed')}
+  ${sectionHead('', 'What cannot be confirmed')}
   <ul class="unknown-list">${historyUnknowns.map((u) => `<li>${u}</li>`).join('')}</ul>
 </section>`,
   };

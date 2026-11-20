@@ -26,7 +26,7 @@ export function renderHome() {
   <p class="fan-hint"><span class="swipe-hint">SWIPE TO BROWSE · TAP A CARD FOR ITS STORY</span></p>
 
   <section class="section roster-notes">
-    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>Roster notes</h2></div><p class="section-sub">Anaver is listed with the substitutes.</p></div>
+    <div class="section-head"><div><span class="kicker">01</span><h2>Roster notes</h2></div><p class="section-sub">Anaver is listed with the substitutes.</p></div>
     <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div><p class="bench-note">No. 04 is Anaver, a substitute. Synthetic illustration, not a real portrait.</p></details>
     ${sourceNote(['IG_S18'], 'Roster source')}
   </section>

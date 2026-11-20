@@ -66,7 +66,7 @@ export function renderPlayer(slug) {
 </section>
 
 <section class="section">
-  ${sectionHead('Numbers', 'Statistics we can show')}
+  ${sectionHead('', 'Statistics we can show')}
   ${statBlock}
   ${mvp}
 </section>

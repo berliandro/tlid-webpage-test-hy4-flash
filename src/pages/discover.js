@@ -17,7 +17,7 @@ export function renderDiscover() {
 </section>
 
 <section class="section">
-  ${sectionHead('Blank space', 'Not covered')}
+  ${sectionHead('', 'Not covered')}
   <p>No head-to-head records or player interviews in the research pack. We left them out.</p>
 </section>`,
   };
