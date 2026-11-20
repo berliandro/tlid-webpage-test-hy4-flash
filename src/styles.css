@@ -330,6 +330,10 @@ h1,h2,h3,.tile b,.arch-place,.source-card h3,.conflict h3{overflow-wrap:anywhere
   .search-pill{width:100%}
   .search-pill input{font-size:16px;width:100%}
 }
+@media(max-width:360px){
+  .search-pill{padding:0 8px;gap:0}
+  .search-pill>span:first-child{display:none}
+}
 
 /* motion — transform/opacity only; one observer, no scroll listeners */
 @keyframes page-enter{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
