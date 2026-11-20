@@ -344,6 +344,7 @@ em{font-style:normal}
 .ledger-note{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
 .unknown-list{padding-left:18px;font-size:13px;color:var(--muted)}
 .not-found{text-align:center}
+.not-found .link-row{justify-content:center}
 
 /* footer */
 .site-footer{border-top:1px solid var(--hair);padding:var(--section-y) var(--gutter) calc(var(--section-y) / 2)}
