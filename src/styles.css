@@ -14,6 +14,7 @@
   --section-y:clamp(40px,6vw,88px); --page-y:clamp(36px,5vw,72px);
   --block-gap:clamp(16px,2vw,28px);
   --s-2:12px; --s-3:16px; --s-4:24px; --s-5:32px; --s-6:48px;
+  --fan-top-gap:-16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 [hidden]{display:none!important}
@@ -156,7 +157,7 @@ em{font-style:normal}
 .hero-cta .pill:hover{background:var(--cyan);border-color:var(--cyan)}
 
 /* character fan */
-.card-fan{position:relative;height:min(clamp(320px,36vw,420px),46vh);margin-top:-16px;overflow:hidden}
+.card-fan{position:relative;height:min(clamp(320px,36vw,420px),46vh);margin-top:var(--fan-top-gap);overflow:hidden}
 .fan-inner{position:absolute;left:50%;bottom:0;width:min(100%,1180px);height:100%;padding-bottom:32px;transform:translateX(-50%);display:flex;justify-content:center;align-items:flex-end}
 .fan-card{position:relative;width:clamp(140px,min(20vw,26vh),280px);aspect-ratio:3/4;border-radius:var(--card-radius) var(--card-radius) 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 -8px 30px rgba(0,0,0,.25);transform-origin:bottom center;transition:transform 260ms cubic-bezier(.16,1,.3,1)}
 /* Portrait composition: source photos are cropped flush to the hair, so a colour-matched
@@ -424,6 +425,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .roster,.roster-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media(max-width:860px){
+  :root{--fan-top-gap:var(--s-2)}
   .topbar{grid-template-columns:1fr auto}
   .nav-toggle{display:inline-flex}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
