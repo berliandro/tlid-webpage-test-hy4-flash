@@ -22,7 +22,7 @@ typography:
   body: "Manrope 400, 16px / 1.6"
   data: "IBM Plex Mono 400/600, uppercase micro-labels"
 spacing:
-  grid-step: "44px at 1440, 22px at reference 736"
+  grid-step: "32px"
   panel-radius: "28px"
   card-radius: "22px"
   pill-radius: "999px"
@@ -31,7 +31,7 @@ spacing:
 
 ## Overview
 
-The visual language is taken from the supplied reference: a charcoal site background with a large inset near-black panel, a faint one-pixel perspective grid behind all content, compact pill controls, a tiny centred status badge, oversized centred geometric type, and a bottom fan of vivid character cards. Layout and information architecture are adapted freely to Team Liquid ID; the visual language is not.
+The visual language is taken from the supplied reference: a full-bleed charcoal surface, a faint one-pixel perspective grid behind all content, compact pill controls, a tiny centred status badge, oversized centred geometric type, and a bottom fan of vivid character cards on the home page. The grid, pills, type and separators appear on every route. The grey preview frame in the reference is presentation-only and is not reproduced.
 
 ## Colour
 
@@ -39,7 +39,7 @@ Measured from the reference's website surface: panel `#0F0F11`, secondary panel 
 
 ## Grid and construction
 
-The grid is a 1px repeating linear-gradient pair at a 44px step, transformed with `perspective(820px) rotateX(15deg) scale(1.16)` and masked so it fades at the top and bottom. The site runs full-bleed with no outer frame or inset; cards use a 22px radius and all controls are pills. Thin separators appear above and below every major section.
+The grid is a 1px repeating linear-gradient pair at a 32px step, transformed with `perspective(820px) rotateX(15deg) scale(1.16)` and masked so it fades at the top and bottom. The site runs full-bleed with no outer frame or inset; cards use a 22px radius and all controls are pills. Thin separators appear above and below every major section.
 
 ## Type
 
