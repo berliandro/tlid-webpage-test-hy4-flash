@@ -101,7 +101,7 @@ function shell(content) {
       <div><dt>Final placing</dt><dd>Where the team finished in the tournament.</dd></div>
     </dl></details>
     <div class="footer-controls">
-      <div class="footer-control-links"><a href="/sources"${current === '/sources' ? ' class="active" aria-current="page"' : ''}>Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>
+      <div class="footer-control-links"><a href="/sources" data-search="Sources Source Sumber Provenance Credits Daftar sumber"${current === '/sources' ? ' class="active" aria-current="page"' : ''}>Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>
       <p class="motion-note">Motion stops when your system asks for less.</p>
     </div>
     <div class="footer-bottom-row">

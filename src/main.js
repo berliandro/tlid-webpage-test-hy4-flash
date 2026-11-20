@@ -38,7 +38,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 function runSearch(q, source) {
-  const links = [...document.querySelectorAll('.site-nav .nav-link')];
+  // Section/navigation finder only: header nav plus the footer-provenance link.
+  const links = [...document.querySelectorAll('.site-nav .nav-link, .footer-control-links a[data-search]')];
   let shown = 0;
   links.forEach((a) => {
     const haystack = (a.dataset.search || a.textContent).toLowerCase();
@@ -56,8 +57,8 @@ function runSearch(q, source) {
     feedback.hidden = !q;
     if (q) {
       result.textContent = shown ? found : (getLang() === 'id'
-        ? `Tidak ada bagian yang cocok dengan “${q}” — coba “tim” atau tekan Esc`
-        : `No sections match “${q}” — try “team” or press Esc`);
+        ? `Tidak ada bagian yang cocok dengan “${q}” — coba “tim”, “pertandingan” atau tekan Esc`
+        : `No sections match “${q}” — try “team”, “matches” or press Esc`);
     }
   }
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
