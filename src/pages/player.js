@@ -25,6 +25,7 @@ export function renderPlayer(slug) {
     html: `
 <section class="player-hero" style="--accent-rot:${p.index}deg">
   <a class="back-link" href="/players">← Kembali ke roster</a>
+  <nav class="breadcrumb" aria-label="Lokasi">TEAM LIQUID ID / PEMAIN / ${p.handle}</nav>
   <div class="player-grid">
     <div class="player-portrait">
       <div class="portrait-frame">${portrait(p, '', true)}<span class="portrait-tag">${portraitCredit(p)}</span></div>

@@ -28,6 +28,7 @@ export function renderMatches() {
   <div class="filter-row" role="group" aria-label="Filter tahun turnamen">
     <button type="button" class="filter-btn active" data-year="all" aria-pressed="true">Semua</button>
     ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
+    <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="false">Urutkan ↓</button>
   </div>
   <div class="archive" id="match-archive" aria-live="polite"></div>
 </section>
@@ -43,11 +44,16 @@ export function renderMatches() {
 </section>`,
     mount() {
       const archive = document.getElementById('match-archive');
-      const buttons = [...document.querySelectorAll('.filter-btn')];
+      const buttons = [...document.querySelectorAll('.filter-btn[data-year]')];
+      const sortBtn = document.querySelector('[data-sort]');
       if (!archive || !buttons.length) return;
+      let desc = true;
+      let currentYear = 'all';
       const draw = (year) => {
-        const list = tournaments.filter((t) => year === 'all' || String(t.year) === year);
-        archive.innerHTML = `<p class="result-status">${list.length} · ${year === 'all' ? 'ALL' : year}</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
+        currentYear = year;
+        const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
+          .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
+        archive.innerHTML = `<p class="result-status">${list.length} DATA</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
@@ -72,6 +78,13 @@ export function renderMatches() {
         history.pushState({}, '', url);
         draw(btn.dataset.year);
       }));
+      sortBtn?.addEventListener('click', () => {
+        desc = !desc;
+        sortBtn.setAttribute('aria-pressed', String(!desc));
+        sortBtn.textContent = desc ? 'Urutkan ↓' : 'Urutkan ↑';
+        applyLanguage(sortBtn.parentElement);
+        draw(currentYear);
+      });
     },
   };
 }

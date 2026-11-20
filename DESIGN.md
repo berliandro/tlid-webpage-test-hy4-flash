@@ -10,7 +10,7 @@ colors:
   paper: "#E4D8BC"
   paper-dark: "#D9CDB0"
   brass: "#D8A93B"
-  brass-dark: "#E6BC55"
+  brass-dark: "#8A6418"
   brass-deep: "#A9782A"
   oxblood: "#8E2B2B"
   cyan: "#3BB0D4"
@@ -26,7 +26,7 @@ colors:
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(68px, 9.4vw, 150px)"
+    fontSize: "clamp(68px, 8.4vw, 120px)"
     fontWeight: 400
     lineHeight: 0.9
     letterSpacing: "-0.04em"

@@ -286,7 +286,12 @@ const DICT = {
   'Sembunyikan sumber': 'Hide all sources',
   'Gerakan dikurangi otomatis bila sistem memintanya.': 'Motion is reduced automatically when your system requests it.',
   'Tidak ada entri untuk filter ini.': 'No entries for this filter.',
-  'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya.': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence.',
+  'SNAPSHOT · 8 November 2026': 'SNAPSHOT · 8 November 2026',
+  'SNAPSHOT': 'SNAPSHOT',
+  'Lokasi': 'Location',
+  'Urutkan ↓': 'Sort ↓', 'Urutkan ↑': 'Sort ↑',
+  'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya. ': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence. ',
+  'Lihat glosarium →': 'View glossary →',
 };
 
 // Exact-match only. Blind fragment substitution can change meaning, which is

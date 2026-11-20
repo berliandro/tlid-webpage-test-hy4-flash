@@ -36,7 +36,7 @@ export function renderStats() {
 
 <section class="section">
   ${sectionHead('Tim', 'Total yang tidak diberi label musim', 'Angka identik muncul di empat jalur statistik resmi dengan judul musim berbeda.')}
-  <div class="totals-grid">${totalRows.map(([label, value]) => `<div class="total-cell"><b>${value}</b><span>${label}</span></div>`).join('')}</div>
+  <div class="totals-grid">${totalRows.map(([label, value]) => `<div class="total-cell"><span>${label}</span><b>${value}</b></div>`).join('')}</div>
   ${sourceNote(teamTotals.sources, 'Sumber total tim')}
 </section>
 
@@ -60,7 +60,7 @@ export function renderStats() {
       if (!chart || !buttons.length) return;
       const draw = (key) => {
         const m = metrics[key];
-        chart.innerHTML = `<p class="result-status">${playerStats.length} · ${m.label}</p>` + playerStats.map((p) => {
+        chart.innerHTML = `<p class="result-status">${playerStats.length} DATA</p>` + playerStats.map((p) => {
           const value = m.get(p);
           const pct = Math.min(100, (value / m.max) * 100);
           return `<div class="bar-row">
