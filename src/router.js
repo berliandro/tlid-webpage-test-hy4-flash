@@ -46,7 +46,7 @@ function activeHref(path) {
   return '/' + path.split('/')[1];
 }
 
-function shell(content, title) {
+function shell(content) {
   const current = activeHref(routeFromLocation());
   const nav = navItems.map((n) =>
     `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.label}</a>`
@@ -111,7 +111,7 @@ function titles(path) {
 export function render() {
   const path = routeFromLocation();
   const result = resolve(path);
-  app.innerHTML = shell(result.html, titles(path));
+  app.innerHTML = shell(result.html);
   document.title = `${titles(path)} — Team Liquid ID`;
   window.scrollTo({ top: 0, behavior: 'instant' });
   document.getElementById('main')?.focus({ preventScroll: true });

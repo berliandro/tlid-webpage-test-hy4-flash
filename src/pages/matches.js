@@ -16,7 +16,7 @@ export function renderMatches() {
 <section class="section upcoming-section">
   ${sectionHead('Mendatang', 'Keadaan kosong yang disengaja')}
   <div class="unavailable">
-    <span class="unavailable-seal">NO VERIFIED FIXTURE</span>
+    <span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span>
     <h3>${upcoming.title}</h3>
     <p>${upcoming.text}</p>
     ${sourceNote(upcoming.sources)}
@@ -40,20 +40,20 @@ export function renderMatches() {
 
 <section class="section">
   ${sectionHead('Konflik', 'Catatan arsip')}
-  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p>${sourceNote(c.sources)}</article>`).join('')}</div>
+  <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p><a class="conflict-link" href="/sources">Lihat sumber →</a>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>`,
     mount() {
       const archive = document.getElementById('match-archive');
       const buttons = [...document.querySelectorAll('.filter-btn[data-year]')];
       const sortBtn = document.querySelector('[data-sort]');
       if (!archive || !buttons.length) return;
-      let desc = true;
+      let desc = new URLSearchParams(location.search).get('s') !== 'asc';
       let currentYear = 'all';
       const draw = (year) => {
         currentYear = year;
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
           .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
-        archive.innerHTML = `<p class="result-status">${list.length} DATA</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
+        archive.innerHTML = `<p class="result-status"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
@@ -69,6 +69,10 @@ export function renderMatches() {
         b.classList.toggle('active', on);
         b.setAttribute('aria-pressed', String(on));
       });
+      if (sortBtn) {
+        sortBtn.setAttribute('aria-pressed', String(desc));
+        sortBtn.textContent = desc ? 'Urutkan ↓' : 'Urutkan ↑';
+      }
       draw(initial);
       buttons.forEach((btn) => btn.addEventListener('click', () => {
         buttons.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
@@ -80,8 +84,11 @@ export function renderMatches() {
       }));
       sortBtn?.addEventListener('click', () => {
         desc = !desc;
-        sortBtn.setAttribute('aria-pressed', String(!desc));
+        sortBtn.setAttribute('aria-pressed', String(desc));
         sortBtn.textContent = desc ? 'Urutkan ↓' : 'Urutkan ↑';
+        const url = new URL(location.href);
+        url.searchParams.set('s', desc ? 'desc' : 'asc');
+        history.pushState({}, '', url);
         applyLanguage(sortBtn.parentElement);
         draw(currentYear);
       });

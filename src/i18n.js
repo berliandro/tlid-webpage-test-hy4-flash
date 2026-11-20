@@ -290,6 +290,11 @@ const DICT = {
   'SNAPSHOT': 'SNAPSHOT',
   'Lokasi': 'Location',
   'Urutkan ↓': 'Sort ↓', 'Urutkan ↑': 'Sort ↑',
+  'ENTRI': 'ENTRIES', 'PEMAIN': 'PLAYERS',
+  'Klasemen MVP': 'MVP standings',
+  'TIDAK ADA JADWAL TERVERIFIKASI': 'NO VERIFIED FIXTURE',
+  '15 Desember 2024 menurut Liquipedia dan Wikipedia; 14 Desember menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
+  'TLID kalah 1-4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 Desember; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1-4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
   'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya. ': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence. ',
   'Lihat glosarium →': 'View glossary →',
 };
