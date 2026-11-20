@@ -30,7 +30,7 @@ export function renderHome() {
   <section class="card-fan" aria-label="Starting five">
     <div class="fan-inner">${fan}</div>
   </section>
-  <p class="fan-caption"><span class="swipe-hint">SWIPE FOR ALL FIVE · </span>THE STARTING FIVE · SOURCED PORTRAITS · 7 AUGUST 2026</p>
+  <p class="fan-caption"><span class="swipe-hint">SWIPE FOR ALL FIVE · </span>THE STARTING FIVE · NO. 04 IS ANAVER (BENCH) · 7 AUGUST 2026</p>
 
   <section class="section">
     <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>The five</h2></div><p class="section-sub">Named on 7 August 2026. Anaver is listed with the substitutes below.</p></div>
