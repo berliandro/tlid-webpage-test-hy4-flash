@@ -477,6 +477,15 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .fan-card{width:140px;transform:none;scroll-snap-align:center}
   .fan-card:nth-child(3){transform:translateY(-6px)}
 }
+@media(max-width:480px){
+  /* Placing is a headline result: give it a left rail wide enough for the
+     longest value, and align its header to the same edge as the values. */
+  .archive-row{grid-template-columns:120px minmax(0,1fr);row-gap:6px}
+  .arch-year{grid-column:1;grid-row:1}
+  .arch-main{grid-column:2;grid-row:1}
+  .arch-final{grid-column:2;grid-row:2}
+  .arch-place{grid-column:1;grid-row:2;text-align:left;white-space:nowrap}
+}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
