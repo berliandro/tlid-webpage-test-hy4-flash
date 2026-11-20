@@ -49,11 +49,14 @@ function shell(content) {
   const current = activeHref(routeFromLocation());
   const navLink = (n) => `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`;
   const exploreItems = navItems.filter((n) => n.group === 'explore');
-  const exploreOpen = exploreItems.some((n) => n.href === current);
+  const exploreChild = exploreItems.find((n) => n.href === current);
+  const exploreOpen = !!exploreChild;
+  const exploreLabel = exploreChild ? `Explore: ${exploreChild.en}` : 'Explore';
+  const mobileExplore = window.matchMedia('(max-width:860px)').matches;
   const nav = navItems.filter((n) => n.top).map(navLink).join('') + `
     <div class="nav-explore">
-      <button type="button" class="nav-link explore-toggle${exploreOpen ? ' active' : ''}" aria-expanded="false" aria-controls="explore-menu">Explore</button>
-      <div class="explore-menu" id="explore-menu" hidden>${exploreItems.map(navLink).join('')}</div>
+      <button type="button" class="nav-link explore-toggle${exploreOpen ? ' active' : ''}" aria-expanded="${mobileExplore}" aria-controls="explore-menu">${exploreLabel}</button>
+      <div class="explore-menu" id="explore-menu"${mobileExplore ? '' : ' hidden'}>${exploreItems.map(navLink).join('')}</div>
     </div>`;
   const currentLabel = navItems.find((n) => n.href === current)?.en || (current === '/sources' ? 'Sources' : '');
   const html = `
@@ -71,7 +74,7 @@ function shell(content) {
     <div class="topbar-right">
       <span class="current-section">${currentLabel}</span>
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
-      <span class="pill status-pill"><span class="coin"></span> S18 · SINGLE-SOURCE</span>
+      <span class="pill status-pill"><span class="coin"></span> S18 · 17 NOV</span>
     </div>
   </header>
   <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>

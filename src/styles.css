@@ -68,7 +68,8 @@ html{scrollbar-color:var(--pill) var(--panel);scrollbar-width:thin}
 .search-pill{background:var(--pill);border:1px solid var(--hair);border-radius:999px;display:flex;align-items:center;gap:8px;padding:0 10px;min-height:30px}
 .search-pill input{background:transparent;border:0;outline:0;color:var(--text);font-size:12px;width:130px}
 .search-pill input::placeholder{color:#A8A8B2}
-main:focus,main:focus-visible{outline:none}
+main:focus{outline:none}
+main:focus-visible{outline:2px solid var(--cyan);outline-offset:-4px}
 .search-pill span{color:var(--muted);font-size:12px}
 .center-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:42px;height:42px;flex:none;display:grid;place-items:center;background:var(--panel);border:1px solid var(--hair);border-radius:12px}
 .center-mark img{width:22px;height:26px}
@@ -391,7 +392,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
   .site-nav.open{display:flex}
   .explore-menu{position:static;transform:none;min-width:0;padding:0 0 0 var(--s-3);border:0;background:none}
-  .explore-menu[hidden]{display:flex!important}
+
   .current-section{display:inline-flex}
   .brand-sub,.search-pill>span:last-child{display:none}
   .status-pill{display:none}
