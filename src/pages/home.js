@@ -1,6 +1,7 @@
 import { starters, substitutes } from '../data/players.js';
 import { sources } from '../data/sources.js';
-import { sourceNote } from '../lib/ui.js';
+import { sourceNote, esc } from '../lib/ui.js';
+import { translate } from '../i18n.js';
 
 const fan = starters.map((p) => `
   <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}" style="--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
@@ -10,6 +11,7 @@ const fan = starters.map((p) => `
   </a>`).join('');
 
 export function renderHome() {
+  const benchLabel = `Substitutes (${substitutes.length}) · No. ${substitutes[0].index}`;
   return {
     html: `
 <div class="home-page">
@@ -27,7 +29,7 @@ export function renderHome() {
 
   <section class="section roster-notes">
     <div class="section-head"><div><span class="kicker">01</span><h2>Roster notes</h2></div><p class="section-sub">Anaver is listed with the substitutes.</p></div>
-    <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div><p class="bench-note">No. 04 is Anaver, a substitute. Synthetic illustration, not a real portrait.</p></details>
+    <details class="bench"><summary>${esc(translate(benchLabel))}</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div><p class="bench-note">No. 04 is Anaver, a substitute. Synthetic illustration, not a real portrait.</p></details>
     ${sourceNote(['IG_S18'], 'Roster source')}
   </section>
 

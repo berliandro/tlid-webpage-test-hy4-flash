@@ -50,6 +50,8 @@ try {
 
   const collect = `(() => {
     const out = [];
+    // Disclosures contain user-visible labels too; open them before collecting.
+    document.querySelectorAll('details').forEach((d) => { d.open = true; });
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
       const node = walker.currentNode, text = node.nodeValue.trim();
@@ -130,6 +132,7 @@ try {
     'MPL ID S14 champion',
     'M6 runner-up',
     'S18 lineup announced',
+    'Substitutes (1) · No. 04',
   ];
   const stillFlagged = KNOWN.filter((s) => flagged.some((f) => f.text === s));
 

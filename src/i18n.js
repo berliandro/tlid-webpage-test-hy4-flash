@@ -561,6 +561,7 @@ Object.assign(TO_ID, {
   'points · rank 1': 'poin · peringkat 1',
   'Runner-up': 'Juara kedua',
   'Round 2': 'Babak 2', 'Upper Bracket Final': 'Final braket atas', 'Lower Bracket Final': 'Final braket bawah',
+  'Substitutes (1) · No. 04': 'Cadangan (1) · No. 04',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is

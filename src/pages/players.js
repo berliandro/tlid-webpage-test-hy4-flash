@@ -1,7 +1,9 @@
 import { starters, substitutes, rosterNote } from '../data/players.js';
-import { sourceNote, sectionHead } from '../lib/ui.js';
+import { sourceNote, sectionHead, esc } from '../lib/ui.js';
+import { translate } from '../i18n.js';
 
 export function renderPlayers() {
+  const benchLabel = `Substitutes (${substitutes.length}) · No. ${substitutes[0].index}`;
   return {
     html: `
 <section class="page-head">
@@ -19,7 +21,7 @@ export function renderPlayers() {
       <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
     </a>`).join('')}
   </div>
-  <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary>
+  <details class="bench"><summary>${esc(translate(benchLabel))}</summary>
     <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}"><b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
   </details>
 </section>
