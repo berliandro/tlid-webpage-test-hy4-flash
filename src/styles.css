@@ -74,7 +74,6 @@ main:focus,main:focus-visible{outline:none}
 .nav-link{font-size:12px;font-weight:700;padding:7px 11px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
 .nav-link:hover{background:var(--pill)}
 .nav-link.active{background:var(--text);color:var(--panel)}
-.icon-btn{width:30px;height:30px;border-radius:50%;border:1px solid var(--hair);background:var(--pill);display:grid;place-items:center;font-size:11px}
 .status-pill .coin{width:14px;height:14px;border-radius:50%;background:var(--gold);border:1px solid rgba(0,0,0,.35)}
 
 /* shared content */
@@ -94,7 +93,6 @@ h3{font-size:1.15rem}
 .lede{font-size:14px}
 .section{padding:var(--block-gap) var(--gutter);border-top:1px solid var(--hair);max-width:var(--shell-max);margin:0 auto}
 /* Every block-to-block seam resolves to 2 × --block-gap: no dead bands, no crowding. */
-.record-section{max-width:var(--shell-max);margin-inline:auto;padding:var(--block-gap) var(--gutter);border-top:1px solid var(--hair)}
 .roster-editorial{max-width:var(--shell-max);margin-inline:auto;padding:0 var(--gutter) var(--block-gap)}
 .player-hero{max-width:var(--shell-max);margin-inline:auto;padding:var(--page-y) var(--gutter) var(--block-gap)}
 .section-head{margin-bottom:var(--block-gap);display:flex;align-items:end;justify-content:space-between;gap:var(--block-gap);flex-wrap:wrap}
@@ -134,8 +132,6 @@ em{font-style:normal}
 .hero-cta{margin-top:14px}
 .hero-cta .pill{padding:9px 18px;min-height:38px;background:var(--text);color:var(--panel);border-color:var(--text)}
 .hero-cta .pill:hover{background:var(--cyan);border-color:var(--cyan)}
-.hero-stats{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-.hero-stats .pill{font-family:var(--mono);font-size:12px;color:var(--text);min-height:30px;padding:5px 12px}
 
 /* character fan */
 .card-fan{position:relative;height:clamp(340px,38vw,410px);margin-top:-16px;overflow:hidden}
@@ -143,8 +139,8 @@ em{font-style:normal}
 .fan-card{position:relative;width:clamp(150px,20vw,280px);aspect-ratio:3/4;border-radius:var(--card-radius) var(--card-radius) 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 -8px 30px rgba(0,0,0,.25);transform-origin:bottom center;transition:transform 260ms cubic-bezier(.16,1,.3,1)}
 /* Portrait composition: source photos are cropped flush to the hair, so a colour-matched
    matte restores real headroom and a bottom-anchored image sets the face nearer the middle. */
-.fan-card,.player-card,.portrait-frame,.player-shot{background:var(--card-bg,var(--panel-2))}
-.fan-card img,.player-card img,.portrait-frame img,.portrait-frame .portrait,.player-shot img{
+.fan-card,.player-card,.portrait-frame{background:var(--card-bg,var(--panel-2))}
+.fan-card img,.player-card img,.portrait-frame img,.portrait-frame .portrait{
   position:absolute;left:0;bottom:0;width:100%;height:84%;object-fit:cover;object-position:center top
 }
 .fan-card:nth-child(1){transform:rotate(-11deg) translate(10%,16%);z-index:1}
@@ -189,20 +185,12 @@ em{font-style:normal}
 .bench-list{display:flex;gap:8px;flex-wrap:wrap;padding:0 0 14px}
 .bench-list a{padding:8px 14px;border:1px solid var(--hair);border-radius:999px;font-size:12px;font-weight:700}
 .bench-list span{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:6px}
-.roster-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--block-gap);align-items:center;padding:18px 0;border-bottom:1px solid var(--hair)}
-.player-shot{position:relative;border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--hair);aspect-ratio:3/4}
-.row-copy h2{font-size:clamp(2.2rem,4.4vw,4.4rem);margin:8px 0}
-.row-tagline{font-size:14px;color:var(--muted)}
-.row-meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-top:12px}
-.paper-tag,.portrait-tag,.player-no{font-family:var(--mono);font-size:10px;color:var(--muted)}
-.paper-tag{display:inline-block;margin-top:8px}
+.player-no{font-family:var(--mono);font-size:10px;color:var(--muted)}
 .player-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--block-gap);align-items:start;margin-top:var(--block-gap)}
 .portrait-frame{border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--hair);aspect-ratio:3/4;position:relative}
-.portrait-tag{position:absolute;left:12px;bottom:12px;background:rgba(15,15,17,.7);padding:5px 8px;border-radius:999px}
 .player-no{position:absolute;right:12px;top:12px;font-size:12px;color:var(--cyan)}
 .player-intro h1{font-size:clamp(2.8rem,6vw,6rem);margin:8px 0 12px}
 .script{font-family:var(--mono);font-size:12px;color:var(--cyan)}
-.breadcrumb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .identity-list{margin:var(--s-4) 0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .identity-list div{border-top:1px solid var(--hair);padding-top:8px}
 .identity-list dt{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -226,7 +214,6 @@ em{font-style:normal}
 .mvp-card small{font-family:var(--mono);font-size:10px;color:var(--muted)}
 .record-stack b{color:var(--cyan);font-size:1.8rem;font-weight:800}
 .record-stack span,.record-stack small{display:block;font-family:var(--mono);font-size:10px;color:var(--muted)}
-.split-section{display:grid;grid-template-columns:1fr 1.4fr;gap:var(--block-gap)}
 .conflict-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--block-gap)}
 .conflict-grid h3{margin-bottom:8px}
 
@@ -302,7 +289,7 @@ em{font-style:normal}
 
 /* hardening — hidden tabs pause ambient motion; long labels degrade instead of overflowing */
 body.is-hidden *,body.is-hidden *::before,body.is-hidden *::after{animation-play-state:paused!important}
-h1,h2,h3,.tile b,.arch-place,.source-card h3,.conflict h3,.row-copy h2{overflow-wrap:anywhere}
+h1,h2,h3,.tile b,.arch-place,.source-card h3,.conflict h3{overflow-wrap:anywhere}
 .pill,.nav-link,.brand,.bench-list a{max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .footer-search .search-status{flex-basis:100%;margin-top:2px}
 @media(max-width:560px){
@@ -319,7 +306,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 [data-reveal].is-in{opacity:1;transform:none}
 
 /* controls respond with a small lift */
-.pill,.nav-link,.metric-btn,.filter-btn,.ticket,.search-pill,.icon-btn,.nav-toggle,
+.pill,.nav-link,.metric-btn,.filter-btn,.ticket,.search-pill,.nav-toggle,
 .expand-sources,.lang-toggle,.bench-list a,.footer-search button{
   transition:transform 180ms cubic-bezier(.16,1,.3,1),background-color 180ms ease,border-color 180ms ease,color 180ms ease}
 .pill:hover,.nav-link:hover,.metric-btn:hover,.filter-btn:hover,.ticket:hover,.bench-list a:hover{transform:translateY(-2px)}
@@ -370,13 +357,13 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
   .site-nav.open{display:flex}
   .topbar-left .search-pill{display:none}
-  .status-pill,.icon-btn{display:none}
+  .status-pill{display:none}
   .hero{min-height:auto;padding-top:var(--page-y)}
   .hero h1{font-size:clamp(2.5rem,12vw,4.6rem)}
   .card-fan{height:min(clamp(260px,72vw,420px),64vh)}
   .fan-inner{width:160%;bottom:-2%}
   .roster{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .roster-row,.player-grid,.split-section,.story{grid-template-columns:1fr}
+  .player-grid,.story{grid-template-columns:1fr}
   .archive-row{grid-template-columns:50px 1fr 72px}
   .arch-final{grid-column:2/-1}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -401,7 +388,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 }
 @media(pointer:coarse){.nav-link,.nav-toggle,.metric-btn,.filter-btn,.pill,.ticket,.text-link,.back-link,.source-note summary,.glossary summary,.bench summary,.brand,.center-mark,.site-footer a,.credits-line a{min-height:var(--tap)}}
 /* Functional text floor: nothing below 12px carries information. */
-.src-url,.stat-strip span,.identity-list dt,.bar-label small,.src-meta,.stat-caveat,.chart-note,.arch-main p,.po-note,.po-date,.credits-line,.footer-search label,.footer-search button,.expand-sources,.lang-toggle,.player-no,.paper-tag,.portrait-tag,.result-status,.unavailable-seal,.metric-btn,.filter-btn,.site-footer a,.ticket,.nav-toggle,.search-pill span{font-size:12px}
+.src-url,.stat-strip span,.identity-list dt,.bar-label small,.src-meta,.stat-caveat,.chart-note,.arch-main p,.po-note,.po-date,.credits-line,.footer-search label,.footer-search button,.expand-sources,.lang-toggle,.player-no,.result-status,.unavailable-seal,.metric-btn,.filter-btn,.site-footer a,.ticket,.nav-toggle,.search-pill span{font-size:12px}
 .fan-card .card-name,.player-card .card-name{max-width:none;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.05}
 @media(max-width:560px){
   .card-fan{height:210px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none}
