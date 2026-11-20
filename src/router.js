@@ -9,6 +9,7 @@ import { renderSources } from './pages/sources.js';
 import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
 import { translate, applyLanguage } from './i18n.js';
+import { initMotion } from './motion.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -123,6 +124,7 @@ export function render() {
   const path = routeFromLocation();
   const result = resolve(path);
   app.innerHTML = shell(result.html);
+  initMotion(app);
   const status = document.getElementById('route-status');
   if (status) status.textContent = titles(path);
   document.title = `${titles(path)} — Team Liquid ID`;

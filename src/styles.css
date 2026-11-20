@@ -293,6 +293,54 @@ em{font-style:normal}
 .credits-line{max-width:var(--shell-max);margin:var(--s-3) auto 0;border-top:1px solid var(--hair);padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--muted)}
 .credits-line a{display:inline;color:var(--cyan);text-decoration:underline}
 
+/* motion — transform/opacity only; one observer, no scroll listeners */
+@keyframes page-enter{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
+main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
+[data-reveal]{opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity 520ms cubic-bezier(.2,.7,.2,1),transform 520ms cubic-bezier(.2,.7,.2,1);
+  transition-delay:calc(var(--reveal-i,0)*45ms)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* controls respond with a small lift */
+.pill,.nav-link,.metric-btn,.filter-btn,.ticket,.search-pill,.icon-btn,.nav-toggle,
+.expand-sources,.lang-toggle,.bench-list a,.footer-search button{
+  transition:transform 180ms cubic-bezier(.16,1,.3,1),background-color 180ms ease,border-color 180ms ease,color 180ms ease}
+.pill:hover,.nav-link:hover,.metric-btn:hover,.filter-btn:hover,.ticket:hover,.bench-list a:hover{transform:translateY(-2px)}
+.center-mark{transition:transform 220ms cubic-bezier(.16,1,.3,1),border-color 220ms ease}
+.center-mark:hover{transform:translate(-50%,-50%) scale(1.06)}
+@media(max-width:860px){.center-mark:hover{transform:translateX(-50%) scale(1.06)}}
+
+/* cards and tiles rise; portraits gain depth under the lifted card */
+.player-card,.tile,.source-card,.timeline-card,.story-figure,.total-cell,.mvp-card,.record-stack>div,.conflict{
+  transition:transform 240ms cubic-bezier(.16,1,.3,1),border-color 240ms ease,box-shadow 240ms ease}
+.player-card:hover,.tile:hover,.source-card:hover,.timeline-card:hover,.story-figure:hover,
+.total-cell:hover,.mvp-card:hover,.record-stack>div:hover,.conflict:hover{
+  transform:translateY(-4px);border-color:rgba(255,255,255,.2)}
+.player-card img,.fan-card img{transition:transform 520ms cubic-bezier(.16,1,.3,1)}
+.player-card:hover img,.fan-card:hover img{transform:scale(1.06)}
+.tile:before{transition:width 260ms cubic-bezier(.16,1,.3,1)}
+.tile:hover:before{width:52px}
+
+/* links slide in the reading direction */
+.text-link,.back-link,.row-link,.conflict-link,.site-footer a,.credits-line a{
+  transition:transform 180ms cubic-bezier(.16,1,.3,1),color 180ms ease}
+.text-link:hover,.back-link:hover,.row-link:hover,.conflict-link:hover,.site-footer a:hover,.credits-line a:hover{transform:translateX(3px)}
+
+/* disclosures open with a small reveal; the bench plus turns into a cross */
+.source-note[open] ul,.glossary[open] dl{animation:disclosure-in 240ms ease-out both}
+@keyframes disclosure-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.bench summary:before{transition:transform 220ms cubic-bezier(.16,1,.3,1)}
+.bench[open] summary:before{transform:rotate(45deg)}
+
+/* idle detail: a slow ring on the status coin, a float on the mark, breathing on home */
+@keyframes coin-pulse{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(1.7);opacity:0}}
+.status-pill .coin{position:relative}
+.status-pill .coin:after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--gold);animation:coin-pulse 2.8s ease-out infinite}
+@keyframes mark-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.center-mark img{animation:mark-float 5.5s ease-in-out infinite}
+@keyframes coin-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.home-page .hero-badge .coin{animation:coin-breathe 3.4s ease-in-out infinite}
+
 /* responsive */
 @media(max-width:1100px){
   .topbar{grid-template-columns:1fr auto;row-gap:12px}
@@ -344,4 +392,8 @@ em{font-style:normal}
   .fan-card{width:140px;transform:none;scroll-snap-align:center}
   .fan-card:nth-child(3){transform:translateY(-6px)}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fan-card,.bar-track span{transition:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+}
