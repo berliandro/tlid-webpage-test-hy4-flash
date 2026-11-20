@@ -8,7 +8,7 @@ import { renderHistory } from './pages/history.js';
 import { renderSources } from './pages/sources.js';
 import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
-import { translate, applyLanguage } from './i18n.js';
+import { translate, applyLanguage, getLang } from './i18n.js';
 import { initMotion } from './motion.js';
 
 const app = document.getElementById('app');
@@ -140,6 +140,17 @@ function titles(path) {
   return translate(title);
 }
 
+// Short, truthful placeholder on narrow viewports; the accessible name stays descriptive.
+function syncSearchPlaceholder() {
+  const narrow = window.matchMedia('(max-width:360px)').matches;
+  const short = { en: 'Find section', id: 'Cari bagian' };
+  const long = { en: 'Find a section…', id: 'Cari bagian…' };
+  const lang = getLang();
+  document.querySelectorAll('#site-search, #site-search-footer').forEach((el) => {
+    el.placeholder = narrow ? short[lang] : long[lang];
+  });
+}
+
 export function render() {
   const path = routeFromLocation();
   const result = resolve(path);
@@ -153,6 +164,7 @@ export function render() {
   result.mount?.();
   wireNav();
   applyLanguage(document);
+  syncSearchPlaceholder();
 }
 
 function wireNav() {
@@ -216,6 +228,7 @@ export function startRouter() {
     document.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
   });
   window.addEventListener('popstate', render);
+  window.addEventListener('resize', syncSearchPlaceholder);
   render();
 }
 
