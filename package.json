@@ -9,6 +9,7 @@
     "start": "node server.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node server.mjs --dist",
-    "check": "node --check src/main.js && node --check src/router.js && node --check server.mjs && node --check scripts/build.mjs"
+    "check": "node --check src/main.js && node --check src/router.js && node --check server.mjs && node --check scripts/build.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
   }
 }
