@@ -15,7 +15,7 @@ colors:
   purple: "#8B55F3"
   red: "#F95264"
   green: "#05E0CC"
-  grid-line: "rgba(255,255,255,.055)"
+  grid-line: "rgba(255,255,255,.038)"
   hairline: "rgba(255,255,255,.09)"
   muted-light: "#A8A8B2"
   shade-25: "rgba(0,0,0,.25)"
