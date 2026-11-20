@@ -67,7 +67,7 @@ function shell(content, title) {
       <div><p class="footer-label">Navigasi</p>${navItems.map((n) => `<a href="${n.href}">${n.label}</a>`).join('')}</div>
       <div><p class="footer-label">Data</p><a href="/sources">Daftar sumber</a><a href="/statistics">Catatan verifikasi</a><a href="/players">Roster S18</a></div>
     </div>
-    <details class="glossary"><summary>Glosarium</summary><dl>
+    <details class="glossary" open><summary>Glosarium</summary><dl>
       <div><dt>MLBB</dt><dd>Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.</dd></div>
       <div><dt>MPL ID</dt><dd>Liga MLBB profesional Indonesia tempat TLID berkompetisi.</dd></div>
       <div><dt>S18</dt><dd>Season 18, musim kompetisi yang menjadi acuan roster saat ini.</dd></div>
@@ -75,6 +75,10 @@ function shell(content, title) {
       <div><dt>MVP</dt><dd>Pemain paling berkontribusi menurut klasemen resmi liga.</dd></div>
       <div><dt>Kill participation</dt><dd>Persentase kill tim yang melibatkan pemain tersebut.</dd></div>
     </dl></details>
+    <div class="footer-controls">
+      <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Tampilkan semua sumber</button>
+      <p class="motion-note">Gerakan dikurangi otomatis bila sistem memintanya.</p>
+    </div>
     <div class="footer-bottom-row">
       <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
@@ -106,7 +110,6 @@ function titles(path) {
 
 export function render() {
   const path = routeFromLocation();
-  document.body.classList.toggle('route-home', path === '/');
   const result = resolve(path);
   app.innerHTML = shell(result.html, titles(path));
   document.title = `${titles(path)} — Team Liquid ID`;

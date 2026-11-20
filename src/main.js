@@ -15,3 +15,13 @@ document.addEventListener('click', (e) => {
 document.addEventListener('visibilitychange', () => {
   document.body.classList.toggle('is-hidden', document.hidden);
 });
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-expand-sources]');
+  if (!btn) return;
+  const notes = [...document.querySelectorAll('.source-note')];
+  const open = btn.getAttribute('aria-expanded') !== 'true';
+  notes.forEach((note) => { note.open = open; });
+  btn.setAttribute('aria-expanded', String(open));
+  btn.textContent = open ? 'Sembunyikan sumber' : 'Tampilkan semua sumber';
+});

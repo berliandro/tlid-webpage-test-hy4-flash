@@ -278,35 +278,22 @@ const DICT = {
   'Pemain paling berkontribusi menurut klasemen resmi liga.': 'The most contributing player per the league’s official standings.',
   'Kill participation': 'Kill participation',
   'Persentase kill tim yang melibatkan pemain tersebut.': 'Share of team kills involving that player.',
+  'Buka ledger ': 'Open the ledger ',
+  'S18 / KEDUDUKAN': 'S18 / PLACEMENT',
+  'REKOR PERTANDINGAN · 2024–2026': 'MATCH RECORD · 2024–2026',
+  'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Potret pemain bersumber dari Liquipedia Commons, bukan ukiran; Anaver memakai ilustrasi.': 'S18 lineup per the official 7 August 2026 announcement. Player portraits come from Liquipedia Commons, not engravings; Anaver uses an illustration.',
+  'Tampilkan semua sumber': 'Show all sources',
+  'Sembunyikan sumber': 'Hide all sources',
+  'Gerakan dikurangi otomatis bila sistem memintanya.': 'Motion is reduced automatically when your system requests it.',
+  'Tidak ada entri untuk filter ini.': 'No entries for this filter.',
   'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya.': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence.',
 };
 
-// Phrase fallbacks for dynamically composed strings not covered by exact keys.
-const PHRASES = Object.entries(DICT)
-  .filter(([id]) => id.length > 3)
-  .sort((a, b) => b[0].length - a[0].length);
-const EXTRAS = [
-  [' dan ', ' and '], ['Di ', 'In '], ['Untuk ', 'For '], ['untuk ', 'for '],
-  ['Dengan ', 'With '], ['dengan ', 'with '], ['Dari ', 'From '], ['dari ', 'from '],
-  ['Mei', 'May'], ['Agu', 'Aug'], ['Okt', 'Oct'], ['Des', 'Dec'], ['Nov', 'Nov'],
-  ['Jan', 'Jan'], ['Feb', 'Feb'], ['Mar', 'Mar'], ['Apr', 'Apr'], ['Jun', 'Jun'], ['Jul', 'Jul'],
-  ['tidak ', 'not '], ['Tidak ', 'Not '], ['pada ', 'on '], ['Musim ', 'Season '],
-  ['klasemen', 'standings'], ['peringkat', 'rank'],
-  ['terverifikasi', 'verified'], ['tersedia', 'available'], ['dipublikasikan', 'published'],
-  ['pengumuman', 'announcement'], ['sumber', 'source'], ['statistik', 'statistics'],
-  ['musiman', 'season'], ['turnamen', 'tournament'], ['pertandingan', 'match'],
-  ['pemain', 'player'], ['gelar', 'title'], ['bukan', 'not'],
-];
-const ALL = [...PHRASES, ...EXTRAS].sort((a, b) => b[0].length - a[0].length);
-
+// Exact-match only. Blind fragment substitution can change meaning, which is
+// unacceptable on a product whose core promise is "never invent the record".
 export function translate(text) {
   if (getLang() === 'id' || typeof text !== 'string') return text;
-  if (DICT[text] !== undefined) return DICT[text];
-  let out = text;
-  for (const [from, to] of ALL) {
-    if (out.includes(from)) out = out.split(from).join(to);
-  }
-  return out;
+  return DICT[text] !== undefined ? DICT[text] : text;
 }
 
 const ATTRS = ['aria-label', 'title', 'placeholder', 'alt'];

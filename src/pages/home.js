@@ -17,11 +17,12 @@ export function renderHome() {
     <div class="home-identity">
       <h1 id="home-title" class="home-title">Team Liquid <span class="home-title-accent">ID</span></h1>
       <p class="home-deck">Enam pemain. Satu tim MLBB Indonesia. Setiap musim dipotong menjadi pola.</p>
-      <a class="home-cta" href="/players">Temui roster <span aria-hidden="true">→</span></a>
+      <a class="home-cta" href="/players">Buka ledger <span aria-hidden="true">→</span></a>
       <span class="home-thread" aria-hidden="true"></span>
     </div>
     <aside class="home-pulse" aria-label="Snapshot terakhir">
       <p class="pulse-kicker">SNAPSHOT · ${pulse.date}</p>
+      <p class="pulse-unit">S18 / KEDUDUKAN</p>
       <p class="pulse-big">ke-3</p>
       ${pulse.lines.map((line) => `<p class="pulse-line">${line}</p>`).join('')}
       <p class="pulse-note">${pulse.note}</p>
@@ -32,13 +33,14 @@ export function renderHome() {
   <section class="home-players" aria-labelledby="players-band-title">
     <div class="home-head">
       <h2 id="players-band-title">Enam individu</h2>
-      <p>Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Ilustrasi, bukan potret.</p>
+      <p>Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Potret pemain bersumber dari Liquipedia Commons, bukan ukiran; Anaver memakai ilustrasi.</p>
     </div>
     <div class="band">${band}</div>
     ${sourceNote(['IG_S18'])}
   </section>
 
   <section class="home-record" aria-labelledby="record-title">
+    <p class="record-unit">REKOR PERTANDINGAN · 2024–2026</p>
     <p class="record-number">71–50</p>
     <div class="record-body">
       <h2 id="record-title">Rekor agregat</h2>
