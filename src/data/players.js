@@ -9,7 +9,7 @@ export const rosterNote = {
 
 export const players = [
   {
-    slug: 'aran', handle: 'Aran', realName: 'Aldhia Fahmi Aranda',
+    slug: 'aran', handle: 'Aran', realName: 'Aldhia Fahmi Aranda', starter: true,
     role: 'EXP Laner', nationality: 'Indonesia', born: '2003-02-23',
     joined: 'Tercatat di roster S14 (2024-07-31)',
     portrait: 'player-1', photo: 'Aran', index: '01',
@@ -23,7 +23,7 @@ export const players = [
     sources: ['IG_S18', 'LIQ_PLAYER', 'MLBBHUB'],
   },
   {
-    slug: 'kevin', handle: 'Kevin', realName: null,
+    slug: 'kevin', handle: 'Kevin', realName: null, starter: true,
     role: 'Jungler', nationality: null, born: null,
     joined: 'Bergabung 2025-08',
     portrait: 'player-2', photo: 'Kevinn', index: '02',
@@ -39,7 +39,7 @@ export const players = [
     conflict: 'Sumber S18: Jungler. MLBBHub: Gold Laner. Keduanya ditampilkan apa adanya; peran final belum dikonsolidasikan.',
   },
   {
-    slug: 'drichel', handle: 'Drichel', realName: 'Andric Alfayyadh',
+    slug: 'drichel', handle: 'Drichel', realName: 'Andric Alfayyadh', starter: true,
     role: 'Mid Laner', nationality: 'Indonesia', born: null,
     joined: 'Bergabung 2026-03',
     portrait: 'player-3', photo: 'Drichel', index: '03',
@@ -53,7 +53,7 @@ export const players = [
     sources: ['IG_S18', 'LIQ_PLAYER', 'MPL_STATS', 'MLBBHUB'],
   },
   {
-    slug: 'anaver', handle: 'Anaver', realName: null,
+    slug: 'anaver', handle: 'Anaver', realName: null, starter: false,
     role: 'Mid Laner', nationality: null, born: null,
     joined: 'Bergabung 2026-08',
     portrait: 'player-4', index: '04',
@@ -67,7 +67,7 @@ export const players = [
     sources: ['IG_S18'],
   },
   {
-    slug: 'keven', handle: 'Keven', realName: null,
+    slug: 'keven', handle: 'Keven', realName: null, starter: true,
     role: 'Gold Laner', nationality: null, born: null,
     joined: 'Bergabung 2026-08',
     portrait: 'player-5', photo: 'Keven', index: '05',
@@ -82,7 +82,7 @@ export const players = [
     conflict: 'Kevin / Kevinn / Keven muncul sebagai entitas terpisah di MLBBHub. Halaman ini hanya memakai Keven sesuai pengumuman S18.',
   },
   {
-    slug: 'lyoni', handle: 'Lyoni', realName: null,
+    slug: 'lyoni', handle: 'Lyoni', realName: null, starter: true,
     role: 'Roamer', nationality: 'Indonesia', born: null,
     joined: 'Akademi → tim utama, 2026-03',
     portrait: 'player-6', photo: 'Lyoni', index: '06',
@@ -98,4 +98,6 @@ export const players = [
   },
 ];
 
+export const starters = players.filter((p) => p.starter);
+export const substitutes = players.filter((p) => !p.starter);
 export const playerBySlug = Object.fromEntries(players.map((p) => [p.slug, p]));

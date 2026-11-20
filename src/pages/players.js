@@ -1,4 +1,5 @@
-import { players, rosterNote } from '../data/players.js';
+import { starters, substitutes, rosterNote } from '../data/players.js';
+import { icon } from '../icons.js';
 import { portrait, portraitCredit, sourceNote, sectionHead } from '../lib/ui.js';
 
 export function renderPlayers() {
@@ -11,7 +12,7 @@ export function renderPlayers() {
 </section>
 
 <section class="roster-editorial">
-  ${players.map((p, i) => `
+  ${starters.map((p, i) => `
   <a class="roster-row${i % 2 ? ' reverse' : ''}" href="/players/${p.slug}">
     <div class="row-portrait" style="--tilt:${i % 2 ? '3deg' : '-3deg'}">
       <span class="row-index">${p.index}</span>
@@ -26,6 +27,9 @@ export function renderPlayers() {
       <span class="row-link">Buka profil →</span>
     </div>
   </a>`).join('')}
+  <details class="bench-panel"><summary>Cadangan · ${substitutes.length} pemain</summary>
+    <div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${icon('quill')}<b>${p.handle}</b><span>${p.role}</span></a>`).join('')}</div>
+  </details>
 </section>
 
 <section class="section note-section">
