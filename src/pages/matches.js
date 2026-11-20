@@ -16,7 +16,7 @@ export function renderMatches() {
 <section class="section upcoming-section">
   ${sectionHead('Mendatang', 'Keadaan kosong yang disengaja')}
   ${upcoming.available
-    ? `<div class="unavailable"><h3>${upcoming.title}</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`
+    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`
     : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`}
 </section>
 
@@ -31,7 +31,7 @@ export function renderMatches() {
 </section>
 
 <section class="section">
-  ${sectionHead('S18', 'Jalur playoff terakhir', 'Jatim Expo, Surabaya · 4–8 November 2026')}
+  ${sectionHead('S18', 'Jalur playoff terakhir', 'Jatim Expo, Surabaya · 4–2026-11-8')}
   <ol class="playoff-line">${playoffRun.map((m) => `<li><span class="po-date">${m.date}</span><span class="po-round">${m.round}</span><b>${m.result}</b><span class="po-note">${m.note}</span>${sourceNote(m.sources, 'Sumber')}</li>`).join('')}</ol>
 </section>
 
@@ -50,7 +50,7 @@ export function renderMatches() {
         currentYear = year;
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
           .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
-        archive.innerHTML = `<p class="result-status"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
+        archive.innerHTML = `<p class="result-status"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini. <button type="button" class="filter-btn" data-reset>Semua</button></p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
@@ -58,6 +58,9 @@ export function renderMatches() {
             <span class="arch-place${t.place === 'Juara' ? ' gold' : ''}">${t.place}</span>
           </article>`).join('');
         applyLanguage(archive);
+        archive.querySelector('[data-reset]')?.addEventListener('click', () => {
+          buttons.find((b) => b.dataset.year === 'all')?.click();
+        });
       };
       const requested = new URLSearchParams(location.search).get('y');
       const initial = years.some((y) => String(y) === requested) ? requested : 'all';

@@ -12,7 +12,7 @@ export function getLang() {
 }
 
 export function setLang(lang) {
-  const next = lang === 'id' ? 'id' : 'en';
+  const next = lang === 'id' ? 'id': 'en';
   try { localStorage.setItem(STORAGE_KEY, next); } catch { /* storage disabled */ }
   document.documentElement.lang = next;
   return next;
@@ -32,7 +32,7 @@ const DICT = {
   'Daftar sumber': 'Sources', 'Catatan verifikasi': 'Verification notes',
   'Roster S18': 'S18 roster', 'Data': 'Data',
   'Proyek independen. Tidak afiliasi, tidak commission, dan tidak disetujui oleh Team Liquid atau Moonton. Potret pemain bersumber dari Liquipedia Commons (CC BY-SA 3.0); Anaver memakai ilustrasi sintetik.': 'Independent project. Not affiliated with, commissioned by, or endorsed by Team Liquid or Moonton. Player portraits are sourced from Liquipedia Commons (CC BY-SA 3.0); Anaver uses a synthetic illustration.',
-  'Dibangun sebagai arsip editorial · data dari riset publik 17 November 2026 · status tidak diketahui sengaja dibiarkan kosong.': 'Built as an editorial archive · data from public research, 17 November 2026 · unknown states are intentionally left blank.',
+  'Dibangun sebagai arsip editorial · data dari riset publik 2026-11-17 · status tidak diketahui sengaja dibiarkan kosong.': 'Built as an editorial archive · data from public research, 17 November 2026 · unknown states are intentionally left blank.',
 
   // shared helpers
   'Tidak tersedia dalam data terverifikasi': 'Not available in verified data',
@@ -62,9 +62,9 @@ const DICT = {
   '01 / Tim': '01 / Team', '02 / Pemain': '02 / Players',
   '03 / Rekam jejak': '03 / Track record', '04 / Lanjutkan perjalanan': '04 / Continue the journey',
   'Identitas yang dirakit dari hasil, bukan sebaliknya': 'Identity assembled from results, not the other way around',
-  'Team Liquid ID adalah skuad Mobile Legends: Bang Bang milik Team Liquid di Indonesia. Tim dibentuk setelah akuisisi STUN.GG beserta AURA Esports dan ECHO pada 21 Mei 2024, tampil sebagai Liquid AURA di S13, lalu memakai nama TLID sejak S14.': 'Team Liquid ID is Team Liquid’s Indonesian Mobile Legends: Bang Bang squad. The team was formed after the 21 May 2024 acquisition of STUN.GG along with AURA Esports and ECHO, competed as Liquid AURA in S13, and has used the TLID name since S14.',
+  'Team Liquid ID adalah skuad Mobile Legends: Bang Bang milik Team Liquid di Indonesia. Tim dibentuk setelah akuisisi STUN.GG beserta AURA Esports dan ECHO pada 2024-05-21, tampil sebagai Liquid AURA di S13, lalu memakai nama TLID sejak S14.': 'Team Liquid ID is Team Liquid’s Indonesian Mobile Legends: Bang Bang squad. The team was formed after the 21 May 2024 acquisition of STUN.GG along with AURA Esports and ECHO, competed as Liquid AURA in S13, and has used the TLID name since S14.',
   'Liga': 'League', 'Induk': 'Parent', 'Bentuk': 'Formed',
-  '21 Mei 2024 · akuisisi STUN.GG / AURA Esports / ECHO': '21 May 2024 · acquisition of STUN.GG / AURA Esports / ECHO',
+  '2024-05-21 · akuisisi STUN.GG / AURA Esports / ECHO': '21 May 2024 · acquisition of STUN.GG / AURA Esports / ECHO',
   'Enam jalur dalam satu pola': 'Six threads in one pattern',
   'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Ilustrasi di bawah bukan potret asli.': 'S18 lineup according to the official 7 August 2026 announcement. The illustrations below are not real portraits.',
   'Angka yang bisa dipertanggungjawabkan': 'Numbers that can be accounted for',
@@ -81,7 +81,7 @@ const DICT = {
   // players list
   'DAFTAR': 'ROSTER', 'PEMAIN': 'PLAYERS',
   'Enam identitas, enam jalur. Halaman ini memakai roster yang diumumkan TLID pada 7 Agustus 2026, bukan daftar lama di situs resmi.': 'Six identities, six threads. This page uses the roster TLID announced on 7 August 2026, not the older list on the official site.',
-  'Roster S18 · 7 Agu 2026': 'S18 roster · 7 Aug 2026',
+  'Roster S18 · 2026-08-7': 'S18 roster · 7 Aug 2026',
   'Susunan ini berasal dari pengumuman resmi TLID untuk MPL ID Season 18 dan dua sumber pendukung. Halaman tim resmi masih menampilkan daftar lama, sehingga tidak dipakai sebagai roster saat ini.': 'This lineup comes from TLID’s official MPL ID Season 18 announcement and two supporting sources. The official team page still shows an older list, so it is not used as the current roster.',
   'Buka profil →': 'Open profile →',
   'Catatan': 'Notes', 'Apa yang sengaja tidak kami isi': 'What we deliberately left blank',
@@ -96,7 +96,7 @@ const DICT = {
   '← Kembali ke roster': '← Back to roster',
   'KDA rata-rata': 'Average KDA', 'Kill participation': 'Kill participation',
   'Game tercatat': 'Games recorded', 'K/D/A rata-rata': 'Average K/D/A',
-  'Statistik dari MLBBHub, 17 Nov 2026 14:13 UTC. Peran menurut sumber: ': 'Statistics from MLBBHub, 17 Nov 2026 14:13 UTC. Role per source: ',
+  'Statistik dari MLBBHub, 2026-11-17 14:13 UTC. Peran menurut sumber: ': 'Statistics from MLBBHub, 17 Nov 2026 14:13 UTC. Role per source: ',
   'Nilai KDA 6.39 milik Drichel; Kevin 5.82.': 'Drichel’s KDA is 6.39; Kevin’s is 5.82.',
   'Statistik musiman untuk ': 'Season statistics for ',
   ' tidak tersedia dalam data yang dikumpulkan. Kami tidak mengisi dengan nol atau perkiraan.': ' are not available in the collected data. We do not fill them with zero or estimates.',
@@ -113,22 +113,22 @@ const DICT = {
   'Lihat garis waktu tim →': 'View team timeline →',
 
   // player data
-  'Tercatat di roster S14 (31 Jul 2024)': 'Listed on the S14 roster (31 Jul 2024)',
-  'Bergabung Agu 2025': 'Joined Aug 2025', 'Bergabung Mar 2026': 'Joined Mar 2026',
-  'Bergabung Agu 2026': 'Joined Aug 2026', 'Akademi → tim utama, Mar 2026': 'Academy → main team, Mar 2026',
+  'Tercatat di roster S14 (2024-07-31)': 'Listed on the S14 roster (31 Jul 2024)',
+  'Bergabung 2025-08': 'Joined Aug 2025', 'Bergabung 2026-03': 'Joined Mar 2026',
+  'Bergabung 2026-08': 'Joined Aug 2026', 'Akademi → tim utama, 2026-03': 'Academy → main team, Mar 2026',
   'Pilar EXP yang sudah melewati lebih dari satu babak tim.': 'An EXP mainstay who has crossed more than one chapter of the team.',
   'Aran tercatat sebagai EXP Laner TLID dalam roster S14 dan tetap masuk susunan S18. Namanya, tanggal lahir, dan kewarganegaraannya didokumentasikan di beberapa basis data esports.': 'Aran is listed as TLID’s EXP Laner on the S14 roster and remains in the S18 lineup. His name, date of birth and nationality are documented in several esports databases.',
-  'EXP Laner dalam daftar roster S14 bersama Jeymz (31 Jul 2024).': 'EXP Laner on the S14 roster alongside Jeymz (31 Jul 2024).',
+  'EXP Laner dalam daftar roster S14 bersama Jeymz (2024-07-31).': 'EXP Laner on the S14 roster alongside Jeymz (31 Jul 2024).',
   'Salah satu dari tiga pemain dengan statistik musiman yang terverifikasi di MLBBHub.': 'One of three players with verified season statistics on MLBBHub.',
   'Nama panggungnya berubah di S17; datanya ada, identitas pribadinya tidak.': 'His stage name changed in S17; the data exists, the personal identity does not.',
   'Pengumuman S18 menempatkan Kevin sebagai Jungler. Sumber independen mencatat bahwa ia sebelumnya menggunakan nama “Joo” dan bergabung dengan TLID pada Agustus 2025. Nama asli dan tanggal lahirnya tidak terverifikasi.': 'The S18 announcement places Kevin as Jungler. An independent source notes that he previously used the name “Joo” and joined TLID in August 2025. His real name and date of birth are unverified.',
   'Mengubah nama panggung dari “Joo” menjadi Kevin pada MPL ID S17.': 'Changed stage name from “Joo” to Kevin in MPL ID S17.',
-  'Memimpin klasemen MVP dengan 151 poin di data MLBBHub (17 Nov 2026).': 'Leads the MVP standings with 151 points in MLBBHub data (17 Nov 2026).',
+  'Memimpin klasemen MVP dengan 151 poin di data MLBBHub (2026-11-17).': 'Leads the MVP standings with 151 points in MLBBHub data (17 Nov 2026).',
   'Peran diperdebatkan: pengumuman S18 menyebut Jungler, MLBBHub mencantumkan GOLD.': 'Role disputed: the S18 announcement says Jungler, MLBBHub lists GOLD.',
   'Sumber S18: Jungler. MLBBHub: Gold Laner. Keduanya ditampilkan apa adanya; peran final belum dikonsolidasikan.': 'S18 source: Jungler. MLBBHub: Gold Laner. Both are shown as recorded; the final role has not been consolidated.',
   'KDA 6.39 — angka yang juga muncul di papan peringkat resmi MPL.': 'KDA 6.39 — a figure that also appears on MPL’s official leaderboard.',
   'Drichel masuk TLID pada Maret 2026 sebagai Mid Laner. Andric Alfayyadh tercatat sebagai nama aslinya. KDA rata-ratanya muncul baik di MLBBHub maupun di daftar Top 5 KDA resmi MPL.': 'Drichel joined TLID in March 2026 as Mid Laner. Andric Alfayyadh is recorded as his real name. His average KDA appears both on MLBBHub and in MPL’s official Top 5 KDA list.',
-  'KDA 6.39 dengan 78% kill participation pada 53 game (MLBBHub, 17 Nov 2026).': 'KDA 6.39 with 78% kill participation across 53 games (MLBBHub, 17 Nov 2026).',
+  'KDA 6.39 dengan 78% kill participation pada 53 game (MLBBHub, 2026-11-17).': 'KDA 6.39 with 78% kill participation across 53 games (MLBBHub, 17 Nov 2026).',
   'Termasuk dalam daftar Top 5 Avg KDA di halaman statistik resmi MPL ID.': 'Included in the Top 5 Average KDA list on the official MPL ID statistics page.',
   'Anggota gelombang S18 yang datanya belum dipublikasikan.': 'A member of the S18 wave whose data has not been published.',
   'Anaver diumumkan sebagai Mid Laner dalam roster S18. Akun Instagramnya menggunakan nama “Nain”. Nama asli, tanggal lahir, dan statistik musimannya tidak tersedia dalam data yang dikumpulkan.': 'Anaver was announced as Mid Laner in the S18 roster. His Instagram account uses the name “Nain”. His real name, date of birth and season statistics are not available in the collected data.',
@@ -141,7 +141,7 @@ const DICT = {
   'Kevin / Kevinn / Keven muncul sebagai entitas terpisah di MLBBHub. Halaman ini hanya memakai Keven sesuai pengumuman S18.': 'Kevin / Kevinn / Keven appear as separate entities on MLBBHub. This page uses only Keven, per the S18 announcement.',
   'Jalur akademi yang akhirnya sampai ke roster utama.': 'An academy path that eventually reached the main roster.',
   'Lyoni naik dari TLID Academy ke tim utama pada Maret 2026 dan tercatat pernah bermain untuk Monster Vicious. Dua sumber memberi nama lengkap yang berbeda, sehingga halaman ini tidak memilih salah satu.': 'Lyoni moved from TLID Academy to the main team in March 2026 and is recorded as having played for Monster Vicious. Two sources give different full names, so this page does not choose one.',
-  'Jalur karier: Monster Vicious → TLID Academy → tim utama (Mar 2026).': 'Career path: Monster Vicious → TLID Academy → main team (Mar 2026).',
+  'Jalur karier: Monster Vicious → TLID Academy → tim utama (2026-03).': 'Career path: Monster Vicious → TLID Academy → main team (Mar 2026).',
   'Tercatat sebagai Roamer dalam pengumuman S18.': 'Listed as Roamer in the S18 announcement.',
   'Nama lengkap: “Muhammad ‘Lyoni’ Wijaya” dan “Muhammad Rio Adi Wijaya” keduanya muncul di sumber berbeda.': 'Full name: “Muhammad ‘Lyoni’ Wijaya” and “Muhammad Rio Adi Wijaya” both appear in different sources.',
 
@@ -149,7 +149,7 @@ const DICT = {
   'Angka dengan': 'Numbers with', 'label yang jujur': 'honest labels',
   'Hanya nilai yang tercatat dalam riset yang ditampilkan. Jika musim, scope, atau sumbernya diperdebatkan, kami katakan — bukan memilih angka yang paling rapi.': 'Only values recorded in the research are shown. If the season, scope or source is disputed, we say so rather than choosing the tidiest number.',
   'Perbandingan': 'Comparison', 'Tiga pemain dengan data musiman': 'Three players with season data',
-  'Data MLBBHub · 17 Nov 2026, 14:13 UTC. Klik metrik untuk mengubah perbandingan.': 'MLBBHub data · 17 Nov 2026, 14:13 UTC. Click a metric to change the comparison.',
+  'Data MLBBHub · 2026-11-17, 14:13 UTC. Klik metrik untuk mengubah perbandingan.': 'MLBBHub data · 17 Nov 2026, 14:13 UTC. Click a metric to change the comparison.',
   'Pilih metrik perbandingan': 'Choose comparison metric',
   'Game tercatat': 'Games recorded',
   'Nilai KDA 6.39 Drichel juga muncul di daftar Top 5 resmi MPL ID. Peran Kevin mengikuti MLBBHub (GOLD) dan berbeda dengan pengumuman S18 (Jungler).': 'Drichel’s 6.39 KDA also appears on MPL ID’s official Top 5 list. Kevin’s role follows MLBBHub (GOLD) and differs from the S18 announcement (Jungler).',
@@ -166,9 +166,9 @@ const DICT = {
   'Nilai 151 poin muncul di MLBBHub; klasemen MVP juga tersedia di halaman resmi MPL ID.': 'The 151-point value appears on MLBBHub; the MVP standings are also on the official MPL ID page.',
   'Nilai identik muncul di empat jalur statistik resmi dengan judul musim berbeda (S14–S18). Angka ini tidak diberi label musim.': 'Identical values appear on four official statistics paths with different season titles (S14–S18). These numbers are not season-labelled.',
   'Rekor agregat pertandingan': 'Aggregate match record',
-  '174–141 game · 21 Mei 2024 – 2 Okt 2026': '174–141 games · 21 May 2024 – 2 Oct 2026',
+  '174–141 game · 2024-05-21 – 2026-10-2': '174–141 games · 21 May 2024 – 2 Oct 2026',
   '26–11 game (+15) · posisi 1 klasemen': '26–11 games (+15) · 1st in standings',
-  'Posisi 3': '3rd place', 'Kalah 3–4 dari BTR di final braket bawah, 7 Nov 2026': 'Lost 3–4 to BTR in the lower-bracket final, 7 Nov 2026',
+  'Posisi 3': '3rd place', 'Kalah 3–4 dari BTR di final braket bawah, 2026-11-7': 'Lost 3–4 to BTR in the lower-bracket final, 7 Nov 2026',
   'Pengumuman S18 menyebut Jungler; MLBBHub mencantumkan GOLD. Keduanya ditandai di halaman pemain dan tabel statistik.': 'The S18 announcement says Jungler; MLBBHub lists GOLD. Both are flagged on the player page and statistics table.',
 
   // matches
@@ -177,26 +177,26 @@ const DICT = {
   'Mendatang': 'Upcoming', 'Keadaan kosong yang disengaja': 'An intentional empty state',
   'NO VERIFIED FIXTURE': 'NO VERIFIED FIXTURE',
   'Tidak ada jadwal terverifikasi': 'No verified fixtures',
-  'S18 berakhir pada 8 November 2026. Tidak ada pertandingan mendatang yang dapat diverifikasi dalam paket riset, jadi halaman ini sengaja tidak menampilkan jadwal palsu.': 'S18 ended on 8 November 2026. No upcoming matches could be verified in the research package, so this page deliberately shows no fake schedule.',
+  'S18 berakhir pada 2026-11-8. Tidak ada pertandingan mendatang yang dapat diverifikasi dalam paket riset, jadi halaman ini sengaja tidak menampilkan jadwal palsu.': 'S18 ended on 8 November 2026. No upcoming matches could be verified in the research package, so this page deliberately shows no fake schedule.',
   'Arsip': 'Archive', 'Turnamen yang tercatat': 'Recorded tournaments',
   'Satu baris adalah satu turnamen, bukan satu pertandingan.': 'One row is one tournament, not one match.',
   'Filter tahun turnamen': 'Filter tournament year', 'Semua': 'All',
   'Jalur playoff terakhir': 'Latest playoff path',
-  'Jatim Expo, Surabaya · 4–8 November 2026': 'Jatim Expo, Surabaya · 4–8 November 2026',
+  'Jatim Expo, Surabaya · 4–2026-11-8': 'Jatim Expo, Surabaya · 4–8 November 2026',
   'Menang': 'Win', 'Kalah': 'Loss', 'TLID tidak bertanding': 'TLID did not compete',
   'Konflik': 'Conflicts', 'Catatan arsip': 'Archive notes',
   'Babak grup 5/2': 'Group stage 5/2', 'Babak grup 4/12 · tidak lolos playoff': 'Group stage 4/12 · did not reach playoffs',
   'Identitas S13': 'S13 identity',
   'Liquipedia mencatat hasil S13 di bawah TLID, sementara Wikipedia menyebut rebrand dari Liquid AURA baru terjadi di S14. Atribusi hasil S13 ambigu.': 'Liquipedia records the S13 result under TLID, while Wikipedia says the rebrand from Liquid AURA happened in S14. S13 attribution is ambiguous.',
   'Tanggal final M6': 'M6 final date',
-  '15 Desember 2024 menurut Liquipedia dan Wikipedia; 14 Desember menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
+  '2024-12-15 menurut Liquipedia dan Wikipedia; 14 /12 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
   'Juara': 'Champion',
 
   // discover
   'Hal yang bikin': 'What makes', 'arsip ini hidup': 'this archive live',
   'Setiap cerita di halaman ini bersumber dari paket riset Stage 4. Angka adalah fakta yang dikutip, bukan data contoh. Buka catatan sumber pada tiap bagian untuk melihat asal dan batas keyakinannya.': 'Every story on this page comes from the Stage 4 research package. Figures are cited facts, not sample data. Open the source note on each section to see origin and confidence.',
   'Gelar': 'Title', 'Tujuh game untuk gelar pertama': 'Seven games for a first title',
-  'Grand Final MPL Indonesia Season 14 berakhir 4–3 atas RRQ Hoshi pada 27 Oktober 2024. Kemenangan ini juga membawa TLID ke M6 World Championship.': 'The MPL Indonesia Season 14 grand final ended 4–3 over RRQ Hoshi on 27 October 2024. The win also took TLID to the M6 World Championship.',
+  'Grand Final MPL Indonesia Season 14 berakhir 4–3 atas RRQ Hoshi pada 2024-10-27. Kemenangan ini juga membawa TLID ke M6 World Championship.': 'The MPL Indonesia Season 14 grand final ended 4–3 over RRQ Hoshi on 27 October 2024. The win also took TLID to the M6 World Championship.',
   'Dunia': 'World', 'Satu langkah dari puncak M6': 'One step from the M6 summit',
   'Di final M6 World Championship, TLID taklukkan dalam empat game oleh Fnatic ONIC PH. Runner-up ini tetap menjadi capaian internasional terbesar tim menurut data yang dikumpulkan.': 'In the M6 World Championship final, TLID was beaten in four games by Fnatic ONIC PH. The runner-up finish remains the team’s biggest international achievement in the collected data.',
   'Detail kecil': 'Small detail', 'Nama panggung yang berubah': 'A stage name that changed',
@@ -204,7 +204,7 @@ const DICT = {
   'Musim reguler': 'Regular season', 'Puncak klasemen yang tidak berujung trofi': 'Top of the table, no trophy',
   'TLID menutup musim reguler S18 di posisi pertama dengan selisih game +15, mendapat bye, lalu finis ketiga setelah kalah dari BTR di braket bawah.': 'TLID closed the S18 regular season in first place with a +15 game difference, earned a bye, then finished third after losing to BTR in the lower bracket.',
   'Skala': 'Scale', 'Rekor dalam jendela riset': 'A record within the research window',
-  'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 21 Mei 2024 hingga 2 Oktober 2026.': 'Liquipedia and Esports Charts both record 71 wins and 50 losses for TLID between 21 May 2024 and 2 October 2026.',
+  'Liquipedia dan Esports Charts sama-sama mencatat 71 kemenangan dan 50 kekalahan untuk TLID dalam rentang 2024-05-21 hingga 2026-10-2.': 'Liquipedia and Esports Charts both record 71 wins and 50 losses for TLID between 21 May 2024 and 2 October 2026.',
   'Jalur pemain': 'Player path', 'Akademi → utama': 'Academy → main',
   'Lyoni naik dari TLID Academy': 'Lyoni rose from TLID Academy',
   'Lyoni bergabung dari Monster Vicious, melewati TLID Academy, lalu masuk tim utama pada Maret 2026. Ia tercatat sebagai Roamer di S18.': 'Lyoni joined from Monster Vicious, passed through TLID Academy, then entered the main team in March 2026. He is listed as Roamer in S18.',
@@ -225,7 +225,7 @@ const DICT = {
   'Gelar pertama': 'First title', 'Juara MPL Indonesia S14': 'MPL Indonesia S14 champion',
   'TLID mengalahkan RRQ Hoshi 4–3 di grand final dan mengamankan gelar MPL Indonesia Season 14 sekaligus tiket M6.': 'TLID beat RRQ Hoshi 4–3 in the grand final to secure the MPL Indonesia Season 14 title and an M6 berth.',
   'Panggung dunia': 'World stage',
-  'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 Desember; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1–4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
+  'TLID kalah 1–4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 /12; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1–4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
   'Fluktuasi': 'Fluctuation', 'S15 ke-5–6, S16 ke-9': 'S15 5th–6th, S16 9th',
   'Dua musim berikutnya berakhir di posisi 5–6 dan 9. TLID tidak lolos playoff pada MPL Indonesia Season 16.': 'The next two seasons ended 5th–6th and 9th. TLID missed playoffs in MPL Indonesia Season 16.',
   'Roster baru': 'New roster',
@@ -239,7 +239,7 @@ const DICT = {
 
   // sources + not found
   'Daftar ': 'List of ', 'sumber': 'sources', 'Provenansi': 'Provenance',
-  'Semua sumber yang dipakai dalam situs ini. Setiap angka dan peristiwa membawa catatan sumber di halaman tempatnya muncul. Retrieval date seragam: 17 November 2026.': 'All sources used on this site. Every figure and event carries a source note where it appears. Uniform retrieval date: 17 November 2026.',
+  'Semua sumber yang dipakai dalam situs ini. Setiap angka dan peristiwa membawa catatan sumber di halaman tempatnya muncul. Retrieval date seragam: 2026-11-17.': 'All sources used on this site. Every figure and event carries a source note where it appears. Uniform retrieval date: 17 November 2026.',
   'Ledger': 'Ledger', 'sumber tercatat': 'sources recorded',
   'Halaman ini': 'This page', 'tidak ada di arsip': 'is not in the archive',
   'Rute yang Anda cari tidak tersedia. Kembali ke beranda atau buka daftar sumber.': 'The route you are looking for is unavailable. Return home or open the source list.',
@@ -256,7 +256,7 @@ const DICT = {
   'Enam individu': 'Six individuals',
   'Susunan S18 menurut pengumuman resmi 7 Agustus 2026. Ilustrasi, bukan potret.': 'S18 lineup per the official 7 August 2026 announcement. Illustrations, not portraits.',
   'Rekor agregat': 'Aggregate record',
-  '174–141 game · 21 Mei 2024 – 2 Okt 2026.': '174–141 games · 21 May 2024 – 2 Oct 2026.',
+  '174–141 game · 2024-05-21 – 2026-10-2.': '174–141 games · 21 May 2024 – 2 Oct 2026.',
   'Juara MPL ID S14 · runner-up M6 · ke-3 S18.': 'MPL ID S14 champions · M6 runners-up · 3rd at S18.',
   'Masuk lebih dalam': 'Go deeper',
   'KDA, MVP, batas data': 'KDA, MVP, data limits',
@@ -264,7 +264,7 @@ const DICT = {
   'Bagian lain': 'Other sections',
   'Lewati ke konten': 'Skip to content',
   'Snapshot terakhir': 'Latest snapshot',
-  '8 November 2026': '8 November 2026',
+  '2026-11-8': '8 November 2026',
   'Glosarium': 'Glossary',
   'MLBB': 'MLBB',
   'Mobile Legends: Bang Bang, judul kompetitif yang diikuti TLID.': 'Mobile Legends: Bang Bang, the competitive title TLID plays.',
@@ -286,7 +286,7 @@ const DICT = {
   'Sembunyikan sumber': 'Hide all sources',
   'Gerakan dikurangi otomatis bila sistem memintanya.': 'Motion is reduced automatically when your system requests it.',
   'Tidak ada entri untuk filter ini.': 'No entries for this filter.',
-  'SNAPSHOT · 8 November 2026': 'SNAPSHOT · 8 November 2026',
+  'SNAPSHOT · 2026-11-8': 'SNAPSHOT · 8 November 2026',
   'SNAPSHOT': 'SNAPSHOT',
   'Lokasi': 'Location',
   'Plat spesimen': 'Specimen plate',
@@ -296,10 +296,11 @@ const DICT = {
   'Urutkan ↓': 'Sort ↓', 'Urutkan ↑': 'Sort ↑',
   'Urutan: terbaru ↓': 'Order: newest ↓', 'Urutan: terlama ↑': 'Order: oldest ↑',
   'ENTRI': 'ENTRIES', 'PEMAIN': 'PLAYERS',
+  'Jadwal terverifikasi': 'Verified fixtures',
   'Klasemen MVP': 'MVP standings',
   'TIDAK ADA JADWAL TERVERIFIKASI': 'NO VERIFIED FIXTURE',
-  '15 Desember 2024 menurut Liquipedia dan Wikipedia; 14 Desember menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
-  'TLID kalah 1-4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 Desember; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1-4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
+  '2024-12-15 menurut Liquipedia dan Wikipedia; 14 /12 menurut Moonton.': '15 December 2024 per Liquipedia and Wikipedia; 14 December per Moonton.',
+  'TLID kalah 1-4 dari Fnatic ONIC PH di final M6. Sumber Moonton mencantumkan tanggal 14 /12; perbedaan satu hari ini dicatat, bukan disembunyikan.': 'TLID lost 1-4 to Fnatic ONIC PH in the M6 final. Moonton lists 14 December; the one-day difference is recorded, not hidden.',
   'Angka di situs ini berasal dari riset publik. Buka catatan sumber pada setiap bagian untuk melihat asal, tanggal, dan batas keyakinannya. ': 'Figures on this site come from public research. Open each section’s source note to see origin, date and confidence. ',
   'Lihat glosarium →': 'View glossary →',
 };
@@ -337,8 +338,8 @@ export function applyLanguage(root = document) {
       if (value) el.setAttribute(attr, translate(value));
     });
     if (el.hasAttribute('data-lang-toggle')) {
-      el.textContent = lang === 'id' ? 'English' : 'Bahasa Indonesia';
-      el.setAttribute('aria-label', lang === 'id' ? 'Switch to English' : 'Switch to Bahasa Indonesia');
+      el.textContent = lang === 'id' ? 'English': 'Bahasa Indonesia';
+      el.setAttribute('aria-label', lang === 'id' ? 'Switch to English': 'Switch to Bahasa Indonesia');
     }
   });
 

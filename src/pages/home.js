@@ -44,7 +44,7 @@ export function renderHome() {
     <p class="record-number">71–50</p>
     <div class="record-body">
       <h2 id="record-title">Rekor agregat</h2>
-      <p>174–141 game · 21 Mei 2024 – 2 Okt 2026.</p>
+      <p>174–141 game · 2024-05-21 – 2026-10-2.</p>
       <p>Juara MPL ID S14 · runner-up M6 · ke-3 S18.</p>
       <a class="text-link" href="/matches">Lihat arsip pertandingan →</a>
     </div>

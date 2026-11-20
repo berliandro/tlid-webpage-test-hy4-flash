@@ -14,7 +14,7 @@ export function renderPlayer(slug) {
       <div><b>${p.stat.games}</b><span>Game tercatat</span></div>
       <div><b>${p.stat.k.toFixed(1)}/${p.stat.d.toFixed(1)}/${p.stat.a.toFixed(1)}</b><span>K/D/A rata-rata</span></div>
     </div>
-    <p class="stat-caveat">Statistik dari MLBBHub, 17 Nov 2026 14:13 UTC. Peran menurut sumber: ${p.stat.listedRole}. ${p.slug === 'kevin' ? 'Nilai KDA 6.39 milik Drichel; Kevin 5.82.' : ''}</p>
+    <p class="stat-caveat">Statistik dari MLBBHub, 2026-11-17 14:13 UTC. Peran menurut sumber: ${p.stat.listedRole}. ${p.slug === 'kevin' ? 'Nilai KDA 6.39 milik Drichel; Kevin 5.82.' : ''}</p>
     ${sourceNote(['MLBBHUB', 'MPL_STATS'])}` : `
     <div class="empty-stat"><b>${unknown('Belum dipublikasikan')}</b><p>Statistik musiman untuk ${p.handle} tidak tersedia dalam data yang dikumpulkan. Kami tidak mengisi dengan nol atau perkiraan.</p>${sourceNote(p.sources)}</div>`;
 

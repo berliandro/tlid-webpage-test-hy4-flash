@@ -77,13 +77,13 @@ export const sources = {
     id: 'MLBBHUB', publisher: 'MLBBHub', type: 'secondary',
     url: 'https://mlbbhub.com/mpl/id/stats', retrieved: '2026-11-17',
     confidence: 'single-source, timestamped',
-    note: 'Data as of 17 Nov 2026, 14:13 UTC. Player averages, hero pools, MVP standings. Lists KEVIN as Gold Laner, conflicting with the S18 announcement.',
+    note: 'Data as of 2026-11-17, 14:13 UTC. Player averages, hero pools, MVP standings. Lists KEVIN as Gold Laner, conflicting with the S18 announcement.',
   },
   DOT: {
     id: 'DOT', publisher: 'Dot Esports', type: 'secondary',
     url: 'https://dotesports.com/mobile-legends/news/mpl-id-season-18-schedule-results-standings', retrieved: '2026-11-17',
     confidence: 'verified',
-    note: 'S18 schedule, results and standings, updated 8 Nov 2026.',
+    note: 'S18 schedule, results and standings, updated 2026-11-8.',
   },
   ITEM: {
     id: 'ITEM', publisher: 'itemgame', type: 'secondary',
