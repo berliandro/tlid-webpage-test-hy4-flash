@@ -390,6 +390,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
   .site-nav.open{display:flex}
   .explore-menu{position:static;transform:none;min-width:0;padding:0 0 0 var(--s-3);border:0;background:none}
+  .explore-menu[hidden]{display:flex!important}
   .current-section{display:inline-flex}
   .brand-sub,.search-pill>span:last-child{display:none}
   .status-pill{display:none}

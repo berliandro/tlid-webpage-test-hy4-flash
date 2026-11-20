@@ -150,10 +150,6 @@ function wireNav() {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', translate(open ? 'Tutup navigasi' : 'Buka navigasi'));
-    if (open && window.innerWidth <= 860 && exploreMenu) {
-      exploreMenu.hidden = false;
-      exploreToggle?.setAttribute('aria-expanded', 'true');
-    }
   });
   exploreToggle?.addEventListener('click', () => {
     const open = exploreMenu.hidden;
