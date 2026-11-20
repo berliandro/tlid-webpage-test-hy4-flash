@@ -20,7 +20,7 @@ export function renderStats() {
 <section class="page-head analytics-head">
   <h1>Angka dengan<br><em>label yang jujur</em></h1>
   <p class="kicker">Statistik</p>
-  <p class="lede">Hanya nilai yang tercatat dalam riset yang ditampilkan. Jika musim, scope, atau sumbernya diperdebatkan, kami katakan — bukan memilih angka yang paling rapi.</p>
+  <p class="lede">Hanya angka bersumber. Nilai yang diperdebatkan tidak ditampilkan.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'])}
 </section>
 
@@ -29,8 +29,8 @@ export function renderStats() {
   <div class="metric-controls" role="group" aria-label="Pilih metrik perbandingan">
     ${Object.entries(metrics).map(([key, m]) => `<button type="button" class="metric-btn${key === 'kda' ? ' active' : ''}" data-metric="${key}" aria-pressed="${key === 'kda'}">${m.label}</button>`).join('')}
   </div>
-  <div class="bar-chart" id="bar-chart" aria-live="polite"></div>
-  <p class="chart-note">Nilai KDA 6.39 Drichel juga muncul di daftar Top 5 resmi MPL ID. Peran Kevin mengikuti MLBBHub (GOLD) dan berbeda dengan pengumuman S18 (Jungler).</p>
+  <div class="bar-chart" id="bar-chart"></div>
+  <p class="chart-note">KDA 6.39 Drichel juga ada di Top 5 resmi MPL ID. Peran Kevin diperdebatkan.</p>
   ${sourceNote(['MLBBHUB', 'MPL_STATS', 'IG_S18'])}
 </section>
 
@@ -52,15 +52,17 @@ export function renderStats() {
 
 <section class="section unavailable-block">
   ${sectionHead('Belum tersedia', 'Data yang tidak kami punya')}
-  <p>GPM, DPM, CS, objektif Tambak/Tortoise per pemain, dan pemisahan musim reguler versus playoff tidak tersedia di sumber yang dikumpulkan. Kolom tersebut sengaja tidak dibuat.</p>
+  <p>GPM, DPM, CS, dan rincian objektif tidak tersedia di sumber terkumpul.</p>
 </section>`,
     mount() {
       const chart = document.getElementById('bar-chart');
       const buttons = [...document.querySelectorAll('.metric-btn')];
       if (!chart || !buttons.length) return;
+      const requested = new URLSearchParams(location.search).get('m');
+      const invalid = requested && !metrics[requested];
       const draw = (key) => {
         const m = metrics[key];
-        chart.innerHTML = `<p class="result-status"><span class="count">${playerStats.length}</span> PEMAIN</p>` + playerStats.map((p) => {
+        chart.innerHTML = (invalid ? '<p class="result-status" role="status" aria-live="polite">METRIK TIDAK VALID</p>' : `<p class="result-status" role="status" aria-live="polite"><span class="count">${playerStats.length}</span> PEMAIN</p>`) + playerStats.map((p) => {
           const value = m.get(p);
           const pct = Math.min(100, (value / m.max) * 100);
           return `<div class="bar-row">
@@ -71,7 +73,6 @@ export function renderStats() {
         }).join('');
         applyLanguage(chart);
       };
-      const requested = new URLSearchParams(location.search).get('m');
       const initial = metrics[requested] ? requested : 'kda';
       buttons.forEach((b) => {
         const on = b.dataset.metric === initial;

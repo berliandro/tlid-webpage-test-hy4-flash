@@ -6,6 +6,14 @@ import { renderNotFound } from './notfound.js';
 export function renderPlayer(slug) {
   const p = playerBySlug[slug];
   if (!p) return renderNotFound();
+  const shortBio = {
+    aran: 'EXP Laner TLID sejak S14. Masuk roster S18.',
+    kevin: 'Jungler menurut S18. Sebelumnya bernama Joo.',
+    drichel: 'Mid Laner. Bergabung 2026-03.',
+    anaver: 'Mid Laner dalam roster S18. Data pribadi belum terverifikasi.',
+    keven: 'Gold Laner dalam roster S18. Ejaan nama masih bertabrakan.',
+    lyoni: 'Roamer. Naik dari TLID Academy ke tim utama.',
+  };
 
   const statBlock = p.stat ? `
     <div class="stat-strip">
@@ -50,7 +58,7 @@ export function renderPlayer(slug) {
 
 <section class="section player-bio">
   ${sectionHead('Profil', 'Catatan kompetitif')}
-  <p class="bio-lead">${p.bio}</p>
+  <p class="bio-lead">${shortBio[p.slug]}</p>
   <ul class="fact-list">${p.facts.map((f) => `<li>${f}</li>`).join('')}</ul>
   ${p.conflict ? `<aside class="conflict"><p class="kicker">Konflik sumber</p><p>${p.conflict}</p><a class="conflict-link" href="/sources">Lihat sumber →</a></aside>` : ''}
 </section>

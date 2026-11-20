@@ -7,7 +7,7 @@ export function renderDiscover() {
 <section class="page-head">
   <h1>Hal yang bikin<br><em>arsip ini hidup</em></h1>
   <p class="kicker">Jelajah</p>
-  <p class="lede">${editorialNote}</p>
+  <p class="lede">Fakta bersumber dari riset publik. Baca catatan sumber di tiap bagian.</p>
 </section>
 
 <section class="story-stack">

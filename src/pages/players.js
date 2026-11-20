@@ -6,7 +6,7 @@ export function renderPlayers() {
     html: `
 <section class="page-head">
   <h1 class="mast compact"><span class="mast-a">DAFTAR</span><span class="mast-b">PEMAIN <em>S18</em></span></h1>
-  <p class="lede">Enam identitas, enam jalur. Halaman ini memakai roster yang diumumkan TLID pada 7 Agustus 2026, bukan daftar lama di situs resmi.</p>
+  <p class="lede">Roster S18 menurut pengumuman resmi 2026-08-07.</p>
   ${sourceNote([rosterNote.id], 'Mengapa roster ini dipakai')}
 </section>
 
@@ -31,9 +31,9 @@ export function renderPlayers() {
 <section class="section note-section">
   ${sectionHead('Catatan', 'Apa yang sengaja tidak kami isi', 'Nama asli, tanggal lahir, dan statistik tidak ditambahkan jika tidak ada sumber terverifikasi.')}
   <div class="note-grid">
-    <p><b>Kevin, Keven, Anaver</b> — identitas pribadi belum terverifikasi. Halaman mereka hanya memuat peran dan informasi dari pengumuman resmi.</p>
-    <p><b>Peran Kevin</b> — pengumuman S18 menyebut Jungler, MLBBHub menyebut GOLD. Keduanya ditandai, bukan dipilih diam-diam.</p>
-    <p><b>Potret</b> — Aran, Kevin, Drichel, Keven, dan Lyoni memakai potret dari Liquipedia Commons (CC BY-SA 3.0) dengan atribusi. Anaver tetap memakai ilustrasi sintetik karena tidak ada potret yang disediakan.</p>
+    <p><b>Kevin, Keven, Anaver</b> — identitas pribadi belum terverifikasi.</p>
+    <p><b>Peran Kevin</b> — Jungler menurut S18, GOLD menurut MLBBHub. Keduanya ditandai.</p>
+    <p><b>Potret</b> — bersumber dari Liquipedia Commons (CC BY-SA 3.0). Anaver memakai ilustrasi sintetik.</p>
   </div>
   ${sourceNote(['IG_S18', 'MLBBHUB', 'LIQ_PLAYER'])}
 </section>`,

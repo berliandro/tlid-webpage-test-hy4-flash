@@ -11,6 +11,7 @@ import { navItems } from './data/team.js';
 import { laceTop } from './lib/ui.js';
 import { translate, applyLanguage } from './i18n.js';
 import { applySeededOffsets } from './motion.js';
+import { icon } from './icons.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -49,7 +50,7 @@ function activeHref(path) {
 function shell(content) {
   const current = activeHref(routeFromLocation());
   const nav = navItems.map((n) =>
-    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.label}</a>`
+    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${icon(n.icon)}${n.label}</a>`
   ).join('');
   const html = `
   <a class="skip-link" href="#main">Lewati ke konten</a>
@@ -84,6 +85,7 @@ function shell(content) {
       <p class="footer-bottom">Dibangun sebagai arsip editorial · data dari riset publik 2026-11-17 · status tidak diketahui sengaja dibiarkan kosong.</p>
       <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     </div>
+    <p class="credits-line">Icons by Lorc from <a href="https://game-icons.net" target="_blank" rel="noopener noreferrer">game-icons.net</a> · CC BY 3.0. Paper grain from <a href="https://ambientcg.com/a/Paper001" target="_blank" rel="noopener noreferrer">ambientCG</a> · CC0. Full credits: CREDITS.md.</p>
   </footer>`;
   return html.replace(/href="\//g, `href="${BASE}`);
 }

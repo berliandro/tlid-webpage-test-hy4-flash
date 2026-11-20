@@ -7,7 +7,7 @@ export function renderHistory() {
 <section class="page-head">
   <h1>Garis waktu<br><em>yang belum penuh</em></h1>
   <p class="kicker">Sejarah</p>
-  <p class="lede">${historyIntro.text}</p>
+  <p class="lede">Hanya peristiwa yang bisa ditelusuri. Bagian yang belum pasti dibiarkan kosong.</p>
 </section>
 
 <section class="timeline">
