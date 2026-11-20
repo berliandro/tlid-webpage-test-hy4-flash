@@ -68,14 +68,6 @@ export function renderPlayer(slug) {
   ${statBlock}
   ${mvp}
 </section>
-
-<section class="section">
-  ${sectionHead('Next', 'Keep exploring')}
-  <div class="link-row">
-    <a class="ticket" href="/statistics">Team statistics</a>
-    <a class="ticket" href="/matches">Match results</a>
-    <a class="ticket" href="/history">Team timeline</a>
-  </div>
-</section>`,
+`,
   };
 }

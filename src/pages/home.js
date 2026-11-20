@@ -7,20 +7,11 @@ const fan = starters.map((p) => `
     <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
   </a>`).join('');
 
-const gates = [
-  { href: '/statistics', label: 'Statistics', note: 'KDA / MVP', cls: 'tile-cyan' },
-  { href: '/matches', label: 'Matches', note: 'Results & tournaments', cls: 'tile-purple' },
-  { href: '/discover', label: 'Discover', note: 'Stories', cls: 'tile-red' },
-  { href: '/history', label: 'History', note: 'Timeline', cls: 'tile-green' },
-].map((g) => `<a class="tile tile-vivid ${g.cls}" href="${g.href}"><span class="tile-tag">${g.note}</span><b>${g.label}</b></a>`).join('');
-
 export function renderHome() {
   return {
     html: `
 <div class="home-page">
   <section class="hero" aria-labelledby="home-title">
-    <span class="float-chip left" aria-hidden="true"><img src="public/assets/cards/Aran.jpg" alt="" /></span>
-    <span class="float-chip right" aria-hidden="true"><img src="public/assets/cards/Lyoni.jpg" alt="" /></span>
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
     <p class="hero-sub">Five starters named on 7 August. A 71–50 record since May 2024. Follow any result to its source.</p>
@@ -33,10 +24,7 @@ export function renderHome() {
   <p class="fan-caption"><span class="swipe-hint">SWIPE FOR ALL FIVE · </span>THE STARTING FIVE · NO. 04 IS ANAVER (BENCH) · 7 AUGUST 2026</p>
 
   <section class="section">
-    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>The five</h2></div><p class="section-sub">Named on 7 August 2026. Anaver is listed with the substitutes below.</p></div>
-    <div class="grid-cards">
-      ${starters.map((p) => `<a class="tile" href="/players/${p.slug}"><span class="tile-tag">${p.role}</span><b>${p.handle}</b><p>${p.tagline}</p></a>`).join('')}
-    </div>
+    <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>Roster notes</h2></div><p class="section-sub">The five above were named on 7 August 2026. Anaver is listed with the substitutes.</p></div>
     <details class="bench"><summary>Substitutes (${substitutes.length}) · No. ${substitutes[0].index}</summary><div class="bench-list">${substitutes.map((p) => `<a href="/players/${p.slug}">${p.handle}<span>${p.role}</span></a>`).join('')}</div></details>
     ${sourceNote(['IG_S18'], 'Roster source')}
   </section>
@@ -49,11 +37,6 @@ export function renderHome() {
       <div class="tile"><span class="tile-tag">Best result</span><b>S14</b><p>MPL Indonesia champion</p></div>
     </div>
     ${sourceNote(['LIQ_TEAM', 'ESC'])}
-  </section>
-
-  <section class="section">
-    <div class="section-head"><div><span class="kicker">03 / Explore</span><h2>Go deeper</h2></div><p class="section-sub">Sources are listed on every page.</p></div>
-    <div class="grid-cards">${gates}</div>
   </section>
 </div>`,
   };

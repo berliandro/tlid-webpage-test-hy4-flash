@@ -45,8 +45,6 @@ p{max-width:var(--measure)}
 .topbar-left,.topbar-right{display:flex;align-items:center;gap:10px;min-width:0;flex-wrap:wrap}
 .topbar-right{justify-content:flex-end}
 .brand{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
-.brand-mark{width:22px;height:22px;background:transparent;border:1px solid var(--hair);border-radius:6px;display:grid;place-items:center}
-.brand-mark img{width:12px;height:14px}
 .brand-sub{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400}
 .pill{display:inline-flex;align-items:center;gap:7px;min-height:32px;padding:6px 12px;background:var(--pill);border:1px solid var(--hair);border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
 .pill:hover{border-color:rgba(255,255,255,.28)}
@@ -66,8 +64,6 @@ main:focus,main:focus-visible{outline:none}
 .nav-link:hover{background:var(--pill)}
 .nav-link.active{background:var(--text);color:var(--panel)}
 .icon-btn{width:30px;height:30px;border-radius:50%;border:1px solid var(--hair);background:var(--pill);display:grid;place-items:center;font-size:11px}
-.avatar{width:34px;height:34px;border-radius:9px;overflow:hidden;border:1px solid var(--hair);background:var(--pill)}
-.avatar img{width:100%;height:100%;object-fit:cover}
 .status-pill .coin{width:14px;height:14px;border-radius:50%;background:var(--gold);border:1px solid rgba(0,0,0,.35)}
 
 /* shared content */
@@ -113,10 +109,6 @@ em{font-style:normal}
 
 /* HERO */
 .hero{min-height:min(40vh,360px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:clamp(24px,2.6vw,40px) clamp(20px,3.2vw,52px) 0;text-align:center;position:relative}
-.float-chip{position:absolute;width:clamp(40px,4vw,58px);height:clamp(40px,4vw,58px);border-radius:12px;overflow:hidden;border:1px solid var(--hair);opacity:.72;pointer-events:none}
-.float-chip img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.float-chip.left{left:clamp(20px,6vw,110px);top:38%;transform:rotate(-9deg)}
-.float-chip.right{right:clamp(20px,6vw,110px);top:34%;transform:rotate(8deg)}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(245,197,66,.09);border:1px solid rgba(245,197,66,.25);border-radius:999px;padding:6px 12px;margin-bottom:26px}
 .hero-badge .coin{width:12px;height:12px;border-radius:50%;background:var(--gold)}
 .hero h1{max-width:16ch;margin:0 auto;color:var(--text)}
@@ -156,14 +148,6 @@ em{font-style:normal}
 .tile .tile-tag{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .tile b{display:block;font-size:clamp(1.6rem,2.6vw,2.6rem);font-weight:800;letter-spacing:-.04em;margin-top:8px;line-height:1}
 .tile p{font-size:12px;color:var(--muted);margin-top:8px}
-.tile-vivid{color:#fff;border:0}
-.tile-vivid:before{background:rgba(255,255,255,.7)}
-.tile-vivid .tile-tag,.tile-vivid p{color:rgba(255,255,255,.82)}
-.tile-purple{background:var(--purple)}
-.tile-red{background:var(--red)}
-.tile-cyan{background:var(--cyan)}
-.tile-green{background:var(--green)}
-.tile-blue{background:var(--blue)}
 .tile-gold{background:var(--gold);color:var(--panel)}
 .tile-gold .tile-tag,.tile-gold p{color:rgba(0,21,56,.75)}
 
@@ -313,7 +297,6 @@ em{font-style:normal}
   .topbar-left .search-pill{display:none}
   .status-pill,.icon-btn{display:none}
   .hero{min-height:auto;padding-top:40px}
-  .float-chip{display:none}
   .hero h1{font-size:clamp(2.5rem,12vw,4.6rem)}
   .card-fan{height:clamp(260px,72vw,420px)}
   .fan-inner{width:160%;bottom:-2%}
