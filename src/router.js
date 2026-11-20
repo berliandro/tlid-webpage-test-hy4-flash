@@ -56,7 +56,6 @@ function shell(content) {
   ${laceTop()}
   <header class="site-header">
     <a class="brand" href="/" aria-label="Team Liquid ID — beranda">TEAM LIQUID <b>ID</b><span class="brand-meta">MPL-ID / MLBB</span></a>
-    <button class="lang-toggle header-lang" type="button" data-lang-toggle aria-label="Switch to Bahasa Indonesia">Bahasa Indonesia</button>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Buka navigasi"><span></span><span></span><span></span></button>
     <nav id="primary-nav" class="site-nav" aria-label="Navigasi utama">${nav}</nav>
   </header>
@@ -74,6 +73,8 @@ function shell(content) {
       <div><dt>KDA</dt><dd>Rasio kill, death, assist. Semakin tinggi, semakin baik.</dd></div>
       <div><dt>MVP</dt><dd>Pemain paling berkontribusi menurut klasemen resmi liga.</dd></div>
       <div><dt>Kill participation</dt><dd>Persentase kill tim yang melibatkan pemain tersebut.</dd></div>
+      <div><dt>Plat spesimen</dt><dd>Satu kartu pemain dalam ledger; potret bersumber, bukan ukiran.</dd></div>
+      <div><dt>Cutting lines</dt><dd>Cara situs ini merangkai hasil pertandingan menjadi satu garis waktu.</dd></div>
     </dl></details>
     <div class="footer-controls">
       <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Tampilkan semua sumber</button>

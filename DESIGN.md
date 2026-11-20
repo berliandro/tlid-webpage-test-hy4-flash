@@ -11,6 +11,7 @@ colors:
   paper-dark: "#D9CDB0"
   brass: "#D8A93B"
   brass-dark: "#8A6418"
+  brass-light: "#E6BC55"
   brass-deep: "#A9782A"
   oxblood: "#8E2B2B"
   cyan: "#3BB0D4"

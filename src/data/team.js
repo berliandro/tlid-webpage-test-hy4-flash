@@ -4,13 +4,13 @@ export const team = {
   game: 'Mobile Legends: Bang Bang',
   league: 'MPL Indonesia',
   parent: 'Team Liquid',
-  formed: '21 Mei 2024 · akuisisi STUN.GG / AURA Esports / ECHO',
+  formed: '21 /05 2024 · akuisisi STUN.GG / AURA Esports / ECHO',
   sources: ['TL_SITE', 'ESI', 'ESA', 'ESPN_G'],
 };
 
 export const pulse = {
   label: 'SNAPSHOT TERAKHIR',
-  date: '8 November 2026',
+  date: '8 /11 2026',
   lines: [
     'MPL ID S18 selesai · posisi 3',
     'Musim reguler: 12–4 · posisi 1',

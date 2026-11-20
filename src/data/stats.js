@@ -22,7 +22,7 @@ export const teamTotals = {
 export const records = [
   {
     label: 'Rekor agregat pertandingan', value: '71–50',
-    detail: '174–141 game · 21 Mei 2024 – 2 Okt 2026',
+    detail: '174–141 game · 21 /05 2024 – 2 /10 2026',
     sources: ['LIQ_TEAM', 'ESC'],
   },
   {
@@ -32,7 +32,7 @@ export const records = [
   },
   {
     label: 'MPL ID S18 — akhir', value: 'Posisi 3',
-    detail: 'Kalah 3–4 dari BTR di final braket bawah, 7 Nov 2026',
+    detail: 'Kalah 3–4 dari BTR di final braket bawah, 7 /11 2026',
     sources: ['LIQ_S18', 'DOT', 'ITEM'],
   },
 ];

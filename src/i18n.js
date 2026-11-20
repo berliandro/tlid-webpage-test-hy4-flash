@@ -289,7 +289,12 @@ const DICT = {
   'SNAPSHOT · 8 November 2026': 'SNAPSHOT · 8 November 2026',
   'SNAPSHOT': 'SNAPSHOT',
   'Lokasi': 'Location',
+  'Plat spesimen': 'Specimen plate',
+  'Satu kartu pemain dalam ledger; potret bersumber, bukan ukiran.': 'One player slip in the ledger; sourced portrait, not an engraving.',
+  'Cutting lines': 'Cutting lines',
+  'Cara situs ini merangkai hasil pertandingan menjadi satu garis waktu.': 'How this site threads match results into one timeline.',
   'Urutkan ↓': 'Sort ↓', 'Urutkan ↑': 'Sort ↑',
+  'Urutan: terbaru ↓': 'Order: newest ↓', 'Urutan: terlama ↑': 'Order: oldest ↑',
   'ENTRI': 'ENTRIES', 'PEMAIN': 'PLAYERS',
   'Klasemen MVP': 'MVP standings',
   'TIDAK ADA JADWAL TERVERIFIKASI': 'NO VERIFIED FIXTURE',
@@ -303,7 +308,9 @@ const DICT = {
 // unacceptable on a product whose core promise is "never invent the record".
 export function translate(text) {
   if (getLang() === 'id' || typeof text !== 'string') return text;
-  return DICT[text] !== undefined ? DICT[text] : text;
+  const key = text.trim();
+  if (DICT[key] === undefined) return text;
+  return text.replace(key, DICT[key]);
 }
 
 const ATTRS = ['aria-label', 'title', 'placeholder', 'alt'];
