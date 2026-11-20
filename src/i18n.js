@@ -402,6 +402,7 @@ Object.assign(TO_ID, {
   'No. 04 is Anaver, a substitute. Synthetic illustration, not a real portrait.': 'No. 04 adalah Anaver, seorang cadangan. Ilustrasi sintetik, bukan potret asli.',
   'SYNTHETIC ILLUSTRATION · NO VERIFIED PORTRAIT': 'ILUSTRASI SINTETIK · POTRET TIDAK TERVERIFIKASI',
   'NOT A REAL PORTRAIT': 'BUKAN POTRET ASLI',
+  'Explore': 'Jelajahi',
   'S18 standings and playoff path. One page shows 0–0, conflicting with 12–4.': 'Klasemen dan jalur playoff S18. Satu halaman menampilkan 0–0, bertentangan dengan 12–4.',
   'One step from the M6 title': 'Satu langkah dari gelar M6',
   'The record in this window': 'Rekor dalam rentang ini',

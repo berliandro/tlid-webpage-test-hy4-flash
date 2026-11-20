@@ -75,6 +75,9 @@ main:focus,main:focus-visible{outline:none}
 @media(max-width:860px){.center-mark{top:auto;bottom:-19px;transform:translateX(-50%);width:38px;height:38px;border-radius:11px}.center-mark img{width:20px;height:24px}}
 .nav-toggle{display:none;background:var(--pill);border:1px solid var(--hair);border-radius:999px;min-height:36px;padding:0 14px;font-size:11px;font-weight:700;cursor:pointer}
 .site-nav{display:flex;align-items:center;gap:6px}
+.nav-explore{position:relative}
+.explore-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:150px;display:flex;flex-direction:column;gap:4px;padding:8px;background:var(--panel-2);border:1px solid var(--hair);border-radius:16px;z-index:80}
+.explore-menu .nav-link{white-space:nowrap;text-align:left}
 .nav-link{font-size:12px;font-weight:700;padding:6px 9px;border-radius:999px;border:1px solid transparent;white-space:nowrap}
 .nav-link:hover{background:var(--pill)}
 .nav-link.active{background:var(--text);color:var(--panel)}
@@ -386,6 +389,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .nav-toggle{display:inline-flex}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
   .site-nav.open{display:flex}
+  .explore-menu{position:static;transform:none;min-width:0;padding:0 0 0 var(--s-3);border:0;background:none}
   .current-section{display:inline-flex}
   .brand-sub,.search-pill>span:last-child{display:none}
   .status-pill{display:none}

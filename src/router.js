@@ -47,9 +47,14 @@ function activeHref(path) {
 
 function shell(content) {
   const current = activeHref(routeFromLocation());
-  const nav = navItems.filter((n) => n.top).map((n) =>
-    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
-  ).join('');
+  const navLink = (n) => `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`;
+  const exploreItems = navItems.filter((n) => n.group === 'explore');
+  const exploreOpen = exploreItems.some((n) => n.href === current);
+  const nav = navItems.filter((n) => n.top).map(navLink).join('') + `
+    <div class="nav-explore">
+      <button type="button" class="nav-link explore-toggle${exploreOpen ? ' active' : ''}" aria-expanded="false" aria-controls="explore-menu">Explore</button>
+      <div class="explore-menu" id="explore-menu" hidden>${exploreItems.map(navLink).join('')}</div>
+    </div>`;
   const currentLabel = navItems.find((n) => n.href === current)?.en || (current === '/sources' ? 'Sources' : '');
   const html = `
   <a class="skip-link" href="#main">Skip to content</a>
@@ -144,10 +149,20 @@ function wireNav() {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', translate(open ? 'Tutup navigasi' : 'Buka navigasi'));
   });
+  const exploreToggle = document.querySelector('.explore-toggle');
+  const exploreMenu = document.getElementById('explore-menu');
+  exploreToggle?.addEventListener('click', () => {
+    const open = exploreMenu.hidden;
+    exploreMenu.hidden = !open;
+    exploreToggle.setAttribute('aria-expanded', String(open));
+  });
   nav.addEventListener('click', (e) => {
+    if (e.target.closest('.explore-toggle')) return;
     if (e.target.closest('a')) {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      if (exploreMenu) exploreMenu.hidden = true;
+      exploreToggle?.setAttribute('aria-expanded', 'false');
     }
   });
 }
@@ -162,6 +177,11 @@ export function startRouter() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
+    const menu = document.getElementById('explore-menu');
+    if (menu && !menu.hidden) {
+      menu.hidden = true;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'false');
+    }
     const nav = document.getElementById('primary-nav');
     const toggle = document.querySelector('.nav-toggle');
     if (!nav || !nav.classList.contains('open')) return;
@@ -169,6 +189,11 @@ export function startRouter() {
     toggle?.setAttribute('aria-expanded', 'false');
   });
   document.addEventListener('click', (e) => {
+    const menu = document.getElementById('explore-menu');
+    if (menu && !menu.hidden && !e.target.closest('.nav-explore')) {
+      menu.hidden = true;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'false');
+    }
     const nav = document.getElementById('primary-nav');
     if (!nav || !nav.classList.contains('open')) return;
     if (e.target.closest('#primary-nav') || e.target.closest('.nav-toggle')) return;

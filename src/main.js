@@ -52,6 +52,11 @@ function runSearch(q, source) {
   if (status) status.textContent = q ? found : translate('Search by section name in the navigation.');
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
   if (q) {
+    const menu = document.getElementById('explore-menu');
+    if (menu && [...menu.querySelectorAll('.nav-link')].some((a) => !a.hidden)) {
+      menu.hidden = false;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'true');
+    }
     const nav = document.getElementById('primary-nav');
     const toggle = document.querySelector('.nav-toggle');
     if (nav && getComputedStyle(nav).display === 'none') {
