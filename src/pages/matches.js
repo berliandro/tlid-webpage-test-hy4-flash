@@ -47,7 +47,7 @@ export function renderMatches() {
       if (!archive || !buttons.length) return;
       const draw = (year) => {
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year);
-        archive.innerHTML = list.map((t) => `
+        archive.innerHTML = `<p class="result-status">${list.length} · ${year === 'all' ? 'ALL' : year}</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini.</p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
@@ -69,7 +69,7 @@ export function renderMatches() {
         btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
         const url = new URL(location.href);
         url.searchParams.set('y', btn.dataset.year);
-        history.replaceState({}, '', url);
+        history.pushState({}, '', url);
         draw(btn.dataset.year);
       }));
     },

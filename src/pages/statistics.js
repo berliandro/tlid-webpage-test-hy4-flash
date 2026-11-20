@@ -60,7 +60,7 @@ export function renderStats() {
       if (!chart || !buttons.length) return;
       const draw = (key) => {
         const m = metrics[key];
-        chart.innerHTML = playerStats.map((p) => {
+        chart.innerHTML = `<p class="result-status">${playerStats.length} · ${m.label}</p>` + playerStats.map((p) => {
           const value = m.get(p);
           const pct = Math.min(100, (value / m.max) * 100);
           return `<div class="bar-row">
@@ -85,7 +85,7 @@ export function renderStats() {
         btn.setAttribute('aria-pressed', 'true');
         const url = new URL(location.href);
         url.searchParams.set('m', btn.dataset.metric);
-        history.replaceState({}, '', url);
+        history.pushState({}, '', url);
         draw(btn.dataset.metric);
       }));
     },
