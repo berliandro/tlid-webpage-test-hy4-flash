@@ -23,7 +23,7 @@ export function renderHome() {
     <span class="float-chip right" aria-hidden="true"><img src="public/assets/cards/Lyoni.jpg" alt="" /></span>
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
-    <p class="hero-sub">Five starters announced on 7 August. 71 wins and 50 losses since 2024. Every number here has a source.</p>
+    <p class="hero-sub">Five starters named on 7 August. A 71–50 record since May 2024. Source notes sit on every page.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
   </section>
 
