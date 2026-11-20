@@ -53,7 +53,7 @@ html{scrollbar-color:var(--pill) var(--panel);scrollbar-width:thin}
   -webkit-mask-composite:source-in;
   mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to right,#000 0%,rgba(0,0,0,.32) 26%,rgba(0,0,0,.32) 74%,#000 100%);
   mask-composite:intersect}
-.shell>*:not(.grid-bg):not(.grid-edge){position:relative;z-index:1}
+.shell>*:not(.grid-bg):not(.grid-edge):not(.topbar){position:relative;z-index:1}
 
 /* top bar */
 .topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:var(--block-gap);padding:20px var(--gutter);border-bottom:1px solid var(--hair);background:rgba(15,15,17,.94)}
