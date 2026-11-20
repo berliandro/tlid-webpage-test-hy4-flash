@@ -130,16 +130,15 @@ try {
     'M6 runner-up',
     'S18 lineup announced',
   ];
-  const knownMisses = KNOWN.filter((s) => !flagged.some((f) => f.text === s));
+  const stillFlagged = KNOWN.filter((s) => flagged.some((f) => f.text === s));
 
   const result = {
     base: BASE,
     routes: ROUTES.length,
     stringsPerRoute: counts,
     flagged,
-    knownStringsCaught: KNOWN.length - knownMisses.length,
     knownStringsTotal: KNOWN.length,
-    knownStringsMissed: knownMisses,
+    knownStringsStillFlagged: stillFlagged,
   };
   console.log(JSON.stringify(result, null, 2));
   ws.close();
