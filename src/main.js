@@ -61,6 +61,18 @@ function runSearch(q, source) {
         : `No sections match “${q}” — try “team”, “matches” or press Esc`);
     }
   }
+  // A footer-only match would otherwise be counted but invisible on screen.
+  const hit = document.getElementById('search-hit');
+  const footerHit = links.find((a) => a.matches('.footer-control-links a[data-search]') && !a.hidden);
+  const footerOnly = !!footerHit && shown === 1;
+  if (hit) {
+    hit.hidden = !footerOnly;
+    if (footerOnly) {
+      hit.setAttribute('href', footerHit.getAttribute('href'));
+      hit.querySelector('.search-hit-label').textContent = footerHit.textContent.trim();
+      hit.querySelector('.search-hit-loc').textContent = translate('in the footer');
+    }
+  }
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
   if (q) {
     const menu = document.getElementById('explore-menu');

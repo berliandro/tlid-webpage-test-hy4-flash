@@ -72,6 +72,7 @@ function shell(content) {
         <div class="search-feedback" id="search-feedback" aria-hidden="true" hidden>
           <span id="search-result"></span>
           <button type="button" class="search-clear" data-search-reset>Clear</button>
+          <a class="search-hit" id="search-hit" href="/sources" hidden><span class="search-hit-label"></span><small class="search-hit-loc"></small></a>
         </div>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
