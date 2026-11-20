@@ -10,6 +10,7 @@ import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
 import { laceTop } from './lib/ui.js';
 import { translate, applyLanguage } from './i18n.js';
+import { applySeededOffsets } from './motion.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -114,6 +115,7 @@ export function render() {
   result.mount?.();
   wireNav();
   applyLanguage(document);
+  applySeededOffsets();
 }
 
 function wireNav() {
