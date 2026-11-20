@@ -12,16 +12,16 @@ export function unknown(text = 'Not available in verified data') {
   return `<span class="unknown">${esc(text)}</span>`;
 }
 
-export function sourceNote(ids = [], label = 'Sources &amp; checks') {
+export function sourceNote(ids = [], label = 'Sources & checks') {
   if (!ids.length) return '';
   const items = ids.map((id) => {
     const s = sources[id];
     if (!s) return '';
     return `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)}</a>
-      <span class="src-meta">${esc(s.type)} · ${translate('retrieved')} ${esc(s.retrieved)} · ${esc(s.confidence)}</span>
-      <span class="src-note">${esc(s.note)}</span></li>`;
+      <span class="src-meta"><span>${esc(translate(s.type))}</span> · ${translate('retrieved')} ${esc(s.retrieved)} · <span>${esc(translate(s.confidence))}</span></span>
+      <span class="src-note">${esc(translate(s.note))}</span></li>`;
   }).join('');
-  return `<details class="source-note"><summary>${label}</summary><ul>${items}</ul></details>`;
+  return `<details class="source-note"><summary>${esc(translate(label))}</summary><ul>${items}</ul></details>`;
 }
 
 export function portrait(player, extraClass = '') {

@@ -1,5 +1,6 @@
 import { milestones, historyUnknowns } from '../data/history.js';
-import { sourceNote, sectionHead } from '../lib/ui.js';
+import { sourceNote, sectionHead, esc } from '../lib/ui.js';
+import { translate } from '../i18n.js';
 
 export function renderHistory() {
   return {
@@ -14,7 +15,7 @@ export function renderHistory() {
     <div class="timeline-year">${m.year}</div>
     <div class="timeline-card">
       <h2>${m.title}</h2>
-      <p class="kicker">${m.kicker} · ${m.confidence}</p>
+      <p class="kicker"><span>${esc(translate(m.kicker))}</span> · <span>${esc(translate(m.confidence))}</span></p>
       <p>${m.text}</p>
       ${sourceNote(m.sources)}
     </div>

@@ -1,5 +1,6 @@
 import { sourceList } from '../data/sources.js';
 import { esc, sectionHead } from '../lib/ui.js';
+import { translate } from '../i18n.js';
 
 export function renderSources() {
   return {
@@ -13,8 +14,8 @@ export function renderSources() {
   <div class="source-table">${sourceList.map((s) => `
     <article class="source-card">
       <h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)} ↗</a></h3>
-      <p class="src-meta">${esc(s.type)} · ${esc(s.retrieved)} · ${esc(s.confidence)}</p>
-      <p>${esc(s.note)}</p>
+      <p class="src-meta"><span>${esc(translate(s.type))}</span> · ${esc(s.retrieved)} · <span>${esc(translate(s.confidence))}</span></p>
+      <p>${esc(translate(s.note))}</p>
       <p class="src-url">${esc(s.url)}</p>
     </article>`).join('')}</div>
 </section>`,
