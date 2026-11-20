@@ -1,6 +1,6 @@
 import { playerBySlug } from '../data/players.js';
 import { mvpLeader } from '../data/stats.js';
-import { portrait, portraitCredit, sourceNote, unknown, sectionHead, ribbon } from '../lib/ui.js';
+import { portrait, sourceNote, unknown, sectionHead } from '../lib/ui.js';
 import { renderNotFound } from './notfound.js';
 
 export function renderPlayer(slug) {
@@ -29,13 +29,17 @@ export function renderPlayer(slug) {
   const mvp = p.slug === 'kevin' ? `
     <div class="mvp-mark"><span>MVP standings</span><b>${mvpLeader.points} points · rank ${mvpLeader.rank}</b>${sourceNote(mvpLeader.sources)}</div>` : '';
 
+  const heroPortrait = p.photo
+    ? `<img src="public/assets/cards/${p.handle}.jpg" width="504" height="784" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" />`
+    : portrait(p);
+
   return {
     html: `
-<section class="player-hero" style="--accent-rot:${p.index}deg">
+<section class="player-hero" style="--accent-rot:${p.index}deg;--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
   <a class="back-link" href="/players">← Back to roster</a>
   <div class="player-grid">
     <div class="player-portrait">
-      <div class="portrait-frame"><img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="eager" decoding="async" alt="${p.handle}, Team Liquid ID" /></div>
+      <div class="portrait-frame">${heroPortrait}</div>
       <span class="player-no">${p.index} / 06</span>
       ${p.photo ? sourceNote(['COMMONS'], 'Portrait licence') : ''}
     </div>

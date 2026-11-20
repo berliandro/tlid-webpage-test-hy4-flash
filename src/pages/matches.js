@@ -1,6 +1,7 @@
 import { upcoming, tournaments, playoffRun, matchConflicts } from '../data/matches.js';
 import { sourceNote, sectionHead } from '../lib/ui.js';
 import { applyLanguage } from '../i18n.js';
+import { refreshMotion } from '../motion.js';
 
 const years = [...new Set(tournaments.map((t) => t.year))].sort((a, b) => b - a);
 
@@ -55,6 +56,7 @@ export function renderMatches() {
             <span class="arch-place${t.place === 'Juara' ? ' gold' : ''}">${t.place}</span>
           </article>`).join('');
         applyLanguage(archive);
+        refreshMotion(archive);
         archive.querySelector('[data-reset]')?.addEventListener('click', () => {
           buttons.find((b) => b.dataset.year === 'all')?.click();
         });

@@ -14,8 +14,8 @@ export function renderPlayers() {
 <section class="roster-editorial">
   <div class="roster-cards">
     ${starters.map((p) => `
-    <a class="player-card" href="/players/${p.slug}">
-      <img src="public/assets/cards/${p.handle}.jpg" width="720" height="1120" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" />
+    <a class="player-card" href="/players/${p.slug}" style="--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
+      <picture><source media="(max-width:860px)" srcset="public/assets/cards/sm/${p.handle}.webp" type="image/webp" /><img src="public/assets/cards/${p.handle}.jpg" width="504" height="784" loading="lazy" decoding="async" alt="${p.handle}, Team Liquid ID" /></picture>
       <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
     </a>`).join('')}
   </div>
@@ -30,6 +30,7 @@ export function renderPlayers() {
     <p><b>Kevin, Keven, Anaver</b> — personal identities are not verified.</p>
     <p><b>Kevin's role</b> — Jungler per S18, GOLD per MLBBHub. Both are labelled.</p>
     <p><b>Portraits</b> — Liquipedia Commons, CC BY-SA 3.0. Anaver uses a synthetic illustration.</p>
+    <p><b>Lane roles</b> — EXP, Mid, Gold and Roamer describe where a player plays.</p>
   </div>
   ${sourceNote(['IG_S18', 'MLBBHUB', 'LIQ_PLAYER'])}
 </section>`,

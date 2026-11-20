@@ -1,5 +1,5 @@
 import { startRouter, render } from './router.js';
-import { getLang, setLang, applyLanguage } from './i18n.js';
+import { getLang, setLang, applyLanguage, translate } from './i18n.js';
 
 startRouter();
 
@@ -17,32 +17,71 @@ document.addEventListener('click', (e) => {
   }
 });
 
+function searchInputs() {
+  return [...document.querySelectorAll('#site-search, #site-search-footer')];
+}
+
+function focusSearch() {
+  const visible = searchInputs().find((input) => input.getBoundingClientRect().width > 0);
+  (visible || document.querySelector('.nav-toggle'))?.focus();
+}
+
 document.addEventListener('keydown', (e) => {
   if (e.key === '/' && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) {
     e.preventDefault();
-    document.getElementById('site-search')?.focus();
+    focusSearch();
+  }
+  if (e.key === 'Escape' && document.activeElement.id === 'site-search') {
+    document.activeElement.value = '';
+    runSearch('');
   }
 });
 
-function runSearch(q) {
+function runSearch(q, source) {
   const links = [...document.querySelectorAll('.site-nav .nav-link')];
   let shown = 0;
   links.forEach((a) => {
-    a.hidden = !!q && !a.textContent.toLowerCase().includes(q);
+    const haystack = (a.dataset.search || a.textContent).toLowerCase();
+    a.hidden = !!q && !haystack.includes(q);
     if (!a.hidden) shown += 1;
   });
   const status = document.getElementById('search-status');
-  if (status) status.textContent = q ? `${shown} section${shown === 1 ? '' : 's'} found` : 'Search by section name in the navigation.';
+  const found = getLang() === 'id'
+    ? `${shown} bagian ditemukan`
+    : `${shown} section${shown === 1 ? '' : 's'} found`;
+  if (status) status.textContent = q ? found : translate('Search by section name in the navigation.');
+  searchInputs().forEach((input) => { if (input !== source) input.value = q; });
+  if (q) {
+    const menu = document.getElementById('explore-menu');
+    if (menu && [...menu.querySelectorAll('.nav-link')].some((a) => !a.hidden)) {
+      menu.hidden = false;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'true');
+    }
+    const nav = document.getElementById('primary-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    if (nav && getComputedStyle(nav).display === 'none') {
+      nav.classList.add('open');
+      toggle?.setAttribute('aria-expanded', 'true');
+    }
+  }
 }
 
 document.addEventListener('input', (e) => {
-  if (e.target.id === 'site-search') runSearch(e.target.value.toLowerCase().trim());
+  if (e.target.id === 'site-search' || e.target.id === 'site-search-footer') {
+    runSearch(e.target.value.toLowerCase().trim(), e.target);
+  }
+});
+
+document.addEventListener('submit', (e) => {
+  if (e.target.matches('[data-search-form]')) e.preventDefault();
 });
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('[data-search-reset]')) return;
-  const input = document.getElementById('site-search');
-  if (input) { input.value = ''; runSearch(''); input.focus(); }
+  const inputs = searchInputs();
+  inputs.forEach((input) => { input.value = ''; });
+  runSearch('');
+  inputs.find((input) => input.getBoundingClientRect().width > 0)?.focus();
 });
 
 document.addEventListener('visibilitychange', () => {

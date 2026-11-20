@@ -1,4 +1,5 @@
 import { sources } from '../data/sources.js';
+import { translate } from '../i18n.js';
 
 export function esc(value) {
   if (value === null || value === undefined) return '';
@@ -17,36 +18,23 @@ export function sourceNote(ids = [], label = 'Sources &amp; checks') {
     const s = sources[id];
     if (!s) return '';
     return `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.publisher)}</a>
-      <span class="src-meta">${esc(s.type)} · diambil ${esc(s.retrieved)} · ${esc(s.confidence)}</span>
+      <span class="src-meta">${esc(s.type)} · ${translate('retrieved')} ${esc(s.retrieved)} · ${esc(s.confidence)}</span>
       <span class="src-note">${esc(s.note)}</span></li>`;
   }).join('');
   return `<details class="source-note"><summary>${label}</summary><ul>${items}</ul></details>`;
 }
 
-export function portrait(player, extraClass = '', eager = false) {
-  if (player && typeof player === 'object') {
-    if (player.photo) {
-      return `<img class="portrait photo ${extraClass}" src="public/assets/players/duotone/${esc(player.photo)}.jpg" width="600" height="750" loading="${eager ? 'eager' : 'lazy'}" decoding="async" alt="${esc(player.handle)}, Team Liquid ID · Liquipedia Commons, CC BY-SA 3.0" />`;
-    }
-    return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" role="img" aria-label="Synthetic illustration / Ilustrasi sintetik ${esc(player.handle)}, not a real portrait / bukan potret asli"><use href="public/assets/portraits.svg#${esc(player.portrait)}"></use></svg>`;
-  }
-  return `<svg class="portrait ${extraClass}" viewBox="0 0 200 240" aria-hidden="true"><use href="public/assets/portraits.svg#player-4"></use></svg>`;
-}
-
-export function portraitCredit(player) {
-  return player.photo
-    ? 'PORTRAIT · LIQUIPEDIA COMMONS / CC BY-SA 3.0'
-    : 'ILUSTRASI SINTETIK / BUKAN POTRET';
-}
-
-export function ribbon(text, tag = 'span', cls = '') {
-  return `<${tag} class="ribbon ${cls}">${esc(text)}</${tag}>`;
-}
-
-export function laceTop() {
-  return '';
+export function portrait(player, extraClass = '') {
+  const handle = player?.handle || 'Unknown';
+  const label = `Unknown portrait: ${esc(handle)}. Synthetic illustration, not a real portrait / Potret tidak diketahui: ${esc(handle)}. Ilustrasi sintetik, bukan potret asli.`;
+  return `<div class="portrait-synthetic ${extraClass}" role="img" aria-label="${label}">
+    <span class="synthetic-mark">${esc(handle.slice(0, 1).toUpperCase())}</span>
+    <span class="synthetic-rule" aria-hidden="true"></span>
+    <span class="synthetic-label">SYNTHETIC ILLUSTRATION · NO VERIFIED PORTRAIT</span>
+    <span class="synthetic-sub">NOT A REAL PORTRAIT</span>
+  </div>`;
 }
 
 export function sectionHead(kicker, title, sub = '') {
-  return `<header class="section-head"><h2>${esc(title)}</h2><p class="kicker">${esc(kicker)}</p>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
+  return `<header class="section-head"><div><span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2></div>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
 }

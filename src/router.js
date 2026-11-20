@@ -9,6 +9,7 @@ import { renderSources } from './pages/sources.js';
 import { renderNotFound } from './pages/notfound.js';
 import { navItems } from './data/team.js';
 import { translate, applyLanguage } from './i18n.js';
+import { initMotion } from './motion.js';
 
 const app = document.getElementById('app');
 const FORCE_PAGES = new URLSearchParams(location.search).has('pages');
@@ -46,9 +47,15 @@ function activeHref(path) {
 
 function shell(content) {
   const current = activeHref(routeFromLocation());
-  const nav = navItems.filter((n) => n.top).map((n) =>
-    `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
-  ).join('');
+  const navLink = (n) => `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`;
+  const exploreItems = navItems.filter((n) => n.group === 'explore');
+  const exploreOpen = exploreItems.some((n) => n.href === current);
+  const nav = navItems.filter((n) => n.top).map(navLink).join('') + `
+    <div class="nav-explore">
+      <button type="button" class="nav-link explore-toggle${exploreOpen ? ' active' : ''}" aria-expanded="false" aria-controls="explore-menu">Explore</button>
+      <div class="explore-menu" id="explore-menu" hidden>${exploreItems.map(navLink).join('')}</div>
+    </div>`;
+  const currentLabel = navItems.find((n) => n.href === current)?.en || (current === '/sources' ? 'Sources' : '');
   const html = `
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="shell">
@@ -57,22 +64,21 @@ function shell(content) {
   <header class="topbar">
     <div class="topbar-left">
       <a class="brand" href="/" aria-label="Team Liquid ID — home">TEAM LIQUID ID <span class="brand-sub">/ MLBB</span></a>
-      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections" aria-controls="search-status" /><span>⌘</span></label>
+      <label class="search-pill"><span>⌕</span><input id="site-search" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in header" aria-controls="search-status" /><span>⌘</span></label>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">Menu</button>
     </div>
-    <a class="center-mark" href="/" aria-label="Team Liquid ID home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
+    <a class="center-mark" href="/" aria-label="Team Liquid ID crest — home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
     <div class="topbar-right">
+      <span class="current-section">${currentLabel}</span>
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
-      <span class="pill status-pill"><span class="coin"></span> S18 · VERIFIED</span>
+      <span class="pill status-pill"><span class="coin"></span> S18 · SINGLE-SOURCE</span>
     </div>
   </header>
   <p id="route-status" class="sr-status" role="status" aria-live="polite"></p>
   <main id="main" tabindex="-1">${content}</main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver is synthetic.</p></div>
-      <div><p class="footer-label">More</p><a href="/discover">Discover</a><a href="/history">History</a></div>
-      <div><p class="footer-label">Data</p><a href="/sources">Sources</a></div>
+      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver uses a synthetic illustration.</p></div>
     </div>
     <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
     <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
@@ -85,7 +91,7 @@ function shell(content) {
       <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
     </dl></details>
     <div class="footer-controls">
-      <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button>
+      <div class="footer-control-links"><a href="/sources"${current === '/sources' ? ' class="active" aria-current="page"' : ''}>Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>
       <p class="motion-note">Motion stops when your system asks for less.</p>
     </div>
     <div class="footer-bottom-row">
@@ -123,6 +129,7 @@ export function render() {
   const path = routeFromLocation();
   const result = resolve(path);
   app.innerHTML = shell(result.html);
+  initMotion(app);
   const status = document.getElementById('route-status');
   if (status) status.textContent = titles(path);
   document.title = `${titles(path)} — Team Liquid ID`;
@@ -137,15 +144,25 @@ function wireNav() {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('primary-nav');
   if (!toggle || !nav) return;
+  const exploreToggle = document.querySelector('.explore-toggle');
+  const exploreMenu = document.getElementById('explore-menu');
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', translate(open ? 'Tutup navigasi' : 'Buka navigasi'));
   });
+  exploreToggle?.addEventListener('click', () => {
+    const open = exploreMenu.hidden;
+    exploreMenu.hidden = !open;
+    exploreToggle.setAttribute('aria-expanded', String(open));
+  });
   nav.addEventListener('click', (e) => {
+    if (e.target.closest('.explore-toggle')) return;
     if (e.target.closest('a')) {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      if (exploreMenu) exploreMenu.hidden = true;
+      exploreToggle?.setAttribute('aria-expanded', 'false');
     }
   });
 }
@@ -160,6 +177,11 @@ export function startRouter() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
+    const menu = document.getElementById('explore-menu');
+    if (menu && !menu.hidden) {
+      menu.hidden = true;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'false');
+    }
     const nav = document.getElementById('primary-nav');
     const toggle = document.querySelector('.nav-toggle');
     if (!nav || !nav.classList.contains('open')) return;
@@ -167,6 +189,11 @@ export function startRouter() {
     toggle?.setAttribute('aria-expanded', 'false');
   });
   document.addEventListener('click', (e) => {
+    const menu = document.getElementById('explore-menu');
+    if (menu && !menu.hidden && !e.target.closest('.nav-explore')) {
+      menu.hidden = true;
+      document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'false');
+    }
     const nav = document.getElementById('primary-nav');
     if (!nav || !nav.classList.contains('open')) return;
     if (e.target.closest('#primary-nav') || e.target.closest('.nav-toggle')) return;

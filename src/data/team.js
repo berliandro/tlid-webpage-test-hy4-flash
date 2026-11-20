@@ -25,6 +25,6 @@ export const navItems = [
   { label: 'Pemain', en: 'Players', href: '/players', top: true },
   { label: 'Statistik', en: 'Statistics', href: '/statistics', top: true },
   { label: 'Pertandingan', en: 'Matches', href: '/matches', top: true },
-  { label: 'Jelajah', en: 'Discover', href: '/discover' },
-  { label: 'Sejarah', en: 'History', href: '/history' },
+  { label: 'Jelajah', en: 'Discover', href: '/discover', group: 'explore' },
+  { label: 'Sejarah', en: 'History', href: '/history', group: 'explore' },
 ];
