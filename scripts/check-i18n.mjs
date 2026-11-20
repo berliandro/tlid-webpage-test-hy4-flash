@@ -85,7 +85,7 @@ try {
     // words identical in Indonesian, or approved in-game loan terms
     'Menu', 'Indonesia', 'Damage', 'Lord', 'Tortoise', 'Grand Final',
     // proper names and data labels that carry no translatable prose
-    'Kevin, Keven, Anaver', 'Aldhia Fahmi Aranda', 'Andric Alfayyadh', 'Joo → Kevin',
+    'Kevin, Keven, Anaver', 'Aldhia Fahmi Aranda', 'Andric Alfayyadh', 'Joo → Kevin', 'RRQ Hoshi',
     'MLBBHub, 17 November 2026.',
   ]);
   const PROPER = /^(MPL Indonesia S\d+|M6 World Championship|SPS |ESL |Snapdragon |Joo →|VCGamers|titosenpai|Liquipedia|MPL Indonesia|Dot Esports|itemgame|Esports Charts|Wikipedia|Esports Insider|Esports Advocate|esports\.gg|IDN Times|Moonton|4–3 RRQ|1–4 Fnatic)/;
