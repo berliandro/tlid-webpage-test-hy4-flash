@@ -1,45 +1,32 @@
 ---
-name: Team Liquid ID — The Liquid Ledger
-description: A natural-history field ledger of a competitive horse: engraved, stamped, catalogued, and unequivocally Team Liquid ID
+name: Team Liquid ID — Agled Print Archive
+description: An aged, grainy printed archive of Team Liquid ID: ink, fibre, worn rules and stamped seals
 colors:
-  ink: "#071B33"
-  ink-deep: "#03101F"
-  ink-deep-dark: "#01070F"
-  bone: "#EDE3CC"
-  bone-dark: "#F5EDD8"
-  paper: "#E4D8BC"
-  paper-dark: "#D9CDB0"
-  brass: "#D8A93B"
-  brass-dark: "#8A6418"
-  brass-light: "#E6BC55"
-  brass-deep: "#A9782A"
-  oxblood: "#8E2B2B"
-  cyan: "#3BB0D4"
-  muted: "#9BAFC4"
-  muted-dark: "#A8BCD0"
-  rule: "rgba(237,227,204,.28)"
-  paper-rule: "rgba(7,27,51,.24)"
-  plate-shadow: "rgba(3,16,31,.55)"
-  wash: "rgba(216,169,59,.08)"
-  identity-panel: "rgba(3,16,31,.78)"
-  track-fill: "rgba(237,227,204,.12)"
-  inset-panel: "rgba(237,227,204,.06)"
+  paper: "#D8C8A6"
+  paper-light: "#E7DAC0"
+  paper-dark: "#B9A886"
+  ink: "#241E17"
+  ink-soft: "#5B4E3D"
+  oxblood: "#8D2B1F"
+  blue: "#2C3E57"
+  brass: "#A37C31"
+  rule: "rgba(36,30,23,.32)"
 typography:
   display:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(68px, 8.4vw, 120px)"
+    fontSize: "clamp(56px, 8vw, 116px)"
     fontWeight: 400
-    lineHeight: 0.9
-    letterSpacing: "-0.04em"
+    lineHeight: 0.92
+    letterSpacing: "-0.02em"
   headline:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(36px, 5vw, 70px)"
+    fontSize: "clamp(32px, 4.4vw, 58px)"
     fontWeight: 400
-    lineHeight: 1.03
+    lineHeight: 1.05
     letterSpacing: "-0.02em"
   title:
     fontFamily: "Gloock, Georgia, serif"
-    fontSize: "clamp(20px, 2.4vw, 32px)"
+    fontSize: "clamp(20px, 2.2vw, 30px)"
     fontWeight: 400
     lineHeight: 1.2
     letterSpacing: "0em"
@@ -47,7 +34,7 @@ typography:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
   label:
     fontFamily: "Manrope, Arial, sans-serif"
     fontSize: "0.75rem"
@@ -58,66 +45,55 @@ typography:
     fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.4
-  note:
-    fontFamily: "Bodoni Moda, Georgia, serif"
-    fontSize: "1.75rem"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "0em"
 spacing:
   tap: "44px"
   measure: "38rem"
 components:
   primary-action:
-    backgroundColor: "{colors.brass}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.oxblood}"
+    textColor: "{colors.paper-light}"
     rounded: "0px"
-    padding: "14px 22px"
-  specimen-plate:
-    backgroundColor: "{colors.paper}"
+    padding: "12px 18px"
+  archive-card:
+    backgroundColor: "{colors.paper-light}"
     textColor: "{colors.ink}"
     rounded: "0px"
     padding: "12px"
-  record-panel:
+  stamp:
     backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.bone}"
+    textColor: "{colors.paper-light}"
     rounded: "0px"
-    padding: "clamp(22px, 3vw, 38px)"
-  source-note:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.bone}"
-    rounded: "0px"
-    padding: "8px 0"
+    padding: "26px"
 ---
 
 ## Overview
 
-TLID is presented as a field ledger of a competitive animal: an authored engraving of a horse, specimen plates for the six players, ruled measurement tables for the record, and stamped provenance on every claim. The world is dark petrol indigo and bone paper, never white and never neon. It is an independent concept, not an official Team Liquid site.
+The site is an aged printed archive: warm paper fibre, heavy ink rules, oxblood wax seals, brass annotations, and small inlined game icons. One focal point per viewport, short factual copy, left-aligned reading.
 
 ## Colors
 
-Ink `#071B33` is the ground; bone `#EDE3CC` and paper `#E4D8BC` are the catalogue surfaces. Brass `#D8A93B` is the single action and rule accent; oxblood `#8E2B2B` is reserved for the record panel and status seals; EBB cyan `#3BB0D4` identifies live data labels. `prefers-color-scheme: dark` deepens the ink and brightens bone/brass without changing hue families.
+Paper `#D8C8A6` is the ground with a seamless CC0 grain tile blended in. Ink `#241E17` carries text and rules. Oxblood `#8D2B1F` is the action and seal accent; blue `#2C3E57` marks sources; brass `#A37C31` is a quiet annotation tone. Dark mode darkens paper only.
 
 ## Typography
 
-Six role tokens: `--type-display`, `--type-note`, `--type-body`, `--type-label`, `--type-meta` with `--fs-*` steps. Gloock is the only display voice. Bodoni Moda italic is used only for annotations and the wordmark accent. Manrope handles body and data. All numerals are tabular; `font-synthesis: none` prevents fake weights. Body is 16px/1.55 with a 38rem measure.
+Role tokens `--type-display/headline/title/body/label/meta` with `--fs-*` steps. Gloock for display, Manrope for body and data. No synthesized weights. Body is 16px/1.6 with a 38rem measure; functional text never below 11px; numerals tabular.
 
 ## Layout
 
-One left-aligned reading path: giant masthead, engraved plate, record panel, specimen band, gate index. Asymmetry comes from plate overlap and ruled columns, never from centred content. Every interactive target is at least 44px on coarse pointers via `--tap`.
+A 12-column mental grid, one primary action above the fold, generous spacing, no nested cards. Sections are ruled bands with one heading and one supporting line. Coarse pointers get 44px targets via `--tap`.
 
 ## Elevation & Depth
 
-Depth is made from paper tone, 1px rules and a single hard plate shadow in ink. No glow, blur, or shadow animation.
+No glow or gradient. Depth comes from paper tone, 1px rules, double rules, and a rotated wax-seal panel.
 
 ## Shapes
 
-Square corners. Recurring authored motifs: engraved horse plate, hatched ink texture, registration crosses, measurement ticks, brass double rules, and oxblood wax seals.
+Square corners. Recurring details: grain tile, heavy rules, registration ticks, inlined game-icons, oxblood seals.
 
 ## Components
 
-`primary-action` is brass on ink. `specimen-plate` is a paper card with a brass top rule. `record-panel` is oxblood with a brass border. `source-note` is a disclosure carrying publisher, URL, retrieval date and confidence. `glossary` defines MLBB, MPL ID, S18, KDA, MVP and kill participation.
+`primary-action` is oxblood on paper. `archive-card` is paper-light with a heavy top rule. `stamp` is an oxblood panel for the current-season snapshot. `source-note` is a disclosure with publisher, URL, retrieval date and confidence.
 
 ## Do's and Don'ts
 
-Do keep every route in this same world, attribute every fact, label unknown states, and preserve the deterministic seeded offsets with hidden-tab pause and a static reduced-motion path. Don't use white/clean flat surfaces, generic dark+glow esports styling, card grids, gradients, glow, rounded components, fabricated data, or another project's motifs.
+Do keep every route in this world, write short concrete sentences, attribute every fact, and label unknowns. Don't use long paragraphs, generic marketing language, mixed terminology, emoji, hollow cards, dark+glow esports styling, or uncredited assets.

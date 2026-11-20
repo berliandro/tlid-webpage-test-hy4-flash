@@ -10,14 +10,14 @@ export function renderMatches() {
 <section class="page-head">
   <h1>Arsip <em>cutting lines</em></h1>
   <p class="kicker">Pertandingan</p>
-  <p class="lede">Perjalanan kompetitif TLID dalam bentuk garis potong: turnamen, tanggal, lawan, dan hasil. Tidak ada jadwal masa depan yang mengarang.</p>
+  <p class="lede">Turnamen, tanggal, lawan, hasil. Tanpa jadwal rekaan.</p>
 </section>
 
 <section class="section upcoming-section">
   ${sectionHead('Mendatang', 'Keadaan kosong yang disengaja')}
   ${upcoming.available
-    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`
-    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>${upcoming.text}</p>${sourceNote(upcoming.sources)}</div>`}
+    ? `<div class="unavailable"><h3>Jadwal terverifikasi</h3><p>S18 selesai 2026-11-08. Tidak ada fixture terverifikasi setelahnya.</p>${sourceNote(upcoming.sources)}</div>`
+    : `<div class="unavailable"><span class="unavailable-seal">TIDAK ADA JADWAL TERVERIFIKASI</span><h3>${upcoming.title}</h3><p>S18 selesai 2026-11-08. Tidak ada fixture terverifikasi setelahnya.</p>${sourceNote(upcoming.sources)}</div>`}
 </section>
 
 <section class="section">
@@ -27,7 +27,7 @@ export function renderMatches() {
     ${years.map((y) => `<button type="button" class="filter-btn" data-year="${y}" aria-pressed="false">${y}</button>`).join('')}
     <button type="button" class="filter-btn sort-btn" data-sort aria-pressed="true">Urutan: terbaru ↓</button>
   </div>
-  <div class="archive" id="match-archive" aria-live="polite"></div>
+  <div class="archive" id="match-archive"></div>
 </section>
 
 <section class="section">
@@ -50,7 +50,7 @@ export function renderMatches() {
         currentYear = year;
         const list = tournaments.filter((t) => year === 'all' || String(t.year) === year)
           .sort((a, b) => desc ? b.year - a.year : a.year - b.year);
-        archive.innerHTML = `<p class="result-status"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini. <button type="button" class="filter-btn" data-reset>Semua</button></p>') + list.map((t) => `
+        archive.innerHTML = `<p class="result-status" role="status" aria-live="polite"><span class="count">${list.length}</span> ENTRI</p>` + (list.length ? '' : '<p class="result-empty">Tidak ada entri untuk filter ini. <button type="button" class="filter-btn" data-reset>Semua</button></p>') + list.map((t) => `
           <article class="archive-row">
             <span class="arch-year">${t.year}</span>
             <div class="arch-main"><h3>${t.name}</h3><p>${t.period}</p></div>
