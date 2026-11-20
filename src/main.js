@@ -31,6 +31,10 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
     focusSearch();
   }
+  if (e.key === 'Escape' && document.activeElement.id === 'site-search') {
+    document.activeElement.value = '';
+    runSearch('');
+  }
 });
 
 function runSearch(q, source) {

@@ -14,14 +14,14 @@ export function renderHome() {
   <section class="hero" aria-labelledby="home-title">
     <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
-    <p class="hero-sub">Five starters named on 7 August. 71–50 since May 2024.</p>
+    <p class="hero-sub">Five starters named on 7 August. 71–50 since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
   </section>
 
   <section class="card-fan" aria-label="Starting five">
     <div class="fan-inner">${fan}</div>
   </section>
-  <p class="fan-caption"><span class="swipe-hint">SWIPE · </span>NO. 04 IS ANAVER (BENCH)</p>
+  <p class="fan-caption"><span class="swipe-hint">SWIPE · </span>NO. 04 IS ANAVER (SUBSTITUTE)</p>
 
   <section class="section">
     <div class="section-head"><div><span class="kicker">01 / Roster</span><h2>Roster notes</h2></div><p class="section-sub">Anaver is listed with the substitutes.</p></div>

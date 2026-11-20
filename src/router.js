@@ -50,6 +50,7 @@ function shell(content) {
   const nav = navItems.filter((n) => n.top).map((n) =>
     `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`
   ).join('');
+  const currentLabel = navItems.find((n) => n.href === current)?.en || (current === '/sources' ? 'Sources' : '');
   const html = `
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="shell">
@@ -63,6 +64,7 @@ function shell(content) {
     </div>
     <a class="center-mark" href="/" aria-label="Team Liquid ID crest — home"><img src="public/assets/tlid-mark.svg" alt="" /></a>
     <div class="topbar-right">
+      <span class="current-section">${currentLabel}</span>
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
       <span class="pill status-pill"><span class="coin"></span> S18 · SINGLE-SOURCE</span>
     </div>
@@ -71,16 +73,9 @@ function shell(content) {
   <main id="main" tabindex="-1">${content}</main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver is synthetic.</p></div>
-      <div><p class="footer-label">More</p><a href="/discover">Discover</a><a href="/history">History</a></div>
-      <div><p class="footer-label">Data</p><a href="/sources">Sources</a></div>
+      <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver uses a synthetic illustration.</p></div>
     </div>
-    <form class="footer-search" role="search" data-search-form>
-      <label for="site-search-footer">Find a section</label>
-      <input id="site-search-footer" type="search" placeholder="Find a section…" autocomplete="off" aria-label="Search site sections in footer" aria-controls="search-status" />
-      <button type="button" data-search-reset>Reset</button>
-      <p id="search-status" class="search-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
-    </form>
+    <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
     <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
       <div><dt>MLBB</dt><dd>The game TLID plays.</dd></div>
       <div><dt>MPL ID</dt><dd>Indonesia's pro MLBB league.</dd></div>
@@ -91,7 +86,7 @@ function shell(content) {
       <div><dt>Source note</dt><dd>Where a fact came from.</dd></div>
     </dl></details>
     <div class="footer-controls">
-      <button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button>
+      <div class="footer-control-links"><a href="/sources">Sources</a><button class="expand-sources" type="button" data-expand-sources aria-expanded="false">Show all sources</button></div>
       <p class="motion-note">Motion stops when your system asks for less.</p>
     </div>
     <div class="footer-bottom-row">

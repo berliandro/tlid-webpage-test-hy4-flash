@@ -30,6 +30,7 @@ export function renderPlayers() {
     <p><b>Kevin, Keven, Anaver</b> — personal identities are not verified.</p>
     <p><b>Kevin's role</b> — Jungler per S18, GOLD per MLBBHub. Both are labelled.</p>
     <p><b>Portraits</b> — Liquipedia Commons, CC BY-SA 3.0. Anaver uses a synthetic illustration.</p>
+    <p><b>Lane roles</b> — EXP, Mid, Gold and Roamer describe where a player plays.</p>
   </div>
   ${sourceNote(['IG_S18', 'MLBBHUB', 'LIQ_PLAYER'])}
 </section>`,
