@@ -47,6 +47,7 @@ try {
   const ev = async (expression) => (await send('Runtime.evaluate', { expression, returnByValue: true })).result?.result?.value;
   await send('Runtime.enable');
   await send('Page.enable');
+  await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
 
   const collect = `(() => {
     const out = [];
@@ -103,6 +104,8 @@ try {
 
   const flagged = [];
   const counts = {};
+  const enAll = new Set();
+  const idAll = new Set();
   for (const route of ROUTES) {
     counts[route || 'home'] = 0;
     let enSet = new Set();
@@ -116,12 +119,27 @@ try {
       }
       await sleep(250);
       const texts = await ev(collect);
-      if (lang === 'en') { enSet = new Set(texts); counts[route || 'home'] = texts.length; }
-      else {
+      if (lang === 'en') {
+        enSet = new Set(texts); counts[route || 'home'] = texts.length;
+        texts.forEach((t) => enAll.add(t));
+      } else {
+        texts.forEach((t) => idAll.add(t));
         for (const t of texts) if (enSet.has(t) && !allow(t)) flagged.push({ route: route || 'home', text: t });
       }
     }
   }
+
+  // Exact composed-label assertions: the ID locale must use the agreed wording,
+  // not merely a different string that repeats a word root.
+  const EXPECTED_ID = {
+    'Explore: Discover': 'Jelajahi: Cerita',
+    'Explore: History': 'Jelajahi: Sejarah',
+  };
+  const composedFailures = [];
+  for (const [en, expectedId] of Object.entries(EXPECTED_ID)) {
+    if (enAll.has(en) && !idAll.has(expectedId)) composedFailures.push(`${en} → expected "${expectedId}"`);
+  }
+  for (const failure of composedFailures) flagged.push({ route: 'composed-label', text: failure });
 
   // Explicit regression assertions for the previously verified P1 strings.
   const KNOWN = [
@@ -143,6 +161,7 @@ try {
     flagged,
     knownStringsTotal: KNOWN.length,
     knownStringsStillFlagged: stillFlagged,
+    composedFailures,
   };
   console.log(JSON.stringify(result, null, 2));
   ws.close();

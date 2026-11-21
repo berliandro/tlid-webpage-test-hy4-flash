@@ -387,7 +387,7 @@ Object.assign(TO_ID, {
   'A timeline': 'Linimasa', 'still unfinished': 'yang belum selesai',
   'What cannot be confirmed': 'Yang tidak bisa dipastikan', 'Deliberately blank': 'Sengaja dikosongkan',
   'list': 'daftar', '26 sources': '26 sumber', 'Ledger': 'Daftar',
-  'Explore: Discover': 'Jelajahi: Jelajah', 'Explore: History': 'Jelajahi: Sejarah',
+  'Explore: Discover': 'Jelajahi: Cerita', 'Explore: History': 'Jelajahi: Sejarah',
   'Clear': 'Hapus',
   'August 2025': 'Agustus 2025', 'March 2026': 'Maret 2026', 'Aug 2026': 'Agu 2026',
   'Academy → main team, Mar 2026': 'Akademi → tim utama, Mar 2026',
