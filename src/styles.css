@@ -266,7 +266,10 @@ em{font-style:normal}
 .fact-list li{margin-bottom:6px}
 .conflict{border-top:1px solid var(--hair);background:rgba(245,197,66,.06);padding:16px;border-radius:0 14px 14px 0;margin-top:16px}
 .conflict p{font-size:13px}
-.stat-strip,.totals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--block-gap)}
+.stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--block-gap)}
+.totals-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--block-gap)}
+.split-section{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--block-gap);align-items:start}
+.split-section>div{min-width:0}
 .stat-strip>div,.total-cell,.mvp-card,.record-stack>div{background:var(--panel-2);border:1px solid var(--hair);border-radius:16px;padding:16px}
 .stat-strip b,.total-cell b{display:block;font-size:clamp(1.6rem,2.6vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1}
 .stat-strip span,.total-cell span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -452,6 +455,8 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 }
 @media(max-width:860px){
   :root{--fan-top-gap:var(--s-2)}
+  .totals-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split-section{grid-template-columns:1fr}
   .topbar{grid-template-columns:1fr auto}
   .nav-toggle{display:inline-flex}
   .site-nav{display:none;grid-column:1/-1;flex-wrap:wrap}
