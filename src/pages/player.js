@@ -2,6 +2,7 @@ import { playerBySlug } from '../data/players.js';
 import { mvpLeader } from '../data/stats.js';
 import { portrait, sourceNote, unknown, sectionHead } from '../lib/ui.js';
 import { renderNotFound } from './notfound.js';
+import { numFormat } from '../i18n.js';
 
 export function renderPlayer(slug) {
   const p = playerBySlug[slug];
@@ -17,10 +18,10 @@ export function renderPlayer(slug) {
 
   const statBlock = p.stat ? `
     <div class="stat-strip">
-      <div><b>${p.stat.kda.toFixed(2)}</b><span>Average KDA</span></div>
+      <div><b>${numFormat(p.stat.kda, 2)}</b><span>Average KDA</span></div>
       <div><b>${p.stat.kp}%</b><span>Kill participation</span></div>
       <div><b>${p.stat.games}</b><span>Games recorded</span></div>
-      <div><b>${p.stat.k.toFixed(1)}/${p.stat.d.toFixed(1)}/${p.stat.a.toFixed(1)}</b><span>Average K/D/A</span></div>
+      <div><b>${numFormat(p.stat.k, 1)}/${numFormat(p.stat.d, 1)}/${numFormat(p.stat.a, 1)}</b><span>Average K/D/A</span></div>
     </div>
     <p class="stat-caveat">MLBBHub, 17 November 2026, 14:13 UTC. Role per source: ${p.stat.listedRole}.</p>
     ${sourceNote(['MLBBHUB', 'MPL_STATS'])}` : `

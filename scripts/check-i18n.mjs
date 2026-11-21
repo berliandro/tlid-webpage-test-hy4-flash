@@ -106,6 +106,7 @@ try {
   const counts = {};
   const enAll = new Set();
   const idAll = new Set();
+  const byRoute = {};
   for (const route of ROUTES) {
     counts[route || 'home'] = 0;
     let enSet = new Set();
@@ -119,6 +120,7 @@ try {
       }
       await sleep(250);
       const texts = await ev(collect);
+      byRoute[`${route}|${lang}`] = new Set(texts);
       if (lang === 'en') {
         enSet = new Set(texts); counts[route || 'home'] = texts.length;
         texts.forEach((t) => enAll.add(t));
@@ -141,6 +143,20 @@ try {
   }
   for (const failure of composedFailures) flagged.push({ route: 'composed-label', text: failure });
 
+  // Numeric-format assertions: group separators and decimal marks follow the active locale.
+  const NUMBER_ASSERTIONS = [
+    ['statistics|en', '10,852,558', true], ['statistics|en', '2,644,312', true],
+    ['statistics|id', '10.852.558', true], ['statistics|id', '2.644.312', true],
+    ['statistics|en', '6.39', true], ['statistics|id', '6,39', true],
+    ['statistics|id', '6.39', false], ['players/aran|id', '6.39', false],
+  ];
+  const numberFailures = [];
+  for (const [key, text, expected] of NUMBER_ASSERTIONS) {
+    const present = byRoute[key]?.has(text) || false;
+    if (present !== expected) numberFailures.push(`${key}: "${text}" ${expected ? 'missing' : 'still present'}`);
+  }
+  for (const failure of numberFailures) flagged.push({ route: 'number-format', text: failure });
+
   // Explicit regression assertions for the previously verified P1 strings.
   const KNOWN = [
     'Public research, 17 November 2026. Unknowns stay blank.',
@@ -162,6 +178,7 @@ try {
     knownStringsTotal: KNOWN.length,
     knownStringsStillFlagged: stillFlagged,
     composedFailures,
+    numberFailures,
   };
   console.log(JSON.stringify(result, null, 2));
   ws.close();

@@ -582,6 +582,13 @@ Object.assign(TO_ID, {
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
 // unacceptable on a product whose core promise is "never invent the record".
+// Locale-derived number formatting; never hardcode one locale's separators.
+export function numFormat(value, digits = 0) {
+  const locale = getLang() === 'id' ? 'id-ID' : 'en-US';
+  const options = digits > 0 ? { minimumFractionDigits: digits, maximumFractionDigits: digits } : {};
+  return new Intl.NumberFormat(locale, options).format(value);
+}
+
 export function translate(text) {
   if (typeof text !== 'string') return text;
   const key = text.trim();

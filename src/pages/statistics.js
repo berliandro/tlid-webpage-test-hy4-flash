@@ -1,11 +1,11 @@
 import { playerStats, teamTotals, records, mvpLeader, statConflicts } from '../data/stats.js';
 import { sourceNote, sectionHead, esc } from '../lib/ui.js';
-import { applyLanguage, translate } from '../i18n.js';
+import { applyLanguage, translate, numFormat } from '../i18n.js';
 import { refreshMotion } from '../motion.js';
 
 const metrics = {
   kda: {
-    label: 'KDA rata-rata', max: 7, get: (p) => p.kda, fmt: (v) => v.toFixed(2),
+    label: 'KDA rata-rata', max: 7, get: (p) => p.kda, fmt: (v) => numFormat(v, 2),
     note: "Drichel's 6.39 KDA is also in the MPL ID Top 5.",
   },
   kp: { label: 'Kill participation', max: 100, get: (p) => p.kp, fmt: (v) => `${v}%`, note: '' },
@@ -19,13 +19,13 @@ const totalGroups = [
     label: 'Combat',
     rows: [
       ['Kills', teamTotals.kills], ['Deaths', teamTotals.deaths],
-      ['Assists', teamTotals.assists], ['Damage', teamTotals.damage.toLocaleString('id-ID')],
+      ['Assists', teamTotals.assists], ['Damage', numFormat(teamTotals.damage)],
     ],
   },
   {
     label: 'Objectives & economy',
     rows: [
-      ['Gold', teamTotals.gold.toLocaleString('id-ID')], ['Lord', teamTotals.lord],
+      ['Gold', numFormat(teamTotals.gold)], ['Lord', teamTotals.lord],
       ['Tortoise', teamTotals.tortoise], ['Tower', teamTotals.tower],
     ],
   },
