@@ -4,10 +4,10 @@ import { sourceNote, esc } from '../lib/ui.js';
 import { translate } from '../i18n.js';
 
 const fan = starters.map((p) => `
-  <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}" style="--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
+  <a class="fan-card" href="/players/${p.slug}" aria-label="${p.handle}, ${p.role}" aria-describedby="hook-${p.slug}" style="--card-bg:${p.cardBg};--card-ink:${p.cardInk}">
     <picture><source media="(max-width:860px)" srcset="public/assets/cards/sm/${p.handle}.webp" type="image/webp" /><img src="public/assets/cards/${p.handle}.jpg" width="504" height="784" loading="eager" decoding="async" alt="${p.handle} of Team Liquid ID" /></picture>
     <span class="card-top"><span><span class="card-name">${p.handle}</span><span class="card-sub">${p.role}</span></span><span class="score"><b>${p.index}</b></span></span>
-    <span class="card-hook"><span class="card-hook-text">${p.hook}</span><span class="card-hook-src">${sources[p.sources[0]]?.publisher || ''}</span></span>
+    <span class="card-hook" id="hook-${p.slug}"><span class="card-hook-text">${p.hook}</span><span class="card-hook-src">${sources[p.sources[0]]?.publisher || ''}</span></span>
   </a>`).join('');
 
 export function renderHome() {
