@@ -46,8 +46,9 @@ function activeHref(path) {
 }
 
 function shell(content) {
-  const current = activeHref(routeFromLocation());
-  const glossaryOpen = current === '/' || current === '/players' || location.hash === '#glossary';
+  const path = routeFromLocation();
+  const current = activeHref(path);
+  const glossaryOpen = path === '/' || path === '/players' || location.hash === '#glossary';
   const navLink = (n) => `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`;
   const exploreItems = navItems.filter((n) => n.group === 'explore');
   const exploreChild = exploreItems.find((n) => n.href === current);
