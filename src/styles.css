@@ -14,6 +14,7 @@
   --section-y:clamp(40px,6vw,88px); --page-y:clamp(36px,5vw,72px);
   --block-gap:clamp(16px,2vw,28px);
   --s-2:12px; --s-3:16px; --s-4:24px; --s-5:32px; --s-6:48px;
+  --display-size:clamp(2.6rem,5vw,4.6rem);
   --fan-top-gap:-16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -103,7 +104,8 @@ main{min-height:40vh}
 .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 /* Route openings: data rooms are compact; narrative rooms lead like chapters. */
 .page-head.compact-head,.page-head.chapter-head{align-items:flex-start;text-align:left;padding-block:var(--s-6) var(--s-5);border-bottom:1px solid var(--hair)}
-.page-head.compact-head h1{font-size:clamp(2.4rem,4vw,3.4rem);letter-spacing:-.03em;max-width:none}
+.page-head:not(.compact-head):not(.chapter-head) h1{font-size:var(--display-size)}
+.page-head.compact-head h1{font-size:clamp(2.4rem,5vw,4.2rem);letter-spacing:-.03em;max-width:none}
 .page-head.chapter-head h1{font-size:clamp(2.2rem,4vw,3.6rem);max-width:20ch}
 .page-head.compact-head .lede,.page-head.chapter-head .lede{text-align:left;margin-inline:0;max-width:var(--measure)}
 .page-head.compact-head>.source-note,.page-head.chapter-head>.source-note{margin-inline:0}
@@ -152,7 +154,7 @@ em{font-style:normal}
 .hero{min-height:min(34vh,340px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;max-width:var(--shell-max);margin-inline:auto;padding:clamp(28px,3vw,48px) var(--gutter) 0;text-align:center;position:relative}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(245,197,66,.09);border:1px solid rgba(245,197,66,.25);border-radius:999px;padding:6px 12px;margin-bottom:var(--s-4)}
 .hero-badge .coin{width:12px;height:12px;border-radius:50%;background:var(--gold)}
-.hero h1{max-width:16ch;margin:0 auto;color:var(--text)}
+.hero h1{font-size:var(--display-size);max-width:16ch;margin:0 auto;color:var(--text)}
 .hero h1 span{display:block}
 .hero h1 span+span{margin-top:2px}
 .hero-sub{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.7;max-width:56ch}
@@ -255,7 +257,7 @@ em{font-style:normal}
 .synthetic-label,.synthetic-sub{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
 .synthetic-sub{opacity:.75}
 .player-no{position:absolute;right:12px;top:12px;font-size:12px;color:var(--cyan)}
-.player-intro h1{font-size:clamp(2.8rem,5vw,4.6rem);margin:8px 0 12px}
+.player-intro h1{font-size:var(--display-size);margin:8px 0 12px}
 .script{font-family:var(--mono);font-size:12px;color:var(--cyan)}
 .identity-list{margin:var(--s-4) 0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .identity-list div{border-top:1px solid var(--hair);padding-top:8px}
@@ -443,7 +445,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
 /* responsive */
 @media(max-height:760px){
   .hero{padding-top:16px;min-height:min(24vh,220px)}
-  .hero h1{font-size:clamp(2rem,3.2vw,3.2rem)}
+  .hero h1{font-size:var(--display-size)}
   .card-fan{height:min(320px,44vh)}
   .fan-card{width:clamp(130px,min(18vw,22vh),240px)}
 }
@@ -468,7 +470,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .brand-sub,.search-pill>span:last-child{display:none}
   .status-pill{display:none}
   .hero{min-height:auto;padding-top:var(--page-y)}
-  .hero h1{font-size:clamp(2.5rem,12vw,4.6rem)}
+  .hero h1{font-size:var(--display-size)}
   .card-fan{height:min(clamp(260px,72vw,420px),64vh)}
   .fan-inner{width:160%;bottom:-2%}
   .roster{grid-template-columns:repeat(2,minmax(0,1fr))}
