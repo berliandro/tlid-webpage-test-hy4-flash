@@ -103,7 +103,7 @@ main{min-height:40vh}
 .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 /* Route openings: data rooms are compact; narrative rooms lead like chapters. */
 .page-head.compact-head,.page-head.chapter-head{align-items:flex-start;text-align:left;padding-block:var(--s-6) var(--s-5);border-bottom:1px solid var(--hair)}
-.page-head.compact-head h1{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.03em;max-width:none}
+.page-head.compact-head h1{font-size:clamp(2.4rem,4vw,3.4rem);letter-spacing:-.03em;max-width:none}
 .page-head.chapter-head h1{font-size:clamp(2.2rem,4vw,3.6rem);max-width:20ch}
 .page-head.compact-head .lede,.page-head.chapter-head .lede{text-align:left;margin-inline:0;max-width:var(--measure)}
 .page-head.compact-head>.source-note,.page-head.chapter-head>.source-note{margin-inline:0}
@@ -255,7 +255,7 @@ em{font-style:normal}
 .synthetic-label,.synthetic-sub{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
 .synthetic-sub{opacity:.75}
 .player-no{position:absolute;right:12px;top:12px;font-size:12px;color:var(--cyan)}
-.player-intro h1{font-size:clamp(2.8rem,6vw,6rem);margin:8px 0 12px}
+.player-intro h1{font-size:clamp(2.8rem,5vw,4.6rem);margin:8px 0 12px}
 .script{font-family:var(--mono);font-size:12px;color:var(--cyan)}
 .identity-list{margin:var(--s-4) 0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .identity-list div{border-top:1px solid var(--hair);padding-top:8px}
