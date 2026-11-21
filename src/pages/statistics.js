@@ -14,10 +14,21 @@ const metrics = {
 
 const pageSources = ['MLBBHUB', 'MPL_STATS', 'LIQ_TEAM', 'ESC'];
 
-const totalRows = [
-  ['Kills', teamTotals.kills], ['Deaths', teamTotals.deaths], ['Assists', teamTotals.assists],
-  ['Gold', teamTotals.gold.toLocaleString('id-ID')], ['Damage', teamTotals.damage.toLocaleString('id-ID')],
-  ['Lord', teamTotals.lord], ['Tortoise', teamTotals.tortoise], ['Tower', teamTotals.tower],
+const totalGroups = [
+  {
+    label: 'Combat',
+    rows: [
+      ['Kills', teamTotals.kills], ['Deaths', teamTotals.deaths],
+      ['Assists', teamTotals.assists], ['Damage', teamTotals.damage.toLocaleString('id-ID')],
+    ],
+  },
+  {
+    label: 'Objectives & economy',
+    rows: [
+      ['Gold', teamTotals.gold.toLocaleString('id-ID')], ['Lord', teamTotals.lord],
+      ['Tortoise', teamTotals.tortoise], ['Tower', teamTotals.tower],
+    ],
+  },
 ];
 
 export function renderStats() {
@@ -40,7 +51,7 @@ export function renderStats() {
 
 <section class="section">
   ${sectionHead('Team', 'Totals without a season label', 'Four official feeds show the same totals under different season titles.')}
-  <div class="totals-grid">${totalRows.map(([label, value]) => `<div class="total-cell"><span>${label}</span><b>${value}</b></div>`).join('')}</div>
+  ${totalGroups.map((g) => `<div class="total-group"><h3 class="total-group-title">${g.label}</h3><div class="totals-grid">${g.rows.map(([label, value]) => `<div class="total-cell"><span>${label}</span><b>${value}</b></div>`).join('')}</div></div>`).join('')}
   ${sourceNote(teamTotals.sources, 'Team totals')}
 </section>
 

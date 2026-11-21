@@ -271,6 +271,8 @@ em{font-style:normal}
 .conflict p{font-size:13px}
 .stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--block-gap)}
 .totals-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--block-gap)}
+.total-group+.total-group{border-top:1px solid var(--hair);padding-top:var(--block-gap);margin-top:var(--block-gap)}
+.total-group-title{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:var(--s-2)}
 .record-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--block-gap)}
 .record-kicker{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--gold);margin-bottom:4px}
 .stat-strip>div,.total-cell,.mvp-card,.record-stack>div{background:var(--panel-2);border:1px solid var(--hair);border-radius:16px;padding:16px}

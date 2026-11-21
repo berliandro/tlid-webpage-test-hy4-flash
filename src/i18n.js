@@ -576,6 +576,8 @@ Object.assign(TO_ID, {
   'Drichel, Mid Laner': 'Drichel, peran Mid Laner',
   'Keven, Gold Laner': 'Keven, peran Gold Laner',
   'Lyoni, Roamer': 'Lyoni, peran Roamer',
+  'Combat': 'Pertarungan',
+  'Objectives & economy': 'Objektif & ekonomi',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
