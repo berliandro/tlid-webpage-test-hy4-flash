@@ -390,6 +390,7 @@ body.is-hidden *,body.is-hidden *::before,body.is-hidden *::after{animation-play
 h1,h2,h3,.tile b,.arch-place,.conflict h3{overflow-wrap:anywhere}
 .pill,.nav-link,.brand,.bench-list a{max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .current-section{display:none;font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.current-section:empty{display:none}
 @media(max-width:560px){
   .brand{display:none}
   .search-wrap{flex:1;min-width:0}
