@@ -1,6 +1,6 @@
 import { starters, substitutes } from '../data/players.js';
 import { sources } from '../data/sources.js';
-import { sourceNote, esc } from '../lib/ui.js';
+import { sourceNote, esc, roleHelpLine } from '../lib/ui.js';
 import { translate } from '../i18n.js';
 
 const fan = starters.map((p) => `
@@ -20,6 +20,7 @@ export function renderHome() {
     <h1 id="home-title"><span>Five starters.</span><span>One season.</span></h1>
     <p class="hero-sub">Five starters named on 7 August. Series record 71–50 (174–141 games) since May 2024. S18 is the 2026 season; MLBB is Mobile Legends: Bang Bang.</p>
     <p class="hero-cta"><a class="pill" href="/players">View roster →</a></p>
+    ${roleHelpLine()}
   </section>
 
   <section class="card-fan" aria-label="Starting five">

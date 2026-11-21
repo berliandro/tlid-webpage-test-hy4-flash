@@ -565,6 +565,12 @@ Object.assign(TO_ID, {
   'Opponent codes': 'Kode lawan',
   'Opponent abbreviations in the match archive.': 'Singkatan lawan dalam arsip pertandingan.',
   'in the footer': 'di footer',
+  'Lane roles': 'Peran jalur',
+  'EXP Laner is a lane role — it describes where a player plays.': 'EXP Laner adalah peran jalur — menjelaskan posisi bermain.',
+  'Jungler is a lane role — it describes where a player plays.': 'Jungler adalah peran jalur — menjelaskan posisi bermain.',
+  'Mid Laner is a lane role — it describes where a player plays.': 'Mid Laner adalah peran jalur — menjelaskan posisi bermain.',
+  'Gold Laner is a lane role — it describes where a player plays.': 'Gold Laner adalah peran jalur — menjelaskan posisi bermain.',
+  'Roamer is a lane role — it describes where a player plays.': 'Roamer adalah peran jalur — menjelaskan posisi bermain.',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is

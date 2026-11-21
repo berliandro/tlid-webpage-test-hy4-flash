@@ -1,5 +1,5 @@
 import { starters, substitutes, rosterNote } from '../data/players.js';
-import { sourceNote, sectionHead, esc } from '../lib/ui.js';
+import { sourceNote, sectionHead, esc, roleHelpLine } from '../lib/ui.js';
 import { translate } from '../i18n.js';
 
 export function renderPlayers() {
@@ -10,6 +10,7 @@ export function renderPlayers() {
   <p class="hero-badge"><span class="coin"></span> S18 · 2026 Season</p>
   <h1><span>The five</span></h1>
   <p class="lede">Announced 7 August 2026.</p>
+  ${roleHelpLine()}
   ${sourceNote([rosterNote.id], 'Why this roster')}
 </section>
 

@@ -35,6 +35,19 @@ export function portrait(player, extraClass = '') {
   </div>`;
 }
 
+// First-use help for lane roles, grounded in the project's own "where a player plays" definition.
+const laneRoles = {
+  'EXP Laner': 'EXP Laner is a lane role — it describes where a player plays.',
+  Jungler: 'Jungler is a lane role — it describes where a player plays.',
+  'Mid Laner': 'Mid Laner is a lane role — it describes where a player plays.',
+  'Gold Laner': 'Gold Laner is a lane role — it describes where a player plays.',
+  Roamer: 'Roamer is a lane role — it describes where a player plays.',
+};
+
+export function roleHelpLine() {
+  return `<div class="role-help"><span class="role-help-kicker">Lane roles</span>${Object.entries(laneRoles).map(([term, gloss]) => `<span class="role-term">${esc(term)}<details class="term-help"><summary aria-label="What this term means">?</summary><p>${esc(gloss)} <a href="#glossary">Full glossary</a></p></details></span>`).join('')}</div>`;
+}
+
 export function sectionHead(kicker, title, sub = '') {
   return `<header class="section-head"><div>${kicker ? `<span class="kicker">${esc(kicker)}</span>` : ''}<h2>${esc(title)}</h2></div>${sub ? `<p class="section-sub">${esc(sub)}</p>` : ''}</header>`;
 }
