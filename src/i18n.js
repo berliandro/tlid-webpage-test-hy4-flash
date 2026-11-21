@@ -571,6 +571,11 @@ Object.assign(TO_ID, {
   'Mid Laner is a lane role — it describes where a player plays.': 'Mid Laner adalah peran jalur — menjelaskan posisi bermain.',
   'Gold Laner is a lane role — it describes where a player plays.': 'Gold Laner adalah peran jalur — menjelaskan posisi bermain.',
   'Roamer is a lane role — it describes where a player plays.': 'Roamer adalah peran jalur — menjelaskan posisi bermain.',
+  'Aran, EXP Laner': 'Aran, peran EXP Laner',
+  'Kevin, Jungler': 'Kevin, peran Jungler',
+  'Drichel, Mid Laner': 'Drichel, peran Mid Laner',
+  'Keven, Gold Laner': 'Keven, peran Gold Laner',
+  'Lyoni, Roamer': 'Lyoni, peran Roamer',
 });
 
 // Exact-match only. Blind fragment substitution can change meaning, which is
