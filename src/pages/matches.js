@@ -56,7 +56,7 @@ export function renderMatches() {
 </section>
 
 <section class="section">
-  ${sectionHead('Conflicts', 'Where sources disagree')}
+  ${sectionHead('', 'Where sources disagree')}
   <div class="conflict-grid">${matchConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>`,
     mount() {

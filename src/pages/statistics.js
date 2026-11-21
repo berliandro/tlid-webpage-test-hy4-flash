@@ -53,7 +53,7 @@ export function renderStats() {
 </section>
 
 <section class="section">
-  ${sectionHead('Conflicts', 'Where sources disagree')}
+  ${sectionHead('', 'Where sources disagree')}
   <div class="conflict-grid">${statConflicts.map((c) => `<article class="conflict"><h3>${c.title}</h3><p>${c.text}</p>${sourceNote(c.sources)}</article>`).join('')}</div>
 </section>
 
