@@ -188,8 +188,8 @@ em{font-style:normal}
 .fan-card .card-top{position:absolute;left:14px;right:12px;top:14px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .fan-card .card-name{display:block;font-size:clamp(14px,1.7vw,25px);font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--card-ink,#fff)}
 .fan-card .card-sub{display:block;font-family:var(--mono);font-size:12px;color:var(--card-ink,#fff);margin-top:4px}
-.fan-card .score{display:inline-flex;align-items:center;gap:4px;background:var(--panel-60);border:1px solid var(--white-28);border-radius:999px;padding:4px 8px;font-family:var(--mono);font-size:12px;color:#fff}
-.fan-card .score b{width:18px;height:18px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:12px}
+.fan-card .score,.player-card .score{display:inline-flex;align-items:center;gap:4px;background:var(--panel-60);border:1px solid var(--white-28);border-radius:999px;padding:4px 8px;font-family:var(--mono);font-size:12px;color:#fff}
+.fan-card .score b,.player-card .score b{width:18px;height:18px;border-radius:50%;background:#fff;color:#001538;display:grid;place-items:center;font-size:12px}
 .fan-card,.player-card{cursor:pointer}
 .fan-card:focus-visible,.player-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .card-hook{position:absolute;left:0;right:0;bottom:0;z-index:6;padding:10px 12px;background:var(--card-bg);color:var(--card-ink);
