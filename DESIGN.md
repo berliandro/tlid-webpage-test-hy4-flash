@@ -112,7 +112,7 @@ The palette is a neutral charcoal field with a small, stable set of accents. Acc
 
 ### Hierarchy
 - **Display** (800, `--display-size: clamp(2.6rem,5vw,4.6rem)`, 1.03, −0.04em): one shared token for the centred oversized openings on Team, Players and 404, plus player-detail names. The 2.6rem floor keeps the tier consistent on phones.
-- **Chapter lead** (800, `clamp(2.2rem,4vw,3.6rem)`): left-aligned narrative openings on Discover and History.
+- **Chapter lead** (800, `clamp(2.4rem,5vw,4.2rem)`): left-aligned narrative openings on Discover and History; also held at least 1.25× the section-head H2.
 - **Compact masthead** (800, `clamp(2.4rem,5vw,4.2rem)`): left-aligned openings on Statistics, Matches and Sources; sized at least 1.25× the section-head H2 so the route title perceptibly outranks its sections.
 - **Headline** (800, ~1.15rem): section and card titles.
 - **Body** (400, 16px/1.6): reading copy; measure capped near 70ch.

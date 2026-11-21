@@ -106,7 +106,7 @@ main{min-height:40vh}
 .page-head.compact-head,.page-head.chapter-head{align-items:flex-start;text-align:left;padding-block:var(--s-6) var(--s-5);border-bottom:1px solid var(--hair)}
 .page-head:not(.compact-head):not(.chapter-head) h1{font-size:var(--display-size)}
 .page-head.compact-head h1{font-size:clamp(2.4rem,5vw,4.2rem);letter-spacing:-.03em;max-width:none}
-.page-head.chapter-head h1{font-size:clamp(2.2rem,4vw,3.6rem);max-width:20ch}
+.page-head.chapter-head h1{font-size:clamp(2.4rem,5vw,4.2rem);max-width:20ch}
 .page-head.compact-head .lede,.page-head.chapter-head .lede{text-align:left;margin-inline:0;max-width:var(--measure)}
 .page-head.compact-head>.source-note,.page-head.chapter-head>.source-note{margin-inline:0}
 .compact-head+.section,.chapter-head+.section{border-top:0}
