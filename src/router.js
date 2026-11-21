@@ -47,6 +47,7 @@ function activeHref(path) {
 
 function shell(content) {
   const current = activeHref(routeFromLocation());
+  const glossaryOpen = current === '/' || current === '/players' || location.hash === '#glossary';
   const navLink = (n) => `<a href="${n.href}" class="nav-link${current === n.href ? ' active' : ''}" data-search="${n.en} ${n.label}" aria-current="${current === n.href ? 'page' : 'false'}">${n.en}</a>`;
   const exploreItems = navItems.filter((n) => n.group === 'explore');
   const exploreChild = exploreItems.find((n) => n.href === current);
@@ -92,7 +93,7 @@ function shell(content) {
       <div><p class="footer-mark">TEAM LIQUID <em>ID</em></p><p class="footer-note">Unofficial concept. Not endorsed by Team Liquid or Moonton. Portraits: Liquipedia Commons, CC BY-SA 3.0; Anaver uses a synthetic illustration.</p></div>
     </div>
     <p id="search-status" class="sr-status" role="status" aria-live="polite">Search by section name in the navigation.</p>
-    <details class="glossary" id="glossary" open><summary>Glossary</summary><dl>
+    <details class="glossary" id="glossary"${glossaryOpen ? ' open' : ''}><summary>Glossary</summary><dl>
       <div><dt>MLBB</dt><dd>The game TLID plays.</dd></div>
       <div><dt>MPL ID</dt><dd>Indonesia's pro MLBB league.</dd></div>
       <div><dt>S18</dt><dd>The season this roster refers to.</dd></div>

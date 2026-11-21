@@ -108,6 +108,14 @@ document.addEventListener('submit', (e) => {
   if (e.target.matches('[data-search-form]')) e.preventDefault();
 });
 
+// A "Full glossary" link must reveal its destination on any route.
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href="#glossary"]');
+  if (!link) return;
+  const glossary = document.getElementById('glossary');
+  if (glossary) glossary.open = true;
+});
+
 document.addEventListener('click', (e) => {
   if (!e.target.closest('[data-search-reset]')) return;
   const inputs = searchInputs();
