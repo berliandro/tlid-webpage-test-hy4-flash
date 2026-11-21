@@ -69,8 +69,11 @@ function runSearch(q, source) {
     hit.hidden = !footerOnly;
     if (footerOnly) {
       hit.setAttribute('href', footerHit.getAttribute('href'));
-      hit.querySelector('.search-hit-label').textContent = footerHit.textContent.trim();
-      hit.querySelector('.search-hit-loc').textContent = translate('in the footer');
+      const hitLabel = footerHit.textContent.trim();
+      const hitLoc = translate('in the footer');
+      hit.querySelector('.search-hit-label').textContent = hitLabel;
+      hit.querySelector('.search-hit-loc').textContent = hitLoc;
+      hit.setAttribute('aria-label', `${hitLabel} — ${hitLoc}`);
     }
   }
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
