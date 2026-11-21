@@ -46,8 +46,11 @@ function runSearch(q, source) {
   let shown = 0;
   links.forEach((a) => {
     const haystack = (a.dataset.search || a.textContent).toLowerCase();
-    a.hidden = !!q && !haystack.includes(q);
-    if (!a.hidden) shown += 1;
+    const match = !q || haystack.includes(q);
+    // Navigation is always present; non-matches are only dimmed, never removed.
+    a.hidden = false;
+    a.classList.toggle('is-dimmed', !!q && !match);
+    if (match) shown += 1;
   });
   const status = document.getElementById('search-status');
   const found = getLang() === 'id'
@@ -66,7 +69,7 @@ function runSearch(q, source) {
   }
   // A footer-only match would otherwise be counted but invisible on screen.
   const hit = document.getElementById('search-hit');
-  const footerHit = links.find((a) => a.matches('.footer-control-links a[data-search]') && !a.hidden);
+  const footerHit = links.find((a) => a.matches('.footer-control-links a[data-search]') && !a.classList.contains('is-dimmed'));
   const footerOnly = !!footerHit && shown === 1;
   if (hit) {
     hit.hidden = !footerOnly;
@@ -82,7 +85,7 @@ function runSearch(q, source) {
   searchInputs().forEach((input) => { if (input !== source) input.value = q; });
   if (q) {
     const menu = document.getElementById('explore-menu');
-    if (menu && [...menu.querySelectorAll('.nav-link')].some((a) => !a.hidden)) {
+    if (menu && [...menu.querySelectorAll('.nav-link')].some((a) => !a.classList.contains('is-dimmed'))) {
       menu.hidden = false;
       document.querySelector('.explore-toggle')?.setAttribute('aria-expanded', 'true');
     }

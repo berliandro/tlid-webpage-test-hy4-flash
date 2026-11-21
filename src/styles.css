@@ -91,6 +91,7 @@ main:focus-visible{outline:2px solid var(--cyan);outline-offset:-4px}
 .nav-link{font-family:inherit;font-size:12px;font-weight:700;line-height:inherit;padding:6px 9px;background:transparent;color:inherit;border:1px solid transparent;border-radius:999px;white-space:nowrap;cursor:pointer}
 .nav-link:hover{background:var(--pill)}
 .nav-link.active{background:var(--text);color:var(--panel)}
+.site-nav .nav-link.is-dimmed,.footer-control-links a.is-dimmed{opacity:.38}
 .status-pill .coin{width:14px;height:14px;border-radius:50%;background:var(--gold);border:1px solid rgba(0,0,0,.35)}
 
 /* shared content */
