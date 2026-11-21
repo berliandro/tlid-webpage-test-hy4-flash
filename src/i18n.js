@@ -600,7 +600,9 @@ export function applyLanguage(root = document) {
       if (value) el.setAttribute(attr, translate(value));
     });
     if (el.hasAttribute('data-lang-toggle')) {
-      el.textContent = lang === 'id' ? 'English': 'Bahasa Indonesia';
+      el.textContent = el.hasAttribute('data-lang-short')
+        ? (lang === 'id' ? 'ID' : 'EN')
+        : (lang === 'id' ? 'English' : 'Bahasa Indonesia');
       el.setAttribute('aria-label', lang === 'id' ? 'Switch to English': 'Switch to Bahasa Indonesia');
     }
   });

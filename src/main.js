@@ -9,8 +9,11 @@ document.addEventListener('click', (e) => {
     const disclosure = [...document.querySelectorAll('.source-note, .glossary')].map((n) => n.open);
     setLang(getLang() === 'en' ? 'id' : 'en');
     render();
-    const toggle = document.querySelector('[data-lang-toggle]');
-    if (toggle) toggle.textContent = getLang() === 'id' ? 'English' : 'Bahasa Indonesia';
+    document.querySelectorAll('[data-lang-toggle]').forEach((toggle) => {
+      toggle.textContent = toggle.hasAttribute('data-lang-short')
+        ? (getLang() === 'id' ? 'ID' : 'EN')
+        : (getLang() === 'id' ? 'English' : 'Bahasa Indonesia');
+    });
     [...document.querySelectorAll('.source-note, .glossary')].forEach((n, i) => { n.open = disclosure[i] !== false; });
     document.querySelector('[data-lang-toggle]')?.focus({ preventScroll: true });
     window.scrollTo({ top: y, behavior: 'instant' });

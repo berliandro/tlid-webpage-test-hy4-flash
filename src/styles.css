@@ -368,6 +368,7 @@ em{font-style:normal}
 .footer-control-links{display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap}
 .footer-control-links a.active{color:var(--cyan)}
 .expand-sources,.lang-toggle{background:var(--pill);border:1px solid var(--hair);border-radius:999px;min-height:38px;padding:8px 14px;font-size:10px;font-weight:700;cursor:pointer}
+.lang-toggle--compact{min-width:44px;min-height:44px;padding:8px 10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
 .footer-bottom-row{max-width:var(--shell-max);margin:var(--s-3) auto 0;border-top:1px solid var(--hair);padding-top:14px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
 .credits-line{max-width:var(--shell-max);margin:var(--s-3) auto 0;border-top:1px solid var(--hair);padding-top:12px;font-family:var(--mono);font-size:10px;color:var(--muted)}
 .credits-line a{display:inline;color:var(--cyan);text-decoration:underline}
@@ -458,6 +459,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .explore-menu{position:static;transform:none;min-width:0;padding:0 0 0 var(--s-3);border:0;background:none}
 
   .current-section{display:inline-flex}
+  .search-pill{max-width:170px}
   .brand-sub,.search-pill>span:last-child{display:none}
   .status-pill{display:none}
   .hero{min-height:auto;padding-top:var(--page-y)}
@@ -521,6 +523,11 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   .fan-inner{width:max-content;left:0;bottom:0;transform:none;padding:0 var(--gutter) 32px;gap:10px}
   .fan-card{width:140px;transform:none;scroll-snap-align:center}
   .fan-card:nth-child(3){transform:translateY(-6px)}
+}
+@media(max-width:360px){
+  /* Make room for the always-visible header language control. */
+  .current-section{display:none}
+  .search-pill{max-width:130px}
 }
 @media(max-width:480px){
   /* Placing is a headline result: give it a left rail wide enough for the

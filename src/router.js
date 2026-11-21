@@ -81,6 +81,7 @@ function shell(content) {
     <div class="topbar-right">
       <span class="current-section">${currentLabel}</span>
       <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${nav}</nav>
+      <button type="button" class="lang-toggle lang-toggle--compact" data-lang-toggle data-lang-short aria-label="Switch to Bahasa Indonesia">EN</button>
       <span class="pill status-pill"><span class="coin"></span> S18 · 17 NOV</span>
     </div>
   </header>
