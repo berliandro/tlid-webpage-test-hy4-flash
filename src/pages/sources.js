@@ -8,6 +8,7 @@ function hostOf(url) {
 }
 
 export function renderSources() {
+  const title = translate('Source list').split(' ');
   const groups = [];
   for (const s of sourceList) {
     let group = groups.find((g) => g.type === s.type);
@@ -17,7 +18,7 @@ export function renderSources() {
   return {
     html: `
 <section class="page-head compact-head">
-  <h1>Source<br><em>list</em></h1>
+  <h1 data-no-i18n>${esc(title[0])} <br><em>${esc(title.slice(1).join(' '))}</em></h1>
   <p class="lede">Retrieved 17 November 2026.</p>
 </section>
 <section class="section">

@@ -45,7 +45,7 @@ export const statConflicts = [
   },
   {
     title: 'Persentase kemenangan bergantung scope',
-    text: '45% (GosuGamers), 59% (Esports Charts), 68.4% (mldb.gg, S18), 68% (Polymarket). Tidak ada satu “win rate TLID” yang ditampilkan tanpa scope.',
+    text: '45% (GosuGamers), 59% (Esports Charts), 68,4% (mldb.gg, S18), 68% (Polymarket). Tidak ada satu “win rate TLID” yang ditampilkan tanpa scope.',
     sources: ['ESC'],
   },
   {

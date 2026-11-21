@@ -107,6 +107,7 @@ try {
   const enAll = new Set();
   const idAll = new Set();
   const byRoute = {};
+  const headings = {};
   for (const route of ROUTES) {
     counts[route || 'home'] = 0;
     let enSet = new Set();
@@ -121,6 +122,7 @@ try {
       await sleep(250);
       const texts = await ev(collect);
       byRoute[`${route}|${lang}`] = new Set(texts);
+      headings[`${route}|${lang}`] = await ev(`document.querySelector('#main h1')?.textContent.replace(/\\s+/g,' ').trim() || ''`);
       if (lang === 'en') {
         enSet = new Set(texts); counts[route || 'home'] = texts.length;
         texts.forEach((t) => enAll.add(t));
@@ -157,6 +159,25 @@ try {
   }
   for (const failure of numberFailures) flagged.push({ route: 'number-format', text: failure });
 
+  // Indonesian masthead word order and locale separators inside authored prose.
+  const textFailures = [];
+  const expectedHeadings = {
+    'matches|id': 'Rekor pertandingan',
+    'sources|id': 'Daftar sumber',
+  };
+  for (const [key, expected] of Object.entries(expectedHeadings)) {
+    if (headings[key] !== expected) textFailures.push(`${key}: heading "${headings[key]}" expected "${expected}"`);
+  }
+  const proseAssertions = [
+    ['players/drichel|en', 'KDA 6.39', true], ['players/drichel|id', 'KDA 6,39', true],
+    ['statistics|en', '68.4%', true], ['statistics|id', '68,4%', true],
+  ];
+  for (const [key, fragment, expected] of proseAssertions) {
+    const present = [...(byRoute[key] || [])].some((t) => t.includes(fragment));
+    if (present !== expected) textFailures.push(`${key}: "${fragment}" ${expected ? 'missing' : 'still present'}`);
+  }
+  for (const failure of textFailures) flagged.push({ route: 'id-text', text: failure });
+
   // Explicit regression assertions for the previously verified P1 strings.
   const KNOWN = [
     'Public research, 17 November 2026. Unknowns stay blank.',
@@ -179,6 +200,7 @@ try {
     knownStringsStillFlagged: stillFlagged,
     composedFailures,
     numberFailures,
+    textFailures,
   };
   console.log(JSON.stringify(result, null, 2));
   ws.close();

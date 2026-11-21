@@ -46,10 +46,10 @@ export const players = [
     joined: 'March 2026',
     portrait: 'player-3', photo: 'Drichel', index: '03', cardBg: '#04ddca', cardInk: '#0F0F11',
     hook: 'Mid laner. Joined in March 2026.',
-    tagline: 'KDA 6.39 — angka yang juga muncul di papan peringkat resmi MPL.',
+    tagline: 'KDA 6,39 — angka yang juga muncul di papan peringkat resmi MPL.',
     bio: 'Drichel masuk TLID pada Maret 2026 sebagai Mid Laner. Andric Alfayyadh tercatat sebagai nama aslinya. KDA rata-ratanya muncul baik di MLBBHub maupun di daftar Top 5 KDA resmi MPL.',
     facts: [
-      'KDA 6.39 dengan 78% kill participation pada 53 game (MLBBHub, 2026-11-17).',
+      'KDA 6,39 dengan 78% kill participation pada 53 game (MLBBHub, 2026-11-17).',
       'Termasuk dalam daftar Top 5 Avg KDA di halaman statistik resmi MPL ID.',
     ],
     stat: { games: 53, k: 2.0, d: 1.4, a: 6.9, kda: 6.39, kp: 78, listedRole: 'MID' },

@@ -1,6 +1,6 @@
 import { upcoming, tournaments, playoffRun, matchConflicts } from '../data/matches.js';
-import { sourceNote, sectionHead } from '../lib/ui.js';
-import { applyLanguage } from '../i18n.js';
+import { sourceNote, sectionHead, esc } from '../lib/ui.js';
+import { applyLanguage, translate } from '../i18n.js';
 import { refreshMotion } from '../motion.js';
 
 const years = [...new Set(tournaments.map((t) => t.year))].sort((a, b) => b - a);
@@ -24,10 +24,11 @@ function helpFor(text, seen) {
 
 export function renderMatches() {
   const seenTerms = new Set();
+  const title = translate('Match record').split(' ');
   return {
     html: `
 <section class="page-head compact-head">
-  <h1>Match<br><em>record</em></h1>
+  <h1 data-no-i18n>${esc(title[0])} <br><em>${esc(title.slice(1).join(' '))}</em></h1>
   <p class="lede">No invented fixtures.</p>
 </section>
 
