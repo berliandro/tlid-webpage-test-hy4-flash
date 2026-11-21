@@ -542,7 +542,7 @@ main{animation:page-enter 300ms cubic-bezier(.2,.7,.2,1) both}
   /* Keep the section name visible below the bar, clear of the centred mark. */
   .current-section{
     position:absolute;left:var(--gutter);top:calc(100% + var(--s-2));z-index:2;
-    display:inline-flex;max-width:calc(50% - var(--s-2));padding:4px 10px;
+    display:inline-flex;max-width:calc(50% - var(--s-2));padding:4px 8px;
     background:var(--pill);border:1px solid var(--hair);border-radius:999px
   }
   .search-pill{max-width:130px}
