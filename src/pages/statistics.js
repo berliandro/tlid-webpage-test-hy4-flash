@@ -44,9 +44,12 @@ export function renderStats() {
   ${sourceNote(teamTotals.sources, 'Team totals')}
 </section>
 
-<section class="section split-section">
-  <div><h3 class="subhead">MVP</h3><div class="mvp-card"><span>${mvpLeader.handle}</span><b>${mvpLeader.points}</b><small>points · rank ${mvpLeader.rank}</small></div>${sourceNote(mvpLeader.sources)}</div>
-  <div><h3 class="subhead">Rekor</h3><div class="record-stack">${records.map((r) => `<div><b>${r.value}</b><span>${r.label}</span><small>${r.detail}</small>${sourceNote(r.sources, 'Source')}</div>`).join('')}</div></div>
+<section class="section">
+  <h3 class="subhead">Rekor</h3>
+  <div class="record-stack">
+    <div><span class="record-kicker">MVP</span><b>${mvpLeader.points}</b><span>${mvpLeader.handle}</span><small>points · rank ${mvpLeader.rank}</small>${sourceNote(mvpLeader.sources, 'Source')}</div>
+    ${records.map((r) => `<div><b>${r.value}</b><span>${r.label}</span><small>${r.detail}</small>${sourceNote(r.sources, 'Source')}</div>`).join('')}
+  </div>
 </section>
 
 <section class="section">
